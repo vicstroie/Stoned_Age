@@ -12,6 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if (picked_up):
+		visible = false
 		self.set_process(false)
 
 func pick_up() -> InvItem:
