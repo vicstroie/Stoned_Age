@@ -13,6 +13,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (picked_up):
 		visible = false
+	if(!visible):
 		self.set_process(false)
 
 func pick_up() -> InvItem:
