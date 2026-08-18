@@ -84,7 +84,6 @@ func _setup_local_player():
 		%PhantomCamera3D.visible = false
 		%InventoryUI.main_inventory = false
 		%InventoryUI.visible = false
-		%InventoryUI.set_script(null)
 		main_player = false
 		# We get the index of the "Record" bus.
 	
