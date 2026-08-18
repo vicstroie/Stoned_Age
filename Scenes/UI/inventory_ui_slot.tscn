@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bim2rmyf2w42i"]
+
+[ext_resource type="Texture2D" uid="uid://b5mou04gnkh1s" path="res://icon.svg" id="1_b0u83"]
+[ext_resource type="Script" uid="uid://diqcm1tqycfrk" path="res://Scripts/Player/inventory_ui_slot.gd" id="1_ivhch"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_82c14"]
+font_size = 30
+
+[node name="InventoryUISlot" type="Panel" unique_id=1888089578]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(200, 200)
+custom_maximum_size = Vector2(500, 500)
+offset_right = 200.0
+offset_bottom = 200.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_ivhch")
+
+[node name="SlotBackground" type="ColorRect" parent="." unique_id=595794181]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+color = Color(0, 0, 0, 0.60784316)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=328989391]
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1603030428]
+layout_mode = 2
+
+[node name="ItemDisplay" type="Sprite2D" parent="CenterContainer/Panel" unique_id=1480517919]
+unique_name_in_owner = true
+scale = Vector2(1.3203125, 1.3203125)
+texture = ExtResource("1_b0u83")
+
+[node name="ItemCount" type="Label" parent="CenterContainer/Panel" unique_id=1592979328]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 49.0
+offset_top = 64.0
+offset_right = 98.0
+offset_bottom = 111.0
+text = "99"
+label_settings = SubResource("LabelSettings_82c14")
+horizontal_alignment = 2

@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://cs5uw5ng78niv"]
+
+[ext_resource type="Script" uid="uid://cy3jex7t81k02" path="res://UNUSED/player_controller.gd" id="1_7vbo8"]
+[ext_resource type="Shader" uid="uid://bj2few6lgphk6" path="res://Scripts/Shaders/dither_and_gradient_compression.gdshader" id="2_x6j6n"]
+[ext_resource type="Texture2D" uid="uid://cfhibibv515g0" path="res://Assets/Gradients/Classic Red Palette.png" id="3_c2wtl"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_ffs04"]
+[ext_resource type="Shader" uid="uid://dc4n1tkqmy250" path="res://Scripts/Shaders/moebius.gdshader" id="5_yglbm"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="6_ntfu7"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_78dfv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_no5jg"]
+shader = ExtResource("2_x6j6n")
+shader_parameter/shader_enabled = true
+shader_parameter/palette = ExtResource("3_c2wtl")
+shader_parameter/dithering = false
+shader_parameter/dithering_size = 1
+shader_parameter/resolution_scale = 1
+shader_parameter/quantization_level = 16
+
+[sub_resource type="BoxMesh" id="BoxMesh_hj8yn"]
+size = Vector3(10, 10, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7j8e6"]
+render_priority = 0
+shader = ExtResource("5_yglbm")
+shader_parameter/sensitivity = 2.999999932944
+shader_parameter/outline_thickness = 0.0999999977648
+shader_parameter/step_threshold = 0.5999999865888
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Resource" id="Resource_rlble"]
+script = ExtResource("7_78dfv")
+duration = 0.5
+transition = 1
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cwweq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8j60k"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_qkgtm"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("Player Body:position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Player Body:rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:rotation")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath("Body:rotation")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[node name="Player Controller" type="Node3D" unique_id=1667299940 node_paths=PackedStringArray("player_body", "lower_body_visual", "ground_cast", "climb_checker", "body_collision", "cam", "center_point", "cam_origin", "multiplayer_name") groups=["Player Controller"]]
+script = ExtResource("1_7vbo8")
+player_body = NodePath("Player Body")
+lower_body_visual = NodePath("Body")
+ground_cast = NodePath("Body/Ground Cast")
+climb_checker = NodePath("Body/Climb Checker")
+max_stamina = 30.0
+body_collision = NodePath("Player Body/CollisionShape3D")
+cam = NodePath("SubViewportContainer/SubViewport/Camera")
+center_point = NodePath("Player Body/Center Point")
+follow_buffer = Vector4(0.1, 1, 5, 0.5)
+cam_follow_weight = 8.0
+cam_origin = NodePath("Cam Origin")
+rotation_buffer = 5.0
+multiplayer_name = NodePath("Player Body/Label3D")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=451404646]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_no5jg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=736215373]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="Camera" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=959619856]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.99939084, 0.034899496, 0, -0.034899496, 0.99939084, 0, 0, 2.1326761)
+top_level = true
+h_offset = 1.5
+current = true
+fov = 84.117065
+
+[node name="PhantomCameraHost" type="Node" parent="SubViewportContainer/SubViewport/Camera" unique_id=1412045122]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("4_ffs04")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Camera" unique_id=348879990]
+transform = Transform3D(1000, 0, 0, 0, 384.88, 0, 0, 0, 111.85, 0, 0, 0)
+mesh = SubResource("BoxMesh_hj8yn")
+surface_material_override/0 = SubResource("ShaderMaterial_7j8e6")
+
+[node name="Cam Origin" type="Node3D" parent="." unique_id=1716167983]
+transform = Transform3D(1, 0, 0, 0, 0.99939084, 0.034899496, 0, -0.034899496, 0.99939084, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Cam Origin" unique_id=703369229]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+collision_mask = 2
+spring_length = 4.0
+
+[node name="Default Cam" type="Node3D" parent="Cam Origin/SpringArm3D" unique_id=1447527248]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0.04, 0, 2.091)
+visible = false
+script = ExtResource("6_ntfu7")
+priority = 10
+tween_resource = SubResource("Resource_rlble")
+follow_damping = true
+follow_distance = 3.0
+spring_length = 3.0
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1086601029]
+mesh = SubResource("CapsuleMesh_cwweq")
+
+[node name="Ground Cast" type="RayCast3D" parent="Body" unique_id=217260227]
+transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, -0.954, 0)
+debug_shape_thickness = 5
+
+[node name="Climb Checker" type="RayCast3D" parent="Body" unique_id=1584802665]
+transform = Transform3D(0.99999994, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 1, -4.3711385e-08, 0, 5.9604645e-08, -0.45564914)
+collision_mask = 4
+
+[node name="Player Body" type="RigidBody3D" parent="." unique_id=919998661 groups=["Player"]]
+mass = 90.0
+gravity_scale = 2.0
+can_sleep = false
+lock_rotation = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player Body" unique_id=252550095]
+shape = SubResource("CapsuleShape3D_8j60k")
+
+[node name="UpperBody" type="MeshInstance3D" parent="Player Body" unique_id=1859962029]
+transform = Transform3D(1.5119047, 0, 0, 0, 0.5338587, 0, 0, 0, 1.2821106, 0, 0.4867847, 0)
+mesh = SubResource("CapsuleMesh_cwweq")
+
+[node name="Center Point" type="Marker3D" parent="Player Body" unique_id=1897500884]
+transform = Transform3D(1, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 0.9685745, 0)
+
+[node name="Label3D" type="Label3D" parent="Player Body" unique_id=620924339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2286097, 0)
+text = "NAME"
+font_size = 42
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=23027294]
+replication_config = SubResource("SceneReplicationConfig_qkgtm")

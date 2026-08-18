@@ -1,0 +1,360 @@
+[gd_scene format=3 uid="uid://d3ubup8w6n2lq"]
+
+[ext_resource type="Script" uid="uid://b1uymulsake4i" path="res://Scripts/database.gd" id="1_3blq3"]
+[ext_resource type="Shader" uid="uid://dqbq6by4bwaim" path="res://Scripts/Shaders/AuroraSky.gdshader" id="2_rj8he"]
+[ext_resource type="Texture2D" uid="uid://bt47elcjsrylq" path="res://Assets/Gradients/Screenshot 2026-08-12 174812.png" id="3_0wh8c"]
+
+[sub_resource type="Gradient" id="Gradient_6byxh"]
+colors = PackedColorArray(0.047058824, 0.8745098, 1, 1, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hipvn"]
+gradient = SubResource("Gradient_6byxh")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eq76m"]
+shader = ExtResource("2_rj8he")
+shader_parameter/equirectangular_sky_texture = SubResource("GradientTexture2D_hipvn")
+shader_parameter/color_gradient = ExtResource("3_0wh8c")
+shader_parameter/brightness = 2.705
+shader_parameter/speed = 0.12
+shader_parameter/height = 46.875
+shader_parameter/scale = 0.58
+
+[sub_resource type="Sky" id="Sky_e35u1"]
+sky_material = SubResource("ShaderMaterial_eq76m")
+
+[sub_resource type="Environment" id="Environment_75yyr"]
+background_mode = 2
+sky = SubResource("Sky_e35u1")
+glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_rj8he"]
+resource_name = "Day to Night"
+length = 119.99
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/equirectangular_sky_texture:gradient:colors")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 60, 120),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [PackedColorArray(0.047058824, 0.8745098, 1, 1, 0, 0, 1, 1), PackedColorArray(0.047058824, 0, 0, 1, 0, 0, 0, 1), PackedColorArray(0.047058824, 0.8745098, 1, 1, 0, 0, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DirectionalLight3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 60.000023, 120),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.71462524, -2.1812868, -2.5887024), Vector3(3.8554323, -2.1816616, -2.5883234), Vector3(0.71462524, -2.1812868, -2.5887024)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DirectionalLight3D:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 60.000023, 120),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.1, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DirectionalLight3D:light_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 60, 120),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.7808378e-06, 0.5086671, 0.50948644, 1), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:daytime")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(50.00796, 90.03626),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/brightness")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 60, 119.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [2.5, 0.365, 2.5]
+}
+
+[sub_resource type="Animation" id="Animation_0wh8c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/equirectangular_sky_texture:gradient:colors")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedColorArray(0.047058824, 0.8745098, 1, 1, 0, 0, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DirectionalLight3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.71462524, -2.1812868, -2.5887024)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DirectionalLight3D:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DirectionalLight3D:light_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:daytime")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WorldEnvironment:environment:sky:sky_material:shader_parameter/brightness")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.705]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6byxh"]
+_data = {
+&"Day to Night": SubResource("Animation_rj8he"),
+&"RESET": SubResource("Animation_0wh8c")
+}
+
+[node name="Database" type="Node" unique_id=1463900199 node_paths=PackedStringArray("inventory_ui", "inventory_back", "item_list", "menu_ui", "save_game", "inventory", "options", "exit_game", "dither_slider", "dither_pattern_slider") groups=["Database"]]
+script = ExtResource("1_3blq3")
+inventory_ui = NodePath("Inventory UI")
+inventory_back = NodePath("Inventory UI/Panel/Inventory Buttons/Inventory Back")
+item_list = NodePath("Inventory UI/Panel/Item List")
+menu_ui = NodePath("Menu UI")
+save_game = NodePath("Menu UI/Panel/Menu Buttons/Save")
+inventory = NodePath("Menu UI/Panel/Menu Buttons/Inventory")
+options = NodePath("Menu UI/Panel/Menu Buttons/Options")
+exit_game = NodePath("Menu UI/Panel/Menu Buttons/Quit")
+dither_slider = NodePath("Menu UI/Panel/Menu Buttons/Dither Slider")
+dither_pattern_slider = NodePath("Menu UI/Panel/Menu Buttons/Dither Pattern Slider")
+
+[node name="Menu UI" type="Control" parent="." unique_id=918783687]
+z_index = 24
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Menu UI" unique_id=359160265]
+z_index = 24
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu Buttons" type="VBoxContainer" parent="Menu UI/Panel" unique_id=1573026406]
+z_index = 24
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33900002
+anchor_top = 0.19600001
+anchor_right = 0.64100003
+anchor_bottom = 0.76400006
+offset_left = 0.47198486
+offset_top = -0.008003235
+offset_right = -0.43200684
+offset_bottom = -0.072052
+
+[node name="Save" type="Button" parent="Menu UI/Panel/Menu Buttons" unique_id=2063179749]
+z_index = 24
+layout_mode = 2
+text = "Save Game"
+
+[node name="Inventory" type="Button" parent="Menu UI/Panel/Menu Buttons" unique_id=1246639735]
+z_index = 24
+layout_mode = 2
+text = "Inventory"
+
+[node name="Options" type="Button" parent="Menu UI/Panel/Menu Buttons" unique_id=1750861474]
+z_index = 24
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="Menu UI/Panel/Menu Buttons" unique_id=1396552223]
+z_index = 24
+layout_mode = 2
+text = "Quit
+"
+
+[node name="Spacing" type="Label" parent="Menu UI/Panel/Menu Buttons" unique_id=265938923]
+z_index = 24
+layout_mode = 2
+
+[node name="Spacing2" type="Label" parent="Menu UI/Panel/Menu Buttons" unique_id=1894399058]
+z_index = 24
+layout_mode = 2
+
+[node name="Spacing3" type="Label" parent="Menu UI/Panel/Menu Buttons" unique_id=1854672789]
+z_index = 24
+layout_mode = 2
+
+[node name="Dither Amount" type="Label" parent="Menu UI/Panel/Menu Buttons" unique_id=753996020]
+z_index = 24
+layout_mode = 2
+text = "Dither Amount"
+
+[node name="Dither Slider" type="HSlider" parent="Menu UI/Panel/Menu Buttons" unique_id=62926699]
+z_index = 24
+layout_mode = 2
+max_value = 8.0
+value = 2.0
+tick_count = 9
+
+[node name="Spacing4" type="Label" parent="Menu UI/Panel/Menu Buttons" unique_id=1405243249]
+z_index = 24
+layout_mode = 2
+
+[node name="Spacing5" type="Label" parent="Menu UI/Panel/Menu Buttons" unique_id=2039819563]
+z_index = 24
+layout_mode = 2
+
+[node name="Dither Amount2" type="Label" parent="Menu UI/Panel/Menu Buttons" unique_id=43695419]
+z_index = 24
+layout_mode = 2
+text = "Dither Pattern"
+
+[node name="Dither Pattern Slider" type="HSlider" parent="Menu UI/Panel/Menu Buttons" unique_id=841770112]
+z_index = 24
+layout_mode = 2
+max_value = 3.0
+value = 2.0
+tick_count = 4
+
+[node name="Inventory UI" type="Control" parent="." unique_id=1835641062]
+visible = false
+z_index = 24
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Inventory UI" unique_id=1940401358]
+z_index = 24
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inventory Buttons" type="VBoxContainer" parent="Inventory UI/Panel" unique_id=1095067168]
+z_index = 24
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.056
+anchor_top = 0.133
+anchor_right = 0.35700002
+anchor_bottom = 0.70100003
+offset_left = -0.51200104
+offset_top = -0.18399811
+offset_right = -0.2640381
+offset_bottom = -0.24801636
+
+[node name="Inventory Back" type="Button" parent="Inventory UI/Panel/Inventory Buttons" unique_id=2033401650]
+z_index = 24
+layout_mode = 2
+text = "Back
+"
+
+[node name="Item List" type="VBoxContainer" parent="Inventory UI/Panel" unique_id=569045732]
+z_index = 24
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.42600003
+anchor_top = 0.133
+anchor_right = 0.90900004
+anchor_bottom = 0.70100003
+offset_left = 0.24795532
+offset_top = -0.18399811
+offset_right = -0.16809082
+offset_bottom = -0.24801636
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=971553599]
+environment = SubResource("Environment_75yyr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1748012994]
+transform = Transform3D(0.7698419, 0.15590602, -0.6188997, -0.3966655, -0.64280117, -0.6553344, -0.49999997, 0.75, -0.4330127, 0, 0, 0)
+light_energy = 0.1
+shadow_enabled = true
+
+[node name="Sky Animator" type="AnimationPlayer" parent="." unique_id=1900444237]
+libraries/ = SubResource("AnimationLibrary_6byxh")
+autoplay = &"Day to Night"

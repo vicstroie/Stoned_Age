@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dmewidr72f0k5"]
+
+[ext_resource type="Script" uid="uid://balsxsuwosger" path="res://Scripts/Objects/interactable_object.gd" id="1_x7wyi"]
+[ext_resource type="Script" uid="uid://cpn5vvvoobabs" path="res://Scripts/Objects/inventory_item.gd" id="2_rt065"]
+[ext_resource type="Texture2D" uid="uid://b5mou04gnkh1s" path="res://icon.svg" id="3_1ajtd"]
+
+[sub_resource type="Resource" id="Resource_rh7hs"]
+script = ExtResource("2_rt065")
+name = "Base Interactable"
+texture = ExtResource("3_1ajtd")
+metadata/_custom_type_script = "uid://cpn5vvvoobabs"
+
+[sub_resource type="SphereMesh" id="SphereMesh_82c14"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_82c14"]
+
+[node name="InteractableObject" type="Area3D" unique_id=1402295265]
+collision_layer = 2
+script = ExtResource("1_x7wyi")
+ID = "Base"
+item_id = SubResource("Resource_rh7hs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1567823254]
+mesh = SubResource("SphereMesh_82c14")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1698275933]
+shape = SubResource("SphereShape3D_82c14")

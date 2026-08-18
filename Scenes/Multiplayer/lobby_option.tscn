@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ckh8i8vfljq41"]
+
+[ext_resource type="Script" uid="uid://dyrwpkiei2vtc" path="res://Scripts/Steam/lobby_option.gd" id="1_qpm2l"]
+
+[node name="Lobby Option" type="Button" unique_id=331776481]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_qpm2l")
