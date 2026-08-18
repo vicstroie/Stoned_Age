@@ -38,7 +38,7 @@ var t_bob = 0.0
 
 #UI Elements
 @onready var interaction_text = %InteractionText
-var inventory_ui : Control
+@export var inventory_ui : Control
 @export_category("Player Data Info")
 @export var health : float
 @export var inventory_size : int = 8 #DO NOT CHANGE
@@ -78,11 +78,11 @@ func _setup_local_player():
 		body_mesh.set_layer_mask_value(1,false)
 		multiplayer_name.set_layer_mask_value(20,true)
 		multiplayer_name.set_layer_mask_value(1,false)
-		%InventoryUI.main_inventory = true
+		inventory_ui.main_inventory = true
 	else:
 		%Camera3D.visible = false
 		%PhantomCamera3D.visible = false
-		%InventoryUI.main_inventory = false
+		inventory_ui.main_inventory = false
 		%InventoryUI.visible = false
 		main_player = false
 		# We get the index of the "Record" bus.
@@ -98,8 +98,7 @@ func _setup_local_player():
 
 func _ready():
 	_setup_local_player()
-	if (%InventoryUI.main_inventory):
-		inventory_ui = %InventoryUI
+	if (inventory_ui.main_inventory):
 		inventory_ui.setup_inventory()
 
 	interaction_text.text = ""

@@ -67,7 +67,7 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 1)
 
-[node name="Player" type="RigidBody3D" unique_id=1534641321 node_paths=PackedStringArray("water_cast", "ground_cast", "multiplayer_name", "body_mesh") groups=["Player"]]
+[node name="Player" type="RigidBody3D" unique_id=1534641321 node_paths=PackedStringArray("water_cast", "ground_cast", "inventory_ui", "multiplayer_name", "body_mesh") groups=["Player"]]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
@@ -78,6 +78,7 @@ use_fov_change = true
 use_headbob = true
 bob_freq = 2.2
 bob_amp = 0.04
+inventory_ui = NodePath("CanvasLayer/InventoryUI")
 multiplayer_name = NodePath("Nametag")
 body_mesh = NodePath("Body")
 
