@@ -38,7 +38,7 @@ var t_bob = 0.0
 
 #UI Elements
 @onready var interaction_text = %InteractionText
-
+var inventory_ui : Control
 @export_category("Player Data Info")
 @export var health : float
 @export var inventory_size : int = 8 #DO NOT CHANGE
@@ -78,9 +78,11 @@ func _setup_local_player():
 		body_mesh.set_layer_mask_value(1,false)
 		multiplayer_name.set_layer_mask_value(20,true)
 		multiplayer_name.set_layer_mask_value(1,false)
+		%InventoryUI.main_inventory = true
 	else:
 		%Camera3D.visible = false
 		%PhantomCamera3D.visible = false
+		%InventoryUI.main_inventory = false
 		%InventoryUI.visible = false
 		%InventoryUI.set_script(null)
 		main_player = false
@@ -97,10 +99,10 @@ func _setup_local_player():
 
 func _ready():
 	_setup_local_player()
-	
-	#Setup UI and Inventory
-	if(%InventoryUI.get_script() != null):
-		%InventoryUI.setup_inventory()
+	if (%InventoryUI.main_inventory):
+		inventory_ui = %InventoryUI
+		inventory_ui.setup_inventory()
+
 	interaction_text.text = ""
 
 func _process(delta):
@@ -193,9 +195,9 @@ func _handle_water_check(delta):
 	pass
 
 func _handle_adding_inventory(target_item): ##handles adding an item to your inventory
-	if(!target_item.permanent && %InventoryUI.get_script != null):
+	if(!target_item.permanent && inventory_ui.get_script != null):
 		#inventory_dictionary.Removable.append(target_item.ID)
-		%InventoryUI.insert_item(target_item.pick_up())
+		inventory_ui.insert_item(target_item.pick_up())
 	else:
 		#this is called when the player grabs a permanent item
 		pass
