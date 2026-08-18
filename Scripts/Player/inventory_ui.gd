@@ -22,27 +22,30 @@ func _process(delta: float) -> void:
 
 #Called in "_ready()" in player.gd
 func setup_inventory(size: int = 8):
-	inventory = Inventory.new()
-	inventory.update.connect(update_slots)
-	for i in range(size):
-		var new_slot = InvSlot.new()
-		inventory.slots.append(new_slot)
-	update_slots()
+	if( main_inventory):
+		inventory = Inventory.new()
+		inventory.update.connect(update_slots)
+		for i in range(size):
+			var new_slot = InvSlot.new()
+			inventory.slots.append(new_slot)
+		update_slots()
 
 #Update the UI slots
 func update_slots():
-	for i in range(min(inventory.slots.size(), slots.size())):
-		slots[i].update(inventory.slots[i])
+	if(main_inventory):
+		for i in range(min(inventory.slots.size(), slots.size())):
+			slots[i].update(inventory.slots[i])
 
 #WILL BE Called in Player
 func can_pick_up(item: InvItem) -> bool:
 	return inventory.can_pick_up(item)
 
 func insert_item(new_item: InvItem):
-	if new_item != null:
-		inventory.insert(new_item)
-	else:
-			print("INVALID ITEM ID")
+	if(main_inventory):
+		if new_item != null:
+			inventory.insert(new_item)
+		else:
+				print("INVALID ITEM ID")
 
 func open():
 	visible = true
