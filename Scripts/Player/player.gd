@@ -56,6 +56,12 @@ var autosave_timer
 ##this is the player that this instance is controlling
 var main_player := true
 
+@export_category("Voice Chat")
+const SAMPLE_RATE: int = 48000
+@export var current_sample_rate: int = SAMPLE_RATE
+var voice_playback: AudioStreamGeneratorPlayback = null
+@export var is_open_mic := false
+
 func _load_in():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
 	speed = WALK_SPEED
@@ -100,9 +106,7 @@ func _ready():
 	_setup_local_player()
 	if (inventory_ui.main_inventory):
 		inventory_ui.setup_inventory()
-
 	interaction_text.text = ""
-
 func _process(delta):
 	%SubViewportContainer.material.set("shader_parameter/quantize_size", database.dither_slider.value)
 	%SubViewportContainer.material.set("shader_parameter/dither_pattern", database.dither_pattern_slider.value)
@@ -110,6 +114,7 @@ func _process(delta):
 	_handle_saving()
 	_handle_picking_up()
 	
+	_check_for_voice()
 
 func _physics_process(delta):
 	if(main_player):
@@ -119,6 +124,40 @@ func _physics_process(delta):
 			_handle_movement(delta)
 		_handle_water_check(delta)
 
+func _record_voice(is_recording:bool) -> void:
+	# If talking, suppress all other audio or voice comms from the Steam UI
+	Steam.setInGameVoiceSpeaking(SteamManager.steam_id, is_recording)
+	if is_recording:
+		Steam.startVoiceRecording()
+	else:
+		Steam.stopVoiceRecording()
+
+func _check_for_voice() -> void: 
+	var available_voice: Dictionary = Steam.getAvailableVoice()
+	if available_voice['result'] == Steam.VoiceResult.VOICE_RESULT_OK and available_voice['size'] > 0:
+		var voice_data: Dictionary = Steam.getVoice()
+		if voice_data['result'] == Steam.VOICE_RESULT_OK and voice_data['size'] > 0:
+			# Here we pass the voice data off to the network
+			_process_voice_data.rpc(voice_data['buffer'])
+
+@rpc("any_peer", "call_remote", "unreliable")
+func _process_voice_data(voice_data: PackedByteArray) -> void:
+	var decompressed_voice: Dictionary = Steam.decompressVoice(voice_data, current_sample_rate)
+
+	if decompressed_voice['result'] == Steam.VoiceResult.VOICE_RESULT_OK and decompressed_voice['size'] > 0:
+		var frames_to_push: PackedVector2Array = PackedVector2Array()
+		frames_to_push.resize(decompressed_voice['size'] / 2)
+
+		for i in range(0, decompressed_voice['size'], 2):
+			var sample_int: int = decompressed_voice['uncompressed'].decode_s16(i)
+			var amplitude: float = float(sample_int) / 32768.0
+			frames_to_push[i / 2] = Vector2(amplitude,  amplitude)
+
+		if voice_playback.get_frames_available() >= frames_to_push.size():
+			voice_playback.push_buffer(frames_to_push)
+		elif voice_playback.get_frames_available() > 0:
+			voice_playback.push_buffer(frames_to_push.slice(0, voice_playback.get_frames_available()))
+
 func _input(event):
 	#region Mouse Head Rotation
 	if event is InputEventMouseMotion && main_player && !database.pause_game:
@@ -126,6 +165,23 @@ func _input(event):
 			p_cam.rotate_x(-event.relative.y * SENSITIVITY)
 			p_cam.rotation.x = clamp(p_cam.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 	#endregion
+	if(event.is_action_pressed("toggle mic")):
+		is_open_mic = !is_open_mic
+		_record_voice(is_open_mic)
+	if(event.is_action_pressed("push to talk")):
+		_record_voice(true)
+	if(event.is_action_released("push to talk")):
+		_record_voice(false)
+
+func _setup_stream () -> void: 
+	# Optionally we can get the sample rate from Steam
+	# current_sample_rate = Steam.getVoiceOptimalSampleRate()
+	var voice_stream_player := AudioStreamPlayer.new()
+	add_child(voice_stream_player)
+	voice_stream_player.stream = AudioStreamGenerator.new()
+	voice_stream_player.stream.mix_rate = current_sample_rate
+	voice_stream_player.play()
+	voice_playback = voice_stream_player.get_stream_playback()
 
 #region Inventory
 func _handle_picking_up():
@@ -199,6 +255,8 @@ func _handle_adding_inventory(target_item): ##handles adding an item to your inv
 	else:
 		#this is called when the player grabs a permanent item
 		pass
+
+
 
 func _handle_saving():
 	if (database.saving):
