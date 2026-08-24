@@ -8,6 +8,10 @@
 
 config_version=5
 
+[addons]
+
+csg_toolkit/auto_hide=false
+
 [application]
 
 config/name="Stoned Age"
@@ -26,6 +30,7 @@ PhantomCameraManager="*uid://duq6jhf6unyis"
 MultiplayerManager="*uid://oe8prn7qtp3x"
 SteamManager="*uid://bup4vc7tm8t6h"
 Database="*uid://d3ubup8w6n2lq"
+CsgToolkitAutoload="*uid://w8ad8q4lneis"
 
 [display]
 
@@ -35,7 +40,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/csg_terrain/plugin.cfg", "res://addons/godotsteam/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/ScatterShot/plugin.cfg", "res://addons/anthonyec.camera_preview/plugin.cfg", "res://addons/csg_terrain/plugin.cfg", "res://addons/csg_toolkit/plugin.cfg", "res://addons/godotsteam/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/project-time-tracker/plugin.cfg")
 
 [file_customization]
 
