@@ -39,6 +39,7 @@ var t_bob = 0.0
 #UI Elements
 @onready var interaction_text = %InteractionText
 @export var inventory_ui : Control
+
 @export_category("Player Data Info")
 @export var health : float
 @export var inventory_size : int = 8 #DO NOT CHANGE
@@ -61,6 +62,8 @@ const SAMPLE_RATE: int = 48000
 @export var current_sample_rate: int = SAMPLE_RATE
 var voice_playback: AudioStreamGeneratorPlayback = null
 @export var is_open_mic := false
+
+
 
 func _load_in():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
@@ -107,6 +110,7 @@ func _ready():
 	if (inventory_ui.main_inventory):
 		inventory_ui.setup_inventory()
 	interaction_text.text = ""
+
 func _process(delta):
 	%SubViewportContainer.material.set("shader_parameter/quantize_size", database.dither_slider.value)
 	%SubViewportContainer.material.set("shader_parameter/dither_pattern", database.dither_pattern_slider.value)
@@ -131,6 +135,7 @@ func _record_voice(is_recording:bool) -> void:
 		Steam.startVoiceRecording()
 	else:
 		Steam.stopVoiceRecording()
+	%"Hot Mic".visible = is_recording
 
 func _check_for_voice() -> void: 
 	var available_voice: Dictionary = Steam.getAvailableVoice()
@@ -250,8 +255,8 @@ func _handle_water_check(delta):
 
 func _handle_adding_inventory(target_item): ##handles adding an item to your inventory
 	if(!target_item.permanent && inventory_ui.get_script != null):
-		#inventory_dictionary.Removable.append(target_item.ID)
 		inventory_ui.insert_item(target_item.pick_up())
+		#inventory_dictionary.Removable.append(target_item.ID)
 	else:
 		#this is called when the player grabs a permanent item
 		pass

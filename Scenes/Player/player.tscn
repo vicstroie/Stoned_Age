@@ -41,9 +41,17 @@ shader_parameter/outline_thickness = 0.0999999977648
 shader_parameter/step_threshold = 0.5999999865888
 shader_parameter/outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Gradient" id="Gradient_oqlhh"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dyyqa"]
+gradient = SubResource("Gradient_oqlhh")
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xc2g5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wydro"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_74mp2"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_0u5uq"]
 properties/0/path = NodePath(".:rotation")
@@ -143,6 +151,13 @@ target_position = Vector3(0, 0, -5)
 collision_mask = 2
 collide_with_areas = true
 
+[node name="Hot Mic" type="TextureRect" parent="SubViewportContainer/SubViewport" unique_id=1198528225]
+unique_name_in_owner = true
+z_index = 18
+offset_right = 64.0
+offset_bottom = 64.0
+texture = SubResource("GradientTexture2D_dyyqa")
+
 [node name="Body" type="MeshInstance3D" parent="." unique_id=103819521]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_xc2g5")
@@ -160,10 +175,10 @@ collide_with_bodies = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_wydro")
 
-[node name="VC_Output" type="AudioStreamPlayer3D" parent="." unique_id=2040970495]
+[node name="AudioStreamRecord" type="AudioStreamPlayer3D" parent="." unique_id=2040970495]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50159, -0.66986406)
+stream = SubResource("AudioStreamMicrophone_74mp2")
 unit_size = 15.0
-autoplay = true
 max_distance = 15.0
 bus = &"Record"
 

@@ -56,7 +56,7 @@ func _process(delta):
 	if(inventory.button_pressed):
 		inventory_ui.visible = true
 		menu_ui.visible = false
-		_update_inventory()
+		#_update_inventory()
 	if(inventory_back.button_pressed):
 		inventory_ui.visible = false
 		menu_ui.visible = true
@@ -64,6 +64,7 @@ func _process(delta):
 		#controller_used = true
 
 func _update_inventory():
+	#CHASE THIS FUNCTION NEEDS TO BE UPDATED, SHOULD TALK TO INVENTORY SLOTS AND SHOULD TALK TO WORLD DATABASE SO THAT PICKED UP ITEMS DON'T RESPAWN UPON RELOADING THE GAME
 	var inventory_data = _JSON_to_dictionary(player_inventory_path)
 	for item in inventory_data.Removable.size():
 		print(inventory_data.Removable[item])

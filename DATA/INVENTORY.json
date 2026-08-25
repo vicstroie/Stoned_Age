@@ -1,5 +1,7 @@
 {
 	"Permanent": {},
 	"Removable": [
+		"Base",
+		"Ephedra"
 	]
 }
