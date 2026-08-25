@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://bx2kv5h2uqmya"]
+
+[ext_resource type="Script" uid="uid://cpn5vvvoobabs" path="res://Scripts/Objects/inventory_item.gd" id="1_t2ya7"]
+[ext_resource type="Texture2D" uid="uid://dimjjc3j64bqd" path="res://Imports/TEMP/temp other/redberries.png" id="2_c21v6"]
+
+[resource]
+script = ExtResource("1_t2ya7")
+name = "Red Berry"
+texture = ExtResource("2_c21v6")
+is_edible = true
+hunger_points = 5
+metadata/_custom_type_script = "uid://cpn5vvvoobabs"

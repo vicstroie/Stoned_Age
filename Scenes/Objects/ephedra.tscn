@@ -1,14 +1,8 @@
 [gd_scene format=3 uid="uid://dn1x1ps55hw1v"]
 
 [ext_resource type="Script" uid="uid://balsxsuwosger" path="res://Scripts/Objects/interactable_object.gd" id="1_8yorj"]
-[ext_resource type="Script" uid="uid://cpn5vvvoobabs" path="res://Scripts/Objects/inventory_item.gd" id="2_d3ee6"]
+[ext_resource type="Resource" uid="uid://bx2kv5h2uqmya" path="res://ObjectData/RedBerry.tres" id="2_d3ee6"]
 [ext_resource type="Texture2D" uid="uid://dimjjc3j64bqd" path="res://Imports/TEMP/temp other/redberries.png" id="2_rh7hs"]
-
-[sub_resource type="Resource" id="Resource_8yorj"]
-script = ExtResource("2_d3ee6")
-name = "Ephedra"
-texture = ExtResource("2_rh7hs")
-metadata/_custom_type_script = "uid://cpn5vvvoobabs"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5xqn0"]
 size = Vector3(1.3776855, 2.1408691, 0.068847656)
@@ -17,7 +11,7 @@ size = Vector3(1.3776855, 2.1408691, 0.068847656)
 collision_layer = 2
 script = ExtResource("1_8yorj")
 ID = "Ephedra"
-item_id = SubResource("Resource_8yorj")
+item_id = ExtResource("2_d3ee6")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1191962540]
 transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0, 0, 0)
