@@ -40,7 +40,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/ScatterShot/plugin.cfg", "res://addons/anthonyec.camera_preview/plugin.cfg", "res://addons/csg_terrain/plugin.cfg", "res://addons/csg_toolkit/plugin.cfg", "res://addons/godotsteam/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/project-time-tracker/plugin.cfg")
+enabled=PackedStringArray("res://addons/ScatterShot/plugin.cfg", "res://addons/anthonyec.camera_preview/plugin.cfg", "res://addons/csg_terrain/plugin.cfg", "res://addons/godotsteam/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/project-time-tracker/plugin.cfg")
 
 [file_customization]
 
@@ -145,6 +145,7 @@ player_position={
 
 initialization/app_data/app_id=4489380
 initialization/processes/initialize_on_startup=true
+initialization/processes/embed_callbacks=true
 
 [steam_server]
 

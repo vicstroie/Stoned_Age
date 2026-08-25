@@ -60,7 +60,7 @@ var main_player := true
 @export_category("Voice Chat")
 const SAMPLE_RATE: int = 48000
 @export var current_sample_rate: int = SAMPLE_RATE
-var voice_playback: AudioStreamGeneratorPlayback = null
+var voice_playback : AudioStreamGeneratorPlayback = null
 @export var is_open_mic := false
 
 
@@ -110,7 +110,8 @@ func _ready():
 	if (inventory_ui.main_inventory):
 		inventory_ui.setup_inventory()
 	interaction_text.text = ""
-	_setup_stream() #this function is where the audio data is being called
+	if(main_player):
+		_setup_stream() #this function is where the audio data is being called
 
 func _process(delta):
 	%SubViewportContainer.material.set("shader_parameter/quantize_size", database.dither_slider.value)
@@ -148,7 +149,7 @@ func _check_for_voice() -> void:
 			print("DETECTING VOICE DATA...")
 
 
-@rpc("any_peer", "call_remote", "unreliable")
+@rpc("any_peer", "call_local", "unreliable")
 func _process_voice_data(voice_data: PackedByteArray) -> void:
 	var decompressed_voice: Dictionary = Steam.decompressVoice(voice_data, current_sample_rate)
 
@@ -185,11 +186,11 @@ func _setup_stream () -> void:
 	# Optionally we can get the sample rate from Steam
 	current_sample_rate = Steam.getVoiceOptimalSampleRate()
 	var voice_stream_player := $Voice
-	add_child(voice_stream_player)
 	voice_stream_player.stream = AudioStreamGenerator.new()
 	voice_stream_player.stream.mix_rate = current_sample_rate
 	voice_stream_player.play()
-	voice_playback = voice_stream_player.get_stream_playback()
+	voice_playback = voice_stream_player.get_stream_playback() #I think this is where audio is being applied
+	
 
 #region Inventory
 func _handle_picking_up():
@@ -263,8 +264,6 @@ func _handle_adding_inventory(target_item): ##handles adding an item to your inv
 	else:
 		#this is called when the player grabs a permanent item
 		pass
-
-
 
 func _handle_saving():
 	if (database.saving):

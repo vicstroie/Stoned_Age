@@ -208,3 +208,6 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6843575, 0)
 pitch_scale = 1.62
 bus = &"Player"
+
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=1335176084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5767124, 0)
