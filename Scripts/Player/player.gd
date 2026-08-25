@@ -110,6 +110,7 @@ func _ready():
 	if (inventory_ui.main_inventory):
 		inventory_ui.setup_inventory()
 	interaction_text.text = ""
+	_setup_stream() #this function is where the audio data is being called
 
 func _process(delta):
 	%SubViewportContainer.material.set("shader_parameter/quantize_size", database.dither_slider.value)
@@ -182,8 +183,8 @@ func _input(event):
 
 func _setup_stream () -> void: 
 	# Optionally we can get the sample rate from Steam
-	# current_sample_rate = Steam.getVoiceOptimalSampleRate()
-	var voice_stream_player := AudioStreamPlayer.new()
+	current_sample_rate = Steam.getVoiceOptimalSampleRate()
+	var voice_stream_player := $Voice
 	add_child(voice_stream_player)
 	voice_stream_player.stream = AudioStreamGenerator.new()
 	voice_stream_player.stream.mix_rate = current_sample_rate
