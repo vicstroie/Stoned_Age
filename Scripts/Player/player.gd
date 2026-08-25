@@ -144,6 +144,8 @@ func _check_for_voice() -> void:
 		if voice_data['result'] == Steam.VOICE_RESULT_OK and voice_data['size'] > 0:
 			# Here we pass the voice data off to the network
 			_process_voice_data.rpc(voice_data['buffer'])
+			print("DETECTING VOICE DATA...")
+
 
 @rpc("any_peer", "call_remote", "unreliable")
 func _process_voice_data(voice_data: PackedByteArray) -> void:
