@@ -11,7 +11,11 @@ extends Control
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if(Input.is_action_just_pressed("interact")):
+		_update_quick_inv()
+
+func _update_quick_inv():
 	for i in range(max_slots):
-		if (main_inventory.inventory.slots[i].item != null):
-			print(main_inventory.inventory.slots[i].item.name)
-			quick_slots[i].item_icon.texture = main_inventory.inventory.slots[i].item.texture
+			if (main_inventory.inventory.slots[i].item != null):
+				#print("INVENTORY ADDED " + str(main_inventory.inventory.slots[i].item.name))
+				quick_slots[i].item_icon.texture = main_inventory.inventory.slots[i].item.texture
