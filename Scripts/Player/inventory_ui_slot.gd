@@ -6,19 +6,35 @@ extends Button
 @onready var action_button: Button = %ActionButton
 @onready var drop_button: Button = %DropButton
 
+var current_item: InvItem
+
 #TEMP SOLUTION TO SPRITE SCALING
 var visual_width : float = 170
+var is_mouse_over
 
 func _ready() -> void:
 	toggle_action_buttons(false)
 
+func _process(delta: float) -> void:
+	if is_mouse_over:
+		var is_x_range = get_global_mouse_position().x > global_position.x and get_global_mouse_position().x < global_position.x + 200
+		var is_y_range = get_global_mouse_position().y > global_position.y and get_global_mouse_position().y < global_position.y + 200
+		if !is_x_range or !is_y_range:
+			is_mouse_over = false
+			toggle_action_buttons(false)
+	
+
 func update(slot: InvSlot):
 	if !slot.item:
+		current_item = null
+		
 		item_visual.visible = false
 		amount_text.visible = false
 		item_name.text = ""
 		item_name.visible = false
 	else:
+		current_item = slot.item
+		
 		item_visual.visible = true
 		item_visual.texture = slot.item.texture
 		item_name.text = slot.item.name
@@ -36,13 +52,9 @@ func rescale_sprite(new_texture : Texture2D):
 	item_visual.scale.y = 170.0/height
 
 func _on_mouse_entered() -> void:
-	print("mouse enter")
-
-func _on_mouse_exited() -> void:
-	toggle_action_buttons(false)
-
-func _on_pressed() -> void:
-	toggle_action_buttons(true)
+	if current_item != null:
+		is_mouse_over = true
+		toggle_action_buttons(true)
 
 func toggle_action_buttons(toggle: bool) -> void:
 	if toggle:
