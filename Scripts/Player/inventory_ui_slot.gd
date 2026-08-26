@@ -7,6 +7,7 @@ extends Button
 @onready var drop_button: Button = %DropButton
 
 var current_item: InvItem
+var current_slot: InvSlot
 
 #TEMP SOLUTION TO SPRITE SCALING
 var visual_width : float = 170
@@ -25,6 +26,7 @@ func _process(delta: float) -> void:
 	
 
 func update(slot: InvSlot):
+	current_slot = slot
 	if !slot.item:
 		current_item = null
 		
@@ -34,6 +36,8 @@ func update(slot: InvSlot):
 		item_name.visible = false
 	else:
 		current_item = slot.item
+		if current_item.is_edible:
+			action_button.text = "EAT"
 		
 		item_visual.visible = true
 		item_visual.texture = slot.item.texture
@@ -69,7 +73,20 @@ func toggle_action_buttons(toggle: bool) -> void:
 		drop_button.visible = false
 
 func _on_action_button_pressed() -> void:
-	print("action button pressed")
+	#Temporary Eating Logic
+	if current_item.is_edible:
+		current_slot.amount = current_slot.amount - 1
+		if current_slot.amount <= 0:
+			reset_current_slot()
+	#Update slot to account for action
+	update(current_slot)
 
 func _on_drop_button_pressed() -> void:
-	print("drop button pressed")
+	#Temporary Drop Logic
+	reset_current_slot()
+
+func reset_current_slot():
+	current_slot.item = null
+	current_slot.amount = 0
+	update(current_slot)
+	toggle_action_buttons(false)
