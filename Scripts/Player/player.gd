@@ -162,7 +162,7 @@ func _process_voice_data(voice_data: PackedByteArray) -> void:
 			var amplitude: float = float(sample_int) / 32768.0
 			frames_to_push[i / 2] = Vector2(amplitude,  amplitude)
 
-		if voice_playback.get_frames_available() >= frames_to_push.size():
+		if voice_playback.get_frames_available() >= frames_to_push.size() && voice_playback != null:
 			voice_playback.push_buffer(frames_to_push)
 		elif voice_playback.get_frames_available() > 0:
 			voice_playback.push_buffer(frames_to_push.slice(0, voice_playback.get_frames_available()))
