@@ -50,7 +50,9 @@ func insert_item(new_item: InvItem):
 func open():
 	visible = true
 	is_open = true
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 func close():
 	visible = false
 	is_open = false
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

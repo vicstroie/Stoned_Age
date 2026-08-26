@@ -159,4 +159,3 @@ This plugin is a complete architectural overhaul and refactor of [CSG Toolkit](h
 - **Architecture Refactor, 3D Pie Menu, Spatial Hash Grid Optimization, & GDScript 2.0 Rewrite:** [qwqzhanqwq](https://github.com/qwqzhanqwq) (Copyright (c) 2026).
 
 License: [MIT License](LICENSE)
-

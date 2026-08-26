@@ -169,7 +169,7 @@ func _process_voice_data(voice_data: PackedByteArray) -> void:
 
 func _input(event):
 	#region Mouse Head Rotation
-	if event is InputEventMouseMotion && main_player && !database.pause_game:
+	if event is InputEventMouseMotion && main_player && !database.pause_game && !inventory_ui.is_open:
 			head.rotate_y(-event.relative.x * SENSITIVITY)
 			p_cam.rotate_x(-event.relative.y * SENSITIVITY)
 			p_cam.rotation.x = clamp(p_cam.rotation.x, deg_to_rad(-40), deg_to_rad(60))
