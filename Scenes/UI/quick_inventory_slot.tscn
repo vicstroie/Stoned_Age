@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bbwpugrldev3s"]
+
+[ext_resource type="Script" uid="uid://d2tk1ecfmyxqh" path="res://Scripts/Player/quick_inventory_slot.gd" id="1_c4gvm"]
+
+[sub_resource type="Gradient" id="Gradient_jhyir"]
+offsets = PackedFloat32Array(0.35147393, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.21379077, 0.19858548, 0.18683556, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o4uhr"]
+gradient = SubResource("Gradient_jhyir")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_n5iax"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oqlhh"]
+gradient = SubResource("Gradient_n5iax")
+
+[node name="Quick Inventory Slot" type="TextureRect" unique_id=1610103511 node_paths=PackedStringArray("item_icon")]
+texture = SubResource("GradientTexture2D_o4uhr")
+script = ExtResource("1_c4gvm")
+item_icon = NodePath("CenterContainer/Texture")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=791263155]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Texture" type="TextureRect" parent="CenterContainer" unique_id=1202838397]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_oqlhh")

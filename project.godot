@@ -36,7 +36,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/ScatterShot/plugin.cfg", "res://addons/anthonyec.camera_preview/plugin.cfg", "res://addons/csg_blockout/plugin.cfg", "res://addons/csg_terrain/plugin.cfg", "res://addons/godotsteam/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/project-time-tracker/plugin.cfg")
+enabled=PackedStringArray("res://addons/ScatterShot/plugin.cfg", "res://addons/anthonyec.camera_preview/plugin.cfg", "res://addons/csg_blockout/plugin.cfg", "res://addons/csg_terrain/plugin.cfg", "res://addons/godotsteam/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/project-time-tracker/plugin.cfg", "res://addons/proton_scatter/plugin.cfg")
 
 [file_customization]
 

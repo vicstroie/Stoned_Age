@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cic4p3gftyojm"]
+
+[ext_resource type="PackedScene" uid="uid://bbwpugrldev3s" path="res://Scenes/UI/quick_inventory_slot.tscn" id="1_45y7a"]
+[ext_resource type="Script" uid="uid://5ebeligx5fk1" path="res://Scripts/Player/quick_inventory.gd" id="1_ka7v2"]
+
+[node name="Quick Inventory" type="Control" unique_id=2092767237 node_paths=PackedStringArray("quick_slots")]
+layout_mode = 3
+anchor_left = 0.33900002
+anchor_top = 0.85
+anchor_right = 0.693
+anchor_bottom = 0.96800005
+offset_left = -0.52801514
+offset_top = 0.2000122
+offset_right = -0.33599854
+offset_bottom = -0.2640381
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(1, 0)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_ka7v2")
+quick_slots = [NodePath("HBoxContainer/Quick Inventory Slot"), NodePath("HBoxContainer/Quick Inventory Slot2"), NodePath("HBoxContainer/Quick Inventory Slot3"), NodePath("HBoxContainer/Quick Inventory Slot4"), NodePath("HBoxContainer/Quick Inventory Slot5")]
+max_slots = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1219499957]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Quick Inventory Slot" parent="HBoxContainer" unique_id=1610103511 instance=ExtResource("1_45y7a")]
+layout_mode = 2
+
+[node name="Quick Inventory Slot2" parent="HBoxContainer" unique_id=291197078 instance=ExtResource("1_45y7a")]
+layout_mode = 2
+
+[node name="Quick Inventory Slot3" parent="HBoxContainer" unique_id=1487058121 instance=ExtResource("1_45y7a")]
+layout_mode = 2
+
+[node name="Quick Inventory Slot4" parent="HBoxContainer" unique_id=1138795566 instance=ExtResource("1_45y7a")]
+layout_mode = 2
+
+[node name="Quick Inventory Slot5" parent="HBoxContainer" unique_id=750413827 instance=ExtResource("1_45y7a")]
+layout_mode = 2
