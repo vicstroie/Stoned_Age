@@ -118,7 +118,8 @@ func _process(delta):
 	_handle_saving()
 	_handle_picking_up()
 	
-	_check_for_voice()
+	if(main_player):
+		_check_for_voice()
 
 func _physics_process(delta):
 	if(main_player):
@@ -168,7 +169,6 @@ func _process_voice_data(voice_data: PackedByteArray) -> void:
 			var sample_int: int = decompressed_voice['uncompressed'].decode_s16(i)
 			var amplitude: float = float(sample_int) / 32768.0
 			frames_to_push[i / 2] = Vector2(amplitude,  amplitude)
-
 		if voice_playback.get_frames_available() >= frames_to_push.size() && voice_playback != null:
 			voice_playback.push_buffer(frames_to_push)
 		elif voice_playback.get_frames_available() > 0:

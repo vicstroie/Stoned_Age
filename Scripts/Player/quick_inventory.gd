@@ -7,8 +7,6 @@ extends Control
 @export var player_owner : RigidBody3D
 @export var main_inventory : Control
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(Input.is_action_just_pressed("interact")):

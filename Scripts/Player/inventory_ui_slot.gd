@@ -23,7 +23,6 @@ func _process(delta: float) -> void:
 		if !is_x_range or !is_y_range:
 			is_mouse_over = false
 			toggle_action_buttons(false)
-	
 
 func update(slot: InvSlot):
 	current_slot = slot
