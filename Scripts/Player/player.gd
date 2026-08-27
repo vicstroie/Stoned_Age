@@ -53,7 +53,6 @@ var autosave_timer
 @export var player_id : int
 @export var multiplayer_name : Label3D
 @export var body_mesh : MeshInstance3D
-@export var vc_output : AudioStreamPlayer3D
 ##this is the player that this instance is controlling
 var main_player := true
 
@@ -62,7 +61,6 @@ const SAMPLE_RATE: int = 48000
 @export var current_sample_rate: int = SAMPLE_RATE
 var voice_playback : AudioStreamGeneratorPlayback = null
 @export var is_open_mic := false
-
 
 
 func _load_in():
@@ -139,6 +137,16 @@ func _record_voice(is_recording:bool) -> void:
 		Steam.stopVoiceRecording()
 	%"Hot Mic".visible = is_recording
 
+func _setup_stream () -> void: 
+	# Optionally we can get the sample rate from Steam
+	current_sample_rate = Steam.getVoiceOptimalSampleRate()
+	var voice_stream_player := AudioStreamPlayer.new()
+	add_child(voice_stream_player)
+	voice_stream_player.stream = AudioStreamGenerator.new()
+	voice_stream_player.stream.mix_rate = current_sample_rate
+	voice_stream_player.play()
+	voice_playback = voice_stream_player.get_stream_playback() #I think this is where audio is being applied
+
 func _check_for_voice() -> void: 
 	var available_voice: Dictionary = Steam.getAvailableVoice()
 	if available_voice['result'] == Steam.VoiceResult.VOICE_RESULT_OK and available_voice['size'] > 0:
@@ -147,7 +155,6 @@ func _check_for_voice() -> void:
 			# Here we pass the voice data off to the network
 			_process_voice_data.rpc(voice_data['buffer'])
 			print("DETECTING VOICE DATA...")
-
 
 @rpc("any_peer", "call_local", "unreliable")
 func _process_voice_data(voice_data: PackedByteArray) -> void:
@@ -174,6 +181,7 @@ func _input(event):
 			p_cam.rotate_x(-event.relative.y * SENSITIVITY)
 			p_cam.rotation.x = clamp(p_cam.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 	#endregion
+	
 	if(event.is_action_pressed("toggle mic")):
 		is_open_mic = !is_open_mic
 		_record_voice(is_open_mic)
@@ -181,16 +189,6 @@ func _input(event):
 		_record_voice(true)
 	if(event.is_action_released("push to talk")):
 		_record_voice(false)
-
-func _setup_stream () -> void: 
-	# Optionally we can get the sample rate from Steam
-	current_sample_rate = Steam.getVoiceOptimalSampleRate()
-	var voice_stream_player := $Voice
-	voice_stream_player.stream = AudioStreamGenerator.new()
-	voice_stream_player.stream.mix_rate = current_sample_rate
-	voice_stream_player.play()
-	voice_playback = voice_stream_player.get_stream_playback() #I think this is where audio is being applied
-	
 
 #region Inventory
 func _handle_picking_up():
