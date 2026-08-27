@@ -159,20 +159,23 @@ func _check_for_voice() -> void:
 
 @rpc("any_peer", "call_local", "unreliable")
 func _process_voice_data(voice_data: PackedByteArray) -> void:
-	var decompressed_voice: Dictionary = Steam.decompressVoice(voice_data, current_sample_rate)
+	if(main_player):
+		var decompressed_voice: Dictionary = Steam.decompressVoice(voice_data, current_sample_rate)
 
-	if decompressed_voice['result'] == Steam.VoiceResult.VOICE_RESULT_OK and decompressed_voice['size'] > 0:
-		var frames_to_push: PackedVector2Array = PackedVector2Array()
-		frames_to_push.resize(decompressed_voice['size'] / 2)
+		if decompressed_voice['result'] == Steam.VoiceResult.VOICE_RESULT_OK and decompressed_voice['size'] > 0:
+			var frames_to_push: PackedVector2Array = PackedVector2Array()
+			frames_to_push.resize(decompressed_voice['size'] / 2)
 
-		for i in range(0, decompressed_voice['size'], 2):
-			var sample_int: int = decompressed_voice['uncompressed'].decode_s16(i)
-			var amplitude: float = float(sample_int) / 32768.0
-			frames_to_push[i / 2] = Vector2(amplitude,  amplitude)
-		if voice_playback.get_frames_available() >= frames_to_push.size() && voice_playback != null:
-			voice_playback.push_buffer(frames_to_push)
-		elif voice_playback.get_frames_available() > 0:
-			voice_playback.push_buffer(frames_to_push.slice(0, voice_playback.get_frames_available()))
+			for i in range(0, decompressed_voice['size'], 2):
+				var sample_int: int = decompressed_voice['uncompressed'].decode_s16(i)
+				var amplitude: float = float(sample_int) / 32768.0
+				frames_to_push[i / 2] = Vector2(amplitude,  amplitude)
+			if voice_playback.get_frames_available() >= frames_to_push.size() && voice_playback != null:
+				voice_playback.push_buffer(frames_to_push)
+			elif voice_playback.get_frames_available() > 0:
+				voice_playback.push_buffer(frames_to_push.slice(0, voice_playback.get_frames_available()))
+	else:
+		return
 
 func _input(event):
 	#region Mouse Head Rotation
@@ -181,14 +184,14 @@ func _input(event):
 			p_cam.rotate_x(-event.relative.y * SENSITIVITY)
 			p_cam.rotation.x = clamp(p_cam.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 	#endregion
-	
-	if(event.is_action_pressed("toggle mic")):
-		is_open_mic = !is_open_mic
-		_record_voice(is_open_mic)
-	if(event.is_action_pressed("push to talk")):
-		_record_voice(true)
-	if(event.is_action_released("push to talk")):
-		_record_voice(false)
+	if (main_player):
+		if(event.is_action_pressed("toggle mic")):
+			is_open_mic = !is_open_mic
+			_record_voice(is_open_mic)
+		if(event.is_action_pressed("push to talk")):
+			_record_voice(true)
+		if(event.is_action_released("push to talk")):
+			_record_voice(false)
 
 #region Inventory
 func _handle_picking_up():
