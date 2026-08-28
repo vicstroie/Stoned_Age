@@ -112,9 +112,10 @@ func _ready():
 	if (inventory_ui.main_inventory):
 		inventory_ui.setup_inventory()
 	interaction_text.text = ""
+	
+	_setup_stream() #this function is where the audio data is being called
 
 	if(main_player):
-		_setup_stream() #this function is where the audio data is being called
 		_add_self_to_database()
 
 func _process(delta):
@@ -137,12 +138,13 @@ func _physics_process(delta):
 
 func _record_voice(is_recording:bool) -> void:
 	# If talking, suppress all other audio or voice comms from the Steam UI
-	Steam.setInGameVoiceSpeaking(SteamManager.steam_id, is_recording)
-	if is_recording:
-		Steam.startVoiceRecording()
-	else:
-		Steam.stopVoiceRecording()
-	%"Hot Mic".visible = is_recording
+	if(main_player):
+		Steam.setInGameVoiceSpeaking(SteamManager.steam_id, is_recording)
+		if is_recording:
+			Steam.startVoiceRecording()
+		else:
+			Steam.stopVoiceRecording()
+		%"Hot Mic".visible = is_recording
 
 func _setup_stream () -> void: 
 	# Optionally we can get the sample rate from Steam

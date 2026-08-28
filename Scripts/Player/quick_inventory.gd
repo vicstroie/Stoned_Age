@@ -14,6 +14,6 @@ func _process(delta):
 
 func _update_quick_inv():
 	for i in range(max_slots):
-			if (main_inventory.inventory.slots[i].item != null):
-				#print("INVENTORY ADDED " + str(main_inventory.inventory.slots[i].item.name))
-				quick_slots[i].item_icon.texture = main_inventory.inventory.slots[i].item.texture
+		if (main_inventory.inventory.slots[i].item != null):
+			#print("INVENTORY ADDED " + str(main_inventory.inventory.slots[i].item.name))
+			quick_slots[i].item_icon.texture = main_inventory.inventory.slots[i].item.texture
