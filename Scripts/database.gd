@@ -5,6 +5,10 @@ var player_inventory_path = "res://DATA/INVENTORY.json"
 @export var autosave_enabled : bool
 @export var daytime : bool
 
+@export_category("Multiplayer")
+@export var players : Array[RigidBody3D]
+@export var player_voices : Array[AudioStream]
+
 @export_category("All Inventory Items")
 @export var permanent_items : Dictionary
 @export var removable_items : Dictionary

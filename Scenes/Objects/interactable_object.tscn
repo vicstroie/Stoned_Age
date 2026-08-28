@@ -14,11 +14,12 @@ metadata/_custom_type_script = "uid://cpn5vvvoobabs"
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_82c14"]
 
-[node name="InteractableObject" type="Area3D" unique_id=1402295265]
+[node name="InteractableObject" type="Area3D" unique_id=1402295265 node_paths=PackedStringArray("collision_shape")]
 collision_layer = 2
 script = ExtResource("1_x7wyi")
 ID = "Base"
 item_id = SubResource("Resource_rh7hs")
+collision_shape = NodePath("CollisionShape3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1567823254]
 mesh = SubResource("SphereMesh_82c14")

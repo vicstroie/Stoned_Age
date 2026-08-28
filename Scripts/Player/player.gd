@@ -62,7 +62,6 @@ const SAMPLE_RATE: int = 48000
 var voice_playback : AudioStreamGeneratorPlayback = null
 @export var is_open_mic := false
 
-
 func _load_in():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
 	speed = WALK_SPEED
@@ -99,17 +98,24 @@ func _setup_local_player():
 		database = game_obj
 	status_dictionary = database._JSON_to_dictionary(database.player_status_path)
 	inventory_dictionary = database._JSON_to_dictionary(database.player_inventory_path)
-		
+	
 	#spawn location
 	position = Vector3(status_dictionary.Position[0],status_dictionary.Position[1],status_dictionary.Position[2])
+
+@rpc ("any_peer","call_local","reliable") #i think rpc's sync functions, not quite sure
+func _add_self_to_database():
+	#add self to player list
+	database.players.append(self)
 
 func _ready():
 	_setup_local_player()
 	if (inventory_ui.main_inventory):
 		inventory_ui.setup_inventory()
 	interaction_text.text = ""
+
 	if(main_player):
 		_setup_stream() #this function is where the audio data is being called
+		_add_self_to_database()
 
 func _process(delta):
 	%SubViewportContainer.material.set("shader_parameter/quantize_size", database.dither_slider.value)
@@ -157,7 +163,7 @@ func _check_for_voice() -> void:
 			_process_voice_data.rpc(voice_data['buffer'])
 			print("DETECTING VOICE DATA...")
 
-@rpc("any_peer", "call_local", "unreliable")
+@rpc("any_peer", "call_local", "reliable")
 func _process_voice_data(voice_data: PackedByteArray) -> void:
 	if(main_player):
 		var decompressed_voice: Dictionary = Steam.decompressVoice(voice_data, current_sample_rate)
