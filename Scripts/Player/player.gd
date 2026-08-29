@@ -115,7 +115,7 @@ func _ready():
 	
 	_setup_stream() #this function is where the audio data is being called
 
-	_add_self_to_database.rpc(0)
+	_add_self_to_database.rpc()
 
 func _process(delta):
 	%SubViewportContainer.material.set("shader_parameter/quantize_size", database.dither_slider.value)
