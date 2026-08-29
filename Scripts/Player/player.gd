@@ -159,28 +159,26 @@ func _check_for_voice() -> void:
 		var voice_data: Dictionary = Steam.getVoice()
 		if voice_data['result'] == Steam.VOICE_RESULT_OK and voice_data['size'] > 0:
 			# Here we pass the voice data off to the network
-			_process_voice_data.rpc(voice_data['result'])
+			_process_voice_data.rpc(voice_data['buffer'])
 			print("DETECTING VOICE DATA...")
 
-@rpc("any_peer", "call_remote", "reliable")
+@rpc("any_peer", "call_local", "reliable")
 func _process_voice_data(voice_data: PackedByteArray) -> void:
-	if(main_player):
-		var decompressed_voice: Dictionary = Steam.decompressVoice(voice_data, current_sample_rate)
+	var decompressed_voice: Dictionary = Steam.decompressVoice(voice_data, current_sample_rate)
 
-		if decompressed_voice['result'] == Steam.VoiceResult.VOICE_RESULT_OK and decompressed_voice['size'] > 0:
-			var frames_to_push: PackedVector2Array = PackedVector2Array()
-			frames_to_push.resize(decompressed_voice['size'] / 2)
+	if decompressed_voice['result'] == Steam.VoiceResult.VOICE_RESULT_OK and decompressed_voice['size'] > 0:
+		var frames_to_push: PackedVector2Array = PackedVector2Array()
+		frames_to_push.resize(decompressed_voice['size'] / 2)
 
-			for i in range(0, decompressed_voice['size'], 2):
-				var sample_int: int = decompressed_voice['uncompressed'].decode_s16(i)
-				var amplitude: float = float(sample_int) / 32768.0
-				frames_to_push[i / 2] = Vector2(amplitude,  amplitude)
-			if voice_playback.get_frames_available() >= frames_to_push.size() && voice_playback != null:
-				voice_playback.push_buffer(frames_to_push)
-			elif voice_playback.get_frames_available() > 0:
-				voice_playback.push_buffer(frames_to_push.slice(0, voice_playback.get_frames_available()))
-	else:
-		return
+		for i in range(0, decompressed_voice['size'], 2):
+			var sample_int: int = decompressed_voice['uncompressed'].decode_s16(i)
+			var amplitude: float = float(sample_int) / 32768.0
+			frames_to_push[i / 2] = Vector2(amplitude,  amplitude)
+		if voice_playback.get_frames_available() >= frames_to_push.size() && voice_playback != null:
+			voice_playback.push_buffer(frames_to_push)
+		elif voice_playback.get_frames_available() > 0:
+			voice_playback.push_buffer(frames_to_push.slice(0, voice_playback.get_frames_available()))
+
 
 func _input(event):
 	#region Mouse Head Rotation
@@ -265,7 +263,7 @@ func _handle_water_check(delta):
 
 func _handle_adding_inventory(target_item): ##handles adding an item to your inventory
 	if(!target_item.permanent && inventory_ui.get_script != null):
-		inventory_ui.insert_item(target_item.pick_up.rpc())
+		inventory_ui.insert_item(target_item.pick_up())
 		#inventory_dictionary.Removable.append(target_item.ID)
 	else:
 		#this is called when the player grabs a permanent item

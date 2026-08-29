@@ -17,7 +17,6 @@ func _process(delta: float) -> void:
 		self.set_process(false)
 		print("Disabled " + str(name))
 
-@rpc("any_peer","call_local","reliable")
 func pick_up() -> InvItem:
 	picked_up = true
 	return item_id
