@@ -114,7 +114,6 @@ func _ready():
 	interaction_text.text = ""
 	
 	_setup_stream() #this function is where the audio data is being called
-
 	_add_self_to_database.rpc()
 
 func _process(delta):
@@ -124,8 +123,8 @@ func _process(delta):
 	_handle_saving()
 	_handle_picking_up()
 	
-	if(main_player):
-		_check_for_voice()
+	#if(main_player):
+	_check_for_voice()
 
 func _physics_process(delta):
 	if(main_player):
