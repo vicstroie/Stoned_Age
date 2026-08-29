@@ -115,8 +115,7 @@ func _ready():
 	
 	_setup_stream() #this function is where the audio data is being called
 
-	if(main_player):
-		_add_self_to_database()
+	_add_self_to_database()
 
 func _process(delta):
 	%SubViewportContainer.material.set("shader_parameter/quantize_size", database.dither_slider.value)
@@ -138,13 +137,13 @@ func _physics_process(delta):
 
 func _record_voice(is_recording:bool) -> void:
 	# If talking, suppress all other audio or voice comms from the Steam UI
-	if(main_player):
-		Steam.setInGameVoiceSpeaking(SteamManager.steam_id, is_recording)
-		if is_recording:
-			Steam.startVoiceRecording()
-		else:
-			Steam.stopVoiceRecording()
-		%"Hot Mic".visible = is_recording
+
+	Steam.setInGameVoiceSpeaking(SteamManager.steam_id, is_recording)
+	if is_recording:
+		Steam.startVoiceRecording()
+	else:
+		Steam.stopVoiceRecording()
+	%"Hot Mic".visible = is_recording
 
 func _setup_stream () -> void: 
 	# Optionally we can get the sample rate from Steam
