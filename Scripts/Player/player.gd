@@ -115,7 +115,7 @@ func _ready():
 	
 	_setup_stream() #this function is where the audio data is being called
 
-	_add_self_to_database()
+	_add_self_to_database.rpc(0)
 
 func _process(delta):
 	%SubViewportContainer.material.set("shader_parameter/quantize_size", database.dither_slider.value)
@@ -137,7 +137,6 @@ func _physics_process(delta):
 
 func _record_voice(is_recording:bool) -> void:
 	# If talking, suppress all other audio or voice comms from the Steam UI
-
 	Steam.setInGameVoiceSpeaking(SteamManager.steam_id, is_recording)
 	if is_recording:
 		Steam.startVoiceRecording()
@@ -161,7 +160,7 @@ func _check_for_voice() -> void:
 		var voice_data: Dictionary = Steam.getVoice()
 		if voice_data['result'] == Steam.VOICE_RESULT_OK and voice_data['size'] > 0:
 			# Here we pass the voice data off to the network
-			_process_voice_data.rpc(voice_data['buffer'])
+			_process_voice_data.rpc(0, voice_data['buffer'])
 			print("DETECTING VOICE DATA...")
 
 @rpc("any_peer", "call_remote", "reliable")
