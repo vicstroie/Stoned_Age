@@ -10,7 +10,6 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-@rpc("any_peer","call_local","reliable")
 func _process(delta: float) -> void:
 	if (picked_up):
 		visible = false
@@ -18,6 +17,7 @@ func _process(delta: float) -> void:
 		self.set_process(false)
 		print("Disabled " + str(name))
 
+@rpc("any_peer","call_local","reliable")
 func pick_up() -> InvItem:
 	picked_up = true
 	return item_id

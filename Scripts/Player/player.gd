@@ -123,8 +123,8 @@ func _process(delta):
 	_handle_saving()
 	_handle_picking_up()
 	
-	#if(main_player):
-	_check_for_voice()
+	if(main_player):
+		_check_for_voice()
 
 func _physics_process(delta):
 	if(main_player):
@@ -159,7 +159,7 @@ func _check_for_voice() -> void:
 		var voice_data: Dictionary = Steam.getVoice()
 		if voice_data['result'] == Steam.VOICE_RESULT_OK and voice_data['size'] > 0:
 			# Here we pass the voice data off to the network
-			_process_voice_data.rpc(0, voice_data['buffer'])
+			_process_voice_data.rpc(voice_data['result'])
 			print("DETECTING VOICE DATA...")
 
 @rpc("any_peer", "call_remote", "reliable")
@@ -265,7 +265,7 @@ func _handle_water_check(delta):
 
 func _handle_adding_inventory(target_item): ##handles adding an item to your inventory
 	if(!target_item.permanent && inventory_ui.get_script != null):
-		inventory_ui.insert_item(target_item.pick_up())
+		inventory_ui.insert_item(target_item.pick_up.rpc())
 		#inventory_dictionary.Removable.append(target_item.ID)
 	else:
 		#this is called when the player grabs a permanent item
