@@ -102,10 +102,6 @@ func _setup_local_player():
 	#spawn location
 	position = Vector3(status_dictionary.Position[0],status_dictionary.Position[1],status_dictionary.Position[2])
 
-@rpc ("any_peer","call_local","reliable") #i think rpc's sync functions, not quite sure
-func _add_self_to_database():
-	#add self to player list
-	database.players.append(self)
 
 func _ready():
 	_setup_local_player()
@@ -114,7 +110,6 @@ func _ready():
 	interaction_text.text = ""
 	
 	_setup_stream() #this function is where the audio data is being called
-	_add_self_to_database.rpc()
 
 func _process(delta):
 	%SubViewportContainer.material.set("shader_parameter/quantize_size", database.dither_slider.value)
