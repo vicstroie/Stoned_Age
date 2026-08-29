@@ -136,7 +136,8 @@ func _record_voice(is_recording:bool) -> void:
 		Steam.startVoiceRecording()
 	else:
 		Steam.stopVoiceRecording()
-	%"Hot Mic".visible = is_recording
+	if (main_player):
+		%"Hot Mic".visible = is_recording
 
 func _setup_stream () -> void: 
 	# Optionally we can get the sample rate from Steam
