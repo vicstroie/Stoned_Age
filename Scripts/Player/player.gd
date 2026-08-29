@@ -60,7 +60,8 @@ var main_player := true
 const SAMPLE_RATE: int = 48000
 @export var current_sample_rate: int = SAMPLE_RATE
 var voice_playback : AudioStreamGeneratorPlayback = null
-@export var is_open_mic := false
+@export var is_open_mic := true #defaulting to on
+@export var hot_mic : TextureRect
 
 func _load_in():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
@@ -108,7 +109,7 @@ func _ready():
 	if (inventory_ui.main_inventory):
 		inventory_ui.setup_inventory()
 	interaction_text.text = ""
-	
+	_record_voice(true) #default microphone toggled ON
 	_setup_stream() #this function is where the audio data is being called
 
 func _process(delta):
@@ -137,7 +138,7 @@ func _record_voice(is_recording:bool) -> void:
 	else:
 		Steam.stopVoiceRecording()
 	if (main_player):
-		%"Hot Mic".visible = is_recording
+		hot_mic.visible = is_recording
 
 func _setup_stream () -> void: 
 	# Optionally we can get the sample rate from Steam
@@ -174,7 +175,6 @@ func _process_voice_data(voice_data: PackedByteArray) -> void:
 			voice_playback.push_buffer(frames_to_push)
 		elif voice_playback.get_frames_available() > 0:
 			voice_playback.push_buffer(frames_to_push.slice(0, voice_playback.get_frames_available()))
-
 
 func _input(event):
 	#region Mouse Head Rotation

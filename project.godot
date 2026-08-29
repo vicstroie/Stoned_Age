@@ -50,6 +50,10 @@ folder_colors={
 "res://addons/proton_scatter/": "orange"
 }
 
+[filesystem]
+
+import/blender/enabled=false
+
 [global_group]
 
 Player=""
