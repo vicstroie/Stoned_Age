@@ -102,7 +102,7 @@ func _setup_local_player():
 	#spawn location
 	position = Vector3(status_dictionary.Position[0],status_dictionary.Position[1],status_dictionary.Position[2])
 
-@rpc ("any_peer","call_local","reliable") #i think rpc's sync functions, not quite sure
+@rpc ("any_peer","call_remote","reliable") #i think rpc's sync functions, not quite sure
 func _add_self_to_database():
 	#add self to player list
 	database.players.append(self)
