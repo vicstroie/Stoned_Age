@@ -15,10 +15,19 @@ fill_from = Vector2(1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_oqlhh"]
 gradient = SubResource("Gradient_n5iax")
 
-[node name="Quick Inventory Slot" type="TextureRect" unique_id=1610103511 node_paths=PackedStringArray("item_icon")]
+[node name="Quick Inventory Slot" type="TextureRect" unique_id=1610103511 node_paths=PackedStringArray("item_visual")]
+anchors_preset = -1
+anchor_left = 0.028
+anchor_top = 0.049000002
+anchor_right = 0.028
+anchor_bottom = 0.049000002
+offset_left = -32.256
+offset_top = -31.752
+offset_right = -32.256
+offset_bottom = -31.752
 texture = SubResource("GradientTexture2D_o4uhr")
 script = ExtResource("1_c4gvm")
-item_icon = NodePath("CenterContainer/Texture")
+item_visual = NodePath("CenterContainer/Texture")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=791263155]
 layout_mode = 1
