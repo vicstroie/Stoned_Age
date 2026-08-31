@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dyjuj7vvcfu43" path="res://Imports/TEMP/temp other/coin.png" id="9_gk6dx"]
 [ext_resource type="PackedScene" uid="uid://b5nlo21oi5f06" path="res://Scenes/UI/inventory_ui.tscn" id="10_jhyir"]
 [ext_resource type="PackedScene" uid="uid://cic4p3gftyojm" path="res://Scenes/UI/quick_inventory.tscn" id="11_74mp2"]
+[ext_resource type="Script" uid="uid://b2ohe8lsij56a" path="res://Scripts/Player/player_stats.gd" id="12_oikmp"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_0u5uq"]
 properties/0/path = NodePath(".:rotation")
@@ -74,7 +75,7 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 1)
 
-[node name="Player" type="RigidBody3D" unique_id=1534641321 node_paths=PackedStringArray("water_cast", "ground_cast", "inventory_ui", "multiplayer_name", "body_mesh", "hot_mic") groups=["Player"]]
+[node name="Player" type="RigidBody3D" unique_id=1534641321 node_paths=PackedStringArray("water_cast", "ground_cast", "player_stats", "inventory_ui", "multiplayer_name", "body_mesh", "hot_mic") groups=["Player"]]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
@@ -85,6 +86,7 @@ use_fov_change = true
 use_headbob = true
 bob_freq = 2.2
 bob_amp = 0.04
+player_stats = NodePath("Player UI/PlayerStats")
 inventory_ui = NodePath("Player UI/InventoryUI")
 multiplayer_name = NodePath("Nametag")
 body_mesh = NodePath("Body")
@@ -209,3 +211,29 @@ unique_name_in_owner = true
 [node name="Quick Inventory" parent="Player UI" unique_id=2092767237 node_paths=PackedStringArray("player_owner", "main_inventory") instance=ExtResource("11_74mp2")]
 player_owner = NodePath("../..")
 main_inventory = NodePath("../InventoryUI")
+
+[node name="PlayerStats" type="Control" parent="Player UI" unique_id=558879293]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 386.0
+offset_bottom = 113.0
+script = ExtResource("12_oikmp")
+
+[node name="HealthBar" type="ProgressBar" parent="Player UI/PlayerStats" unique_id=673015467]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 313.0
+offset_bottom = 27.0
+show_percentage = false
+
+[node name="HungerBar" type="ProgressBar" parent="Player UI/PlayerStats" unique_id=741842461]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 5.0
+offset_top = 29.0
+offset_right = 312.0
+offset_bottom = 42.0
+show_percentage = false

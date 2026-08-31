@@ -36,8 +36,9 @@ var t_bob = 0.0
 @onready var p_cam = %PhantomCamera3D
 @onready var camera_cast = %CameraCast
 
-#UI Elements
+@export_category("UI Elements")
 @onready var interaction_text = %InteractionText
+@export var player_stats : Control
 @export var inventory_ui : Control
 
 @export_category("Player Data Info")
@@ -86,11 +87,14 @@ func _setup_local_player():
 		multiplayer_name.set_layer_mask_value(20,true)
 		multiplayer_name.set_layer_mask_value(1,false)
 		inventory_ui.main_inventory = true
+		player_stats.main_player = true
 	else:
 		%Camera3D.visible = false
 		%PhantomCamera3D.visible = false
 		inventory_ui.main_inventory = false
 		%InventoryUI.visible = false
+		player_stats.main_player = false
+		%PlayerStats.visible = false
 		main_player = false
 		# We get the index of the "Record" bus.
 	
@@ -108,6 +112,8 @@ func _ready():
 	_setup_local_player()
 	if (inventory_ui.main_inventory):
 		inventory_ui.setup_inventory()
+	if player_stats.main_player:
+		player_stats.setup(self, 100.0, 100.0)
 	interaction_text.text = ""
 	_record_voice(true) #default microphone toggled ON
 	_setup_stream() #this function is where the audio data is being called
@@ -264,6 +270,9 @@ func _handle_adding_inventory(target_item): ##handles adding an item to your inv
 	else:
 		#this is called when the player grabs a permanent item
 		pass
+
+func update_hunger(hunger_change):
+	player_stats.update_hunger_bar(hunger_change)
 
 func _handle_saving():
 	if (database.saving):
