@@ -17,26 +17,23 @@ gradient = SubResource("Gradient_n5iax")
 
 [node name="Quick Inventory Slot" type="TextureRect" unique_id=1610103511 node_paths=PackedStringArray("item_visual")]
 anchors_preset = -1
-anchor_left = 0.028
-anchor_top = 0.049000002
-anchor_right = 0.028
-anchor_bottom = 0.049000002
-offset_left = -32.256
-offset_top = -31.752
-offset_right = -32.256
-offset_bottom = -31.752
 texture = SubResource("GradientTexture2D_o4uhr")
 script = ExtResource("1_c4gvm")
-item_visual = NodePath("CenterContainer/Texture")
+item_visual = NodePath("CenterContainer/Panel/Texture")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=791263155]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_maximum_size = Vector2(65, 65)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
 
-[node name="Texture" type="TextureRect" parent="CenterContainer" unique_id=1202838397]
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1453287328]
 layout_mode = 2
+
+[node name="Texture" type="TextureRect" parent="CenterContainer/Panel" unique_id=1202838397]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
 texture = SubResource("GradientTexture2D_oqlhh")
