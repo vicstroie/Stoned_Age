@@ -7,9 +7,11 @@ var inventory: Inventory
 
 var is_open = false
 var main_inventory : bool
+var player
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	close()
+	setup_slots()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -21,7 +23,8 @@ func _process(delta: float) -> void:
 			update_slots()
 
 #Called in "_ready()" in player.gd
-func setup_inventory(size: int = 8):
+func setup_inventory(player, size: int = 8):
+	self.player = player
 	if(main_inventory):
 		inventory = Inventory.new()
 		inventory.update.connect(update_slots)
@@ -29,6 +32,10 @@ func setup_inventory(size: int = 8):
 			var new_slot = InvSlot.new()
 			inventory.slots.append(new_slot)
 		update_slots()
+
+func setup_slots():
+	for i in range(0, slots.size()):
+		slots[i].inventory_ui = self
 
 #Update the UI slots
 func update_slots():

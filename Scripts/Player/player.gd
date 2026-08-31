@@ -111,7 +111,7 @@ func _setup_local_player():
 func _ready():
 	_setup_local_player()
 	if (inventory_ui.main_inventory):
-		inventory_ui.setup_inventory()
+		inventory_ui.setup_inventory(self)
 	if player_stats.main_player:
 		player_stats.setup(self, 100.0, 100.0)
 	interaction_text.text = ""

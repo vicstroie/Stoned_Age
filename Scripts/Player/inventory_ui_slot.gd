@@ -12,6 +12,7 @@ var current_slot: InvSlot
 #TEMP SOLUTION TO SPRITE SCALING
 var visual_width : float = 170
 var is_mouse_over
+var inventory_ui
 
 func _ready() -> void:
 	toggle_action_buttons(false)
@@ -75,6 +76,7 @@ func _on_action_button_pressed() -> void:
 	#Temporary Eating Logic
 	if current_item.is_edible:
 		current_slot.amount = current_slot.amount - 1
+		inventory_ui.player.update_hunger(current_item.hunger_points)
 		if current_slot.amount <= 0:
 			reset_current_slot()
 	#Update slot to account for action
