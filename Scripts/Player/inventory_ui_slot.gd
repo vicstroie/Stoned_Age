@@ -13,6 +13,7 @@ var current_slot: InvSlot
 var visual_width : float = 170
 var is_mouse_over
 var inventory_ui
+var player
 
 func _ready() -> void:
 	toggle_action_buttons(false)
@@ -36,8 +37,8 @@ func update(slot: InvSlot):
 		item_name.visible = false
 	else:
 		current_item = slot.item
-		if current_item.is_edible:
-			action_button.text = "EAT"
+		if current_item.is_consumable:
+			action_button.text = "CONSUME"
 		
 		item_visual.visible = true
 		item_visual.texture = slot.item.texture
@@ -74,9 +75,9 @@ func toggle_action_buttons(toggle: bool) -> void:
 
 func _on_action_button_pressed() -> void:
 	#Temporary Eating Logic
-	if current_item.is_edible:
+	if current_item.is_consumable:
 		current_slot.amount = current_slot.amount - 1
-		inventory_ui.player.update_hunger(current_item.hunger_points)
+		player.consume_item(current_slot.item)
 		if current_slot.amount <= 0:
 			reset_current_slot()
 	#Update slot to account for action

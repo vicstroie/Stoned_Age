@@ -7,7 +7,6 @@ class_name InvItem
 @export var texture : Texture2D
 
 @export_category("Food Attributes")
-@export var is_edible : bool
-@export var hunger_points : int
-@export var is_poison : bool
-@export var damage_points : int
+@export var is_consumable : bool
+@export var health_points : float
+@export var hunger_points : float

@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cc3ggulrcjvee" path="res://Imports/TEMP/Audio/483168__kevp888__190809_0562_fr_cricketsandwind.wav" id="8_f5sk1"]
 [ext_resource type="Shader" uid="uid://mvcgr1gk7pwj" path="res://Scripts/Shaders/water.gdshader" id="9_5xqn0"]
 [ext_resource type="PackedScene" uid="uid://dn1x1ps55hw1v" path="res://Scenes/Objects/ephedra.tscn" id="9_hipvn"]
+[ext_resource type="PackedScene" uid="uid://c6681thmtwhof" path="res://Scenes/Objects/black_berry.tscn" id="10_hipvn"]
 
 [sub_resource type="Gradient" id="Gradient_f5sk1"]
 offsets = PackedFloat32Array(0.00986842, 1)
@@ -371,6 +372,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8269815, 0, 19.655628)
 
 [node name="Ephedra4" parent="Interactables" unique_id=724295367 instance=ExtResource("9_hipvn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.394322, 0, 19.655628)
+
+[node name="Ephedra" parent="." unique_id=456947770 instance=ExtResource("10_hipvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.352719, -0.5850391, 21.623213)
+
+[node name="Ephedra2" parent="." unique_id=397351990 instance=ExtResource("10_hipvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4414787, -0.87057203, 22.379341)
+
+[node name="Ephedra3" parent="." unique_id=598380887 instance=ExtResource("10_hipvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8474303, -1.1119527, 22.985315)
 
 [connection signal="pressed" from="Multiplayer HUD/Panel/VBoxContainer/Host" to="Game Manager" method="attempt_host"]
 [connection signal="pressed" from="Multiplayer HUD/Panel/VBoxContainer/Join As Client" to="Game Manager" method="attempt_join_as_client"]

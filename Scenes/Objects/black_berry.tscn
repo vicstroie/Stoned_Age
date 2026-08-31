@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c6681thmtwhof"]
+
+[ext_resource type="Script" uid="uid://balsxsuwosger" path="res://Scripts/Objects/interactable_object.gd" id="1_1kmhx"]
+[ext_resource type="Resource" uid="uid://b1vdc7l5iiqkp" path="res://ObjectData/BlackBerry.tres" id="2_1kmhx"]
+[ext_resource type="Texture2D" uid="uid://c7ftannrdld58" path="res://Imports/TEMP/temp other/blackberries.png" id="3_qprvn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5xqn0"]
+size = Vector3(1.3776855, 2.1408691, 0.068847656)
+
+[node name="Ephedra" type="Area3D" unique_id=250256377]
+collision_layer = 2
+script = ExtResource("1_1kmhx")
+ID = "Black Berry"
+item_id = ExtResource("2_1kmhx")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1191962540]
+transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0, 0, 0)
+texture = ExtResource("3_qprvn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=117710419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02355957, 0.07458496, 0.010986328)
+shape = SubResource("BoxShape3D_5xqn0")

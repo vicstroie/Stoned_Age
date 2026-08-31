@@ -271,8 +271,9 @@ func _handle_adding_inventory(target_item): ##handles adding an item to your inv
 		#this is called when the player grabs a permanent item
 		pass
 
-func update_hunger(hunger_change):
-	player_stats.update_hunger_bar(hunger_change)
+func consume_item(current_item: InvItem):
+	player_stats.update_health_bar(current_item.health_points)
+	player_stats.update_hunger_bar(current_item.hunger_points)
 
 func _handle_saving():
 	if (database.saving):

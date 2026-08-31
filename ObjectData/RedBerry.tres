@@ -7,6 +7,6 @@
 script = ExtResource("1_t2ya7")
 name = "Red Berry"
 texture = ExtResource("2_c21v6")
-is_edible = true
-hunger_points = 5
+is_consumable = true
+hunger_points = 10.0
 metadata/_custom_type_script = "uid://cpn5vvvoobabs"
