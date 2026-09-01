@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b5nlo21oi5f06" path="res://Scenes/UI/inventory_ui.tscn" id="10_jhyir"]
 [ext_resource type="PackedScene" uid="uid://cic4p3gftyojm" path="res://Scenes/UI/quick_inventory.tscn" id="11_74mp2"]
 [ext_resource type="Script" uid="uid://b2ohe8lsij56a" path="res://Scripts/Player/player_stats.gd" id="12_oikmp"]
+[ext_resource type="PackedScene" uid="uid://blhp7042rtwtf" path="res://Scenes/UI/hand_slot.tscn" id="15_dey5f"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_0u5uq"]
 properties/0/path = NodePath(".:rotation")
@@ -135,7 +136,6 @@ render_target_update_mode = 4
 unique_name_in_owner = true
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
-top_level = true
 cull_mask = 524287
 current = true
 
@@ -205,10 +205,18 @@ mouse_filter = 2
 texture = ExtResource("9_gk6dx")
 expand_mode = 1
 
-[node name="InventoryUI" parent="Player UI" unique_id=777426713 instance=ExtResource("10_jhyir")]
+[node name="HandSlot" parent="Player UI" unique_id=607667247 instance=ExtResource("15_dey5f")]
+offset_left = 985.0
+offset_top = 482.0
+offset_right = 1110.0
+offset_bottom = 607.0
+
+[node name="InventoryUI" parent="Player UI" unique_id=777426713 node_paths=PackedStringArray("hand_slot") instance=ExtResource("10_jhyir")]
 unique_name_in_owner = true
+hand_slot = NodePath("../HandSlot")
 
 [node name="Quick Inventory" parent="Player UI" unique_id=2092767237 node_paths=PackedStringArray("player_owner", "main_inventory") instance=ExtResource("11_74mp2")]
+visible = false
 player_owner = NodePath("../..")
 main_inventory = NodePath("../InventoryUI")
 

@@ -1,34 +1,35 @@
-[gd_scene format=3 uid="uid://bim2rmyf2w42i"]
+[gd_scene format=3 uid="uid://blhp7042rtwtf"]
 
-[ext_resource type="Texture2D" uid="uid://b5mou04gnkh1s" path="res://icon.svg" id="1_b0u83"]
-[ext_resource type="Script" uid="uid://diqcm1tqycfrk" path="res://Scripts/Player/inventory_ui_slot.gd" id="1_ivhch"]
+[ext_resource type="Script" uid="uid://diqcm1tqycfrk" path="res://Scripts/Player/inventory_ui_slot.gd" id="1_qfrhi"]
+[ext_resource type="Texture2D" uid="uid://b5mou04gnkh1s" path="res://icon.svg" id="2_jjkga"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_82c14"]
-font_size = 30
+font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_bs44d"]
-font_size = 28
+font_size = 15
 
-[node name="InventoryUISlot" type="Button" unique_id=607667247]
+[node name="HandSlot" type="Button" unique_id=607667247]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(200, 200)
-custom_maximum_size = Vector2(500, 500)
+custom_minimum_size = Vector2(125, 125)
+custom_maximum_size = Vector2(125, 125)
 anchors_preset = -1
 offset_right = 200.0
 offset_bottom = 200.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
-script = ExtResource("1_ivhch")
+script = ExtResource("1_qfrhi")
+is_hand_slot = true
 
 [node name="SlotBackground" type="ColorRect" parent="." unique_id=595794181]
 layout_mode = 0
-offset_right = 200.0
-offset_bottom = 200.0
+offset_right = 125.0
+offset_bottom = 125.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0.60784316)
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=328989391]
-custom_maximum_size = Vector2(200, 200)
+custom_maximum_size = Vector2(125, 125)
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 200.0
@@ -40,16 +41,16 @@ mouse_filter = 2
 
 [node name="ItemDisplay" type="Sprite2D" parent="CenterContainer/Panel" unique_id=1480517919]
 unique_name_in_owner = true
-scale = Vector2(1.3203125, 1.3203125)
-texture = ExtResource("1_b0u83")
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_jjkga")
 
 [node name="ItemCount" type="Label" parent="CenterContainer/Panel" unique_id=1592979328]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 49.0
-offset_top = 64.0
-offset_right = 98.0
-offset_bottom = 111.0
+offset_left = 9.0
+offset_top = 35.0
+offset_right = 58.0
+offset_bottom = 82.0
 text = "99"
 label_settings = SubResource("LabelSettings_82c14")
 horizontal_alignment = 2
@@ -57,41 +58,33 @@ horizontal_alignment = 2
 [node name="ItemName" type="Label" parent="CenterContainer/Panel" unique_id=1268222866]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -100.0
-offset_top = 105.0
-offset_right = 100.0
-offset_bottom = 128.0
+offset_left = -62.0
+offset_top = 61.0
+offset_right = 63.0
+offset_bottom = 100.0
 text = "Item Name"
 label_settings = SubResource("LabelSettings_bs44d")
 horizontal_alignment = 1
 
 [node name="ActionButton" type="Button" parent="CenterContainer/Panel" unique_id=2032682674]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = -73.0
-offset_top = -68.99999
+offset_top = -55.0
 offset_right = 73.791016
-offset_bottom = -33.985622
+offset_bottom = -19.98563
 scale = Vector2(1.0002096, 1.0281492)
 text = "ACTION BUTTON"
 
-[node name="EquipButton" type="Button" parent="CenterContainer/Panel" unique_id=1297356577]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -73.0
-offset_top = -20.999996
-offset_right = 73.791016
-offset_bottom = 14.014374
-scale = Vector2(1.0002096, 1.0281492)
-text = "EQUIP ITEM"
-
 [node name="DropButton" type="Button" parent="CenterContainer/Panel" unique_id=1008164476]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = -73.0
-offset_top = 30.000002
+offset_top = 16.0
 offset_right = 73.791016
-offset_bottom = 65.01437
+offset_bottom = 51.01437
 scale = Vector2(1.0002096, 1.0281492)
 text = "DROP ITEM"
 
@@ -99,5 +92,4 @@ text = "DROP ITEM"
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/ActionButton" to="." method="_on_action_button_pressed"]
-[connection signal="pressed" from="CenterContainer/Panel/EquipButton" to="." method="_on_equip_button_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/DropButton" to="." method="_on_drop_button_pressed"]

@@ -6,6 +6,8 @@ extends Button
 @onready var action_button: Button = %ActionButton
 @onready var drop_button: Button = %DropButton
 
+@export var is_hand_slot: bool
+
 var current_item: InvItem
 var current_slot: InvSlot
 
@@ -16,6 +18,8 @@ var inventory_ui
 var player
 
 func _ready() -> void:
+	if is_hand_slot:
+		visual_width = 125.0
 	toggle_action_buttons(false)
 
 func _process(delta: float) -> void:
@@ -53,8 +57,8 @@ func update(slot: InvSlot):
 func rescale_sprite(new_texture : Texture2D):
 	var width = new_texture.get_width()
 	var height = new_texture.get_height()
-	item_visual.scale.x = 170.0/width
-	item_visual.scale.y = 170.0/height
+	item_visual.scale.x = visual_width/width
+	item_visual.scale.y = visual_width/height
 
 func _on_mouse_entered() -> void:
 	if current_item != null:
@@ -86,6 +90,9 @@ func _on_action_button_pressed() -> void:
 func _on_drop_button_pressed() -> void:
 	#Temporary Drop Logic
 	reset_current_slot()
+
+func _on_equip_button_pressed() -> void:
+	pass # 
 
 func reset_current_slot():
 	current_slot.item = null
