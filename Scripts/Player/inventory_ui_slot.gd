@@ -4,6 +4,7 @@ extends Button
 @onready var amount_text: Label = %ItemCount
 @onready var item_name: Label = %ItemName
 @onready var action_button: Button = %ActionButton
+@onready var equip_button: Button = %EquipButton
 @onready var drop_button: Button = %DropButton
 
 @export var is_hand_slot: bool
@@ -69,11 +70,15 @@ func toggle_action_buttons(toggle: bool) -> void:
 	if toggle:
 		action_button.mouse_filter = Control.MOUSE_FILTER_STOP
 		action_button.visible = true
+		equip_button.mouse_filter = Control.MOUSE_FILTER_STOP
+		equip_button.visible = true
 		drop_button.mouse_filter = Control.MOUSE_FILTER_STOP
 		drop_button.visible = true
 	else:
 		action_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		action_button.visible = false
+		equip_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		equip_button.visible = false
 		drop_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		drop_button.visible = false
 
@@ -92,7 +97,7 @@ func _on_drop_button_pressed() -> void:
 	reset_current_slot()
 
 func _on_equip_button_pressed() -> void:
-	pass # 
+	inventory_ui.equip_item(self)
 
 func reset_current_slot():
 	current_slot.item = null

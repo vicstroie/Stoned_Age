@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 		else:
 			open()
 			update_slots()
-	if Input.is_action_just_pressed("use") && main_inventory && slots[0].current_item:
+	if Input.is_action_just_pressed("use") && main_inventory && !is_open && slots[0].current_item:
 		slots[0]._on_action_button_pressed()
 		update_slots()
 
@@ -53,8 +53,13 @@ func update_slots():
 		for i in range(0, min(inventory.slots.size(), slots.size())):
 			slots[i].update(inventory.slots[i])
 
-func equip_item():
-	pass
+#Called in inventory_ui_slot
+func equip_item(old_ui_slot):
+	var swap_slot = old_ui_slot.current_slot
+	var old_index = slots.find(old_ui_slot)
+	inventory.slots[old_index] = inventory.slots[0]
+	inventory.slots[0] = swap_slot
+	update_slots()
 
 #WILL BE Called in Player
 func can_pick_up(item: InvItem) -> bool:

@@ -77,6 +77,17 @@ offset_bottom = -19.98563
 scale = Vector2(1.0002096, 1.0281492)
 text = "ACTION BUTTON"
 
+[node name="EquipButton" type="Button" parent="CenterContainer/Panel" unique_id=777426898]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -73.0
+offset_top = -20.999996
+offset_right = 73.791016
+offset_bottom = 14.014374
+scale = Vector2(1.0002096, 1.0281492)
+text = "EQUIP ITEM"
+
 [node name="DropButton" type="Button" parent="CenterContainer/Panel" unique_id=1008164476]
 unique_name_in_owner = true
 visible = false
