@@ -10,7 +10,6 @@
 [ext_resource type="FontFile" uid="uid://d0r3fxyfh4kne" path="res://Assets/Fonts/Jacquard24-Regular.ttf" id="8_jlvik"]
 [ext_resource type="Texture2D" uid="uid://dyjuj7vvcfu43" path="res://Imports/TEMP/temp other/coin.png" id="9_gk6dx"]
 [ext_resource type="PackedScene" uid="uid://b5nlo21oi5f06" path="res://Scenes/UI/inventory_ui.tscn" id="10_jhyir"]
-[ext_resource type="PackedScene" uid="uid://cic4p3gftyojm" path="res://Scenes/UI/quick_inventory.tscn" id="11_74mp2"]
 [ext_resource type="Script" uid="uid://b2ohe8lsij56a" path="res://Scripts/Player/player_stats.gd" id="12_oikmp"]
 [ext_resource type="PackedScene" uid="uid://blhp7042rtwtf" path="res://Scenes/UI/hand_slot.tscn" id="15_dey5f"]
 
@@ -215,11 +214,6 @@ offset_bottom = 607.0
 [node name="InventoryUI" parent="Player UI" unique_id=777426713 node_paths=PackedStringArray("hand_slot") instance=ExtResource("10_jhyir")]
 unique_name_in_owner = true
 hand_slot = NodePath("../HandSlot")
-
-[node name="Quick Inventory" parent="Player UI" unique_id=2092767237 node_paths=PackedStringArray("player_owner", "main_inventory") instance=ExtResource("11_74mp2")]
-visible = false
-player_owner = NodePath("../..")
-main_inventory = NodePath("../InventoryUI")
 
 [node name="PlayerStats" type="Control" parent="Player UI" unique_id=558879293]
 unique_name_in_owner = true
