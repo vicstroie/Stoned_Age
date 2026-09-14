@@ -46,6 +46,7 @@ folder_colors={
 "res://Scripts/": "teal",
 "res://Terrain/": "yellow",
 "res://UNUSED/": "red",
+"res://addons/csg_blockout/": "orange",
 "res://addons/proton_scatter/": "orange"
 }
 
