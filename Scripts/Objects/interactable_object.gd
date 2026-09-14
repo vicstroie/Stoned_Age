@@ -2,6 +2,7 @@ extends Area3D
 @export var ID : String
 @export var permanent := false
 @export var item_id: InvItem
+var picked_up : bool 
 @export var collision_shape : CollisionShape3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,4 +21,5 @@ func remove_from_world():
 
 func pick_up() -> InvItem:
 	rpc("remove_from_world")
+	picked_up = true
 	return item_id
