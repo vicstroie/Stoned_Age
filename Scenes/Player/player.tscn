@@ -218,9 +218,12 @@ hand_slot = NodePath("../HandSlot")
 [node name="PlayerStats" type="Control" parent="Player UI" unique_id=558879293]
 unique_name_in_owner = true
 layout_mode = 3
-anchors_preset = 0
-offset_right = 386.0
-offset_bottom = 113.0
+anchor_top = 0.81900007
+anchor_right = 0.335
+anchor_bottom = 1.0
+offset_top = 0.28796387
+offset_right = 0.07998657
+offset_bottom = -4.0
 script = ExtResource("12_oikmp")
 
 [node name="HealthBar" type="ProgressBar" parent="Player UI/PlayerStats" unique_id=673015467]

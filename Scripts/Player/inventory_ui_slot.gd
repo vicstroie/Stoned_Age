@@ -23,7 +23,11 @@ func _ready() -> void:
 		visual_width = 125.0
 	toggle_action_buttons(false)
 
+
 func _process(delta: float) -> void:
+	if (player != null && !player.main_player):
+		visible = false
+		self.set_process(false)
 	if is_mouse_over:
 		var is_x_range = get_global_mouse_position().x > global_position.x and get_global_mouse_position().x < global_position.x + 200
 		var is_y_range = get_global_mouse_position().y > global_position.y and get_global_mouse_position().y < global_position.y + 200
