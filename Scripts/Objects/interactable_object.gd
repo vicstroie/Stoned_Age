@@ -18,6 +18,7 @@ func remove_from_world():
 	self.set_process(false)
 	print("Disabled " + str(name))
 	visible = false
+	queue_free()
 
 func pick_up() -> InvItem:
 	rpc("remove_from_world")
