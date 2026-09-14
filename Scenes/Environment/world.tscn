@@ -177,6 +177,11 @@ shader_parameter/normal_map_scale = Vector2(0.1, 0.1)
 
 [node name="World" type="Node3D" unique_id=1340814464]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1649125312]
+unique_name_in_owner = true
+stream = ExtResource("8_f5sk1")
+autoplay = true
+
 [node name="Game Manager" type="Node" parent="." unique_id=1116847051]
 script = ExtResource("1_65wml")
 
@@ -307,11 +312,6 @@ spawn_limit = 4
 
 [node name="Players" type="Node3D" parent="." unique_id=3530728 groups=["Player_Container"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1649125312]
-unique_name_in_owner = true
-stream = ExtResource("8_f5sk1")
-autoplay = true
 
 [node name="Water" type="Area3D" parent="." unique_id=1919145153 groups=["Water"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.2370014, 49.30139)
