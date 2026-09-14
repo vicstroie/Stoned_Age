@@ -40,7 +40,6 @@ var t_bob = 0.0
 @onready var interaction_text = %InteractionText
 @export var player_stats : Control
 @export var inventory_ui : Control
-@export var player_ui_container : CanvasLayer
 
 @export_category("Player Data Info")
 @export var health : float
@@ -97,8 +96,6 @@ func _setup_local_player():
 		player_stats.main_player = false
 		%PlayerStats.visible = false
 		main_player = false
-		player_ui_container.queue_free()
-		set_script(null)
 		# We get the index of the "Record" bus.
 	
 	#JSON stuff
