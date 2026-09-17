@@ -5,11 +5,65 @@
 [ext_resource type="Shader" uid="uid://bwyb8jsf1fjae" path="res://addons/csg_terrain/csg_terrain_shader.gdshader" id="3_5iqf7"]
 [ext_resource type="Script" uid="uid://dpxy8xquxvntr" path="res://Scripts/water_behavior.gd" id="6_5xqn0"]
 [ext_resource type="Texture2D" uid="uid://c6dsjyrmp38oy" path="res://Imports/TEMP/temp other/Leaves with grass_Albedo.png" id="6_f5sk1"]
+[ext_resource type="PackedScene" uid="uid://b6mx4kkf1wndm" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/olive/nb_tree5_olive.tscn" id="6_v5js4"]
+[ext_resource type="PackedScene" uid="uid://drjt3mvnvrjk" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/anime/nb_tree3_anime.tscn" id="7_b8raa"]
 [ext_resource type="PackedScene" uid="uid://dmewidr72f0k5" path="res://Scenes/Objects/interactable_object.tscn" id="8_5xqn0"]
 [ext_resource type="AudioStream" uid="uid://cc3ggulrcjvee" path="res://Imports/TEMP/Audio/483168__kevp888__190809_0562_fr_cricketsandwind.wav" id="8_f5sk1"]
+[ext_resource type="PackedScene" uid="uid://dh1rv54vcuoc0" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/jungle/nb_tree3_jungle.tscn" id="8_v26p3"]
+[ext_resource type="PackedScene" uid="uid://dwnsocdsrul1m" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/olive/nb_tree2_olive.tscn" id="9_3anrc"]
 [ext_resource type="Shader" uid="uid://mvcgr1gk7pwj" path="res://Scripts/Shaders/water.gdshader" id="9_5xqn0"]
 [ext_resource type="PackedScene" uid="uid://dn1x1ps55hw1v" path="res://Scenes/Objects/ephedra.tscn" id="9_hipvn"]
 [ext_resource type="PackedScene" uid="uid://c6681thmtwhof" path="res://Scenes/Objects/black_berry.tscn" id="10_hipvn"]
+[ext_resource type="PackedScene" uid="uid://bbl5ykafk8ahf" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/forest/nb_tree2_forest.tscn" id="10_w6hdu"]
+[ext_resource type="PackedScene" uid="uid://dj4gopyi5flbr" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/olive/nb_tree4_olive.tscn" id="11_nfkbo"]
+[ext_resource type="PackedScene" uid="uid://dronpr51cuy77" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/blue/nb_tree1_blue.tscn" id="12_euvq4"]
+[ext_resource type="PackedScene" uid="uid://kjvb7jjq6ivs" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/anime/nb_tree4_anime.tscn" id="13_6xlaw"]
+[ext_resource type="PackedScene" uid="uid://b0quv76s4tokl" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/anime/nb_tree1_anime.tscn" id="14_aly8g"]
+[ext_resource type="PackedScene" uid="uid://djai4x05ougeu" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/savannah/nb_tree1_savannah.tscn" id="15_x8kku"]
+[ext_resource type="PackedScene" uid="uid://db7a8jj52o73l" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/jungle/nb_tree2_jungle.tscn" id="16_qoeiu"]
+[ext_resource type="PackedScene" uid="uid://c6nsdlum10jm7" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/forest/nb_tree1_forest.tscn" id="17_qcq11"]
+[ext_resource type="PackedScene" uid="uid://81qrrbduthl4" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/savannah/nb_tree3_savannah.tscn" id="18_ymfnq"]
+[ext_resource type="PackedScene" uid="uid://clpqs2aurjaqw" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/jungle/nb_tree4_jungle.tscn" id="19_1ltse"]
+[ext_resource type="PackedScene" uid="uid://crqsoqru18bau" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/olive/nb_tree3_olive.tscn" id="20_q0ybk"]
+[ext_resource type="PackedScene" uid="uid://dc8v36cqgawb2" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/jungle/nb_tree1_jungle.tscn" id="21_1dup2"]
+[ext_resource type="PackedScene" uid="uid://btlm6vt1h4ggr" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/spooky/nb_tree5_spooky.tscn" id="22_m3km8"]
+[ext_resource type="PackedScene" uid="uid://c343gjxlmj0cf" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/blue/nb_tree2_blue.tscn" id="23_dwo48"]
+[ext_resource type="PackedScene" uid="uid://d2horuvnfc32w" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/tundra/nb_tree5_tundra.tscn" id="24_17qii"]
+[ext_resource type="PackedScene" uid="uid://dyvye23x7isaa" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/forest/nb_tree5_forest.tscn" id="25_jiad2"]
+[ext_resource type="PackedScene" uid="uid://dtm4aqnrbei1h" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/mars/nb_tree2_mars.tscn" id="26_hyceq"]
+[ext_resource type="PackedScene" uid="uid://dqbqr2n3h03u6" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/olive/nb_tree1_olive.tscn" id="27_sbbvx"]
+[ext_resource type="PackedScene" uid="uid://dutgaf7mcpb8u" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/savannah/nb_tree2_savannah.tscn" id="28_2wooy"]
+[ext_resource type="PackedScene" uid="uid://d32pnwq3cpjha" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/autumn/nb_tree3_autumn.tscn" id="29_1stxq"]
+[ext_resource type="PackedScene" uid="uid://biclyehorrwu8" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/tundra/nb_tree2_tundra.tscn" id="30_34usc"]
+[ext_resource type="PackedScene" uid="uid://cb3tdtfh26v1p" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/forest/nb_tree4_forest.tscn" id="31_j1vc2"]
+[ext_resource type="PackedScene" uid="uid://d0i3ubg6j0g3e" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/sakura/nb_tree3_sakura.tscn" id="32_eixev"]
+[ext_resource type="PackedScene" uid="uid://bpbn2vt7qykq4" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/autumn/nb_tree5_autumn.tscn" id="33_jgse0"]
+[ext_resource type="PackedScene" uid="uid://cq2exgpy1o3iv" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/jungle/nb_tree5_jungle.tscn" id="34_xd53d"]
+[ext_resource type="PackedScene" uid="uid://tlpsy6x2s1s6" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/forest/nb_tree3_forest.tscn" id="35_2bwdl"]
+[ext_resource type="PackedScene" uid="uid://bmkgr16ge8kmq" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/tundra/nb_tree1_tundra.tscn" id="36_6kt2l"]
+[ext_resource type="PackedScene" uid="uid://d07m1sbypnjj6" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/blue/nb_tree5_blue.tscn" id="37_ivygn"]
+[ext_resource type="PackedScene" uid="uid://ctd8hxyf5iujr" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/sakura/nb_tree4_sakura.tscn" id="38_haiyq"]
+[ext_resource type="PackedScene" uid="uid://db4fdmt2rjooj" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/spooky/nb_tree1_spooky.tscn" id="39_nuxgi"]
+[ext_resource type="PackedScene" uid="uid://dsh4awvamqmrl" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/savannah/nb_tree4_savannah.tscn" id="40_sntwg"]
+[ext_resource type="PackedScene" uid="uid://gbvrwtqd0ixm" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/spooky/nb_tree3_spooky.tscn" id="41_gtr4l"]
+[ext_resource type="PackedScene" uid="uid://boqyt5f2kl1lx" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/tundra/nb_tree4_tundra.tscn" id="42_3ikei"]
+[ext_resource type="PackedScene" uid="uid://dnanya83u3y7p" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/savannah/nb_tree5_savannah.tscn" id="43_aphdq"]
+[ext_resource type="PackedScene" uid="uid://dmajl5pt2qyk3" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/mars/nb_tree3_mars.tscn" id="44_22xf7"]
+[ext_resource type="PackedScene" uid="uid://b3wnnkjylkdos" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/tundra/nb_tree3_tundra.tscn" id="45_vy4g5"]
+[ext_resource type="PackedScene" uid="uid://5p13uwjtsucq" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/spooky/nb_tree4_spooky.tscn" id="46_7teql"]
+[ext_resource type="PackedScene" uid="uid://cnm11n7rui11w" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/sakura/nb_tree2_sakura.tscn" id="47_fpnum"]
+[ext_resource type="PackedScene" uid="uid://drxcpegct7oen" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/mars/nb_tree4_mars.tscn" id="48_t5qm6"]
+[ext_resource type="PackedScene" uid="uid://c86hjuu3sqk7g" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/blue/nb_tree3_blue.tscn" id="49_usr6l"]
+[ext_resource type="PackedScene" uid="uid://cq2nrnp3dawiq" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/sakura/nb_tree5_sakura.tscn" id="50_eom1a"]
+[ext_resource type="PackedScene" uid="uid://b1eoa45f8fmha" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/blue/nb_tree4_blue.tscn" id="51_c112h"]
+[ext_resource type="PackedScene" uid="uid://brddhbnpj3h7g" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/spooky/nb_tree2_spooky.tscn" id="52_ptaty"]
+[ext_resource type="PackedScene" uid="uid://p5347wamb2sy" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/autumn/nb_tree1_autumn.tscn" id="53_wg3vi"]
+[ext_resource type="PackedScene" uid="uid://boxeqyjt8oe4a" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/mars/nb_tree5_mars.tscn" id="54_wuuyb"]
+[ext_resource type="PackedScene" uid="uid://c7hx1f1gvpg2n" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/mars/nb_tree1_mars.tscn" id="55_1paw6"]
+[ext_resource type="PackedScene" uid="uid://8628s23fvrkd" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/autumn/nb_tree4_autumn.tscn" id="56_5f4hf"]
+[ext_resource type="PackedScene" uid="uid://cxpbfhn14ie1j" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/sakura/nb_tree1_sakura.tscn" id="57_s7cnu"]
+[ext_resource type="PackedScene" uid="uid://jrkxrkp6s8d3" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/autumn/nb_tree2_autumn.tscn" id="58_qucik"]
+[ext_resource type="PackedScene" uid="uid://jdtj608hhat" path="res://PolyBlocks/NatureBlocks/tools/scatter_trees/nb_scatter_tree.tscn" id="64_m6qae"]
 
 [sub_resource type="Gradient" id="Gradient_f5sk1"]
 offsets = PackedFloat32Array(0.00986842, 1)
@@ -197,6 +251,1008 @@ transform = Transform3D(200, 0, 0, 0, 1, 0, 0, 0, 200, 0, -1, -16.251139)
 transform = Transform3D(0.005, 0, 0, 0, 1, 0, 0, 0, 0.005, 0, 1, 0.08125569)
 mesh = SubResource("ArrayMesh_npxue")
 
+[node name="GenericTrees" type="Node3D" parent="Ground/CSGTerrain-Mesh" unique_id=1765592498]
+
+[node name="nb_tree5" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=898169268 instance=ExtResource("6_v5js4")]
+transform = Transform3D(0.27956685, 1.6562258e-12, 0.8665383, -1.3222529e-05, 0.9105198, 4.2659162e-06, -0.8665383, -1.3893643e-05, 0.27956685, -56.037476, 0.01, -190.42151)
+metadata/flat_scatter_generated = true
+
+[node name="nb_tree3" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=767070799 instance=ExtResource("7_b8raa")]
+transform = Transform3D(0.9586716, 4.710813e-13, -0.3925252, 5.9895506e-06, 1.0359187, 1.4628392e-05, 0.3925252, -1.5807107e-05, 0.9586716, 111.07867, 0.01, -192.09709)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25744" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1293949821 instance=ExtResource("8_v26p3")]
+transform = Transform3D(1.0194519, -1.2821296e-12, 0.0028625259, -4.3678053e-08, 1.0194559, 1.5555837e-05, -0.0028625259, -1.5555897e-05, 1.0194519, -167.14241, 0.01, -39.193954)
+metadata/flat_scatter_generated = true
+
+[node name="nb_tree2" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=383517047 instance=ExtResource("9_3anrc")]
+transform = Transform3D(-0.7792452, 1.293251e-12, -0.5398247, 8.237198e-06, 0.947963, -1.1890518e-05, 0.5398247, -1.4464988e-05, -0.7792452, 21.40136, 0.01, 143.2044)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25745" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=21956197 instance=ExtResource("10_w6hdu")]
+transform = Transform3D(-1.1516944, -1.0540236e-12, 0.1291319, -1.9704275e-06, 1.1589112, -1.7573731e-05, -0.1291319, -1.7683851e-05, -1.1516944, 105.93316, 0.01, 170.54976)
+metadata/flat_scatter_generated = true
+
+[node name="nb_tree4" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1369555431 instance=ExtResource("11_nfkbo")]
+transform = Transform3D(-0.8825491, 1.7042912e-12, -0.31459668, 4.8004395e-06, 0.936944, -1.3466836e-05, 0.31459668, -1.4296849e-05, -0.8825491, -195.0103, 0.01, -244.02939)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25746" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1434922810 instance=ExtResource("9_3anrc")]
+transform = Transform3D(0.05411877, 7.3614655e-13, 0.8075904, -1.232304e-05, 0.8094017, 8.257989e-07, -0.8075904, -1.2350678e-05, 0.05411877, 103.197975, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="nb_tree1" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=688538462 instance=ExtResource("12_euvq4")]
+transform = Transform3D(0.7360016, 0, -0.91036636, 1.38913e-05, 1.1706687, 1.1230664e-05, 0.91036636, -1.786326e-05, 0.7360016, 250, 0.01, -152.7206)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25747" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=251640289 instance=ExtResource("9_3anrc")]
+transform = Transform3D(-0.7814867, 0, 0.7755822, -1.1834625e-05, 1.1010219, -1.1924722e-05, -0.7755822, -1.6800517e-05, -0.7814867, -209.36333, 0.01, -112.18576)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25748" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2095742788 instance=ExtResource("13_6xlaw")]
+transform = Transform3D(-0.89481664, 1.9335612e-12, -0.57379746, 8.755589e-06, 1.0629865, -1.3654025e-05, 0.57379746, -1.6220134e-05, -0.89481664, -250, 0.01, 68.84816)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25749" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1019279651 instance=ExtResource("14_aly8g")]
+transform = Transform3D(-0.11512744, 6.0045556e-13, 1.05004, -1.6022585e-05, 1.0563326, -1.7567328e-06, -1.05004, -1.6118602e-05, -0.11512744, -26.564575, 0.01, 235.45866)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25750" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1124559746 instance=ExtResource("15_x8kku")]
+transform = Transform3D(0.4794856, -1.238505e-12, -0.7708798, 1.1762872e-05, 0.9078337, 7.31648e-06, 0.7708798, -1.3852654e-05, 0.4794856, -9.392101, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25751" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1015651612 instance=ExtResource("16_qoeiu")]
+transform = Transform3D(0.21181197, 1.1606123e-12, 0.8239481, -1.2572644e-05, 0.8507378, 3.2320427e-06, -0.8239481, -1.2981428e-05, 0.21181197, 250, 0.01, -77.19488)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25752" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1568004908 instance=ExtResource("17_qcq11")]
+transform = Transform3D(0.069794826, 5.84575e-13, 1.0260239, -1.5656122e-05, 1.0283952, 1.0650002e-06, -1.0260239, -1.5692305e-05, 0.069794826, 110.94359, 0.01, -243.09732)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25753" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1629899463 instance=ExtResource("18_ymfnq")]
+transform = Transform3D(-0.00962433, -3.0093874e-13, -1.0083675, 1.5386702e-05, 1.0084134, -1.4685818e-07, 1.0083675, -1.5387403e-05, -0.00962433, 250, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25754" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=584272958 instance=ExtResource("19_1ltse")]
+transform = Transform3D(-0.2075915, -5.2214407e-13, 1.129285, -1.7231785e-05, 1.148207, -3.1676427e-06, -1.129285, -1.7520515e-05, -0.2075915, -250, 0.01, 153.01048)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25755" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1076666217 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(-0.46973088, 1.3867321e-12, -0.9014407, 1.3755104e-05, 1.0164853, -7.1676327e-06, 0.9014407, -1.5510572e-05, -0.46973088, 250, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25756" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1020531756 instance=ExtResource("21_1dup2")]
+transform = Transform3D(0.8849791, -3.0259082e-13, -0.062816046, 9.585117e-07, 0.88720566, 1.3503915e-05, 0.062816046, -1.35378905e-05, 0.8849791, 93.18454, 0.01, 154.60336)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25757" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=494820976 instance=ExtResource("22_m3km8")]
+transform = Transform3D(-0.021308403, 6.213609e-13, 0.9935075, -1.5159954e-05, 0.99373597, -3.2514603e-07, -0.9935075, -1.516344e-05, -0.021308403, 11.85416, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25758" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=582499363 instance=ExtResource("23_dwo48")]
+transform = Transform3D(0.69815284, 1.1168749e-12, 0.42757007, -6.524302e-06, 0.81867796, 1.065313e-05, -0.42757007, -1.2492225e-05, 0.69815284, 223.42184, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25759" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=657630726 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(-0.26895615, 7.406663e-13, 0.7686762, -1.1729247e-05, 0.8143712, -4.1040084e-06, -0.7686762, -1.2426508e-05, -0.26895615, -159.8461, 0.01, 3.6260948)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25760" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1761294444 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(-0.8510126, 1.3425116e-12, -0.011386791, 1.7375265e-07, 0.8510888, -1.298562e-05, 0.011386791, -1.2986783e-05, -0.8510126, 228.62825, 0.01, 174.05746)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25761" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1313021334 instance=ExtResource("24_17qii")]
+transform = Transform3D(0.59744775, 5.1514435e-13, -0.9624576, 1.4686162e-05, 1.1328144, 9.116469e-06, 0.9624576, -1.728564e-05, 0.59744775, -97.208176, 0.01, 171.54016)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25762" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1475347876 instance=ExtResource("19_1ltse")]
+transform = Transform3D(-0.029780427, 5.0477125e-13, 0.8067259, -1.2309849e-05, 0.8072754, -4.5442073e-07, -0.8067259, -1.23182335e-05, -0.029780427, 250, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25763" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=639785743 instance=ExtResource("25_jiad2")]
+transform = Transform3D(-0.57297254, -0.2693174, -0.9657571, 0.14116476, 1.0795871, -0.38481218, 0.9926184, -0.308992, -0.5027414, -30.157436, 5.5717306, -77.15499)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25764" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1744869099 instance=ExtResource("26_hyceq")]
+transform = Transform3D(-0.77584237, -1.0965634e-12, 0.21010984, -3.206072e-06, 0.80378944, -1.1838594e-05, -0.21010984, -1.2265041e-05, -0.77584237, 250, 0.01, -233.21106)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25765" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1594895393 instance=ExtResource("27_sbbvx")]
+transform = Transform3D(0.7798284, 0, 0.45920432, -7.007009e-06, 0.90498674, 1.1899419e-05, -0.45920432, -1.3809213e-05, 0.7798284, 71.467064, 0.01, 18.688713)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25766" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2100319958 instance=ExtResource("28_2wooy")]
+transform = Transform3D(-0.7519186, 8.0736817e-13, -0.47185656, 7.2000707e-06, 0.8877107, -1.1473543e-05, 0.47185656, -1.3545597e-05, -0.7519186, 171.13568, 0.01, 123.63549)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25767" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=276904680 instance=ExtResource("11_nfkbo")]
+transform = Transform3D(0.8623209, 9.09534e-13, 0.50644743, -7.727894e-06, 1.0000432, 1.3158174e-05, -0.50644743, -1.5259682e-05, 0.8623209, 196.27757, 0.01, -96.6997)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25768" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=246241715 instance=ExtResource("7_b8raa")]
+transform = Transform3D(0.813488, 4.3153388e-13, -0.4886197, 7.4558575e-06, 0.94895303, 1.241303e-05, 0.4886197, -1.4480095e-05, 0.813488, 59.339764, 0.01, -239.8414)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25769" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=874668195 instance=ExtResource("29_1stxq")]
+transform = Transform3D(0.7910533, -7.7945197e-13, 0.32971495, -5.031127e-06, 0.8570165, 1.2070699e-05, -0.32971495, -1.3077232e-05, 0.7910533, -16.84688, 0.01, -232.68939)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25770" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1962336613 instance=ExtResource("30_34usc")]
+transform = Transform3D(0.9176788, 0, -0.73514426, 1.1217582e-05, 1.175828, 1.4002881e-05, 0.73514426, -1.7941986e-05, 0.9176788, -228.20416, 0.01, -3.0531387)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25771" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1188666547 instance=ExtResource("15_x8kku")]
+transform = Transform3D(0.9644397, 5.030269e-13, 0.5417225, -8.266156e-06, 1.1061678, 1.4716406e-05, -0.5417225, -1.687904e-05, 0.9644397, 96.8122, 0.01, 141.25134)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25772" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=5173039 instance=ExtResource("11_nfkbo")]
+transform = Transform3D(-0.5025821, 1.1589191e-12, -0.68487656, 1.0450547e-05, 0.8494967, -7.668909e-06, 0.68487656, -1.2962489e-05, -0.5025821, 37.12915, 0.01, -238.23866)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25773" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=601188161 instance=ExtResource("19_1ltse")]
+transform = Transform3D(-0.6994553, 9.929276e-13, -0.8382412, 1.2790742e-05, 1.0917355, -1.0673004e-05, 0.8382412, -1.6658816e-05, -0.6994553, -207.30954, 0.01, -149.63339)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25774" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1990425717 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(0.7430499, 0, 0.90983707, -1.3883225e-05, 1.1747028, 1.1338215e-05, -0.90983707, -1.7924818e-05, 0.7430499, -172.8986, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25775" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1765811416 instance=ExtResource("17_qcq11")]
+transform = Transform3D(0.33512136, 3.9448092e-13, 0.80012655, -1.220915e-05, 0.8674727, 5.113624e-06, -0.80012655, -1.3236785e-05, 0.33512136, -250, 0.01, -121.160446)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25776" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=63937319 instance=ExtResource("18_ymfnq")]
+transform = Transform3D(-0.5702961, 2.0827365e-12, -0.99286425, 1.5150138e-05, 1.1449965, -8.70216e-06, 0.99286425, -1.7471528e-05, -0.5702961, 250, 0.01, -8.991192)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25777" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=302876555 instance=ExtResource("31_j1vc2")]
+transform = Transform3D(0.08833841, 7.245303e-13, 1.0584929, -1.6151565e-05, 1.0621727, 1.347957e-06, -1.0584929, -1.6207716e-05, 0.08833841, 79.89793, 0.01, -201.51942)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25778" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=870186401 instance=ExtResource("11_nfkbo")]
+transform = Transform3D(1.1596732, 2.6715804e-13, -0.18899958, 2.8839486e-06, 1.1749735, 1.7695478e-05, 0.18899958, -1.792895e-05, 1.1596732, 72.425545, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25779" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=443666456 instance=ExtResource("11_nfkbo")]
+transform = Transform3D(-0.54487604, -0.30852842, 0.681777, -0.33335385, 0.8551262, 0.12055851, -0.6699885, -0.17455502, -0.61444724, -40.206993, 5.0166097, -68.090866)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25780" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=555633388 instance=ExtResource("29_1stxq")]
+transform = Transform3D(-0.33315372, 0, -1.0062255, 1.5354017e-05, 1.0599439, -5.0836e-06, 1.0062255, -1.6173708e-05, -0.33315372, -157.10536, 0.01, 144.52254)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25781" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1282072440 instance=ExtResource("32_eixev")]
+transform = Transform3D(-0.45166197, 1.5480634e-12, 1.0409813, -1.5884354e-05, 1.1347425, -6.891921e-06, -1.0409813, -1.731506e-05, -0.45166197, -250, 0.01, 215.00575)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25782" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1232554811 instance=ExtResource("6_v5js4")]
+transform = Transform3D(0.91918343, 2.0991779e-13, -0.08632605, 1.317251e-06, 0.9232282, 1.402584e-05, 0.08632605, -1.4087561e-05, 0.91918343, 202.89502, 0.01, -227.87859)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25783" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1294560203 instance=ExtResource("23_dwo48")]
+transform = Transform3D(-1.1565253, 2.0053182e-12, -0.017222058, 2.6279375e-07, 1.1566535, -1.7647444e-05, 0.017222058, -1.7649401e-05, -1.1565253, 237.31049, 0.01, -183.72061)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25784" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1733803574 instance=ExtResource("29_1stxq")]
+transform = Transform3D(0.5935874, 0, -0.84792066, 1.2938441e-05, 1.0350437, 9.057563e-06, 0.84792066, -1.5793754e-05, 0.5935874, 250, 0.01, -30.865803)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25785" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=691475700 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(-0.20693076, 0.021914959, -0.79469204, 0.1312313, 0.8108482, -0.011810968, 0.7840881, -0.12992644, -0.20775253, -3.2062576, -11.603188, 75.598145)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25786" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1438205489 instance=ExtResource("8_v26p3")]
+transform = Transform3D(0.9189161, -1.7390455e-12, 0.26386657, -4.0263444e-06, 0.9560504, 1.4021761e-05, -0.26386657, -1.4588392e-05, 0.9189161, -91.87164, 0.01, 145.4416)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25787" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=745624448 instance=ExtResource("27_sbbvx")]
+transform = Transform3D(-0.7880622, -1.0395953e-12, 0.8279581, -1.2633834e-05, 1.1430471, -1.2025059e-05, -0.8279581, -1.7441782e-05, -0.7880622, 225.55147, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25788" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1019029792 instance=ExtResource("33_jgse0")]
+transform = Transform3D(0.49606413, -1.0484049e-12, -1.0405357, 1.5877557e-05, 1.1527333, 7.569452e-06, 1.0405357, -1.7589584e-05, 0.49606413, 208.41031, 0.01, -32.018078)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25789" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=785588813 instance=ExtResource("34_xd53d")]
+transform = Transform3D(0.74785954, -4.597772e-13, 0.68040407, -1.03823e-05, 1.0110607, 1.1411606e-05, -0.68040407, -1.5427797e-05, 0.74785954, 250, 0.01, 118.20652)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25790" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=596488696 instance=ExtResource("11_nfkbo")]
+transform = Transform3D(0.96508116, 0, 0.3863712, -5.895648e-06, 1.0395502, 1.4726197e-05, -0.3863712, -1.5862523e-05, 0.96508116, -250, 0.01, 153.33943)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25791" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1173260352 instance=ExtResource("34_xd53d")]
+transform = Transform3D(0.93038785, 0, -0.63183296, 9.641153e-06, 1.1246486, 1.41968085e-05, 0.63183296, -1.7161037e-05, 0.93038785, 142.19443, 0.01, 78.62271)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25792" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1842770102 instance=ExtResource("21_1dup2")]
+transform = Transform3D(0.8778747, 0, -0.47580296, 7.2602875e-06, 0.9985251, 1.3395509e-05, 0.47580296, -1.5236516e-05, 0.8778747, 187.83733, 0.01, 238.63333)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25793" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=893262531 instance=ExtResource("12_euvq4")]
+transform = Transform3D(1.0829539, -0.26829222, 0.42219412, 0.17706734, 1.1472261, 0.27484053, -0.46784154, -0.18684068, 1.0813107, -21.479328, 12.807791, -59.573334)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25794" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=559268231 instance=ExtResource("9_3anrc")]
+transform = Transform3D(0.72922236, 0, -0.6481121, 9.889557e-06, 0.97560984, 1.1127219e-05, 0.6481121, -1.4886852e-05, 0.72922236, -237.33183, 0.01, 210.94911)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25795" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1911530440 instance=ExtResource("35_2bwdl")]
+transform = Transform3D(-0.8868001, -4.1680445e-13, 0.23167364, -3.5351138e-06, 0.9165627, -1.3531702e-05, -0.23167364, -1.3985851e-05, -0.8868001, 248.05011, 0.01, -216.94533)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25796" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=304408953 instance=ExtResource("34_xd53d")]
+transform = Transform3D(-1.1288286, -1.2886561e-12, 0.102955244, -1.5709976e-06, 1.1335139, -1.722482e-05, -0.102955244, -1.7296314e-05, -1.1288286, 115.25805, 0.01, -170.05664)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25797" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=957858250 instance=ExtResource("36_6kt2l")]
+transform = Transform3D(-0.9440768, 1.5053786e-12, -0.0573627, 8.7530026e-07, 0.9458179, -1.44056885e-05, 0.0573627, -1.4432256e-05, -0.9440768, -250, 0.01, -143.2657)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25798" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1279425594 instance=ExtResource("16_qoeiu")]
+transform = Transform3D(-1.0429131, 2.3747e-12, -0.055787895, 8.5127107e-07, 1.0444041, -1.5913834e-05, 0.055787895, -1.5936586e-05, -1.0429131, -215.83008, 0.01, 181.2268)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25799" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=994254310 instance=ExtResource("35_2bwdl")]
+transform = Transform3D(-1.1065998, 1.8066648e-12, -0.25282404, 3.8578487e-06, 1.1351137, -1.6885631e-05, 0.25282404, -1.7320725e-05, -1.1065998, -250, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25800" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2140893180 instance=ExtResource("9_3anrc")]
+transform = Transform3D(-0.79240066, 9.447752e-13, -0.6717057, 1.0249573e-05, 1.0387913, -1.2091257e-05, 0.6717057, -1.585094e-05, -0.79240066, 250, 0.01, 0.3298347)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25801" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1020760304 instance=ExtResource("27_sbbvx")]
+transform = Transform3D(0.76934594, -3.8162038e-13, 0.33518678, -5.114621e-06, 0.8391921, 1.1739466e-05, -0.33518678, -1.2805249e-05, 0.76934594, 57.884823, 0.01, -111.451324)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25802" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=954970220 instance=ExtResource("8_v26p3")]
+transform = Transform3D(-1.0644066, -1.0661101e-12, 0.4910116, -7.4923573e-06, 1.1722004, -1.6241804e-05, -0.4910116, -1.7886632e-05, -1.0644066, -148.30234, 0.01, -131.62686)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25803" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=691267761 instance=ExtResource("37_ivygn")]
+transform = Transform3D(0.8168373, 0.12475717, 0.5108919, -0.26102784, 0.91548324, 0.19378707, -0.45655155, -0.30020764, 0.80326474, 11.460295, 10.926877, -72.77812)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25804" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=60901851 instance=ExtResource("27_sbbvx")]
+transform = Transform3D(0.7761005, 1.2919265e-12, -0.5426436, 8.280211e-06, 0.94699216, 1.1842536e-05, 0.5426436, -1.4450174e-05, 0.7761005, 141.73315, 0.01, 234.18594)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25805" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1372924711 instance=ExtResource("9_3anrc")]
+transform = Transform3D(0.047211707, -5.9736856e-13, -0.87447804, 1.334368e-05, 0.87575155, 7.204039e-07, 0.87447804, -1.3363114e-05, 0.047211707, 250, 0.01, 85.9731)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25806" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=195125624 instance=ExtResource("28_2wooy")]
+transform = Transform3D(1.1101689, -5.4511495e-13, -0.45216787, 6.89964e-06, 1.1987205, 1.6940092e-05, 0.45216787, -1.82913e-05, 1.1101689, -30.10582, 0.01, -218.34032)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25807" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2093327437 instance=ExtResource("32_eixev")]
+transform = Transform3D(0.6789082, 0, 0.71663016, -1.0935076e-05, 0.9871551, 1.0359476e-05, -0.71663016, -1.5063021e-05, 0.6789082, 250, 0.01, -36.08548)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25808" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1504649919 instance=ExtResource("27_sbbvx")]
+transform = Transform3D(0.8411972, -7.706967e-13, 0.102259174, -1.5603741e-06, 0.84739, 1.2835846e-05, -0.102259174, -1.2930341e-05, 0.8411972, 181.45387, 0.01, 47.121487)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25809" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2049949767 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(-0.15405501, -4.893357e-13, -1.0649756, 1.6250488e-05, 1.0760605, -2.3507293e-06, 1.0649756, -1.6419632e-05, -0.15405501, -250, 0.01, 106.94269)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25810" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=620565979 instance=ExtResource("29_1stxq")]
+transform = Transform3D(-0.29316306, 0.039800603, -0.8210897, 0.009548587, 0.8718464, 0.0388517, 0.8219982, 0.004067121, -0.29329038, 65.96267, 0.009989488, -7.5378094)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25811" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=299404004 instance=ExtResource("27_sbbvx")]
+transform = Transform3D(-0.94496846, -1.4851204e-12, 0.5404582, -8.246866e-06, 1.0886048, -1.4419296e-05, -0.5404582, -1.6611046e-05, -0.94496846, -224.72314, 0.01, 85.053)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25812" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1043885243 instance=ExtResource("38_haiyq")]
+transform = Transform3D(1.0757645, -2.479589e-13, -0.17887631, 2.7294782e-06, 1.0905348, 1.6415115e-05, 0.17887631, -1.6640495e-05, 1.0757645, -250, 0.01, 107.31785)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25813" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=734002303 instance=ExtResource("39_nuxgi")]
+transform = Transform3D(-0.8709508, -1.8649175e-12, 0.54090726, -8.253718e-06, 1.0252492, -1.3289859e-05, -0.54090726, -1.5644302e-05, -0.8709508, 156.89388, 0.01, -62.14793)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25814" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2008874962 instance=ExtResource("16_qoeiu")]
+transform = Transform3D(-1.1190609, -1.2791889e-13, 0.1172488, -1.7891023e-06, 1.1251864, -1.7075774e-05, -0.1172488, -1.7169245e-05, -1.1190609, -250, 0.01, -247.23949)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25815" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2127024979 instance=ExtResource("6_v5js4")]
+transform = Transform3D(-0.28145406, -3.9200896e-13, -0.81479514, 1.2432976e-05, 0.8620368, -4.2947136e-06, 0.81479514, -1.3153839e-05, -0.28145406, 93.60506, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25816" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1719691889 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(0.7927692, 0, -0.7535265, 1.14980785e-05, 1.0937483, 1.2096883e-05, 0.7535265, -1.6689532e-05, 0.7927692, -250, 0.01, 65.18152)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25817" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=605146629 instance=ExtResource("25_jiad2")]
+transform = Transform3D(0.9298078, 0, -0.662798, 1.0113648e-05, 1.1418598, 1.4187956e-05, 0.662798, -1.7423661e-05, 0.9298078, 186.54817, 0.01, 189.7184)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25818" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1128320589 instance=ExtResource("40_sntwg")]
+transform = Transform3D(-0.2908127, -7.8958373e-13, -0.8179997, 1.2481876e-05, 0.8681565, -4.4375183e-06, 0.8179997, -1.3247219e-05, -0.2908127, -46.819042, 0.01, 237.88834)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25819" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2043626857 instance=ExtResource("11_nfkbo")]
+transform = Transform3D(-0.7176954, 1.8746545e-12, -0.40581208, 6.192297e-06, 0.8244817, -1.0951329e-05, 0.40581208, -1.2580785e-05, -0.7176954, 133.73035, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25820" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1837183529 instance=ExtResource("6_v5js4")]
+transform = Transform3D(0.18787132, 0.017589498, 0.8026705, 0.24664833, 0.7832244, -0.07489333, -0.76403797, 0.25716725, 0.17319356, 11.01245, 3.446706, 6.8734794)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25821" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1444269600 instance=ExtResource("8_v26p3")]
+transform = Transform3D(-1.0346773, -2.1229804e-12, 0.540013, -8.240072e-06, 1.1671208, -1.5788162e-05, -0.540013, -1.7809121e-05, -1.0346773, -78.16914, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25822" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1022027751 instance=ExtResource("6_v5js4")]
+transform = Transform3D(0.8258904, -3.8513528e-13, -0.18756591, 2.8620727e-06, 0.84692144, 1.2602281e-05, 0.18756591, -1.2923195e-05, 0.8258904, 196.51024, 0.01, 212.38843)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25823" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1070747072 instance=ExtResource("41_gtr4l")]
+transform = Transform3D(0.59110487, 4.006141e-13, 0.6532113, -9.967367e-06, 0.88095975, 9.019683e-06, -0.6532113, -1.3442585e-05, 0.59110487, 63.106655, 0.01, 145.95929)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25824" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=209171447 instance=ExtResource("40_sntwg")]
+transform = Transform3D(0.7768391, 5.339708e-13, 0.88051134, -1.34357415e-05, 1.1742142, 1.1853804e-05, -0.88051134, -1.791736e-05, 0.7768391, -189.8365, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25825" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=83836552 instance=ExtResource("19_1ltse")]
+transform = Transform3D(-0.8594859, 1.3298756e-12, -0.4599312, 7.0181018e-06, 0.9748091, -1.31149145e-05, 0.4599312, -1.4874634e-05, -0.8594859, -250, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25826" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=386778985 instance=ExtResource("19_1ltse")]
+transform = Transform3D(0.044171814, 6.571886e-13, 1.0501063, -1.6023594e-05, 1.0510349, 6.74018e-07, -1.0501063, -1.6037766e-05, 0.044171814, 56.46458, 0.01, 237.22333)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25827" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1485069004 instance=ExtResource("42_3ikei")]
+transform = Transform3D(-0.38841587, -4.5328544e-13, -0.9179945, 1.4007698e-05, 0.9967852, -5.926847e-06, 0.9179945, -1.5209967e-05, -0.38841587, -208.1486, 0.01, -96.48707)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25828" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1364878317 instance=ExtResource("43_aphdq")]
+transform = Transform3D(0.9125716, -5.0973803e-13, -0.65091294, 9.932294e-06, 1.1209258, 1.3924949e-05, 0.65091294, -1.710423e-05, 0.9125716, 250, 0.01, 107.86482)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25829" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2087605019 instance=ExtResource("38_haiyq")]
+transform = Transform3D(-0.17371982, -2.5011102e-13, -1.0861957, 1.6574286e-05, 1.0999999, -2.6507948e-06, 1.0861957, -1.6784923e-05, -0.17371982, 250, 0.01, -52.74867)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25830" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2136383705 instance=ExtResource("16_qoeiu")]
+transform = Transform3D(0.6017459, 0, 0.5942476, -9.067637e-06, 0.8457117, 9.182054e-06, -0.5942476, -1.2904734e-05, 0.6017459, 250, 0.01, 31.972898)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25831" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=525112424 instance=ExtResource("34_xd53d")]
+transform = Transform3D(0.43560597, 4.0004152e-13, -0.7642778, 1.1662132e-05, 0.8797006, 6.6469215e-06, 0.7642778, -1.3423371e-05, 0.43560597, 212.3096, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25832" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1564105630 instance=ExtResource("9_3anrc")]
+transform = Transform3D(-1.0171046, 1.626712e-12, -0.10042798, 1.5324343e-06, 1.0220507, -1.5520023e-05, 0.10042798, -1.5595495e-05, -1.0171046, -80.45663, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25833" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=496302629 instance=ExtResource("34_xd53d")]
+transform = Transform3D(0.4882427, -1.2613231e-12, -0.78513026, 1.1980321e-05, 0.9245596, 7.450105e-06, 0.78513026, -1.4107875e-05, 0.4882427, 250, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25834" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=538243838 instance=ExtResource("6_v5js4")]
+transform = Transform3D(0.64292985, 0.08536994, -0.7331884, -0.24881113, 0.9404757, -0.10867574, 0.6949432, 0.25773898, 0.6394033, -18.370264, -10.802517, 48.9337)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25835" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1973235088 instance=ExtResource("37_ivygn")]
+transform = Transform3D(-0.8799769, 0.29297736, -0.5031055, 0.32996792, 1.0021925, 0.0064709047, 0.4796583, -0.15193734, -0.92744446, -49.23248, -2.166016, 74.198685)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25836" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1828678327 instance=ExtResource("35_2bwdl")]
+transform = Transform3D(-0.102410704, -3.1413376e-13, -0.9153387, 1.3967173e-05, 0.9210499, -1.5626874e-06, 0.9153387, -1.4054321e-05, -0.102410704, 66.38242, 0.01, 171.59793)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25837" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1302627386 instance=ExtResource("21_1dup2")]
+transform = Transform3D(-0.50159216, 2.1388377e-12, -1.0634854, 1.6227748e-05, 1.1758385, -7.6538045e-06, 1.0634854, -1.7942148e-05, -0.50159216, -250, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25838" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=12189715 instance=ExtResource("44_22xf7")]
+transform = Transform3D(0.20658939, -0.019859234, 0.9057615, 0.28678834, 0.8826714, -0.046058763, -0.8593898, 0.28978375, 0.20236638, -13.540544, 3.963586, 5.199144)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25839" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=133282628 instance=ExtResource("43_aphdq")]
+transform = Transform3D(-0.78191656, -1.4238773e-12, 0.6913346, -1.0549091e-05, 1.0437131, -1.1931281e-05, -0.6913346, -1.5926042e-05, -0.78191656, -250, 0.01, 20.165012)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25840" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=14371394 instance=ExtResource("45_vy4g5")]
+transform = Transform3D(0.96718854, -4.6748006e-13, 0.3483237, -5.315078e-06, 1.0279995, 1.4758351e-05, -0.3483237, -1.5686268e-05, 0.96718854, 5.06235, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25841" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=862317712 instance=ExtResource("16_qoeiu")]
+transform = Transform3D(-1.0689775, 1.9804765e-12, -0.20670211, 3.1540742e-06, 1.0887785, -1.6311551e-05, 0.20670211, -1.6613694e-05, -1.0689775, 89.76011, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25842" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=321335171 instance=ExtResource("22_m3km8")]
+transform = Transform3D(-0.5919467, -5.062722e-13, 0.94289225, -1.4387612e-05, 1.1133044, -9.0325275e-06, -0.94289225, -1.6987937e-05, -0.5919467, 126.183975, 0.01, -124.06926)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25843" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1587069491 instance=ExtResource("46_7teql")]
+transform = Transform3D(-0.48791438, 1.3971916e-12, -0.9004596, 1.3740133e-05, 1.0241523, -7.445095e-06, 0.9004596, -1.5627562e-05, -0.48791438, 15.757958, 0.01, 152.67413)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25844" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=527198946 instance=ExtResource("33_jgse0")]
+transform = Transform3D(0.5421717, 0, -0.65475553, 9.990928e-06, 0.85009116, 8.273009e-06, 0.65475553, -1.297156e-05, 0.5421717, -228.5748, 0.01, 62.202682)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25845" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1060037284 instance=ExtResource("6_v5js4")]
+transform = Transform3D(0.8194084, 0, 0.7576849, -1.1561532e-05, 1.1160272, 1.2503372e-05, -0.7576849, -1.7029486e-05, 0.8194084, 144.23349, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25846" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1283774316 instance=ExtResource("27_sbbvx")]
+transform = Transform3D(0.48551574, 0, -0.9106297, 1.3895319e-05, 1.0319749, 7.408496e-06, 0.9106297, -1.5746928e-05, 0.48551574, 14.565148, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25847" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=569076920 instance=ExtResource("9_3anrc")]
+transform = Transform3D(1.1298397, -1.1584223e-12, 0.07270933, -1.109472e-06, 1.1321768, 1.7240245e-05, -0.07270933, -1.7275908e-05, 1.1298397, -106.66139, 0.01, -87.81695)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25848" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1569537211 instance=ExtResource("6_v5js4")]
+transform = Transform3D(1.0530983, 7.7882487e-13, -0.042133257, 6.429115e-07, 1.0539409, 1.606925e-05, 0.042133257, -1.6082107e-05, 1.0530983, 198.86253, 0.01, 156.06169)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25849" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1354847211 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(0.49887156, 9.476701e-13, 0.9147883, -1.39587755e-05, 1.0419743, 7.612291e-06, -0.9147883, -1.5899508e-05, 0.49887156, -250, 0.01, 109.79411)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25850" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=87166503 instance=ExtResource("27_sbbvx")]
+transform = Transform3D(-0.8110139, 0, 0.38741332, -5.9115487e-06, 0.89879507, -1.2375278e-05, -0.38741332, -1.37147335e-05, -0.8110139, 119.10687, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25851" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=422302281 instance=ExtResource("47_fpnum")]
+transform = Transform3D(-0.44348124, -1.364861e-12, 0.89678985, -1.3684136e-05, 1.0004537, -6.767089e-06, -0.89678985, -1.5265945e-05, -0.44348124, 119.210594, 0.01, 170.546)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25852" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1096341312 instance=ExtResource("48_t5qm6")]
+transform = Transform3D(-0.7503245, -1.5429153e-12, 0.39560282, -6.036514e-06, 0.84822667, -1.14492195e-05, -0.39560282, -1.2943111e-05, -0.7503245, 208.59038, 0.01, 50.237095)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25853" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1834722849 instance=ExtResource("9_3anrc")]
+transform = Transform3D(-0.7017871, -1.5731562e-12, 0.5054339, -7.712428e-06, 0.8648518, -1.0708584e-05, -0.5054339, -1.3196792e-05, -0.7017871, 175.10782, 0.01, 229.6284)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25854" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1806531167 instance=ExtResource("49_usr6l")]
+transform = Transform3D(-0.9886753, 1.9782782e-12, -0.45313314, 6.9143703e-06, 1.08757, -1.5086217e-05, 0.45313314, -1.6595255e-05, -0.9886753, 181.55971, 0.01, 144.20764)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25855" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=272068052 instance=ExtResource("21_1dup2")]
+transform = Transform3D(0.9405415, 4.479476e-13, 0.2927448, -4.4669996e-06, 0.98504716, 1.4351744e-05, -0.2927448, -1.5030856e-05, 0.9405415, 45.304527, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25856" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=58502798 instance=ExtResource("43_aphdq")]
+transform = Transform3D(0.33765236, 4.1048014e-13, -0.83712465, 1.2773703e-05, 0.90265536, 5.1522447e-06, 0.83712465, -1.3773638e-05, 0.33765236, 39.52515, 0.01, 161.62822)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25857" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1000988789 instance=ExtResource("23_dwo48")]
+transform = Transform3D(0.38413987, 0, 0.8712223, -1.3294e-05, 0.9521511, 5.8615983e-06, -0.8712223, -1.4528895e-05, 0.38413987, -250, 0.01, -191.53705)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25858" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1818820618 instance=ExtResource("21_1dup2")]
+transform = Transform3D(-0.9176695, -2.1519909e-13, 0.23164813, -3.534724e-06, 0.9464556, -1.4002739e-05, -0.23164813, -1.4441985e-05, -0.9176695, -42.31129, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25859" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2005574471 instance=ExtResource("16_qoeiu")]
+transform = Transform3D(-0.03621041, -2.7922255e-13, -0.9817594, 1.4980689e-05, 0.982427, -5.5253577e-07, 0.9817594, -1.4990876e-05, -0.03621041, -216.74062, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25860" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1595121057 instance=ExtResource("49_usr6l")]
+transform = Transform3D(0.16831192, -3.9034834e-13, -0.8417221, 1.2843856e-05, 0.8583851, 2.568275e-06, 0.8417221, -1.3098117e-05, 0.16831192, 77.90915, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25861" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=465354800 instance=ExtResource("46_7teql")]
+transform = Transform3D(-0.50510895, -0.13901983, 0.6164701, -0.0865587, 0.7969735, 0.108802535, -0.62599474, 0.0019731391, -0.51246816, -15.916778, 15.639288, -41.599)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25862" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=859207096 instance=ExtResource("15_x8kku")]
+transform = Transform3D(-1.1063412, 2.6390454e-12, -0.35092884, 5.3548333e-06, 1.1606644, -1.6881684e-05, 0.35092884, -1.7710605e-05, -1.1063412, 250, 0.01, 221.22002)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25863" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1063264014 instance=ExtResource("10_w6hdu")]
+transform = Transform3D(-0.555065, 1.9533667e-12, -0.65570974, 1.0005491e-05, 0.85909975, -8.469747e-06, 0.65570974, -1.3109022e-05, -0.555065, 201.72778, 0.01, 167.8225)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25864" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2088945567 instance=ExtResource("9_3anrc")]
+transform = Transform3D(-0.5648669, -1.3636785e-12, 0.8246814, -1.2583833e-05, 0.99958694, -8.619316e-06, -0.8246814, -1.5252719e-05, -0.5648669, -134.09105, 0.01, 24.367777)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25865" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=881624424 instance=ExtResource("37_ivygn")]
+transform = Transform3D(-0.8062392, -1.6192984e-12, 0.871119, -1.3292426e-05, 1.1869583, -1.230242e-05, -0.871119, -1.8111823e-05, -0.8062392, 250, 0.01, -118.526695)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25866" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=851371801 instance=ExtResource("28_2wooy")]
+transform = Transform3D(-0.3609101, 1.0225037e-12, 1.06475, -1.6247042e-05, 1.1242547, -5.507136e-06, -1.06475, -1.7155025e-05, -0.3609101, -127.39735, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25867" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=199005373 instance=ExtResource("31_j1vc2")]
+transform = Transform3D(0.31990996, -3.934058e-13, -0.803785, 1.22649735e-05, 0.8651085, 4.8815127e-06, 0.803785, -1.3200709e-05, 0.31990996, 250, 0.01, -218.67755)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25868" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=156785137 instance=ExtResource("8_v26p3")]
+transform = Transform3D(-0.38183874, 1.4378377e-12, 0.982345, -1.4989622e-05, 1.0539461, -5.8264864e-06, -0.982345, -1.6082187e-05, -0.38183874, -34.86541, 0.01, 152.52396)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25869" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1118839542 instance=ExtResource("39_nuxgi")]
+transform = Transform3D(-0.4573393, 1.6313837e-12, -0.7714943, 1.1772249e-05, 0.8968627, -6.9785488e-06, 0.7714943, -1.3685248e-05, -0.4573393, 230.17462, 0.01, 105.8748)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25870" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1439054031 instance=ExtResource("32_eixev")]
+transform = Transform3D(0.9346976, -0.0032349997, -0.12197452, -0.03695746, 0.89052796, -0.3068256, 0.11628585, 0.30902645, 0.8829089, -7.064991, 3.0695508, 8.159838)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25871" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1144011676 instance=ExtResource("50_eom1a")]
+transform = Transform3D(0.96660256, 4.4434814e-13, 0.14305966, -2.182951e-06, 0.9771319, 1.474941e-05, -0.14305966, -1.4910077e-05, 0.96660256, 121.56494, 0.01, 238.95216)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25872" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=433795990 instance=ExtResource("51_c112h")]
+transform = Transform3D(1.0982151, -1.0281577e-12, 0.26812118, -4.0912655e-06, 1.1304713, 1.6757687e-05, -0.26812118, -1.7249886e-05, 1.0982151, -250, 0.01, 135.48375)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25873" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1117867430 instance=ExtResource("28_2wooy")]
+transform = Transform3D(0.9370936, -4.505226e-13, -0.32149833, 4.9057503e-06, 0.99070966, 1.4299132e-05, 0.32149833, -1.5117261e-05, 0.9370936, 61.210167, 0.01, -212.06343)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25874" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2109339343 instance=ExtResource("21_1dup2")]
+transform = Transform3D(-0.8271386, 1.7827455e-12, -0.5257263, 8.022072e-06, 0.9800747, -1.26213245e-05, 0.5257263, -1.4954981e-05, -0.8271386, 107.31743, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25875" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=263872361 instance=ExtResource("9_3anrc")]
+transform = Transform3D(-0.16253802, -4.1928985e-13, -0.90758866, 1.3848916e-05, 0.9220281, -2.4801716e-06, 0.90758866, -1.4069247e-05, -0.16253802, 96.885056, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25876" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1815010093 instance=ExtResource("15_x8kku")]
+transform = Transform3D(-0.8096172, 1.0595639e-12, -0.8377061, 1.2782577e-05, 1.1650028, -1.2353966e-05, 0.8377061, -1.7776803e-05, -0.8096172, -32.249763, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25877" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=999975236 instance=ExtResource("6_v5js4")]
+transform = Transform3D(-0.42422843, 9.206779e-13, -0.91911554, 1.4024805e-05, 1.0122961, -6.47331e-06, 0.91911554, -1.5446649e-05, -0.42422843, 175.41895, 0.01, 128.123)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25878" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1503097106 instance=ExtResource("16_qoeiu")]
+transform = Transform3D(0.055491015, -4.799531e-13, -0.9365157, 1.4290314e-05, 0.9381582, 8.4673815e-07, 0.9365157, -1.4315377e-05, 0.055491015, 250, 0.01, 3.706842)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25879" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2081810912 instance=ExtResource("29_1stxq")]
+transform = Transform3D(1.0615789, -0.025691677, -0.4049577, 0.03415787, 1.1358382, 0.017482527, 0.40433162, -0.028501516, 1.0617458, 48.97366, 0.009994298, 107.05268)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25880" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1864165338 instance=ExtResource("6_v5js4")]
+transform = Transform3D(0.9974347, -1.1375674e-13, -0.07971319, 1.2163454e-06, 1.0006149, 1.5219877e-05, 0.07971319, -1.5268404e-05, 0.9974347, 203.16139, 0.01, 133.99393)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25881" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=82499103 instance=ExtResource("8_v26p3")]
+transform = Transform3D(-0.03815071, 5.8943903e-13, 0.94191146, -1.4372648e-05, 0.94268376, -5.821431e-07, -0.94191146, -1.4384432e-05, -0.03815071, -250, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25882" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1772314079 instance=ExtResource("11_nfkbo")]
+transform = Transform3D(0.41281778, -8.289562e-13, -0.812599, 1.2399466e-05, 0.911447, 6.299195e-06, 0.812599, -1.3907789e-05, 0.41281778, 250, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25883" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1575943822 instance=ExtResource("31_j1vc2")]
+transform = Transform3D(0.8721858, -3.972105e-13, -0.04744166, 7.239138e-07, 0.87347513, 1.3308703e-05, 0.04744166, -1.33283775e-05, 0.8721858, -250, 0.01, -209.38298)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25884" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=426158174 instance=ExtResource("22_m3km8")]
+transform = Transform3D(-0.6129277, 8.670178e-13, -0.7301323, 1.11411055e-05, 0.9532961, -9.352676e-06, 0.7301323, -1.4546366e-05, -0.6129277, -145.30853, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25885" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=771710197 instance=ExtResource("27_sbbvx")]
+transform = Transform3D(0.6545798, 0, 0.79042816, -1.2061162e-05, 1.0262804, 9.98825e-06, -0.79042816, -1.5660036e-05, 0.6545798, 250, 0.01, 132.21892)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25886" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1652864699 instance=ExtResource("16_qoeiu")]
+transform = Transform3D(0.9529312, -4.576187e-13, 0.32340387, -4.9348264e-06, 1.0063142, 1.45407985e-05, -0.32340387, -1.535537e-05, 0.9529312, 103.89563, 0.01, 140.1843)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25887" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=703308208 instance=ExtResource("11_nfkbo")]
+transform = Transform3D(-0.80685633, 1.5977712e-12, -0.84890664, 1.2953485e-05, 1.1711787, -1.2311837e-05, 0.84890664, -1.7871042e-05, -0.80685633, 137.15616, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25888" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1026857651 instance=ExtResource("16_qoeiu")]
+transform = Transform3D(-0.6740233, -2.5628547e-12, -0.90342236, 1.378534e-05, 1.1271554, -1.0284938e-05, 0.90342236, -1.7199289e-05, -0.6740233, 77.20977, 0.01, 8.537852)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25889" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1781762544 instance=ExtResource("12_euvq4")]
+transform = Transform3D(-0.11475843, 9.710379e-13, 1.0614821, -1.6197178e-05, 1.0676675, -1.7511023e-06, -1.0614821, -1.6291562e-05, -0.11475843, 146.12622, 0.01, -185.33781)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25890" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=297599794 instance=ExtResource("33_jgse0")]
+transform = Transform3D(0.13974375, 4.946821e-13, 1.0788041, -1.6461496e-05, 1.0878174, 2.1323522e-06, -1.0788041, -1.659903e-05, 0.13974375, -95.08704, 0.01, 113.89856)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25891" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1517828300 instance=ExtResource("9_3anrc")]
+transform = Transform3D(0.8400977, 1.9463455e-13, 0.1642927, -2.506946e-06, 0.8560118, 1.2819069e-05, -0.1642927, -1.3061903e-05, 0.8400977, -204.11226, 0.01, -75.06783)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25892" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1001748443 instance=ExtResource("51_c112h")]
+transform = Transform3D(-0.56941074, 7.908948e-13, -0.65724593, 1.0028931e-05, 0.86959803, -8.68865e-06, 0.65724593, -1.3269216e-05, -0.56941074, -250, 0.01, 203.69728)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25893" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=480268287 instance=ExtResource("18_ymfnq")]
+transform = Transform3D(0.8406914, 4.3230618e-13, 0.44381973, -6.7722563e-06, 0.95065135, 1.282813e-05, -0.44381973, -1.4506011e-05, 0.8406914, -75.19089, 0.01, -197.19133)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25894" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1367853027 instance=ExtResource("43_aphdq")]
+transform = Transform3D(-0.69211835, 1.6922953e-12, -0.62170875, 9.486669e-06, 0.9303492, -1.0561048e-05, 0.62170875, -1.4196218e-05, -0.69211835, -131.52927, 0.01, -246.15437)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25895" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1778751546 instance=ExtResource("11_nfkbo")]
+transform = Transform3D(0.21245174, 6.181981e-13, 0.8810347, -1.3443729e-05, 0.906288, 3.2418054e-06, -0.8810347, -1.3829069e-05, 0.21245174, -240.2325, 0.01, -233.93654)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25896" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=11469232 instance=ExtResource("52_ptaty")]
+transform = Transform3D(0.5431022, 0, 0.63569826, -9.700133e-06, 0.8361054, 8.287208e-06, -0.63569826, -1.2758151e-05, 0.5431022, 250, 0.01, -221.5537)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25897" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1938049328 instance=ExtResource("9_3anrc")]
+transform = Transform3D(-0.890415, -5.071794e-13, 0.057030424, -8.7022903e-07, 0.8922395, -1.3586861e-05, -0.057030424, -1.3614702e-05, -0.890415, 229.42007, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25898" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1675979789 instance=ExtResource("16_qoeiu")]
+transform = Transform3D(0.9400821, 0, -0.28679022, 4.3761383e-06, 0.9828545, 1.4344733e-05, 0.28679022, -1.49973985e-05, 0.9400821, -250, 0.01, -221.54164)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25899" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1805046249 instance=ExtResource("21_1dup2")]
+transform = Transform3D(0.7545301, -4.008887e-13, -0.45589337, 6.956487e-06, 0.8815636, 1.1513391e-05, 0.45589337, -1.3451799e-05, 0.7545301, -121.62564, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25900" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=425343893 instance=ExtResource("15_x8kku")]
+transform = Transform3D(-0.7414305, -1.5009428e-12, 0.81285095, -1.2403313e-05, 1.1002027, -1.1313504e-05, -0.81285095, -1.6788017e-05, -0.7414305, 250, 0.01, 28.551601)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25901" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1440384270 instance=ExtResource("49_usr6l")]
+transform = Transform3D(0.47385243, 1.3177679e-12, 0.8417201, -1.2843826e-05, 0.96593416, 7.230524e-06, -0.8417201, -1.473921e-05, 0.47385243, 58.67169, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25902" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=14354918 instance=ExtResource("8_v26p3")]
+transform = Transform3D(-0.8843116, -1.7807792e-12, -0.42002568, 6.409179e-06, 0.9789937, -1.3493731e-05, 0.42002568, -1.4938487e-05, -0.8843116, 250, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25903" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=80623342 instance=ExtResource("27_sbbvx")]
+transform = Transform3D(0.82000685, 4.667279e-13, 0.6172308, -9.41834e-06, 1.0263455, 1.25125025e-05, -0.6172308, -1.5661028e-05, 0.82000685, 26.382893, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25904" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=598268784 instance=ExtResource("47_fpnum")]
+transform = Transform3D(-1.1867123, -2.0294675e-12, 0.08962959, -1.367662e-06, 1.1900923, -1.8108069e-05, -0.08962959, -1.8159648e-05, -1.1867123, -188.79297, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25905" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1176316085 instance=ExtResource("53_wg3vi")]
+transform = Transform3D(0.27600968, 0, 0.76058507, -1.16057845e-05, 0.80911744, 4.211638e-06, -0.76058507, -1.2346341e-05, 0.27600968, -250, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25906" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1469925994 instance=ExtResource("54_wuuyb")]
+transform = Transform3D(-1.0658216, 1.7436443e-12, -0.25334704, 3.8658295e-06, 1.0955184, -1.6263395e-05, 0.25334704, -1.6716538e-05, -1.0658216, -197.43028, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25907" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1119464539 instance=ExtResource("6_v5js4")]
+transform = Transform3D(0.08894326, 5.158213e-13, 1.1308105, -1.7255064e-05, 1.1343031, 1.3571869e-06, -1.1308105, -1.7308357e-05, 0.08894326, 30.962793, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25908" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=606288520 instance=ExtResource("52_ptaty")]
+transform = Transform3D(0.7680591, -5.1683164e-13, 0.83771926, -1.2782776e-05, 1.1365248, 1.1719831e-05, -0.83771926, -1.7342256e-05, 0.7680591, 250, 0.01, -206.01797)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25909" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1175981244 instance=ExtResource("34_xd53d")]
+transform = Transform3D(-0.1671411, -3.9860433e-13, -0.8604572, 1.3129735e-05, 0.8765402, -2.55041e-06, 0.8604572, -1.33751455e-05, -0.1671411, -214.45424, 0.01, -63.63583)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25910" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1684900846 instance=ExtResource("6_v5js4")]
+transform = Transform3D(0.84690297, 0, -0.069829874, 1.0655356e-06, 0.8497769, 1.2922911e-05, 0.069829874, -1.2966765e-05, 0.84690297, 136.53403, 0.01, 248.82083)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25911" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1246334743 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(0.4477075, 1.4350575e-12, 0.9518766, -1.4524707e-05, 1.0519083, 6.8315776e-06, -0.9518766, -1.6051094e-05, 0.4477075, 116.53182, 0.01, -212.41547)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25912" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1296386234 instance=ExtResource("19_1ltse")]
+transform = Transform3D(-0.4558299, -7.816104e-13, 0.72853947, -1.1116801e-05, 0.8593897, -6.9555185e-06, -0.72853947, -1.3113448e-05, -0.4558299, 209.12703, 0.01, -8.152306)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25913" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1761562072 instance=ExtResource("49_usr6l")]
+transform = Transform3D(0.030337324, -7.508113e-13, -1.0155787, 1.5496738e-05, 1.0160317, 4.6291714e-07, 1.0155787, -1.550365e-05, 0.030337324, 41.321342, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25914" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=812833721 instance=ExtResource("48_t5qm6")]
+transform = Transform3D(0.9935777, 4.681753e-13, -0.2696888, 4.115187e-06, 1.0295284, 1.5161024e-05, 0.2696888, -1.5709596e-05, 0.9935777, 211.29756, 0.01, -127.38521)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25915" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1663086145 instance=ExtResource("6_v5js4")]
+transform = Transform3D(0.114451885, 5.740551e-13, 0.83375484, -1.2722283e-05, 0.8415737, 1.7464232e-06, -0.83375484, -1.2841591e-05, 0.114451885, 250, 0.01, 229.20616)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25916" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1562721912 instance=ExtResource("30_34usc")]
+transform = Transform3D(0.33415097, 4.656195e-13, -0.96784866, 1.4768424e-05, 1.0239081, 5.0988174e-06, 0.96784866, -1.5623837e-05, 0.33415097, -150.07584, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25917" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=932850451 instance=ExtResource("25_jiad2")]
+transform = Transform3D(0.012205315, 6.8033854e-13, 1.0185348, -1.5541844e-05, 1.0186079, 1.8624047e-07, -1.0185348, -1.5542959e-05, 0.012205315, -250, 0.01, -118.46143)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25918" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1413645084 instance=ExtResource("15_x8kku")]
+transform = Transform3D(0.8976383, 0, -0.33896536, 5.1722795e-06, 0.95950615, 1.3697083e-05, 0.33896536, -1.4641126e-05, 0.8976383, 250, 0.01, -29.39324)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25919" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1572778911 instance=ExtResource("52_ptaty")]
+transform = Transform3D(0.69545853, -5.3709993e-13, -0.9546326, 1.456676e-05, 1.1810952, 1.0612017e-05, 0.9546326, -1.8022358e-05, 0.69545853, -250, 0.01, 16.118948)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25920" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1700293813 instance=ExtResource("54_wuuyb")]
+transform = Transform3D(-0.412737, 4.4528243e-13, 0.88794947, -1.3549239e-05, 0.9791864, -6.297963e-06, -0.88794947, -1.4941427e-05, -0.412737, -87.11118, 0.01, -200.72116)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25921" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=813458968 instance=ExtResource("28_2wooy")]
+transform = Transform3D(-0.9424159, 9.172561e-13, -0.35915536, 5.48036e-06, 1.0085337, -1.4380344e-05, 0.35915536, -1.5389238e-05, -0.9424159, 50.869614, 0.01, 109.02536)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25922" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1343623438 instance=ExtResource("27_sbbvx")]
+transform = Transform3D(-0.4904147, 1.8943677e-12, -0.91874367, 1.40191305e-05, 1.0414397, -7.4832474e-06, 0.91874367, -1.589135e-05, -0.4904147, -250, 0.01, 23.887917)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25923" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=952432294 instance=ExtResource("21_1dup2")]
+transform = Transform3D(0.8162452, -1.4150983e-12, -0.6400699, 9.766842e-06, 1.037278, 1.2455103e-05, 0.6400699, -1.5827849e-05, 0.8162452, -46.31367, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25924" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=321819544 instance=ExtResource("17_qcq11")]
+transform = Transform3D(-0.046556443, 8.5325274e-13, 1.1537211, -1.7604656e-05, 1.1546601, -7.1040665e-07, -1.1537211, -1.7618984e-05, -0.046556443, 227.21028, 0.01, 44.89198)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25925" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=133663655 instance=ExtResource("47_fpnum")]
+transform = Transform3D(0.33199456, 4.5156126e-13, -0.93585044, 1.4280163e-05, 0.9929937, 5.065913e-06, 0.93585044, -1.5152111e-05, 0.33199456, -250, 0.01, -196.94812)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25926" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2088255996 instance=ExtResource("18_ymfnq")]
+transform = Transform3D(-0.98262995, -1.8627253e-12, 0.28827867, -4.3988516e-06, 1.024044, -1.49939715e-05, -0.28827867, -1.562591e-05, -0.98262995, -184.00381, 0.01, 31.522915)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25927" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=137416793 instance=ExtResource("11_nfkbo")]
+transform = Transform3D(-0.8594157, -0.05346939, 0.21322128, -0.052625075, 0.88546574, 0.009935676, -0.21343125, -0.0030232882, -0.8610201, 67.139275, 0.009981759, 63.664673)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25928" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1741138441 instance=ExtResource("27_sbbvx")]
+transform = Transform3D(0.7383282, 9.85445e-13, 0.7930079, -1.2100526e-05, 1.0835083, 1.1266166e-05, -0.7930079, -1.6533277e-05, 0.7383282, 250, 0.01, -249.46716)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25929" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=315683461 instance=ExtResource("33_jgse0")]
+transform = Transform3D(0.7526572, 0, -0.42863277, 6.5405166e-06, 0.86615175, 1.1484812e-05, 0.42863277, -1.3216629e-05, 0.7526572, -250, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25930" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2144624902 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(-1.168972, 1.6207354e-12, -0.21183948, 3.232465e-06, 1.1880116, -1.783737e-05, 0.21183948, -1.8127896e-05, -1.168972, 250, 0.01, 123.320915)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25931" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=897990065 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(0.9378603, -4.5432036e-13, -0.3442979, 5.2536498e-06, 0.99906105, 1.4310831e-05, 0.3442979, -1.5244695e-05, 0.9378603, -192.57062, 0.01, 117.82879)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25932" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=375398345 instance=ExtResource("17_qcq11")]
+transform = Transform3D(0.78599787, -5.187501e-13, -0.8267425, 1.2615282e-05, 1.1407435, 1.1993558e-05, 0.8267425, -1.740663e-05, 0.78599787, 250, 0.01, -76.00166)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25933" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1150781797 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(-0.8199161, 2.0592458e-12, -0.78060746, 1.1911307e-05, 1.1320823, -1.2511116e-05, 0.78060746, -1.727447e-05, -0.8199161, -34.206276, 0.01, 195.2263)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25934" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=761036771 instance=ExtResource("47_fpnum")]
+transform = Transform3D(0.83203936, 5.372512e-13, -0.83873856, 1.27983285e-05, 1.1814278, 1.2696106e-05, 0.83873856, -1.8027433e-05, 0.83203936, 250, 0.01, -223.17003)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25935" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=572991793 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(0.5461721, -1.0384131e-12, -1.0026379, 1.5299274e-05, 1.1417472, 8.334052e-06, 1.0026379, -1.7421948e-05, 0.5461721, 246.96245, 0.01, -138.26846)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25936" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2071796343 instance=ExtResource("6_v5js4")]
+transform = Transform3D(-0.61779714, -2.140308e-12, -1.0014111, 1.5280553e-05, 1.1766467, -9.426982e-06, 1.0014111, -1.7954479e-05, -0.61779714, 4.2593465, 0.01, -192.7386)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25937" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=338716822 instance=ExtResource("27_sbbvx")]
+transform = Transform3D(0.62037796, -5.1691225e-13, 0.9524824, -1.4533949e-05, 1.1367021, 9.466361e-06, -0.9524824, -1.734496e-05, 0.62037796, -100.093636, 0.01, 156.57703)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25938" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1982120367 instance=ExtResource("27_sbbvx")]
+transform = Transform3D(-0.5409658, -8.028333e-13, 0.6975374, -1.064374e-05, 0.8827245, -8.254609e-06, -0.6975374, -1.3469513e-05, -0.5409658, -250, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25939" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=596232753 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(-0.91565746, 1.1977266e-12, -0.0289251, 4.4136996e-07, 0.9161143, -1.3972038e-05, 0.0289251, -1.3979008e-05, -0.91565746, 157.95595, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25940" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1132401833 instance=ExtResource("37_ivygn")]
+transform = Transform3D(0.66031075, -4.9157266e-13, 0.85586613, -1.305968e-05, 1.0809797, 1.0075696e-05, -0.85586613, -1.6494692e-05, 0.66031075, -111.56252, 0.01, -40.976902)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25941" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1656876611 instance=ExtResource("21_1dup2")]
+transform = Transform3D(0.702684, 0.024344625, -0.89889884, -0.2947279, 1.0840188, -0.20103544, 0.8495571, 0.3559313, 0.67375225, 12.929561, 3.7270901, 5.9307446)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25942" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2039463728 instance=ExtResource("8_v26p3")]
+transform = Transform3D(0.9865364, -5.35277e-13, 0.6420894, -9.797657e-06, 1.1770866, 1.5053582e-05, -0.6420894, -1.796119e-05, 0.9865364, 56.64579, 0.01, -189.55392)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25943" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1493299988 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(-1.0987866, -1.6319938e-12, 0.10964557, -1.6730859e-06, 1.1042438, -1.676641e-05, -0.10964557, -1.6849679e-05, -1.0987866, -159.64545, 0.01, -235.64253)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25944" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1722413402 instance=ExtResource("19_1ltse")]
+transform = Transform3D(-0.7582234, -3.7628112e-13, 0.33131897, -5.055603e-06, 0.82745093, -1.1569747e-05, -0.33131897, -1.262609e-05, -0.7582234, -250, 0.01, 248.68282)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25945" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1538174647 instance=ExtResource("6_v5js4")]
+transform = Transform3D(-0.9626155, -0.16948034, 0.37755704, -0.20653316, 1.0251019, -0.066420145, -0.35863212, -0.13544002, -0.9751617, -18.063507, 14.6080885, -51.94428)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25946" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1695401774 instance=ExtResource("9_3anrc")]
+transform = Transform3D(0.61859006, 0, -0.9171902, 1.39954245e-05, 1.1062963, 9.439079e-06, 0.9171902, -1.6881e-05, 0.61859006, -167.1563, 0.01, 26.61895)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25947" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=948628816 instance=ExtResource("55_1paw6")]
+transform = Transform3D(-0.23158398, -4.908248e-13, -1.0541979, 1.6086027e-05, 1.0793351, -3.5337455e-06, 1.0541979, -1.6469598e-05, -0.23158398, -250, 0.01, -213.22006)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25948" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1056433599 instance=ExtResource("16_qoeiu")]
+transform = Transform3D(0.32154816, 0.13309115, -1.0645316, -0.2008636, 1.0991349, 0.07674533, 1.0538474, 0.16888689, 0.33943573, -17.398624, -11.321313, 50.133987)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25949" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1989985072 instance=ExtResource("37_ivygn")]
+transform = Transform3D(-0.59952116, 1.5812621e-12, -0.99198526, 1.5136726e-05, 1.1590774, -9.148105e-06, 0.99198526, -1.7686387e-05, -0.59952116, 139.27937, 0.01, 123.363014)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25950" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=656368854 instance=ExtResource("32_eixev")]
+transform = Transform3D(-0.37201622, -1.124399e-12, 0.73545784, -1.1222368e-05, 0.8241931, -5.676603e-06, -0.73545784, -1.2576381e-05, -0.37201622, -90.11114, 0.01, -112.51967)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25951" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=333285226 instance=ExtResource("54_wuuyb")]
+transform = Transform3D(0.38623646, -4.7214354e-13, -0.96373963, 1.4705724e-05, 1.0382546, 5.89359e-06, 0.96373963, -1.584275e-05, 0.38623646, 233.039, 0.01, -24.639496)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25952" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1751121754 instance=ExtResource("9_3anrc")]
+transform = Transform3D(-0.77268934, -2.4421457e-12, 0.74603695, -1.1383796e-05, 1.074067, -1.1790483e-05, -0.74603695, -1.6389215e-05, -0.77268934, -250, 0.01, 92.18593)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25953" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=790217258 instance=ExtResource("21_1dup2")]
+transform = Transform3D(-0.28580326, 0, 0.8628231, -1.3165837e-05, 0.9089264, -4.3610785e-06, -0.8628231, -1.38693285e-05, -0.28580326, 22.842548, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25954" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=228721931 instance=ExtResource("50_eom1a")]
+transform = Transform3D(-0.72606504, 2.3428906e-12, -0.45843032, 6.9952e-06, 0.8586785, -1.10790415e-05, 0.45843032, -1.31025945e-05, -0.72606504, -13.299809, 0.01, -194.59212)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25955" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=646222556 instance=ExtResource("16_qoeiu")]
+transform = Transform3D(1.057672, -1.2064739e-13, -0.08677306, 1.3240723e-06, 1.0612257, 1.6139042e-05, 0.08677306, -1.6193266e-05, 1.057672, 250, 0.01, 199.49352)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25956" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=163870685 instance=ExtResource("56_5f4hf")]
+transform = Transform3D(0.9431963, -1.0738337e-12, 0.7102225, -1.08373e-05, 1.1806927, 1.4392253e-05, -0.7102225, -1.8016215e-05, 0.9431963, -40.753872, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25957" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1405265648 instance=ExtResource("8_v26p3")]
+transform = Transform3D(-1.0131454, 0.2510917, -0.017035322, 0.25153065, 1.0126083, -0.034023322, 0.0083406875, -0.037124414, -1.0432415, 59.319458, 0.29130086, -55.704735)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25958" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1501076910 instance=ExtResource("37_ivygn")]
+transform = Transform3D(0.8900802, 0, 0.7877741, -1.2020662e-05, 1.1886256, 1.3581754e-05, -0.7877741, -1.8137263e-05, 0.8900802, -166.44426, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25959" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1869101531 instance=ExtResource("47_fpnum")]
+transform = Transform3D(0.1280826, -1.8893338e-13, -0.821007, 1.2527764e-05, 0.8309378, 1.9544152e-06, 0.821007, -1.2679298e-05, 0.1280826, 250, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25960" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=144347316 instance=ExtResource("42_3ikei")]
+transform = Transform3D(0.26315913, 3.7227754e-13, 0.77519685, -1.1828745e-05, 0.81864697, 4.0155505e-06, -0.77519685, -1.2491752e-05, 0.26315913, -154.45644, 0.01, -78.87605)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25961" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=714661725 instance=ExtResource("53_wg3vi")]
+transform = Transform3D(-1.1078761, -1.2831884e-12, 0.21583372, -3.2934129e-06, 1.1287044, -1.6905105e-05, -0.21583372, -1.7222925e-05, -1.1078761, -106.05561, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25962" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2145836599 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(-0.55418175, -1.0136236e-12, 0.9669399, -1.4754557e-05, 1.114491, -8.456271e-06, -0.9669399, -1.7006043e-05, -0.55418175, -97.98892, 0.01, 88.363815)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25963" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=542326889 instance=ExtResource("6_v5js4")]
+transform = Transform3D(-0.2895015, 4.0405586e-13, 0.8400425, -1.2818226e-05, 0.8885282, -4.41751e-06, -0.8400425, -1.3558071e-05, -0.2895015, -250, 0.01, -14.429767)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25964" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=901330305 instance=ExtResource("9_3anrc")]
+transform = Transform3D(-0.06895915, -0.18003877, -0.8993775, 0.29232603, 0.8505695, -0.19268216, 0.86939025, -0.30027816, -0.006549761, -20.234764, 9.265364, -73.70926)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25965" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2138556893 instance=ExtResource("19_1ltse")]
+transform = Transform3D(0.8214091, 4.1010126e-13, 0.37225044, -5.680178e-06, 0.9018222, 1.2533899e-05, -0.37225044, -1.3760925e-05, 0.8214091, -250, 0.01, 72.79611)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25966" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1826596295 instance=ExtResource("29_1stxq")]
+transform = Transform3D(-0.66061103, 1.5834597e-12, -0.9543534, 1.4562501e-05, 1.1606883, -1.0080277e-05, 0.9543534, -1.7710969e-05, -0.66061103, -250, 0.01, 213.27638)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25967" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1365563792 instance=ExtResource("40_sntwg")]
+transform = Transform3D(-0.27918285, 0, -0.8575625, 1.3085565e-05, 0.90186286, -4.2600573e-06, 0.8575625, -1.3761545e-05, -0.27918285, -86.1281, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25968" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1407234970 instance=ExtResource("15_x8kku")]
+transform = Transform3D(1.0127469, -4.9664087e-13, -0.40875417, 6.237189e-06, 1.0921248, 1.5453528e-05, 0.40875417, -1.6664757e-05, 1.0127469, -10.309681, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25969" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=673292068 instance=ExtResource("57_s7cnu")]
+transform = Transform3D(-0.6074548, -1.5408706e-12, 0.95220876, -1.4529775e-05, 1.1294701, -9.269164e-06, -0.95220876, -1.723461e-05, -0.6074548, 250, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25970" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=847965917 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(-1.0432673, -1.5331074e-12, 0.41770115, -6.3737125e-06, 1.1237797, -1.5919237e-05, -0.41770115, -1.7147779e-05, -1.0432673, -250, 0.01, 60.971817)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25971" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2102746895 instance=ExtResource("11_nfkbo")]
+transform = Transform3D(0.9372477, 1.5983666e-13, -0.009116633, 1.3911075e-07, 0.9372921, 1.4301484e-05, 0.009116633, -1.4302161e-05, 0.9372477, -119.09386, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25972" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1749925599 instance=ExtResource("32_eixev")]
+transform = Transform3D(0.9624177, -1.4846597e-12, -0.50801325, 7.751786e-06, 1.0882671, 1.4685552e-05, 0.50801325, -1.660589e-05, 0.9624177, -70.408295, 0.01, 141.62999)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25973" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1486221243 instance=ExtResource("8_v26p3")]
+transform = Transform3D(0.27893105, -3.8726796e-13, -0.80463606, 1.227796e-05, 0.85161126, 4.2562147e-06, 0.80463606, -1.2994755e-05, 0.27893105, -95.33995, 0.01, -219.94438)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25974" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1912923639 instance=ExtResource("23_dwo48")]
+transform = Transform3D(-0.73277724, 7.9733697e-13, -0.48125628, 7.343501e-06, 0.87668127, -1.1181463e-05, 0.48125628, -1.3377298e-05, -0.73277724, -250, 0.01, -20.99362)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25975" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=61586663 instance=ExtResource("9_3anrc")]
+transform = Transform3D(1.0940953, 7.6657897e-13, -0.25674725, 3.917711e-06, 1.1238166, 1.6694825e-05, 0.25674725, -1.7148343e-05, 1.0940953, -42.916485, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25976" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=648162378 instance=ExtResource("6_v5js4")]
+transform = Transform3D(0.6286302, -9.845639e-13, 0.88131475, -1.3448001e-05, 1.0825394, 9.592283e-06, -0.88131475, -1.6518494e-05, 0.6286302, -3.4613307, 0.01, 205.91623)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25977" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=919413436 instance=ExtResource("9_3anrc")]
+transform = Transform3D(0.33737206, 5.1313364e-13, 1.0767778, -1.6430577e-05, 1.1283928, 5.147967e-06, -1.0767778, -1.721817e-05, 0.33737206, 250, 0.01, 81.41556)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25978" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1360052472 instance=ExtResource("16_qoeiu")]
+transform = Transform3D(0.96647424, -1.0733793e-12, 0.67733544, -1.0335475e-05, 1.1801931, 1.4747452e-05, -0.67733544, -1.8008592e-05, 0.96647424, 230.31033, 0.01, 102.999626)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25979" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=853456962 instance=ExtResource("6_v5js4")]
+transform = Transform3D(1.0268464, 0, 0.6020523, -9.186729e-06, 1.1903279, 1.5668673e-05, -0.6020523, -1.8163239e-05, 1.0268464, -67.51847, 0.01, 93.51593)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25980" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=202707324 instance=ExtResource("53_wg3vi")]
+transform = Transform3D(0.83642185, -4.834107e-13, 0.65607476, -1.0011058e-05, 1.0630313, 1.2762978e-05, -0.65607476, -1.6220818e-05, 0.83642185, 147.95456, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25981" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1089323623 instance=ExtResource("55_1paw6")]
+transform = Transform3D(0.786433, -7.619847e-13, 0.28887787, -4.4079934e-06, 0.83781105, 1.2000199e-05, -0.28887787, -1.2784177e-05, 0.786433, 9.652469, 0.01, -250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25982" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=105043675 instance=ExtResource("20_q0ybk")]
+transform = Transform3D(-0.92682785, -2.525737e-12, 0.6123194, -9.343398e-06, 1.1108309, -1.4142487e-05, -0.6123194, -1.6950195e-05, -0.92682785, 240.73523, 0.01, -7.8120284)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25983" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1982949420 instance=ExtResource("11_nfkbo")]
+transform = Transform3D(0.52465, -0.05587534, 1.0427636, 0.035860322, 1.1672486, 0.044503175, -1.0436435, 0.012018386, 0.5257368, -61.974693, 0.009988033, 7.4816227)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25984" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=254929126 instance=ExtResource("48_t5qm6")]
+transform = Transform3D(-0.7756135, 9.219645e-13, -0.65271217, 9.959751e-06, 1.0137107, -1.1835102e-05, 0.65271217, -1.5468235e-05, -0.7756135, 3.5120518, 0.01, -182.86426)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25985" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=2126902541 instance=ExtResource("58_qucik")]
+transform = Transform3D(-0.62555265, -8.353386e-13, -0.67250335, 1.0261744e-05, 0.9184645, -9.545323e-06, 0.67250335, -1.40148695e-05, -0.62555265, -35.557163, 0.01, 250)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25986" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=951677963 instance=ExtResource("11_nfkbo")]
+transform = Transform3D(0.23570816, -7.3533795e-13, -0.7733914, 1.1801198e-05, 0.8085126, 3.5966755e-06, 0.7733914, -1.2337112e-05, 0.23570816, -250, 0.01, -130.35373)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25987" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=1042047173 instance=ExtResource("34_xd53d")]
+transform = Transform3D(-0.42260274, -1.0985063e-12, 0.685402, -1.0458565e-05, 0.80521363, -6.4485034e-06, -0.685402, -1.2286772e-05, -0.42260274, 136.48752, 0.01, -171.67267)
+metadata/flat_scatter_generated = true
+
+[node name="@Node3D@25988" type="Node3D" parent="Ground/CSGTerrain-Mesh/GenericTrees" unique_id=467347699 instance=ExtResource("33_jgse0")]
+transform = Transform3D(-0.11486826, 8.047421e-13, 1.1741589, -1.7916516e-05, 1.1797644, -1.7527781e-06, -1.1741589, -1.8002049e-05, -0.11486826, -11.810591, 0.01, -124.22181)
+metadata/flat_scatter_generated = true
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1441525093]
 transform = Transform3D(0.005, 0, 0, 0, 1, 0, 0, 0, 0.005, 0, 1, 0.08125569)
 shape = SubResource("ConcavePolygonShape3D_ys834")
@@ -361,6 +1417,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4414787, -0.87057203, 22.3
 
 [node name="Ephedra3" parent="." unique_id=598380887 instance=ExtResource("10_hipvn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8474303, -1.1119527, 22.985315)
+
+[node name="nb[tool]_tree_scatter" parent="." unique_id=826304168 node_paths=PackedStringArray("surface_mesh") instance=ExtResource("64_m6qae")]
+surface_mesh = NodePath("../Ground/CSGTerrain-Mesh")
+align_to_surface_normal = true
+max_trees = 250
+cluster = 0.09
 
 [connection signal="pressed" from="Multiplayer HUD/Panel/VBoxContainer/Host" to="Game Manager" method="attempt_host"]
 [connection signal="pressed" from="Multiplayer HUD/Panel/VBoxContainer/Join As Client" to="Game Manager" method="attempt_join_as_client"]
