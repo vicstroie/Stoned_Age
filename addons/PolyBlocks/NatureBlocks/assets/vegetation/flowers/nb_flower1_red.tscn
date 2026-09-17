@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c8vlgq52jux4m"]
+
+[ext_resource type="PackedScene" uid="uid://ddcuegsdj7p3j" path="res://PolyBlocks/NatureBlocks/source_files/glb/vegetation/flowers/nbglb_flower1.glb" id="1_8r1oj"]
+[ext_resource type="Material" uid="uid://cqx3p8ehnxbv1" path="res://PolyBlocks/NatureBlocks/source_files/materials/flowers/nbmat_flower1_red.tres" id="2_2iqvm"]
+
+[node name="nb_flower1" unique_id=431799966 instance=ExtResource("1_8r1oj")]
+
+[node name="nb_flower" parent="." index="0" unique_id=551325907]
+surface_material_override/0 = ExtResource("2_2iqvm")

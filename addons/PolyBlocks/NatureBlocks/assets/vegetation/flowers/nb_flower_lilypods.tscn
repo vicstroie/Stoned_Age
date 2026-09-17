@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bxh2joncge37r"]
+
+[ext_resource type="PackedScene" uid="uid://c2qfwbk34oyuj" path="res://PolyBlocks/NatureBlocks/source_files/glb/vegetation/flowers/nbglb_lilypods.glb" id="1_w07vv"]
+[ext_resource type="Material" uid="uid://cv1ypccqqvdt2" path="res://PolyBlocks/NatureBlocks/source_files/materials/flowers/nbmat_flower_lilypods.tres" id="2_oyn11"]
+[ext_resource type="Shader" uid="uid://dhidh6oqmagms" path="res://PolyBlocks/NatureBlocks/source_files/shaders/nbshader_grass.gdshader" id="4_ppsg1"]
+
+[sub_resource type="Gradient" id="Gradient_ldutg"]
+offsets = PackedFloat32Array(0, 0.12627551, 0.17785235, 0.24362245, 0.3354531)
+colors = PackedColorArray(0.16510332, 0.23989931, 0.06902563, 1, 0.34710628, 0.15372008, 0.06622993, 1, 0.8905566, 0.4666568, 0, 1, 0.8496303, 0.2908631, 0.13342458, 1, 0.5898019, 0, 0.08571539, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_u5fd0"]
+gradient = SubResource("Gradient_ldutg")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o2sh3"]
+load_path = "res://.godot/imported/nbtex_flower1.png-87ce39f5d397c68df4aeab761db14ca0.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yu2d0"]
+load_path = "res://.godot/imported/nbtex_noise4.png-f3133cf2ac743ec84807aa3a71838fcc.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ss3r6"]
+render_priority = 0
+shader = ExtResource("4_ppsg1")
+shader_parameter/albedoGradient = SubResource("GradientTexture1D_u5fd0")
+shader_parameter/alphaMask = SubResource("CompressedTexture2D_o2sh3")
+shader_parameter/windSpeed = 1.5000000475
+shader_parameter/windStrength = 0.800000038
+shader_parameter/hue_noise = SubResource("CompressedTexture2D_yu2d0")
+shader_parameter/hueNoiseScale = 0.46000002115148
+shader_parameter/hueStrength = 0.0690000032775
+shader_parameter/ambientColor = Color(0.6, 0.2, 0.2, 1)
+shader_parameter/ambientStrength = 0.0
+
+[node name="nbglb_lilypods" unique_id=1027288708 instance=ExtResource("1_w07vv")]
+
+[node name="nb_lilypods_leaves" parent="." index="0" unique_id=1746516667]
+surface_material_override/0 = ExtResource("2_oyn11")
+
+[node name="nb_lilypods_flower" parent="." index="1" unique_id=1293266718]
+surface_material_override/0 = SubResource("ShaderMaterial_ss3r6")

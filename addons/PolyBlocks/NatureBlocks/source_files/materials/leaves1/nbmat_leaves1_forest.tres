@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b4gb7wusx7nsw"]
+
+[ext_resource type="Shader" uid="uid://21w7tbgbehsw" path="res://PolyBlocks/NatureBlocks/source_files/shaders/nbshader_leaves.gdshader" id="1_qwxoa"]
+[ext_resource type="Texture2D" uid="uid://bowuebcot5w7t" path="res://PolyBlocks/NatureBlocks/source_files/textures/vegetation/nbtex_leaves1.png" id="2_h6yaw"]
+[ext_resource type="Texture2D" uid="uid://cb05ib7q3nnp7" path="res://PolyBlocks/NatureBlocks/source_files/textures/noise/nbtex_noise_procedural.res" id="3_18552"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qwxoa")
+shader_parameter/albedoColor = Color(0.23977762, 0.4282671, 0.2134923, 1)
+shader_parameter/alphaTexture = ExtResource("2_h6yaw")
+shader_parameter/shadowIntensity = -1.9109999957725
+shader_parameter/windNoise = ExtResource("3_18552")
+shader_parameter/windSpeed = 1.2
+shader_parameter/windStrength = 0.25
+shader_parameter/ambientColor = Color(0.07224139, 0.4203696, 0.5991258, 1)
+shader_parameter/ambientStrength = 0.810000038475

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bcil28n0a4ul6"]
+
+[ext_resource type="PackedScene" uid="uid://wep4g5oioev7" path="res://PolyBlocks/NatureBlocks/source_files/glb/trees/pine/nbglb_pine2.glb" id="1_28kp7"]
+[ext_resource type="Material" uid="uid://bea5ur3i1o41b" path="res://PolyBlocks/NatureBlocks/source_files/materials/leaves2/nbmat_leaves2_jungle.tres" id="2_vdfky"]
+[ext_resource type="Material" path="res://PolyBlocks/NatureBlocks/source_files/materials/tree_trunks/nbmat_trunk_pine.tres" id="3_8w5me"]
+
+[node name="nb_pine2" unique_id=1678787151 instance=ExtResource("1_28kp7")]
+
+[node name="nb_pine_2_leaves" parent="." index="0" unique_id=412841877]
+surface_material_override/0 = ExtResource("2_vdfky")
+
+[node name="nb_pine_2_trunk" parent="." index="1" unique_id=857151681]
+surface_material_override/0 = ExtResource("3_8w5me")

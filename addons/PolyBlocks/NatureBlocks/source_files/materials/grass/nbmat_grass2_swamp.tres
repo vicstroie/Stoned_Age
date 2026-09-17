@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cm47j4m0wkhtm"]
+
+[ext_resource type="Shader" uid="uid://dhidh6oqmagms" path="res://PolyBlocks/NatureBlocks/source_files/shaders/nbshader_grass.gdshader" id="1_5meew"]
+[ext_resource type="Texture2D" uid="uid://ccms5fh7qx0wp" path="res://PolyBlocks/NatureBlocks/source_files/textures/vegetation/nbtex_leaves10.png" id="2_xyp78"]
+[ext_resource type="Texture2D" uid="uid://buc0uow8c0smd" path="res://PolyBlocks/NatureBlocks/source_files/textures/noise/nbtex_noise4.png" id="3_6r88q"]
+
+[sub_resource type="Gradient" id="Gradient_ms7po"]
+offsets = PackedFloat32Array(0, 0.78571427)
+colors = PackedColorArray(0, 0, 0, 1, 0.5848686, 0.70512205, 0.58714414, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gs74u"]
+gradient = SubResource("Gradient_ms7po")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_5meew")
+shader_parameter/albedoGradient = SubResource("GradientTexture1D_gs74u")
+shader_parameter/alphaMask = ExtResource("2_xyp78")
+shader_parameter/windSpeed = 1.00000002375
+shader_parameter/windStrength = 0.2
+shader_parameter/hue_noise = ExtResource("3_6r88q")
+shader_parameter/hueNoiseScale = 1.0
+shader_parameter/hueStrength = 0.30000001425
+shader_parameter/ambientColor = Color(0.183359, 0.10675996, 0.19976723, 1)
+shader_parameter/ambientStrength = 0.38400001824

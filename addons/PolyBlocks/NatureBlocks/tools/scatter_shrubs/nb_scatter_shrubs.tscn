@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://r1oymw46jxy5"]
+
+[ext_resource type="Script" uid="uid://ccpbc2328ukw2" path="res://PolyBlocks/NatureBlocks/tools/scatter_shrubs/src/nb_scatter_shrubs.gd" id="1_rpm72"]
+
+[node name="nb[tool]_shrub_scatter" type="Node" unique_id=1155773107]
+script = ExtResource("1_rpm72")
+anime = 2.3
+autumn = 0.0
+blue = 3.5
+forest = 30.3
+jungle = 20.2
+mars = 0.0
+olive = 58.9
+sakura = 0.0
+savannah = 6.5
+snow = 0.0
+spooky = 0.0
+tundra = 7.1

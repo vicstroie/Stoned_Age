@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://drkbrct5lrtdn"]
+
+[ext_resource type="PackedScene" uid="uid://vnr4q8idufnb" path="res://PolyBlocks/misc/reference/src/adventurer.glb" id="1_x2lli"]
+[ext_resource type="Material" uid="uid://dxqcf8bg5ppe4" path="res://PolyBlocks/misc/template/mat_template.tres" id="2_anx6o"]
+
+[node name="HumanReference" type="Node3D" unique_id=1868862629]
+
+[node name="adventurer2" parent="." unique_id=992162789 instance=ExtResource("1_x2lli")]
+
+[node name="adventurer" parent="adventurer2" index="0" unique_id=1053360661]
+surface_material_override/0 = ExtResource("2_anx6o")
+
+[editable path="adventurer2"]

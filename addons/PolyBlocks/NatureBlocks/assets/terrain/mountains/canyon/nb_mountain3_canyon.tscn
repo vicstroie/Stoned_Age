@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dw2ekyd027pfs"]
+
+[ext_resource type="PackedScene" uid="uid://ca2vauh6vv701" path="res://PolyBlocks/NatureBlocks/source_files/glb/terrain/mountains/nbglb_mountain3.glb" id="1_dcr35"]
+[ext_resource type="Material" uid="uid://cgt3lauvbarl1" path="res://PolyBlocks/NatureBlocks/source_files/materials/terrain/nbmat_terrain_canyon.tres" id="2_28m3i"]
+
+[node name="nb_mountain3" unique_id=1050190569 instance=ExtResource("1_dcr35")]
+
+[node name="nb_mountain_3" parent="." index="0" unique_id=2006279179]
+surface_material_override/0 = ExtResource("2_28m3i")

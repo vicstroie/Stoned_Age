@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://jdtj608hhat"]
+
+[ext_resource type="Script" uid="uid://b8r68ckplefcj" path="res://PolyBlocks/NatureBlocks/tools/scatter_trees/src/nb_scatter_trees.gd" id="1_v2ape"]
+
+[node name="nb[tool]_tree_scatter" type="Node" unique_id=826304168]
+script = ExtResource("1_v2ape")
+snow = 0.0
+tundra = 6.0
+forest = 11.0
+jungle = 52.0
+savannah = 24.0
+olive = 71.0
+mars = 7.0
+sakura = 14.0
+autumn = 13.0
+blue = 18.0
+spooky = 13.0
+anime = 5.0

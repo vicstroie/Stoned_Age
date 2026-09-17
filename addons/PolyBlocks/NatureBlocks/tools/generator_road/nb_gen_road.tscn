@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cv70r7x8wrnv2"]
+
+[ext_resource type="Script" uid="uid://2efov38gr1g8" path="res://PolyBlocks/NatureBlocks/tools/generator_road/src/nb_gen_road.gd" id="1_ehrp5"]
+
+[node name="nb[tool]_road_generator" type="Node3D" unique_id=549192038]
+script = ExtResource("1_ehrp5")

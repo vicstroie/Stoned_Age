@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://crej1gaa1x2ls"]
+
+[ext_resource type="Material" uid="uid://cmjqennlq6l4b" path="res://PolyBlocks/NatureBlocks/source_files/materials/terrain/nbmat_terrain_cave.tres" id="1_yc6sx"]
+[ext_resource type="PackedScene" uid="uid://cosp6seyx6v5d" path="res://PolyBlocks/NatureBlocks/assets/ground/rocks/cave/nb_rock1_cave.tscn" id="2_b1guv"]
+[ext_resource type="PackedScene" uid="uid://vmtqn2wwt572" path="res://PolyBlocks/NatureBlocks/assets/ground/rocks/cave/nb_rock4_cave.tscn" id="3_hiogp"]
+[ext_resource type="PackedScene" uid="uid://d22wvv44mwf3i" path="res://PolyBlocks/NatureBlocks/assets/ground/rocks/cave/nb_rock5_cave.tscn" id="4_tl4o1"]
+[ext_resource type="PackedScene" uid="uid://bj4vsburp1f4c" path="res://PolyBlocks/NatureBlocks/assets/ground/rocks/cave/nb_rock6_cave.tscn" id="5_10da0"]
+[ext_resource type="PackedScene" uid="uid://cgmmsvrvcd6a4" path="res://PolyBlocks/NatureBlocks/assets/ground/rocks/cave/nb_rock3_cave.tscn" id="6_sxc0c"]
+[ext_resource type="PackedScene" uid="uid://dcpuux487dff7" path="res://PolyBlocks/NatureBlocks/assets/ground/boulders/cave/nb_boulder4_cave.tscn" id="7_a5ykk"]
+[ext_resource type="PackedScene" uid="uid://dkguhry7c0584" path="res://PolyBlocks/NatureBlocks/assets/ground/boulders/cave/nb_boulder3_cave.tscn" id="8_j0wki"]
+[ext_resource type="PackedScene" uid="uid://dbhwoap0ltr1j" path="res://PolyBlocks/NatureBlocks/assets/ground/boulders/cave/nb_boulder2_cave.tscn" id="9_jhrs0"]
+[ext_resource type="PackedScene" uid="uid://dt0yoc0yipdg5" path="res://PolyBlocks/NatureBlocks/assets/ground/boulders/cave/nb_boulder1_cave.tscn" id="10_8ugeu"]
+[ext_resource type="PackedScene" uid="uid://j222x6jtmr5l" path="res://PolyBlocks/NatureBlocks/assets/ground/pebbles/cave/nb_pebble1_cave.tscn" id="11_y2twn"]
+[ext_resource type="PackedScene" uid="uid://crqigpyjwptvd" path="res://PolyBlocks/NatureBlocks/assets/ground/pebbles/cave/nb_pebble2_cave.tscn" id="12_o17jn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_73uif"]
+size = Vector3(10, 2, 10)
+
+[node name="nb_demo_ground_cave" type="MeshInstance3D" unique_id=151165606]
+mesh = SubResource("BoxMesh_73uif")
+surface_material_override/0 = ExtResource("1_yc6sx")
+
+[node name="Rocks" type="Node3D" parent="." unique_id=1801233459]
+
+[node name="_Node3D_35293" parent="Rocks" unique_id=167122657 instance=ExtResource("2_b1guv")]
+transform = Transform3D(0.11181845, 0, 0.94679725, 0, 0.9533774, 0, -0.94679725, 0, 0.11181845, -1.5905421, 1.01, 2.5766249)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35294" parent="Rocks" unique_id=419159258 instance=ExtResource("3_hiogp")]
+transform = Transform3D(-0.2694806, 0, -1.0406946, 0, 1.0750188, 0, 1.0406946, 0, -0.2694806, -3.6590004, 1.01, 1.2007565)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35295" parent="Rocks" unique_id=545416882 instance=ExtResource("2_b1guv")]
+transform = Transform3D(-0.50710624, 0, 0.976568, 0, 1.1003827, 0, -0.976568, 0, -0.50710624, -1.1515427, 1.01, 1.1324692)
+metadata/flat_scatter_generated = true
+
+[node name="nb_rock5" parent="Rocks" unique_id=1987671296 instance=ExtResource("4_tl4o1")]
+transform = Transform3D(-1.1514224, 0, -0.13600865, 0, 1.1594274, 0, 0.13600865, 0, -1.1514224, 0.8841572, 1.01, 2.7064247)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35304" parent="Rocks" unique_id=274315110 instance=ExtResource("5_10da0")]
+transform = Transform3D(0.9759696, 0, 0.58756965, 0, 1.1391904, 0, -0.58756965, 0, 0.9759696, 4.013318, 1.01, 1.1163936)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35307" parent="Rocks" unique_id=927904827 instance=ExtResource("2_b1guv")]
+transform = Transform3D(0.7436297, 0, -0.83585954, 0, 1.11877, 0, 0.83585954, 0, 0.7436297, -4.810302, 1.01, -0.50119686)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35308" parent="Rocks" unique_id=1070654598 instance=ExtResource("3_hiogp")]
+transform = Transform3D(-0.9778215, 0, -0.20372716, 0, 0.9988192, 0, 0.20372716, 0, -0.9778215, 4.1263523, 1.01, -4.170627)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35310" parent="Rocks" unique_id=1833546355 instance=ExtResource("3_hiogp")]
+transform = Transform3D(-0.041056536, 0, -1.1863912, 0, 1.1871014, 0, 1.1863912, 0, -0.041056536, -1.1944723, 1.01, -1.89397)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35311" parent="Rocks" unique_id=180413707 instance=ExtResource("2_b1guv")]
+transform = Transform3D(1.1040491, 0, 0.22460146, 0, 1.1266634, 0, -0.22460146, 0, 1.1040491, -2.8569264, 1.01, -1.261725)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35312" parent="Rocks" unique_id=245605821 instance=ExtResource("3_hiogp")]
+transform = Transform3D(0.98302746, 0, -0.49494103, 0, 1.1005951, 0, 0.49494103, 0, 0.98302746, 4.367319, 1.01, 4.94578)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35314" parent="Rocks" unique_id=2080399552 instance=ExtResource("6_sxc0c")]
+transform = Transform3D(1.0548136, 0, -0.22398461, 0, 1.0783324, 0, 0.22398461, 0, 1.0548136, -4.787847, 1.01, 4.852792)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35320" parent="Rocks" unique_id=1855654665 instance=ExtResource("4_tl4o1")]
+transform = Transform3D(-0.11200253, 0, -0.9177324, 0, 0.9245417, 0, 0.9177324, 0, -0.11200253, -1.62917, 1.01, -4.9543905)
+metadata/flat_scatter_generated = true
+
+[node name="Boulders" type="Node3D" parent="." unique_id=1456890952]
+
+[node name="_Node3D_35297" parent="Boulders" unique_id=1168488129 instance=ExtResource("7_a5ykk")]
+transform = Transform3D(0.92045516, 0, 0.060470242, 0, 0.92243934, 0, -0.060470242, 0, 0.92045516, 2.87789, 1.01, -0.5039053)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35299" parent="Boulders" unique_id=815003583 instance=ExtResource("7_a5ykk")]
+transform = Transform3D(-0.5936739, 0, 0.541691, 0, 0.8036652, 0, -0.541691, 0, -0.5936739, 3.9668055, 1.01, -2.5474145)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35303" parent="Boulders" unique_id=1497834806 instance=ExtResource("8_j0wki")]
+transform = Transform3D(0.60714793, 0, -0.85833055, 0, 1.051361, 0, 0.85833055, 0, 0.60714793, 2.4191184, 1.01, -4.9099617)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35313" parent="Boulders" unique_id=2089311685 instance=ExtResource("7_a5ykk")]
+transform = Transform3D(-0.6365803, 0, -0.7668352, 0, 0.9966297, 0, 0.7668352, 0, -0.6365803, -4.9031734, 1.01, -3.1232533)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35315" parent="Boulders" unique_id=142529603 instance=ExtResource("9_jhrs0")]
+transform = Transform3D(-0.7900961, 0, -0.6185336, 0, 1.003412, 0, 0.6185336, 0, -0.7900961, 2.0714302, 1.01, -2.6710126)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35316" parent="Boulders" unique_id=695488974 instance=ExtResource("8_j0wki")]
+transform = Transform3D(-0.8649346, 0, -0.17819822, 0, 0.8831005, 0, 0.17819822, 0, -0.8649346, -2.750504, 1.01, -3.8437374)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35318" parent="Boulders" unique_id=1305296185 instance=ExtResource("10_8ugeu")]
+transform = Transform3D(-0.47739348, 0, 0.8625479, 0, 0.9858465, 0, -0.8625479, 0, -0.47739348, 4.9868355, 1.01, -0.5785284)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35321" parent="Boulders" unique_id=1860722178 instance=ExtResource("7_a5ykk")]
+transform = Transform3D(0.8402948, 0, 0.620168, 0, 1.0443676, 0, -0.620168, 0, 0.8402948, 0.5687804, 1.01, -4.9298105)
+metadata/flat_scatter_generated = true
+
+[node name="Pebbles" type="Node3D" parent="." unique_id=1400981301]
+
+[node name="nb_pebble1" parent="Pebbles" unique_id=1154799644 instance=ExtResource("11_y2twn")]
+transform = Transform3D(-0.037456997, 0, -1.0901825, 0, 1.0908258, 0, 1.0901825, 0, -0.037456997, -0.43911552, 1.01, 4.335183)
+metadata/flat_scatter_generated = true
+
+[node name="nb_pebble2" parent="Pebbles" unique_id=1353905486 instance=ExtResource("12_o17jn")]
+transform = Transform3D(1.0708448, 0, -0.32566178, 0, 1.1192696, 0, 0.32566178, 0, 1.0708448, 0.25881672, 1.01, 0.30729675)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35296" parent="Pebbles" unique_id=687610911 instance=ExtResource("11_y2twn")]
+transform = Transform3D(-0.18459423, 0, 1.1297355, 0, 1.1447171, 0, -1.1297355, 0, -0.18459423, 2.3272738, 1.01, 4.4572115)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35298" parent="Pebbles" unique_id=2094807859 instance=ExtResource("12_o17jn")]
+transform = Transform3D(-1.0930184, 0, 0.27242482, 0, 1.1264566, 0, -0.27242482, 0, -1.0930184, 2.6215143, 1.01, 2.3009887)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35300" parent="Pebbles" unique_id=1871084824 instance=ExtResource("12_o17jn")]
+transform = Transform3D(-0.48484537, 0, -0.75574845, 0, 0.8979035, 0, 0.75574845, 0, -0.48484537, 4.9917955, 1.01, 3.420209)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35301" parent="Pebbles" unique_id=628410023 instance=ExtResource("12_o17jn")]
+transform = Transform3D(0.78334975, 0, -0.37438625, 0, 0.86821765, 0, 0.37438625, 0, 0.78334975, 0.33171272, 1.01, -1.2162757)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35302" parent="Pebbles" unique_id=1682248826 instance=ExtResource("12_o17jn")]
+transform = Transform3D(0.7053057, 0, 0.49311876, 0, 0.8605942, 0, -0.49311876, 0, 0.7053057, -2.6347802, 1.01, 4.135889)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35305" parent="Pebbles" unique_id=601327404 instance=ExtResource("12_o17jn")]
+transform = Transform3D(0.33986223, 0, 0.81005305, 0, 0.87846017, 0, -0.81005305, 0, 0.33986223, 2.0491152, 1.01, 0.81897736)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35306" parent="Pebbles" unique_id=1095952183 instance=ExtResource("11_y2twn")]
+transform = Transform3D(-0.8786716, 0, 0.63511693, 0, 1.0841758, 0, -0.63511693, 0, -0.8786716, -2.4183419, 1.01, 0.29297543)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35309" parent="Pebbles" unique_id=1885564537 instance=ExtResource("11_y2twn")]
+transform = Transform3D(-0.17926586, 0, -0.8496747, 0, 0.86837983, 0, 0.8496747, 0, -0.17926586, -4.258074, 1.01, 3.2598352)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35317" parent="Pebbles" unique_id=771536751 instance=ExtResource("11_y2twn")]
+transform = Transform3D(-0.91499025, 0, -0.6223564, 0, 1.1065869, 0, 0.6223564, 0, -0.91499025, -4.0805836, 1.01, -4.5651603)
+metadata/flat_scatter_generated = true
+
+[node name="_Node3D_35319" parent="Pebbles" unique_id=1334581169 instance=ExtResource("12_o17jn")]
+transform = Transform3D(0.04381943, 0, 1.021953, 0, 1.022892, 0, -1.021953, 0, 0.04381943, -0.03348589, 1.01, -3.3683763)
+metadata/flat_scatter_generated = true

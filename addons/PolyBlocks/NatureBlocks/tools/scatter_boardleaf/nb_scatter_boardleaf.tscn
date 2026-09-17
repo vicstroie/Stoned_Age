@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c5xk8j38y8b4x"]
+
+[ext_resource type="Script" path="res://PolyBlocks/NatureBlocks/tools/scatter_boardleaf/src/nb_scatter_boardleaf.gd" id="1_rpm72"]
+
+[node name="nb[tool]_boardleaf_scatter" type="Node" unique_id=1155773107]
+script = ExtResource("1_rpm72")

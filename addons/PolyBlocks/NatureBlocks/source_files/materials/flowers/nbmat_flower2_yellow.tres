@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ctyhxcqmlsjyr"]
+
+[ext_resource type="Shader" uid="uid://dhidh6oqmagms" path="res://PolyBlocks/NatureBlocks/source_files/shaders/nbshader_grass.gdshader" id="1_5hf8n"]
+
+[sub_resource type="Gradient" id="Gradient_psa24"]
+offsets = PackedFloat32Array(0, 0.23214285, 0.29336736, 0.72321427, 1)
+colors = PackedColorArray(0.16510332, 0.23989931, 0.06902563, 1, 0.34710628, 0.15372008, 0.06622993, 1, 0.91764706, 0.7294118, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3y7yb"]
+gradient = SubResource("Gradient_psa24")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uexer"]
+load_path = "res://.godot/imported/nbtex_flower2.png-e80880a9903a6a74c1bfb06224318e84.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_twnyn"]
+load_path = "res://.godot/imported/nbtex_noise4.png-f3133cf2ac743ec84807aa3a71838fcc.s3tc.ctex"
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_5hf8n")
+shader_parameter/albedoGradient = SubResource("GradientTexture1D_3y7yb")
+shader_parameter/alphaMask = SubResource("CompressedTexture2D_uexer")
+shader_parameter/windSpeed = 1.5000000475
+shader_parameter/windStrength = 0.2000000095
+shader_parameter/hue_noise = SubResource("CompressedTexture2D_twnyn")
+shader_parameter/hueNoiseScale = 0.46000002115148
+shader_parameter/hueStrength = 0.02000000095
+shader_parameter/ambientColor = Color(0.6, 0.2, 0.2, 1)
+shader_parameter/ambientStrength = 0.0

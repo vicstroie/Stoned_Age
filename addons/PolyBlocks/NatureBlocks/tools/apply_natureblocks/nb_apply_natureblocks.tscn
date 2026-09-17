@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://giwyjuiugtkg"]
+
+[ext_resource type="Script" uid="uid://ckkg7vvksf2ou" path="res://PolyBlocks/NatureBlocks/tools/apply_natureblocks/src/nb_apply_natureblocks.gd" id="1_jcqi1"]
+
+[node name="NatureBlocks" type="Node" unique_id=1428391479]
+script = ExtResource("1_jcqi1")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dsais0q5kohlh"]
+
+[ext_resource type="Script" uid="uid://65wljplv6vyo" path="res://PolyBlocks/NatureBlocks/tools/scatter_ground/src/nb_scatter_ground.gd" id="1_cf8c2"]
+
+[node name="nb[tool]_ground_scatter" type="Node" unique_id=278895764]
+script = ExtResource("1_cf8c2")
+boulders_amount = 5
+density = 0.01
+biome_canyon = 0.0
+biome_cave = 11.0
+biome_desert = 0.0
+biome_grey = 4.0
+biome_ice = 0.0
+biome_moss = 10.0
+biome_river = 5.0
+biome_sand = 0.0
+biome_swamp = 15.0
+biome_verdant = 0.0

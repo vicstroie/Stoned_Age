@@ -1,0 +1,72 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" uid="uid://buy1tfl0ujiai" path="res://PolyBlocks/NatureBlocks/assets/terrain/cliffs/cave/nb_cliff1_cave.tscn" id="1_tdoqa"]
+[ext_resource type="PackedScene" uid="uid://ct7jan0wf6kg0" path="res://PolyBlocks/NatureBlocks/assets/terrain/cliffs/cave/nb_cliff2_cave.tscn" id="2_85sti"]
+[ext_resource type="PackedScene" uid="uid://cgr4j8oualdyr" path="res://PolyBlocks/NatureBlocks/assets/terrain/cliffs/cave/nb_cliff3_cave.tscn" id="3_g750c"]
+[ext_resource type="PackedScene" uid="uid://depaotkedwdox" path="res://PolyBlocks/NatureBlocks/assets/terrain/cliffs/cave/nb_cliff4_cave.tscn" id="4_tmesc"]
+[ext_resource type="PackedScene" uid="uid://2qywx4wn6agw" path="res://PolyBlocks/NatureBlocks/assets/terrain/cliffs/cave/nb_cliff5_cave.tscn" id="5_jsmii"]
+[ext_resource type="PackedScene" uid="uid://djox7m365jsb7" path="res://PolyBlocks/NatureBlocks/assets/terrain/mountains/cave/nb_mountain1_cave.tscn" id="6_tmesc"]
+[ext_resource type="PackedScene" uid="uid://d0qk5oed0a2e1" path="res://PolyBlocks/NatureBlocks/assets/terrain/mountains/cave/nb_mountain2_cave.tscn" id="7_jsmii"]
+[ext_resource type="PackedScene" uid="uid://b38dkpvpr5jl2" path="res://PolyBlocks/NatureBlocks/assets/terrain/mountains/cave/nb_mountain3_cave.tscn" id="8_ahq55"]
+[ext_resource type="PackedScene" uid="uid://5f71ufhwa5an" path="res://PolyBlocks/NatureBlocks/assets/terrain/mountains/cave/nb_mountain4_cave.tscn" id="9_a2jpx"]
+[ext_resource type="PackedScene" uid="uid://a742d6f1d4b14447" path="res://PolyBlocks/NatureBlocks/assets/terrain/setpieces/cave/nb_setpiece1_cave.tscn" id="10_glv58"]
+[ext_resource type="PackedScene" uid="uid://78213cc60c274807" path="res://PolyBlocks/NatureBlocks/assets/terrain/setpieces/cave/nb_setpiece2_cave.tscn" id="11_kkp1b"]
+[ext_resource type="PackedScene" uid="uid://2c6f1266dd2d4c8a" path="res://PolyBlocks/NatureBlocks/assets/terrain/setpieces/cave/nb_setpiece3_cave.tscn" id="12_njbxp"]
+[ext_resource type="PackedScene" uid="uid://1d716c00c3ca413c" path="res://PolyBlocks/NatureBlocks/assets/terrain/setpieces/cave/nb_setpiece4_cave.tscn" id="13_70tpw"]
+[ext_resource type="PackedScene" uid="uid://84bfa2d2af014461" path="res://PolyBlocks/NatureBlocks/assets/terrain/setpieces/cave/nb_setpiece5_cave.tscn" id="14_srxtu"]
+[ext_resource type="PackedScene" uid="uid://dcefc4c2aec44487" path="res://PolyBlocks/NatureBlocks/assets/terrain/setpieces/cave/nb_setpiece6_cave.tscn" id="15_dnn4g"]
+[ext_resource type="PackedScene" uid="uid://df9291bea7984484" path="res://PolyBlocks/NatureBlocks/assets/terrain/setpieces/cave/nb_setpiece7_cave.tscn" id="16_nooq0"]
+[ext_resource type="PackedScene" uid="uid://0097c8554d7a488a" path="res://PolyBlocks/NatureBlocks/assets/terrain/setpieces/cave/nb_setpiece8_cave.tscn" id="17_74d78"]
+
+[node name="nb_terrain_cave" type="Node3D"]
+
+[node name="nb_cliff1" parent="." instance=ExtResource("1_tdoqa")]
+transform = Transform3D(-0.56568545, 0, -0.56568545, 0, 0.8, 0, 0.56568545, 0, -0.56568545, 1.849947, 0, -2)
+
+[node name="nb_cliff2" parent="." instance=ExtResource("2_85sti")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 4.567679, 0, -2)
+
+[node name="nb_cliff3" parent="." instance=ExtResource("3_g750c")]
+transform = Transform3D(0.028352201, 0, -0.7994975, 0, 0.8, 0, 0.7994975, 0, 0.028352201, 6.930228, 0, -2)
+
+[node name="nb_cliff4" parent="." instance=ExtResource("4_tmesc")]
+transform = Transform3D(0.15960379, 0, -0.7839175, 0, 0.8, 0, 0.7839175, 0, 0.15960379, 9.309446, 0, -2)
+
+[node name="nb_cliff5" parent="." instance=ExtResource("5_jsmii")]
+transform = Transform3D(0.034100365, 0, 0.79927295, 0, 0.8, 0, -0.79927295, 0, 0.034100365, 11.690812, 0, -2)
+
+[node name="nb_mountain1" parent="." instance=ExtResource("6_tmesc")]
+transform = Transform3D(0.2, 0, 0, 0, 0.1312119, 0, 0, 0, 0.2, 1.8251457, 0, -29.562319)
+
+[node name="nb_mountain2" parent="." instance=ExtResource("7_jsmii")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 8.100732, 0, -29.562319)
+
+[node name="nb_mountain3" parent="." instance=ExtResource("8_ahq55")]
+transform = Transform3D(0.3, 0, 0, 0, 0.24080431, 0, 0, 0, 0.3, 5.514888, 0, -29.562319)
+
+[node name="nb_mountain4" parent="." instance=ExtResource("9_a2jpx")]
+transform = Transform3D(0.2, 0, 0, 0, 0.15037595, 0, 0, 0, 0.2, 12.185477, 0, -29.562319)
+
+[node name="nb_setpiece1" parent="." instance=ExtResource("10_glv58")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.31682, 0, -8.229601)
+
+[node name="nb_setpiece2" parent="." instance=ExtResource("11_kkp1b")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.149348, 0, -8.275385)
+
+[node name="nb_setpiece3" parent="." instance=ExtResource("12_njbxp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.48875585, 0.105440624, 0, -0.105440624, 0.48875585, 3.907054, 0.6980221, -12.288253)
+
+[node name="nb_setpiece4" parent="." instance=ExtResource("13_70tpw")]
+transform = Transform3D(0.47429457, 0.15825504, 0, -0.14970309, 0.44866413, -0.16214032, -0.051319048, 0.15380456, 0.47298047, 10.446946, 0, -12.360003)
+
+[node name="nb_setpiece5" parent="." instance=ExtResource("14_srxtu")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.3324585, 0, -16.96423)
+
+[node name="nb_setpiece6" parent="." instance=ExtResource("15_dnn4g")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.240916, 0, -16.96423)
+
+[node name="nb_setpiece7" parent="." instance=ExtResource("16_nooq0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.3324585, 0, -22.446184)
+
+[node name="nb_setpiece8" parent="." instance=ExtResource("17_74d78")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 10.240916, 0, -22.446184)

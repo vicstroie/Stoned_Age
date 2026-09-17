@@ -1,0 +1,238 @@
+[gd_scene format=3 uid="uid://tb20oln2ke27"]
+
+[ext_resource type="PackedScene" uid="uid://dtlk8bbos2y2h" path="res://PolyBlocks/misc/backdrop/misc_backdrop.tscn" id="1_itafc"]
+[ext_resource type="Script" uid="uid://dh0ksrwluoonr" path="res://PolyBlocks/NatureBlocks/demo/nb_demo.gd" id="1_t8n5n"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/ground/nb_ground_canyon.tscn" id="3_2g3wb"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/ground/nb_ground_cave.tscn" id="4_yb5h1"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/ground/nb_ground_desert.tscn" id="5_775ec"]
+[ext_resource type="PackedScene" uid="uid://cggm0srundi8g" path="res://PolyBlocks/NatureBlocks/demo/showcase/ground/nb_ground_grey.tscn" id="6_alkjj"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/ground/nb_ground_ice.tscn" id="7_jfspa"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/ground/nb_ground_moss.tscn" id="8_3j0ml"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/ground/nb_ground_river.tscn" id="9_427bu"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/ground/nb_ground_sand.tscn" id="10_gvbm7"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/ground/nb_ground_swamp.tscn" id="11_av55h"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/ground/nb_ground_verdant.tscn" id="12_8dskt"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/terrain/nb_terrain_canyon.tscn" id="13_7udoa"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/terrain/nb_terrain_cave.tscn" id="14_3y3iy"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/terrain/nb_terrain_desert.tscn" id="15_idxc3"]
+[ext_resource type="PackedScene" uid="uid://bco1jnijsblb3" path="res://PolyBlocks/NatureBlocks/demo/showcase/terrain/nb_terrain_grey.tscn" id="16_ri7a0"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/terrain/nb_terrain_ice.tscn" id="17_3g1lt"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/terrain/nb_terrain_moss.tscn" id="18_gvx21"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/terrain/nb_terrain_river.tscn" id="19_gfi75"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/terrain/nb_terrain_sand.tscn" id="20_wcc05"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/terrain/nb_terrain_swamp.tscn" id="21_vjpki"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/showcase/terrain/nb_terrain_verdant.tscn" id="22_praly"]
+[ext_resource type="PackedScene" uid="uid://cpaykysi7eyt3" path="res://PolyBlocks/NatureBlocks/demo/scenes/ground/nb_demo_ground_canyon.tscn" id="23_fbv2h"]
+[ext_resource type="PackedScene" uid="uid://crej1gaa1x2ls" path="res://PolyBlocks/NatureBlocks/demo/scenes/ground/nb_demo_ground_cave.tscn" id="24_hs141"]
+[ext_resource type="PackedScene" uid="uid://b5wtyvhh7dj5n" path="res://PolyBlocks/NatureBlocks/demo/scenes/ground/nb_demo_ground_desert.tscn" id="25_86cxk"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/scenes/ground/nb_demo_ground_grey.tscn" id="26_b3trt"]
+[ext_resource type="PackedScene" uid="uid://b7ms0lce2rls8" path="res://PolyBlocks/NatureBlocks/demo/scenes/ground/nb_demo_ground_ice.tscn" id="27_ptgkk"]
+[ext_resource type="PackedScene" uid="uid://dickewyteax71" path="res://PolyBlocks/NatureBlocks/demo/scenes/ground/nb_demo_ground_moss.tscn" id="28_jyp7n"]
+[ext_resource type="PackedScene" uid="uid://bupdmtfs7wsdo" path="res://PolyBlocks/NatureBlocks/demo/scenes/ground/nb_demo_ground_river.tscn" id="29_2lhwa"]
+[ext_resource type="PackedScene" uid="uid://by6am1x7qe384" path="res://PolyBlocks/NatureBlocks/demo/scenes/ground/nb_demo_ground_sand.tscn" id="30_528eu"]
+[ext_resource type="PackedScene" uid="uid://yitaefvrnvke" path="res://PolyBlocks/NatureBlocks/demo/scenes/ground/nb_demo_ground_swamp.tscn" id="31_is6hd"]
+[ext_resource type="PackedScene" path="res://PolyBlocks/NatureBlocks/demo/scenes/ground/nb_demo_ground_verdant.tscn" id="32_l8pex"]
+[ext_resource type="PackedScene" uid="uid://35pbs83ydj3i" path="res://PolyBlocks/NatureBlocks/demo/showcase/trees/nb_trees_genetic.tscn" id="33_fktll"]
+[ext_resource type="PackedScene" uid="uid://c1kr2behgodsg" path="res://PolyBlocks/NatureBlocks/demo/showcase/trees/nb_trees_pine.tscn" id="34_124rq"]
+[ext_resource type="PackedScene" uid="uid://d1nii7ukfll2x" path="res://PolyBlocks/NatureBlocks/demo/showcase/trees/nb_trees_pine_lowpoly.tscn" id="35_wkyk3"]
+[ext_resource type="PackedScene" uid="uid://dr4l6e8wgt8yq" path="res://PolyBlocks/NatureBlocks/demo/showcase/trees/nb_trees_birch.tscn" id="36_0mefg"]
+[ext_resource type="PackedScene" uid="uid://du0da3fo6jgo7" path="res://PolyBlocks/NatureBlocks/demo/scenes/examples/nb_demo_cliff.tscn" id="37_diyke"]
+[ext_resource type="PackedScene" uid="uid://b5sme5r0t84kn" path="res://PolyBlocks/NatureBlocks/demo/scenes/examples/nb_demo_lake.tscn" id="38_yqwsp"]
+[ext_resource type="PackedScene" uid="uid://bffkn0pyjc6i3" path="res://PolyBlocks/NatureBlocks/demo/scenes/examples/nb_demo_mountains.tscn" id="39_7cr4l"]
+[ext_resource type="PackedScene" uid="uid://dwljdcgtxlmg0" path="res://PolyBlocks/NatureBlocks/demo/scenes/examples/nb_demo_road.tscn" id="40_n67b7"]
+[ext_resource type="PackedScene" uid="uid://dpvrk2lk0petw" path="res://PolyBlocks/NatureBlocks/demo/scenes/examples/nb_demo_waterfall.tscn" id="41_rrwm6"]
+[ext_resource type="PackedScene" uid="uid://dy6ik2t8a7r2o" path="res://PolyBlocks/NatureBlocks/demo/scenes/examples/nb_demo_lavafall.tscn" id="42_rhqc4"]
+[ext_resource type="PackedScene" uid="uid://cpta5ffvoipum" path="res://PolyBlocks/NatureBlocks/demo/scenes/examples/nb_demo_scene.tscn" id="43_714l1"]
+[ext_resource type="PackedScene" uid="uid://cnhvyex707e21" path="res://PolyBlocks/misc/camera_controller/misc_fps_camera.tscn" id="44_t8n5n"]
+[ext_resource type="PackedScene" uid="uid://ssrvfv5ousvb" path="res://PolyBlocks/NatureBlocks/demo/showcase/trees/nb_trees_palm.tscn" id="45_alkjj"]
+[ext_resource type="PackedScene" uid="uid://bgq5xifako2wl" path="res://PolyBlocks/NatureBlocks/demo/showcase/vegetation/nb_vegetation_reeds.tscn" id="46_jfspa"]
+[ext_resource type="PackedScene" uid="uid://dv5mqpsjdu20a" path="res://PolyBlocks/NatureBlocks/demo/showcase/vegetation/nb_vegetation_boardleaf.tscn" id="47_3j0ml"]
+[ext_resource type="PackedScene" uid="uid://bmk2edcqqxox3" path="res://PolyBlocks/NatureBlocks/demo/showcase/vegetation/nb_vegetation_fern.tscn" id="48_427bu"]
+
+[node name="nb_demo" type="Node3D" unique_id=889085708]
+script = ExtResource("1_t8n5n")
+
+[node name="Label" type="Label" parent="." unique_id=311653163]
+texture_filter = 1
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 224.0
+offset_bottom = 157.0
+text = "Movement: WASD
+Up/down: QE
+Sprint: Shift
+Toggle Fullscreen: ESC
+Change Environment: 12345678"
+
+[node name="misc_backdrop" parent="." unique_id=2109330734 instance=ExtResource("1_itafc")]
+
+[node name="misc_backdrop2" parent="." unique_id=361128830 instance=ExtResource("1_itafc")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -10, 0)
+
+[node name="misc_backdrop4" parent="." unique_id=946704292 instance=ExtResource("1_itafc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -10, 0)
+
+[node name="misc_backdrop3" parent="." unique_id=1172675822 instance=ExtResource("1_itafc")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0, -10, 0)
+
+[node name="Ground" type="Node3D" parent="." unique_id=1990509173]
+
+[node name="nb_rocks_canyon" parent="Ground" unique_id=1566778158 instance=ExtResource("3_2g3wb")]
+
+[node name="nb_rocks_cave" parent="Ground" unique_id=1473158606 instance=ExtResource("4_yb5h1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+
+[node name="nb_rocks_desert" parent="Ground" unique_id=339081663 instance=ExtResource("5_775ec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+
+[node name="nb_rocks_grey" parent="Ground" unique_id=153710184 instance=ExtResource("6_alkjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 0)
+
+[node name="nb_rocks_ice" parent="Ground" unique_id=1692467581 instance=ExtResource("7_jfspa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 0)
+
+[node name="nb_rocks_moss" parent="Ground" unique_id=690620971 instance=ExtResource("8_3j0ml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 0)
+
+[node name="nb_rocks_river" parent="Ground" unique_id=625901256 instance=ExtResource("9_427bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, 0)
+
+[node name="nb_rocks_sand" parent="Ground" unique_id=579341423 instance=ExtResource("10_gvbm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105, 0, 0)
+
+[node name="nb_rocks_swamp" parent="Ground" unique_id=399655412 instance=ExtResource("11_av55h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 0)
+
+[node name="nb_rocks_verdant" parent="Ground" unique_id=1681559892 instance=ExtResource("12_8dskt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135, 0, 0)
+
+[node name="Terrain" type="Node3D" parent="." unique_id=1222146851]
+
+[node name="nb_terrain_canyon" parent="Terrain" unique_id=2139633486 instance=ExtResource("13_7udoa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21.598648)
+
+[node name="nb_terrain_cave" parent="Terrain" unique_id=320106707 instance=ExtResource("14_3y3iy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -21.598648)
+
+[node name="nb_terrain_desert" parent="Terrain" unique_id=1553201078 instance=ExtResource("15_idxc3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -21.598648)
+
+[node name="nb_terrain_grey" parent="Terrain" unique_id=1690571865 instance=ExtResource("16_ri7a0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -21.598648)
+
+[node name="nb_terrain_ice" parent="Terrain" unique_id=2015941032 instance=ExtResource("17_3g1lt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -21.598648)
+
+[node name="nb_terrain_moss" parent="Terrain" unique_id=1271165722 instance=ExtResource("18_gvx21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -21.598648)
+
+[node name="nb_terrain_river" parent="Terrain" unique_id=286699713 instance=ExtResource("19_gfi75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -21.598648)
+
+[node name="nb_terrain_sand" parent="Terrain" unique_id=1368073012 instance=ExtResource("20_wcc05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105, 0, -21.598648)
+
+[node name="nb_terrain_swamp" parent="Terrain" unique_id=1006070220 instance=ExtResource("21_vjpki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, -21.598648)
+
+[node name="nb_terrain_verdant" parent="Terrain" unique_id=168252793 instance=ExtResource("22_praly")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135, 0, -21.598648)
+
+[node name="Ground_example" type="Node3D" parent="." unique_id=1425646500]
+
+[node name="nb_demo_ground_canyon" parent="Ground_example" unique_id=1845097518 instance=ExtResource("23_fbv2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5751667, 0, -13.123271)
+skeleton = NodePath("../..")
+
+[node name="nb_demo_ground_cave" parent="Ground_example" unique_id=163989047 instance=ExtResource("24_hs141")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.57517, 0, -13.123271)
+skeleton = NodePath("../..")
+
+[node name="nb_demo_ground_desert" parent="Ground_example" unique_id=301209005 instance=ExtResource("25_86cxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.57517, 0, -13.123271)
+skeleton = NodePath("../..")
+
+[node name="nb_demo_ground_grey" parent="Ground_example" unique_id=569521477 instance=ExtResource("26_b3trt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.57517, 0, -13.123271)
+skeleton = NodePath("../..")
+
+[node name="nb_demo_ground_ice" parent="Ground_example" unique_id=599635468 instance=ExtResource("27_ptgkk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.57517, 0, -13.123271)
+skeleton = NodePath("../..")
+
+[node name="nb_demo_ground_moss" parent="Ground_example" unique_id=1185242216 instance=ExtResource("28_jyp7n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.57517, 0, -13.123271)
+skeleton = NodePath("../..")
+
+[node name="nb_demo_ground_river" parent="Ground_example" unique_id=1392825378 instance=ExtResource("29_2lhwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.57517, 0, -13.123271)
+skeleton = NodePath("../..")
+
+[node name="nb_demo_ground_sand" parent="Ground_example" unique_id=156985561 instance=ExtResource("30_528eu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.5752, 0, -13.123271)
+skeleton = NodePath("../..")
+
+[node name="nb_demo_ground_swamp" parent="Ground_example" unique_id=1305264595 instance=ExtResource("31_is6hd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.5752, 0, -13.123271)
+skeleton = NodePath("../..")
+
+[node name="nb_demo_ground_verdant" parent="Ground_example" unique_id=527000596 instance=ExtResource("32_l8pex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.5752, 0, -13.123271)
+skeleton = NodePath("../..")
+
+[node name="Trees" type="Node3D" parent="." unique_id=485157142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.434402, 0, 0)
+
+[node name="nb_trees" parent="Trees" unique_id=1235839383 instance=ExtResource("33_fktll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.609678, 0, 0)
+
+[node name="nb_tree_pine" parent="Trees" unique_id=255697840 instance=ExtResource("34_124rq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.894203, 0, -25.639202)
+
+[node name="nb_tree_pine2" parent="Trees" unique_id=112325638 instance=ExtResource("35_wkyk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -25.639202)
+
+[node name="nb_tree_birch" parent="Trees" unique_id=151792403 instance=ExtResource("36_0mefg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.843613, 0, -25.639202)
+
+[node name="nb_demo_cliff" parent="." unique_id=1037846167 instance=ExtResource("37_diyke")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 188.07425, 0, -22.54604)
+
+[node name="nb_demo_lake" parent="." unique_id=243450131 instance=ExtResource("38_yqwsp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.71879, 0, -51.580006)
+
+[node name="nb_demo_mountains" parent="." unique_id=1738254264 instance=ExtResource("39_7cr4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.178719, 0, -78.10586)
+
+[node name="nb_demo_road" parent="." unique_id=243512590 instance=ExtResource("40_n67b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.324287, 0, -23.028019)
+
+[node name="nb_demo_waterfall" parent="." unique_id=321038446 instance=ExtResource("41_rrwm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.562843, 0, -46.191593)
+
+[node name="nb_demo_waterfall2" parent="." unique_id=2045394085 instance=ExtResource("42_rhqc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.04465, 0, -50.578312)
+
+[node name="nb_demo_scene" parent="." unique_id=537993473 instance=ExtResource("43_714l1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.5772, 0, -58.7084)
+
+[node name="nb_trees_palm" parent="." unique_id=252496423 instance=ExtResource("45_alkjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.20445, 0, -58.09623)
+
+[node name="nb_vegetation_reeds" parent="." unique_id=174599054 instance=ExtResource("46_jfspa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.20445, 0, -7.315462)
+
+[node name="nb_vegetation_boardleaf" parent="." unique_id=405244029 instance=ExtResource("47_3j0ml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.20445, 0, -24.813765)
+
+[node name="nb_vegetation_fern" parent="." unique_id=558328624 instance=ExtResource("48_427bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.20445, 0, -41.762794)
+
+[node name="misc_fps_camera" parent="." unique_id=1726998309 instance=ExtResource("44_t8n5n")]
+transform = Transform3D(0.8362862, 0.10461955, -0.5382195, 0, 0.9816271, 0.19080949, 0.54829323, -0.15957133, 0.8209212, -24.16415, 9.4484625, -2.3922005)
+min_x = -150.0
+max_x = 200.0
+min_y = 2.0
+max_y = 50.0
+min_z = -60.0
+max_z = 25.0

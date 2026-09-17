@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://oqk7ep1vn60a"]
+
+[ext_resource type="Material" uid="uid://yhhqix2j81iy" path="res://PolyBlocks/NatureBlocks/source_files/materials/leaves1/nbmat_leaves1_autumn.tres" id="1_ckxsm"]
+[ext_resource type="PackedScene" uid="uid://c024vbgk5ql8b" path="res://PolyBlocks/NatureBlocks/source_files/glb/vegetation/shrubs/nbglb_shrub1.glb" id="1_i2yx3"]
+
+[node name="nb_shrub1" unique_id=490369011 instance=ExtResource("1_i2yx3")]
+
+[node name="nb_bush_1" parent="." index="0" unique_id=144268154]
+surface_material_override/0 = ExtResource("1_ckxsm")

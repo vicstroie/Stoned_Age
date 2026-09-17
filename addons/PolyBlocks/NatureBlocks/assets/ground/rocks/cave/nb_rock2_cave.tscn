@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://2qjhd18syk65"]
+
+[ext_resource type="PackedScene" uid="uid://crihxqid4671j" path="res://PolyBlocks/NatureBlocks/source_files/glb/ground/rocks/nbglb_rock2.glb" id="1_3ylru"]
+[ext_resource type="Material" uid="uid://drvxmtycf6ohm" path="res://PolyBlocks/NatureBlocks/source_files/materials/ground/nbmat_ground_cave.tres" id="2_o5ths"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oxq0m"]
+points = PackedVector3Array(-0.41992846, 0.24654542, -0.13567866, 0.47399923, 0.48660496, 0.43220565, 0.4511456, 0.5199221, 0.41018945, 0.30184165, 0.15872118, -0.5168421, -0.14641106, 0.86472327, -0.2910638, -0.14703289, -0.031399596, 0.3810918, -0.23026486, 0.8094371, 0.23980488, 0.40188858, 0.70869535, -0.35810038, 0.4072492, -0.033228155, -0.22417945, -0.34307152, -0.02231891, -0.3862155, -0.3044486, 0.53923255, -0.53797805, 0.18226516, 0.8867687, 0.27889302, -0.06055053, 0.5381869, 0.5696266, -0.4857804, 0.24755152, 0.1716163, 0.33692703, 0.019955523, 0.4160145, -0.4001609, 0.6729316, -0.18572454, -0.060766727, 0.48678514, 0.5719339, 0.18132438, 0.10650896, -0.5002388, -0.07795988, 0.88426983, -0.18892846, 0.42383558, 0.26184994, 0.43378285, -0.23243311, 0.8304108, 0.20749472, -0.4890839, 0.31490928, 0.12121599, 0.42250228, 0.02078414, -0.15405281, 0.40509745, -0.030852098, -0.10220853, -0.0089000175, 0.52138376, 0.5722159, -0.0784352, 0.38287795, -0.5384265, -0.42316264, 0.62475294, -0.11969654, 0.42277318, 0.6594231, -0.22318554, 0.3693754, 0.6927784, -0.37696388, 0.474742, 0.434813, 0.38100982, -0.19924614, -0.032424457, -0.06813822, 0.19673419, 0.8804385, 0.2068164)
+
+[node name="nb_rock2" unique_id=2099537409 instance=ExtResource("1_3ylru")]
+
+[node name="nb_rock2" parent="." index="0" unique_id=1253505849]
+surface_material_override/0 = ExtResource("2_o5ths")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1880721451]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=868007022]
+shape = SubResource("ConvexPolygonShape3D_oxq0m")

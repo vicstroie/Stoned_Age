@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://boqyt5f2kl1lx"]
+
+[ext_resource type="PackedScene" uid="uid://fma7tfxg3gmq" path="res://PolyBlocks/NatureBlocks/source_files/glb/trees/generic/nbglb_tree4.glb" id="1_o2clm"]
+[ext_resource type="Material" uid="uid://df272n2dfxghg" path="res://PolyBlocks/NatureBlocks/source_files/materials/leaves1/nbmat_leaves1_tundra.tres" id="2_tjge5"]
+[ext_resource type="Material" path="res://PolyBlocks/NatureBlocks/source_files/materials/tree_trunks/nbmat_trunk_trees.tres" id="3_mbq7x"]
+
+[node name="nb_tree4" unique_id=1369555431 instance=ExtResource("1_o2clm")]
+
+[node name="nb_tree_4_leaves" parent="." index="0" unique_id=738951722]
+surface_material_override/0 = ExtResource("2_tjge5")
+
+[node name="nb_tree_4_trunk" parent="." index="1" unique_id=1105213166]
+surface_material_override/0 = ExtResource("3_mbq7x")

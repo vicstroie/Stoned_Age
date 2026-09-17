@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://0b8fnwxjltczm"]
+
+[ext_resource type="PackedScene" uid="uid://5bq30tbi1epx" path="res://PolyBlocks/NatureBlocks/source_files/glb/trees/birch/nbglb_birch2.glb" id="1_zi0kk"]
+[ext_resource type="Material" uid="uid://bskne68kb4ap2" path="res://PolyBlocks/NatureBlocks/source_files/materials/leaves1/nbmat_leaves1_sakura.tres" id="2_q59n2"]
+[ext_resource type="Material" uid="uid://cyqcg6yp544lq" path="res://PolyBlocks/NatureBlocks/source_files/materials/tree_trunks/nbmat_trunk_birch.tres" id="3_dkypk"]
+
+[node name="nb_birch2" unique_id=1847572109 instance=ExtResource("1_zi0kk")]
+
+[node name="nb_birch_2_leaves" parent="." index="0" unique_id=1966003015]
+surface_material_override/0 = ExtResource("2_q59n2")
+
+[node name="nb_birch_2_trunk" parent="." index="1" unique_id=1180334024]
+surface_material_override/0 = ExtResource("3_dkypk")

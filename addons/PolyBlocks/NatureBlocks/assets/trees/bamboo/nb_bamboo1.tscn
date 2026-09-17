@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b4r01a0hm1yel"]
+
+[ext_resource type="PackedScene" uid="uid://c4nlf5sx5tbsu" path="res://PolyBlocks/NatureBlocks/source_files/glb/trees/bamboo/nbglb_bamboo1.glb" id="1_cs1h0"]
+[ext_resource type="Material" uid="uid://dw41d61hswipj" path="res://PolyBlocks/NatureBlocks/source_files/materials/other/nbmat_leaves_bamboo.tres" id="2_wjk8c"]
+[ext_resource type="Material" uid="uid://bqeqqtnhyug1w" path="res://PolyBlocks/NatureBlocks/source_files/materials/tree_trunks/nbmat_trunk_bamboo.tres" id="3_va6tl"]
+
+[node name="nb_bamboo1" unique_id=615913325 instance=ExtResource("1_cs1h0")]
+
+[node name="nb_bamboo1_leaves" parent="." index="0" unique_id=179010224]
+surface_material_override/0 = ExtResource("2_wjk8c")
+
+[node name="nb_bamboo1_trunk" parent="." index="1" unique_id=1644775240]
+surface_material_override/0 = ExtResource("3_va6tl")

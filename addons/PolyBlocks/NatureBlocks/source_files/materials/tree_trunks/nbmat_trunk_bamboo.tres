@@ -1,0 +1,55 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bqeqqtnhyug1w"]
+
+[sub_resource type="Gradient" id="Gradient_53yrv"]
+colors = PackedColorArray(0.018940236, 0.018940235, 0.018940233, 1, 0.6255971, 0.6255971, 0.62559694, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eamv1"]
+gradient = SubResource("Gradient_53yrv")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0.6)
+metadata/_snap_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bsm34"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.14562404, 0.14564696, 0.011550815, 1)
+grow = true
+grow_amount = 0.005
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="Gradient" id="Gradient_soygh"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u12g7"]
+noise_type = 2
+frequency = 0.012
+cellular_distance_function = 1
+cellular_jitter = 1.125
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ubgh6"]
+width = 1
+height = 1024
+noise = SubResource("FastNoiseLite_u12g7")
+color_ramp = SubResource("Gradient_soygh")
+seamless = true
+seamless_blend_skirt = 1.0
+
+[resource]
+next_pass = SubResource("StandardMaterial3D_bsm34")
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.6837014, 0.88573563, 0.100635506, 1)
+albedo_texture = SubResource("GradientTexture2D_eamv1")
+roughness = 0.0
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_ubgh6")
+backlight_enabled = true
+backlight = Color(0.5079715, 0.5079715, 0.5079715, 1)
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(0.14562404, 0.14564696, 0.011550815, 1)
+stencil_outline_thickness = 0.005

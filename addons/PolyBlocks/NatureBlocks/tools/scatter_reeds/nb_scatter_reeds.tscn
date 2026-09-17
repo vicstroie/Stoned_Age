@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bfgse0o71sjjv"]
+
+[ext_resource type="Script" path="res://PolyBlocks/NatureBlocks/tools/scatter_reeds/src/nb_scatter_reeds.gd" id="1_rpm72"]
+
+[node name="nb[tool]_reed_scatter" type="Node" unique_id=1155773107]
+script = ExtResource("1_rpm72")

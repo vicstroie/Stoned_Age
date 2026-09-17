@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bfn8qqbttkfg3"]
+
+[ext_resource type="PackedScene" uid="uid://dnnombvaa6p2x" path="res://PolyBlocks/NatureBlocks/source_files/glb/vegetation/fern/nbglb_fern1.glb" id="1_7ojnq"]
+[ext_resource type="Material" uid="uid://cob1rp7j67cvh" path="res://PolyBlocks/NatureBlocks/source_files/materials/ferns/nbmat_fern1_olive.tres" id="2_7ojnq"]
+
+[node name="nb_fern1" unique_id=1954804825 instance=ExtResource("1_7ojnq")]
+
+[node name="nb_fern" parent="." index="0" unique_id=1499322291]
+surface_material_override/0 = ExtResource("2_7ojnq")

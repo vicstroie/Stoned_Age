@@ -1,0 +1,244 @@
+[gd_scene format=3 uid="uid://35pbs83ydj3i"]
+
+[ext_resource type="PackedScene" uid="uid://b0quv76s4tokl" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/anime/nb_tree_1_anime.tscn" id="1_l5nhe"]
+[ext_resource type="PackedScene" uid="uid://p5347wamb2sy" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/autumn/nb_tree_1_autumn.tscn" id="2_kwsf5"]
+[ext_resource type="PackedScene" uid="uid://dronpr51cuy77" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/blue/nb_tree_1_blue.tscn" id="3_18a2n"]
+[ext_resource type="PackedScene" uid="uid://c6nsdlum10jm7" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/forest/nb_tree_1_forest.tscn" id="4_ekmr4"]
+[ext_resource type="PackedScene" uid="uid://dc8v36cqgawb2" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/jungle/nb_tree_1_jungle.tscn" id="5_mwtom"]
+[ext_resource type="PackedScene" uid="uid://c7hx1f1gvpg2n" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/mars/nb_tree_1_mars.tscn" id="6_pdecj"]
+[ext_resource type="PackedScene" uid="uid://dqbqr2n3h03u6" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/olive/nb_tree_1_olive.tscn" id="7_dtv7o"]
+[ext_resource type="PackedScene" uid="uid://cxpbfhn14ie1j" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/sakura/nb_tree_1_sakura.tscn" id="8_xodm2"]
+[ext_resource type="PackedScene" uid="uid://djai4x05ougeu" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/savannah/nb_tree_1_savannah.tscn" id="9_hq81m"]
+[ext_resource type="PackedScene" uid="uid://e3scuqpumhcd" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/snow/nb_tree_1_snow.tscn" id="10_211bv"]
+[ext_resource type="PackedScene" uid="uid://db4fdmt2rjooj" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/spooky/nb_tree_1_spooky.tscn" id="11_4umbv"]
+[ext_resource type="PackedScene" uid="uid://bmkgr16ge8kmq" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/tundra/nb_tree_1_tundra.tscn" id="12_13v82"]
+[ext_resource type="PackedScene" uid="uid://pgfouq7so84k" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/anime/nb_tree_2_anime.tscn" id="13_2s8wk"]
+[ext_resource type="PackedScene" uid="uid://jrkxrkp6s8d3" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/autumn/nb_tree_2_autumn.tscn" id="14_hbetw"]
+[ext_resource type="PackedScene" uid="uid://c343gjxlmj0cf" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/blue/nb_tree_2_blue.tscn" id="15_hhdtd"]
+[ext_resource type="PackedScene" uid="uid://bbl5ykafk8ahf" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/forest/nb_tree_2_forest.tscn" id="16_7b8sv"]
+[ext_resource type="PackedScene" uid="uid://db7a8jj52o73l" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/jungle/nb_tree_2_jungle.tscn" id="17_4ug0e"]
+[ext_resource type="PackedScene" uid="uid://dtm4aqnrbei1h" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/mars/nb_tree_2_mars.tscn" id="18_xb43x"]
+[ext_resource type="PackedScene" uid="uid://dwnsocdsrul1m" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/olive/nb_tree_2_olive.tscn" id="19_4sywk"]
+[ext_resource type="PackedScene" uid="uid://cnm11n7rui11w" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/sakura/nb_tree_2_sakura.tscn" id="20_4gf64"]
+[ext_resource type="PackedScene" uid="uid://dutgaf7mcpb8u" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/savannah/nb_tree_2_savannah.tscn" id="21_tiefl"]
+[ext_resource type="PackedScene" uid="uid://dj8iwhxjhpvdh" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/snow/nb_tree_2_snow.tscn" id="22_142al"]
+[ext_resource type="PackedScene" uid="uid://brddhbnpj3h7g" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/spooky/nb_tree_2_spooky.tscn" id="23_i3xwf"]
+[ext_resource type="PackedScene" uid="uid://biclyehorrwu8" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/tundra/nb_tree_2_tundra.tscn" id="24_je6mx"]
+[ext_resource type="PackedScene" uid="uid://drjt3mvnvrjk" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/anime/nb_tree_3_anime.tscn" id="25_rk3pn"]
+[ext_resource type="PackedScene" uid="uid://d32pnwq3cpjha" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/autumn/nb_tree_3_autumn.tscn" id="26_uwwpb"]
+[ext_resource type="PackedScene" uid="uid://c86hjuu3sqk7g" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/blue/nb_tree_3_blue.tscn" id="27_lv2gu"]
+[ext_resource type="PackedScene" uid="uid://tlpsy6x2s1s6" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/forest/nb_tree_3_forest.tscn" id="28_wd0tt"]
+[ext_resource type="PackedScene" uid="uid://dh1rv54vcuoc0" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/jungle/nb_tree_3_jungle.tscn" id="29_748q0"]
+[ext_resource type="PackedScene" uid="uid://dmajl5pt2qyk3" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/mars/nb_tree_3_mars.tscn" id="30_nexv0"]
+[ext_resource type="PackedScene" uid="uid://crqsoqru18bau" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/olive/nb_tree_3_olive.tscn" id="31_li1cm"]
+[ext_resource type="PackedScene" uid="uid://d0i3ubg6j0g3e" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/sakura/nb_tree_3_sakura.tscn" id="32_asyt6"]
+[ext_resource type="PackedScene" uid="uid://81qrrbduthl4" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/savannah/nb_tree_3_savannah.tscn" id="33_tp4lb"]
+[ext_resource type="PackedScene" uid="uid://bj0idsxcxv8vq" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/snow/nb_tree_3_snow.tscn" id="34_jqxso"]
+[ext_resource type="PackedScene" uid="uid://gbvrwtqd0ixm" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/spooky/nb_tree_3_spooky.tscn" id="35_baama"]
+[ext_resource type="PackedScene" uid="uid://b3wnnkjylkdos" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/tundra/nb_tree_3_tundra.tscn" id="36_gyja5"]
+[ext_resource type="PackedScene" uid="uid://kjvb7jjq6ivs" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/anime/nb_tree_4_anime.tscn" id="37_hcqd8"]
+[ext_resource type="PackedScene" uid="uid://8628s23fvrkd" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/autumn/nb_tree_4_autumn.tscn" id="38_lfiu0"]
+[ext_resource type="PackedScene" uid="uid://b1eoa45f8fmha" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/blue/nb_tree_4_blue.tscn" id="39_wjx72"]
+[ext_resource type="PackedScene" uid="uid://cb3tdtfh26v1p" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/forest/nb_tree_4_forest.tscn" id="40_nyv5f"]
+[ext_resource type="PackedScene" uid="uid://clpqs2aurjaqw" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/jungle/nb_tree_4_jungle.tscn" id="41_gjfbh"]
+[ext_resource type="PackedScene" uid="uid://drxcpegct7oen" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/mars/nb_tree_4_mars.tscn" id="42_22x37"]
+[ext_resource type="PackedScene" uid="uid://dj4gopyi5flbr" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/olive/nb_tree_4_olive.tscn" id="43_pvjwy"]
+[ext_resource type="PackedScene" uid="uid://ctd8hxyf5iujr" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/sakura/nb_tree_4_sakura.tscn" id="44_6o62s"]
+[ext_resource type="PackedScene" uid="uid://dsh4awvamqmrl" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/savannah/nb_tree_4_savannah.tscn" id="45_vqort"]
+[ext_resource type="PackedScene" uid="uid://b2q77pqmjelh2" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/snow/nb_tree_4_snow.tscn" id="46_v3npv"]
+[ext_resource type="PackedScene" uid="uid://5p13uwjtsucq" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/spooky/nb_tree_4_spooky.tscn" id="47_6qam6"]
+[ext_resource type="PackedScene" uid="uid://boqyt5f2kl1lx" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/tundra/nb_tree_4_tundra.tscn" id="48_1frvt"]
+[ext_resource type="PackedScene" uid="uid://c003ujsme8ujg" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/anime/nb_tree_5_anime.tscn" id="49_1hasm"]
+[ext_resource type="PackedScene" uid="uid://bpbn2vt7qykq4" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/autumn/nb_tree_5_autumn.tscn" id="50_okap2"]
+[ext_resource type="PackedScene" uid="uid://d07m1sbypnjj6" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/blue/nb_tree_5_blue.tscn" id="51_gtmu4"]
+[ext_resource type="PackedScene" uid="uid://dyvye23x7isaa" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/forest/nb_tree_5_forest.tscn" id="52_pnp4r"]
+[ext_resource type="PackedScene" uid="uid://cq2exgpy1o3iv" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/jungle/nb_tree_5_jungle.tscn" id="53_20gnx"]
+[ext_resource type="PackedScene" uid="uid://boxeqyjt8oe4a" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/mars/nb_tree_5_mars.tscn" id="54_a25kn"]
+[ext_resource type="PackedScene" uid="uid://b6mx4kkf1wndm" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/olive/nb_tree_5_olive.tscn" id="55_317l4"]
+[ext_resource type="PackedScene" uid="uid://cq2nrnp3dawiq" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/sakura/nb_tree_5_sakura.tscn" id="56_5ujjm"]
+[ext_resource type="PackedScene" uid="uid://dnanya83u3y7p" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/savannah/nb_tree_5_savannah.tscn" id="57_dp4vu"]
+[ext_resource type="PackedScene" uid="uid://54d7m6qyd3pb" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/snow/nb_tree_5_snow.tscn" id="58_e44nf"]
+[ext_resource type="PackedScene" uid="uid://btlm6vt1h4ggr" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/spooky/nb_tree_5_spooky.tscn" id="59_uitnf"]
+[ext_resource type="PackedScene" uid="uid://d2horuvnfc32w" path="res://PolyBlocks/NatureBlocks/assets/trees/generic/tundra/nb_tree_5_tundra.tscn" id="60_sn6j1"]
+
+[node name="nb_trees" type="Node3D" unique_id=1235839383]
+
+[node name="nb_tree_1" parent="." unique_id=688538462 instance=ExtResource("1_l5nhe")]
+transform = Transform3D(-0.40526924, 0, -0.9141974, 0, 1, 0, 0.9141974, 0, -0.40526924, -12.111435, 0, -5.605281)
+
+[node name="nb_tree_2" parent="." unique_id=1871988089 instance=ExtResource("2_kwsf5")]
+transform = Transform3D(0.778539, 0, -0.62759626, 0, 1, 0, 0.62759626, 0, 0.778539, -3.1243057, 0, -2.0274324)
+
+[node name="nb_tree_3" parent="." unique_id=2104103777 instance=ExtResource("3_18a2n")]
+transform = Transform3D(-0.8025676, 0, -0.59656113, 0, 1, 0, 0.59656113, 0, -0.8025676, 10.896927, 0, -2.73952)
+
+[node name="nb_tree_4" parent="." unique_id=1484262469 instance=ExtResource("4_ekmr4")]
+transform = Transform3D(0.12891677, 0, 0.9916554, 0, 1, 0, -0.9916554, 0, 0.12891677, -16.775503, 0, -12.8274145)
+
+[node name="nb_tree_5" parent="." unique_id=1584541647 instance=ExtResource("5_mwtom")]
+transform = Transform3D(-0.9928763, 0, -0.11914924, 0, 1, 0, 0.11914924, 0, -0.9928763, -17.254797, 0, -6.7647657)
+
+[node name="nb_tree_6" parent="." unique_id=58636405 instance=ExtResource("6_pdecj")]
+transform = Transform3D(-0.04246857, 0, -0.9990978, 0, 1, 0, 0.9990978, 0, -0.04246857, 2.4180756, 0, -8.571213)
+
+[node name="nb_tree_7" parent="." unique_id=697790325 instance=ExtResource("7_dtv7o")]
+transform = Transform3D(-0.9095048, 0, -0.41569346, 0, 1, 0, 0.41569346, 0, -0.9095048, -14.192205, 0, -2.546763)
+
+[node name="nb_tree_8" parent="." unique_id=1821251681 instance=ExtResource("8_xodm2")]
+transform = Transform3D(0.8704072, 0, -0.4923323, 0, 1, 0, 0.4923323, 0, 0.8704072, 14.12431, 0, -11.604888)
+
+[node name="nb_tree_9" parent="." unique_id=260707004 instance=ExtResource("9_hq81m")]
+transform = Transform3D(-0.32942703, 0, 0.944181, 0, 1, 0, -0.944181, 0, -0.32942703, -8.569584, 0, -6.484366)
+
+[node name="nb_tree_10" parent="." unique_id=728702902 instance=ExtResource("10_211bv")]
+transform = Transform3D(0.4214316, 0, -0.90686023, 0, 1, 0, 0.90686023, 0, 0.4214316, 16.321424, 0, -8.810871)
+
+[node name="nb_tree_11" parent="." unique_id=1631831710 instance=ExtResource("11_4umbv")]
+transform = Transform3D(0.82756096, 0, -0.56137586, 0, 1, 0, 0.56137586, 0, 0.82756096, 13.116999, 0, -14.643252)
+
+[node name="nb_tree_12" parent="." unique_id=1856545960 instance=ExtResource("12_13v82")]
+transform = Transform3D(-0.1353352, 0, 0.99079984, 0, 1, 0, -0.99079984, 0, -0.1353352, -29.549957, 0, -12.745628)
+
+[node name="nb_tree_13" parent="." unique_id=383517047 instance=ExtResource("13_2s8wk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.305653, 0, -3.90843)
+
+[node name="nb_tree_14" parent="." unique_id=376299982 instance=ExtResource("14_hbetw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9725685, 0, -2.0955758)
+
+[node name="nb_tree_15" parent="." unique_id=2120511659 instance=ExtResource("15_hhdtd")]
+transform = Transform3D(0.1312702, 0, -0.9913466, 0, 1, 0, 0.9913466, 0, 0.1312702, 5.4325137, 0, -14.307975)
+
+[node name="nb_tree_16" parent="." unique_id=1739796898 instance=ExtResource("16_7b8sv")]
+transform = Transform3D(0.6140511, 0, 0.7892663, 0, 1, 0, -0.7892663, 0, 0.6140511, -18.953247, 0, -1.1579156)
+
+[node name="nb_tree_17" parent="." unique_id=587493972 instance=ExtResource("17_4ug0e")]
+transform = Transform3D(0.79876155, 0, 0.6016478, 0, 1, 0, -0.6016478, 0, 0.79876155, -20.706049, 0, -7.3334384)
+
+[node name="nb_tree_18" parent="." unique_id=993576513 instance=ExtResource("18_xb43x")]
+transform = Transform3D(0.13808413, 0, -0.9904205, 0, 1, 0, 0.9904205, 0, 0.13808413, 1.1900363, 0, -4.883877)
+
+[node name="nb_tree_19" parent="." unique_id=1779489370 instance=ExtResource("19_4sywk")]
+transform = Transform3D(-0.03659139, 0, 0.9993303, 0, 1, 0, -0.9993303, 0, -0.03659139, -8.485863, 0, -1.311322)
+
+[node name="nb_tree_20" parent="." unique_id=1646853609 instance=ExtResource("20_4gf64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.765018, 0, -8.44652)
+
+[node name="nb_tree_21" parent="." unique_id=1004671002 instance=ExtResource("21_tiefl")]
+transform = Transform3D(0.72993565, 0, 0.6835159, 0, 1, 0, -0.6835159, 0, 0.72993565, -6.1771717, 0, -11.905002)
+
+[node name="nb_tree_22" parent="." unique_id=1885083082 instance=ExtResource("22_142al")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.104626, 0, -14.813785)
+
+[node name="nb_tree_23" parent="." unique_id=1007273096 instance=ExtResource("23_i3xwf")]
+transform = Transform3D(0.5378294, 0, 0.8430537, 0, 1, 0, -0.8430537, 0, 0.5378294, 6.419134, 0, -6.5923815)
+
+[node name="nb_tree_24" parent="." unique_id=599182446 instance=ExtResource("24_je6mx")]
+transform = Transform3D(0.8699256, 0, 0.4931829, 0, 1, 0, -0.4931829, 0, 0.8699256, -26.944052, 0, -14.551778)
+
+[node name="nb_tree_25" parent="." unique_id=767070799 instance=ExtResource("25_rk3pn")]
+transform = Transform3D(0.40290642, 0, 0.9152412, 0, 1, 0, -0.9152412, 0, 0.40290642, -33.0576, 0, -7.9383726)
+
+[node name="nb_tree_26" parent="." unique_id=1122373128 instance=ExtResource("26_uwwpb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.073917, 0, -1.4825691)
+
+[node name="nb_tree_27" parent="." unique_id=1274066993 instance=ExtResource("27_lv2gu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7802768, 0, -4.4106455)
+
+[node name="nb_tree_28" parent="." unique_id=910377228 instance=ExtResource("28_wd0tt")]
+transform = Transform3D(0.8379569, 0, -0.5457364, 0, 1, 0, 0.5457364, 0, 0.8379569, -17.4764, 0, -9.736777)
+
+[node name="nb_tree_29" parent="." unique_id=240749218 instance=ExtResource("29_748q0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4649982, 0, -9.839876)
+
+[node name="nb_tree_30" parent="." unique_id=983000244 instance=ExtResource("30_nexv0")]
+transform = Transform3D(-0.60351425, 0, 0.7973522, 0, 1, 0, -0.7973522, 0, -0.60351425, 6.957651, 0, -1.3334785)
+
+[node name="nb_tree_31" parent="." unique_id=1564573832 instance=ExtResource("31_li1cm")]
+transform = Transform3D(-0.68867093, 0, 0.72507405, 0, 1, 0, -0.72507405, 0, -0.68867093, -28.73041, 0, -1.4879746)
+
+[node name="nb_tree_32" parent="." unique_id=1046833033 instance=ExtResource("32_asyt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.684078, 0, -7.227568)
+
+[node name="nb_tree_33" parent="." unique_id=1388620051 instance=ExtResource("33_tp4lb")]
+transform = Transform3D(0.45635265, 0, -0.889799, 0, 1, 0, 0.889799, 0, 0.45635265, -6.6475754, 0, -4.1990833)
+
+[node name="nb_tree_34" parent="." unique_id=1919700801 instance=ExtResource("34_jqxso")]
+transform = Transform3D(-0.99989307, 0, -0.014625417, 0, 1, 0, 0.014625417, 0, -0.99989307, 24.753191, 0, -8.736049)
+
+[node name="nb_tree_35" parent="." unique_id=849175607 instance=ExtResource("35_baama")]
+transform = Transform3D(-0.39233717, 0, 0.9198215, 0, 1, 0, -0.9198215, 0, -0.39233717, 7.2107735, 0, -3.9362626)
+
+[node name="nb_tree_36" parent="." unique_id=1372506897 instance=ExtResource("36_gyja5")]
+transform = Transform3D(-0.84911007, 0, -0.5282161, 0, 1, 0, 0.5282161, 0, -0.84911007, -38.521885, 0, -8.173662)
+
+[node name="nb_tree_37" parent="." unique_id=1369555431 instance=ExtResource("37_hcqd8")]
+transform = Transform3D(-0.21088126, 0, -0.9775117, 0, 1, 0, 0.9775117, 0, -0.21088126, -30.714785, 0, -4.5121984)
+
+[node name="nb_tree_38" parent="." unique_id=1047197111 instance=ExtResource("38_lfiu0")]
+transform = Transform3D(-0.3649743, 0, -0.9310176, 0, 1, 0, 0.9310176, 0, -0.3649743, -4.6999836, 0, -14.416807)
+
+[node name="nb_tree_39" parent="." unique_id=1749720436 instance=ExtResource("39_wjx72")]
+transform = Transform3D(-0.20364171, 0, -0.9790455, 0, 1, 0, 0.9790455, 0, -0.20364171, 5.281156, 0, -9.2528925)
+
+[node name="nb_tree_40" parent="." unique_id=2077250731 instance=ExtResource("40_nyv5f")]
+transform = Transform3D(0.0731164, 0, -0.9973234, 0, 1, 0, 0.9973234, 0, 0.0731164, -14.591322, 0, -6.8114877)
+
+[node name="nb_tree_41" parent="." unique_id=388125657 instance=ExtResource("41_gjfbh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.908808, 0, -3.3332467)
+
+[node name="nb_tree_42" parent="." unique_id=1799629031 instance=ExtResource("42_22x37")]
+transform = Transform3D(0.023437575, 0, 0.9997253, 0, 1, 0, -0.9997253, 0, 0.023437575, -7.7007985, 0, -14.366735)
+
+[node name="nb_tree_43" parent="." unique_id=1506912592 instance=ExtResource("43_pvjwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5289707, 0, -1.530962)
+
+[node name="nb_tree_44" parent="." unique_id=343827916 instance=ExtResource("44_6o62s")]
+transform = Transform3D(-0.31647703, 0, 0.9486002, 0, 1, 0, -0.9486002, 0, -0.31647703, 9.530769, 0, -5.7166758)
+
+[node name="nb_tree_45" parent="." unique_id=1912706178 instance=ExtResource("45_vqort")]
+transform = Transform3D(-0.71864843, 0, -0.6953736, 0, 1, 0, 0.6953736, 0, -0.71864843, -11.412455, 0, -1.4511089)
+
+[node name="nb_tree_46" parent="." unique_id=264898153 instance=ExtResource("46_v3npv")]
+transform = Transform3D(-0.25291374, 0, -0.9674888, 0, 1, 0, 0.9674888, 0, -0.25291374, 25.310658, 0, -14.657402)
+
+[node name="nb_tree_47" parent="." unique_id=13979904 instance=ExtResource("47_6qam6")]
+transform = Transform3D(0.16737098, 0, -0.98589396, 0, 1, 0, 0.98589396, 0, 0.16737098, 12.099617, 0, -6.5456057)
+
+[node name="nb_tree_48" parent="." unique_id=610293506 instance=ExtResource("48_1frvt")]
+transform = Transform3D(0.41405782, 0, -0.9102506, 0, 1, 0, 0.9102506, 0, 0.41405782, -31.660385, 0, -1.4983139)
+
+[node name="nb_tree_49" parent="." unique_id=898169268 instance=ExtResource("49_1hasm")]
+transform = Transform3D(-0.55024755, 0, -0.8350016, 0, 1, 0, 0.8350016, 0, -0.55024755, -36.656246, 0, -4.3700953)
+
+[node name="nb_tree_50" parent="." unique_id=1452786725 instance=ExtResource("50_okap2")]
+transform = Transform3D(-0.6877593, 0, 0.72593874, 0, 1, 0, -0.72593874, 0, -0.6877593, 0.96764755, 0, -12.930743)
+
+[node name="nb_tree_51" parent="." unique_id=668533000 instance=ExtResource("51_gtmu4")]
+transform = Transform3D(-0.26903743, 0, 0.96312976, 0, 1, 0, -0.96312976, 0, -0.26903743, 16.499744, 0, -3.439458)
+
+[node name="nb_tree_52" parent="." unique_id=639785743 instance=ExtResource("52_pnp4r")]
+transform = Transform3D(-0.7457435, 0, 0.6662332, 0, 1, 0, -0.6662332, 0, -0.7457435, -35.490425, 0, -12.735727)
+
+[node name="nb_tree_53" parent="." unique_id=1705548463 instance=ExtResource("53_20gnx")]
+transform = Transform3D(0.19490203, 0, -0.9808227, 0, 1, 0, 0.9808227, 0, 0.19490203, -22.975845, 0, -12.533823)
+
+[node name="nb_tree_54" parent="." unique_id=402059497 instance=ExtResource("54_a25kn")]
+transform = Transform3D(-0.2106594, 0, 0.9775595, 0, 1, 0, -0.9775595, 0, -0.2106594, -2.4421387, 0, -6.806083)
+
+[node name="nb_tree_55" parent="." unique_id=2005774660 instance=ExtResource("55_317l4")]
+transform = Transform3D(0.099545516, 0, 0.995033, 0, 1, 0, -0.995033, 0, 0.099545516, -27.495016, 0, -8.17263)
+
+[node name="nb_tree_56" parent="." unique_id=1639158221 instance=ExtResource("56_5ujjm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.094488, 0, -11.522532)
+
+[node name="nb_tree_57" parent="." unique_id=1557763054 instance=ExtResource("57_dp4vu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.490517, 0, -11.096847)
+
+[node name="nb_tree_58" parent="." unique_id=1039304138 instance=ExtResource("58_e44nf")]
+transform = Transform3D(0.6894678, 0, 0.7243163, 0, 1, 0, -0.7243163, 0, 0.6894678, 23.356693, 0, -3.3552208)
+
+[node name="nb_tree_59" parent="." unique_id=2089934785 instance=ExtResource("59_uitnf")]
+transform = Transform3D(0.010210055, 0, -0.9999479, 0, 1, 0, 0.9999479, 0, 0.010210055, 8.780872, 0, -11.6550665)
+
+[node name="nb_tree_60" parent="." unique_id=757718135 instance=ExtResource("60_sn6j1")]
+transform = Transform3D(-0.163326, 0, 0.98657215, 0, 1, 0, -0.98657215, 0, -0.163326, -22.838932, 0, -3.4716759)

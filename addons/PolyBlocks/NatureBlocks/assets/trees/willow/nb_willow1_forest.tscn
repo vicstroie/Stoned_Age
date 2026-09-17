@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://5t6ylbuq2sfp7"]
+
+[ext_resource type="PackedScene" uid="uid://0mk4x06bioy1" path="res://PolyBlocks/NatureBlocks/source_files/glb/trees/willow/nbglb_willow1.glb" id="1_n7unx"]
+[ext_resource type="Material" uid="uid://djs58ftocif16" path="res://PolyBlocks/NatureBlocks/source_files/materials/tree_trunks/nbmat_trunk_generic.tres" id="2_vxneo"]
+[ext_resource type="Material" uid="uid://5uknaicurrro1" path="res://PolyBlocks/NatureBlocks/source_files/materials/leaves_willow/nbmat_leaves_willow_forest.tres" id="3_a3wiy"]
+
+[node name="nb_willow1" unique_id=404464395 instance=ExtResource("1_n7unx")]
+
+[node name="willow1_trunk" parent="." index="0" unique_id=2010426570]
+surface_material_override/0 = ExtResource("2_vxneo")
+
+[node name="willow1_leaves" parent="." index="1" unique_id=1281377883]
+surface_material_override/0 = ExtResource("3_a3wiy")

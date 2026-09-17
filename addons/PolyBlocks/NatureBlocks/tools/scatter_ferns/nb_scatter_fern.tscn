@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://cskc6owh10y8m" path="res://PolyBlocks/NatureBlocks/tools/scatter_ferns/src/nb_scatter_ferns.gd" id="1_rpm72"]
+
+[node name="nb[tool]_fern_scatter" type="Node" unique_id=1155773107]
+script = ExtResource("1_rpm72")

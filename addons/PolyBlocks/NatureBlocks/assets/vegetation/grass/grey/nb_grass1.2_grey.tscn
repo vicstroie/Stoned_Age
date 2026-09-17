@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://34f1ec4b9ca54b"]
+
+[ext_resource type="PackedScene" uid="uid://d21nhms2byt80" path="res://PolyBlocks/NatureBlocks/source_files/glb/vegetation/grass/nbglb_grass1.glb" id="1_q4vd1"]
+[ext_resource type="Material" uid="uid://cd6n12v6xphpa" path="res://PolyBlocks/NatureBlocks/source_files/materials/grass/nbmat_grass2_grey.tres" id="2_6cesh"]
+
+[node name="nb_grass1" unique_id=689597027 instance=ExtResource("1_q4vd1")]
+
+[node name="nb_grass1" parent="." index="0" unique_id=629205089]
+surface_material_override/0 = ExtResource("2_6cesh")

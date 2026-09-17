@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c0bmm6v0lphug"]
+
+[ext_resource type="PackedScene" uid="uid://txdnohgkuph" path="res://PolyBlocks/NatureBlocks/source_files/glb/vegetation/ivy/nbglb_ivy1.glb" id="1_mi51c"]
+[ext_resource type="Material" uid="uid://lbb6nnwv40fe" path="res://PolyBlocks/NatureBlocks/source_files/materials/ivy/nbmat_ivy1.tres" id="2_kl67o"]
+
+[node name="nb_ivy1" unique_id=1422367591 instance=ExtResource("1_mi51c")]
+
+[node name="nb_ivy" parent="." index="0" unique_id=986325987]
+surface_material_override/0 = ExtResource("2_kl67o")

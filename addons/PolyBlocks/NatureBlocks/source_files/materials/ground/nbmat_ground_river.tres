@@ -1,0 +1,25 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://byrcc4c1kta8s"]
+
+[ext_resource type="Texture2D" uid="uid://i5fnxrurgnl1" path="res://PolyBlocks/NatureBlocks/source_files/textures/ground/nbtex_ground_river.png" id="1_pc78f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chimp"]
+cull_mode = 1
+shading_mode = 0
+albedo_color = Color(0.0941632, 0.11197158, 0.12227071, 1)
+grow = true
+grow_amount = 0.02
+
+[resource]
+next_pass = SubResource("StandardMaterial3D_chimp")
+diffuse_mode = 3
+specular_mode = 2
+disable_specular_occlusion = true
+albedo_color = Color(0.750839, 0.7101666, 0.67800045, 1)
+albedo_texture = ExtResource("1_pc78f")
+metallic_specular = 0.0
+roughness = 0.0
+backlight_enabled = true
+backlight = Color(0.3050545, 0.39357388, 0.40138963, 1)
+disable_receive_shadows = true
+stencil_flags = 2
+stencil_outline_thickness = 0.04

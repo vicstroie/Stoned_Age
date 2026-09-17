@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://yyg0gmt3bip7"]
+
+[ext_resource type="Script" uid="uid://cu01gl3rpuva7" path="res://PolyBlocks/NatureBlocks/tools/scatter_flowers/src/nb_scatter_flowers.gd" id="1_ds177"]
+
+[node name="nb[tool]_flower_scatter" type="Node" unique_id=1331975757]
+script = ExtResource("1_ds177")
+blue_flowers = 0.0
+red_flowers = 0.0
+white_flowers = 11.0

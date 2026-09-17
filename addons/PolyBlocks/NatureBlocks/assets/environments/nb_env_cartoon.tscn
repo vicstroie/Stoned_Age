@@ -1,0 +1,40 @@
+[gd_scene format=3]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sky"]
+sky_top_color = Color(0.16, 0.52, 0.94, 1)
+sky_horizon_color = Color(0.75, 0.88, 0.98, 1)
+ground_bottom_color = Color(0.24, 0.46, 0.3, 1)
+ground_horizon_color = Color(0.62, 0.82, 0.68, 1)
+
+[sub_resource type="Sky" id="Sky_env"]
+sky_material = SubResource("ProceduralSkyMaterial_sky")
+
+[sub_resource type="Environment" id="Environment_main"]
+background_mode = 2
+sky = SubResource("Sky_env")
+tonemap_mode = 2
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.008
+volumetric_fog_albedo = Color(0.8, 0.92, 1, 1)
+volumetric_fog_emission = Color(0.05, 0.08, 0.12, 1)
+adjustment_enabled = true
+adjustment_brightness = 1.04
+adjustment_contrast = 1.14
+adjustment_saturation = 1.38
+
+[node name="nb_env_cartoon" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_main")
+
+[node name="KeyDirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.49999997, -0.6123725, 0.6123725, 0, 0.7071068, 0.7071068, -0.86602545, -0.35355338, 0.35355338, 0, 0, 0)
+light_color = Color(1, 0.96, 0.88, 1)
+light_energy = 1.3
+shadow_enabled = true
+
+[node name="FillDirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.7071068, 0.61237246, -0.35355338, 0, 0.49999997, 0.86602545, 0.7071068, -0.61237246, 0.35355338, 0, 0, 0)
+light_color = Color(0.65, 0.85, 1, 1)
+light_energy = 0.55

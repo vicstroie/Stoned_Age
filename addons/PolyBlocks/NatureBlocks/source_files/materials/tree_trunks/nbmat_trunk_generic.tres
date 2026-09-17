@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://djs58ftocif16"]
+
+[sub_resource type="Gradient" id="Gradient_n1plk"]
+colors = PackedColorArray(0.018940236, 0.018940235, 0.018940233, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_khtva"]
+gradient = SubResource("Gradient_n1plk")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0.7)
+metadata/_snap_enabled = true
+
+[resource]
+albedo_color = Color(0.36147645, 0.29690766, 0.22599709, 1)
+albedo_texture = SubResource("GradientTexture2D_khtva")
+metallic_specular = 0.0
+stencil_flags = 2
+stencil_color = Color(0.039455034, 0.031576138, 0.018804528, 1)
+stencil_outline_thickness = 0.005

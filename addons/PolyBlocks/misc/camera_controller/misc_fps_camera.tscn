@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cnhvyex707e21"]
+
+[ext_resource type="Script" uid="uid://bov5yhfnil26x" path="res://PolyBlocks/misc/camera_controller/src/misc_fps_camera.gd" id="1_v57r2"]
+
+[node name="misc_fps_camera" type="Camera3D" unique_id=1726998309]
+script = ExtResource("1_v57r2")

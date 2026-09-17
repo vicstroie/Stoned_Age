@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://diea3vavh8k1a"]
+
+[ext_resource type="PackedScene" uid="uid://clh0oalymo2is" path="res://PolyBlocks/NatureBlocks/source_files/glb/terrain/cliffs/nbglb_cliff2.glb" id="1_y6bwj"]
+[ext_resource type="Material" uid="uid://bss63h7j0pet7" path="res://PolyBlocks/NatureBlocks/source_files/materials/terrain/nbmat_terrain_verdant.tres" id="2_wuv5w"]
+
+[node name="nb_cliff2" unique_id=1095771361 instance=ExtResource("1_y6bwj")]
+
+[node name="nb_cliff_2" parent="." index="0" unique_id=489447831]
+surface_material_override/0 = ExtResource("2_wuv5w")

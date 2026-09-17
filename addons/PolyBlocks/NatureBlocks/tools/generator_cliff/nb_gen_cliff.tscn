@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://o0o2ygqbkbo3"]
+
+[ext_resource type="Script" uid="uid://b8y5y33ysa6hy" path="res://PolyBlocks/NatureBlocks/tools/generator_cliff/src/nb_gen_cliff.gd" id="1_tm1nm"]
+
+[node name="nb[tool]_cliff_generator" type="Node3D" unique_id=549192038]
+script = ExtResource("1_tm1nm")
+cliff_material_biome = 0
+plain_material_biome = 2

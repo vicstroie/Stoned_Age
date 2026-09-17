@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cvkkon2wb816h"]
+
+[ext_resource type="Script" uid="uid://dc7blpmpvkm3c" path="res://PolyBlocks/misc/camera_controller/src/misc_movie_recorder.gd" id="1_nh315"]
+
+[node name="MovieRecorder" type="Node3D" unique_id=1921978481]
+script = ExtResource("1_nh315")
+play_animation = true
+action_mode = 1
+repeat_mode = 1
+start_pos = Vector3(-14.662831, 7.2257304, 20.106506)
+start_rot = Vector3(-34.597816, -21.518446, -2.9301515)
+end_pos = Vector3(105.337166, 7.2257304, 20.106506)
+end_rot = Vector3(-34.597816, -21.518442, -2.930151)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2057004954]
+transform = Transform3D(0.7691169, 0, 0.6391081, 0, 1, 0, -0.6391081, 0, 0.7691169, 0.1889914, 0, 0.8372009)
+fov = 50.0

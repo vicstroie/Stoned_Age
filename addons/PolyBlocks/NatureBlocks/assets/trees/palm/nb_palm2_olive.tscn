@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bi3kv5bclxft2"]
+
+[ext_resource type="PackedScene" uid="uid://02y0fvqgy6af" path="res://PolyBlocks/NatureBlocks/source_files/glb/trees/palm/nbglb_palm2.glb" id="1_acipp"]
+[ext_resource type="Material" uid="uid://b6k3u32ghhwun" path="res://PolyBlocks/NatureBlocks/source_files/materials/tree_trunks/nbmat_trunk_palm.tres" id="2_1ynub"]
+[ext_resource type="Material" uid="uid://u4mykxy5krs6" path="res://PolyBlocks/NatureBlocks/source_files/materials/leaves3/nbmat_leaves3_olive.tres" id="3_urunb"]
+
+[node name="nb_palm2" unique_id=982478513 instance=ExtResource("1_acipp")]
+
+[node name="nb_palm2_trunk" parent="." index="0" unique_id=608242439]
+surface_material_override/0 = ExtResource("2_1ynub")
+
+[node name="nb_palm2_leaves" parent="." index="1" unique_id=231921111]
+surface_material_override/0 = ExtResource("3_urunb")

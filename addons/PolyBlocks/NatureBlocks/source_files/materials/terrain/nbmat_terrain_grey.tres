@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://3g6cwwb5pu8t"]
+
+[ext_resource type="Texture2D" uid="uid://cq5bwtm1kvcvp" path="res://PolyBlocks/NatureBlocks/source_files/textures/terrain/nbtex_terrain_grey.png" id="1_yyr1o"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 2
+disable_specular_occlusion = true
+albedo_color = Color(0.45840502, 0.45840508, 0.45840502, 1)
+albedo_texture = ExtResource("1_yyr1o")
+metallic_specular = 0.0
+roughness = 0.0
+backlight_enabled = true
+backlight = Color(0.22430423, 0.22430405, 0.22430399, 1)
+uv1_scale = Vector3(0.02, 0.02, 0.02)
+uv1_triplanar = true
+uv1_world_triplanar = true
+disable_receive_shadows = true
+stencil_flags = 2
+stencil_outline_thickness = 0.04

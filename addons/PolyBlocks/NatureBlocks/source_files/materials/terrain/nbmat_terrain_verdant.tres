@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bss63h7j0pet7"]
+
+[ext_resource type="Texture2D" uid="uid://cl8te6d71q3dc" path="res://PolyBlocks/NatureBlocks/source_files/textures/terrain/nbtex_terrain_verdant.png" id="1_oi0no"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 2
+disable_specular_occlusion = true
+albedo_color = Color(0.71719974, 0.67700076, 0.626437, 1)
+albedo_texture = ExtResource("1_oi0no")
+metallic_specular = 0.0
+roughness = 0.0
+backlight_enabled = true
+backlight = Color(0.3050545, 0.39357388, 0.40138963, 1)
+uv1_scale = Vector3(0.02, 0.02, 0.02)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 1
+disable_receive_shadows = true
+stencil_flags = 2
+stencil_outline_thickness = 0.04

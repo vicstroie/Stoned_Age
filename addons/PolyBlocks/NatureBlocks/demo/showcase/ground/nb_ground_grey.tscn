@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cggm0srundi8g"]
+
+[ext_resource type="PackedScene" uid="uid://cms4b43n5kija" path="res://PolyBlocks/NatureBlocks/assets/ground/boulders/grey/nb_boulder1_grey.tscn" id="7_2kqy2"]
+[ext_resource type="PackedScene" uid="uid://dfbx46ee0px4g" path="res://PolyBlocks/NatureBlocks/assets/ground/rocks/grey/nb_rock1_grey.tscn" id="7_bce8s"]
+[ext_resource type="PackedScene" uid="uid://br2p75o6oreht" path="res://PolyBlocks/NatureBlocks/assets/ground/rocks/grey/nb_rock2_grey.tscn" id="8_2kqy2"]
+[ext_resource type="PackedScene" uid="uid://ciiyweembcaeq" path="res://PolyBlocks/NatureBlocks/assets/ground/boulders/grey/nb_boulder2_grey.tscn" id="8_742bj"]
+[ext_resource type="PackedScene" uid="uid://sojl4krjbjgt" path="res://PolyBlocks/NatureBlocks/assets/ground/rocks/grey/nb_rock3_grey.tscn" id="9_742bj"]
+[ext_resource type="PackedScene" uid="uid://cjvbaw515psew" path="res://PolyBlocks/NatureBlocks/assets/ground/boulders/grey/nb_boulder3_grey.tscn" id="9_yives"]
+[ext_resource type="PackedScene" uid="uid://vi003r80klxo" path="res://PolyBlocks/NatureBlocks/assets/ground/boulders/grey/nb_boulder4_grey.tscn" id="10_stnmd"]
+[ext_resource type="PackedScene" uid="uid://b1ynvel2vetey" path="res://PolyBlocks/NatureBlocks/assets/ground/rocks/grey/nb_rock5_grey.tscn" id="10_yives"]
+[ext_resource type="PackedScene" uid="uid://dc5kcsc0m5tvv" path="res://PolyBlocks/NatureBlocks/assets/ground/pebbles/grey/nb_pebble1_grey.tscn" id="11_043aw"]
+[ext_resource type="PackedScene" uid="uid://cl03stlqqwsp4" path="res://PolyBlocks/NatureBlocks/assets/ground/rocks/grey/nb_rock4_grey.tscn" id="11_stnmd"]
+[ext_resource type="PackedScene" uid="uid://biccslwi1jmgf" path="res://PolyBlocks/NatureBlocks/assets/ground/rocks/grey/nb_rock6_grey.tscn" id="12_043aw"]
+[ext_resource type="PackedScene" uid="uid://cb6qtn05g4oq7" path="res://PolyBlocks/NatureBlocks/assets/ground/pebbles/grey/nb_pebble2_grey.tscn" id="12_jgvgw"]
+[ext_resource type="PackedScene" uid="uid://cpnl3emphghy2" path="res://PolyBlocks/NatureBlocks/assets/ground/pebbles/grey/nb_pebble3_grey.tscn" id="13_edap2"]
+[ext_resource type="PackedScene" uid="uid://buymyk201yval" path="res://PolyBlocks/NatureBlocks/assets/ground/patches/grey/nb_patch1_type1_grey.tscn" id="14_yives"]
+[ext_resource type="PackedScene" uid="uid://bmbolkvox7tf6" path="res://PolyBlocks/NatureBlocks/assets/ground/patches/grey/nb_patch1_type2_grey.tscn" id="15_stnmd"]
+
+[node name="nb_rocks_grey" type="Node3D" unique_id=504778367]
+
+[node name="nb_rock1" parent="." unique_id=167122657 instance=ExtResource("7_bce8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.508595, 0, -0.9126563)
+
+[node name="nb_rock2" parent="." unique_id=2099537409 instance=ExtResource("8_2kqy2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.108595, 0, -0.9126563)
+
+[node name="nb_rock3" parent="." unique_id=2080399552 instance=ExtResource("9_742bj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.508595, 0, -0.9126563)
+
+[node name="nb_rock4" parent="." unique_id=419159258 instance=ExtResource("11_stnmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.108595, 0, -0.9126563)
+
+[node name="nb_rock5" parent="." unique_id=1987671296 instance=ExtResource("10_yives")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8153515, 0, -0.8788768)
+
+[node name="nb_rock6" parent="." unique_id=274315110 instance=ExtResource("12_043aw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.608595, 0, -0.9126563)
+
+[node name="nb_boulder1" parent="." unique_id=1305296185 instance=ExtResource("7_2kqy2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4, 0, -4.229015)
+
+[node name="nb_boulder2" parent="." unique_id=142529603 instance=ExtResource("8_742bj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3001137, 0, -3.7290149)
+
+[node name="nb_boulder3" parent="." unique_id=1497834806 instance=ExtResource("9_yives")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 0, -3.7290149)
+
+[node name="nb_boulder4" parent="." unique_id=1168488129 instance=ExtResource("10_stnmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -3.7290149)
+
+[node name="nb_pebble1" parent="." unique_id=1154799644 instance=ExtResource("11_043aw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.707338, 0, -2.4404175)
+
+[node name="nb_pebble2" parent="." unique_id=1353905486 instance=ExtResource("12_jgvgw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.650773, 0, -2.1831186)
+
+[node name="nb_pebble3" parent="." unique_id=2127910386 instance=ExtResource("13_edap2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.390447, 0, -2.1402357)
+
+[node name="nb_patch1" parent="." unique_id=512094097 instance=ExtResource("14_yives")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2221713, 0, -1.0953345)
+
+[node name="nb_patch2" parent="." unique_id=697031577 instance=ExtResource("15_stnmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.430656, 0, -1.0953345)

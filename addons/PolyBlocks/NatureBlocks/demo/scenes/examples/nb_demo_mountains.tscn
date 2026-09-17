@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bffkn0pyjc6i3"]
+
+[ext_resource type="PackedScene" uid="uid://bhcjpqkmjijv2" path="res://PolyBlocks/NatureBlocks/tools/generator_mountain/nb_gen_mountain.tscn" id="1_aboir"]
+[ext_resource type="Material" uid="uid://i3ekfr4hdvn" path="res://PolyBlocks/NatureBlocks/source_files/materials/terrain/nbmat_terrain_swamp.tres" id="2_4wam3"]
+[ext_resource type="ArrayMesh" uid="uid://bmkmi4a203v6p" path="res://PolyBlocks/NatureBlocks/tools/generator_mountain/src/nbmesh_mountain1.mesh" id="3_6mk4j"]
+[ext_resource type="ArrayMesh" uid="uid://cjgfhf4viu4cn" path="res://PolyBlocks/NatureBlocks/tools/generator_mountain/src/nbmesh_mountain2.mesh" id="4_xyd2r"]
+[ext_resource type="ArrayMesh" uid="uid://bgymcss3tr73l" path="res://PolyBlocks/NatureBlocks/tools/generator_mountain/src/nbmesh_mountain3.mesh" id="5_a5edq"]
+[ext_resource type="ArrayMesh" uid="uid://chrvqa2cb8xsn" path="res://PolyBlocks/NatureBlocks/tools/generator_mountain/src/nbmesh_mountain4.mesh" id="6_kqqhb"]
+
+[sub_resource type="Curve3D" id="Curve3D_5i2rh"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -49.97609, 0, -1.538948, 0, 0, 0, 0, 0, 0, -22.28627, 0, 1.3300438, 0, 0, 0, 0, 0, 0, 1.103878, 0, -2.25914, 0, 0, 0, 0, 0, 0, 23.178583, 0, 1.7415657, 0, 0, 0, 0, 0, 0, 49.568134, 0, 0.6487732),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="MultiMesh" id="MultiMesh_orgor"]
+transform_format = 1
+instance_count = 2
+mesh = ExtResource("3_6mk4j")
+buffer = PackedFloat32Array(0.33659035, 0, 1.115705, -19.785843, 0, 1.1175854, 0, 0, -1.115705, 0, 0.33659035, 0.9463572, -0.4227931, 0, 0.58957696, 33.677822, 0, 0.7275656, 0, 0, -0.58957696, 0, -0.4227931, 1.3067919)
+
+[sub_resource type="MultiMesh" id="MultiMesh_lfteo"]
+transform_format = 1
+instance_count = 4
+mesh = ExtResource("4_xyd2r")
+buffer = PackedFloat32Array(-0.85758996, 0, 0.8544543, -6.0612984, 0, 1.3696218, 0, 0, -0.8544543, 0, -0.85758996, -1.1596541, 0.74554247, 0, 0.43377647, -28.537556, 0, 0.90359926, 0, 0, -0.43377647, 0, 0.74554247, 0.68233705, -0.33884636, 0, -1.4237212, 14.480734, 0, 1.3764104, 0, 0, 1.4237212, 0, -0.33884636, 0.16521233, 0.690098, 0, -0.11550906, -35.85703, 0, 0.6385469, 0, 0, 0.11550906, 0, 0.690098, -0.07604643)
+
+[sub_resource type="MultiMesh" id="MultiMesh_mjcgk"]
+transform_format = 1
+instance_count = 1
+mesh = ExtResource("5_a5edq")
+buffer = PackedFloat32Array(-0.28259718, 0, -0.6980143, -22.371109, 0, 0.7359212, 0, 0, 0.6980143, 0, -0.28259718, 1.3212538)
+
+[sub_resource type="MultiMesh" id="MultiMesh_fe47i"]
+transform_format = 1
+instance_count = 5
+mesh = ExtResource("6_kqqhb")
+buffer = PackedFloat32Array(-0.37434253, 0, -0.20814823, -46.368626, 0, 0.36315957, 0, 0, 0.20814823, 0, -0.37434253, -1.1651723, 0.9721531, 0, -0.5804528, -23.018509, 0, 1.160562, 0, 0, 0.5804528, 0, 0.9721531, 1.2541752, -0.77264446, 0, 0.6759885, -1.9551767, 0, 1.1776, 0, 0, -0.6759885, 0, -0.77264446, -1.7897326, 0.98891234, 0, 0.6986888, -9.687667, 0, 1.3733264, 0, 0, -0.6986888, 0, 0.98891234, -0.6031934, 0.26536292, 0, 0.19870865, 45.404846, 0, 0.26844388, 0, 0, -0.19870865, 0, 0.26536292, 0.82117516)
+
+[node name="nb_demo_mountains" type="Node3D" unique_id=1738254264]
+
+[node name="MountainPath" type="Path3D" parent="." unique_id=1748342482]
+curve = SubResource("Curve3D_5i2rh")
+
+[node name="nb[tool]_mountain_generator" parent="." unique_id=439265924 node_paths=PackedStringArray("mountain_path") instance=ExtResource("1_aboir")]
+mountain_path = NodePath("../MountainPath")
+use_random_seed = false
+random_seed = 3026736614
+mountain_amount = 12
+
+[node name="nb_gen_mountain_variant_1" type="MultiMeshInstance3D" parent="nb[tool]_mountain_generator" unique_id=1392783518]
+material_override = ExtResource("2_4wam3")
+multimesh = SubResource("MultiMesh_orgor")
+
+[node name="nb_gen_mountain_variant_2" type="MultiMeshInstance3D" parent="nb[tool]_mountain_generator" unique_id=1763334159]
+material_override = ExtResource("2_4wam3")
+multimesh = SubResource("MultiMesh_lfteo")
+
+[node name="nb_gen_mountain_variant_3" type="MultiMeshInstance3D" parent="nb[tool]_mountain_generator" unique_id=2006634710]
+material_override = ExtResource("2_4wam3")
+multimesh = SubResource("MultiMesh_mjcgk")
+
+[node name="nb_gen_mountain_variant_4" type="MultiMeshInstance3D" parent="nb[tool]_mountain_generator" unique_id=1744109941]
+material_override = ExtResource("2_4wam3")
+multimesh = SubResource("MultiMesh_fe47i")

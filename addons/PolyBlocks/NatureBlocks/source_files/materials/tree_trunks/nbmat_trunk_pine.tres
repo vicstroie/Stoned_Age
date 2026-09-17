@@ -1,0 +1,35 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c66fyxu6yhw2w"]
+
+[ext_resource type="Texture2D" uid="uid://cqkrccp2tkdgl" path="res://PolyBlocks/NatureBlocks/source_files/textures/vegetation/nbtex_pine_trunks.png" id="1_5avbg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hohnt"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.113405325, 0.08084149, 0.061381534, 1)
+grow = true
+grow_amount = 0.005
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qf8bi"]
+
+[resource]
+next_pass = SubResource("StandardMaterial3D_hohnt")
+specular_mode = 2
+disable_ambient_light = true
+disable_specular_occlusion = true
+albedo_color = Color(0.57242215, 0.5288034, 0.49096918, 1)
+albedo_texture = ExtResource("1_5avbg")
+normal_scale = -16.0
+normal_texture = SubResource("CompressedTexture2D_qf8bi")
+rim_enabled = true
+rim_tint = 0.0
+ao_light_affect = 1.0
+backlight = Color(0.72993046, 0.60420203, 0.21063238, 1)
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(0.113405325, 0.08084149, 0.061381534, 1)
+stencil_outline_thickness = 0.005

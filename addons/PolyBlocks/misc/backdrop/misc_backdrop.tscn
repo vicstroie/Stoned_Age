@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dtlk8bbos2y2h"]
+
+[ext_resource type="PackedScene" uid="uid://badqwwwy6sm3x" path="res://PolyBlocks/misc/backdrop/src/misc_backdrop.glb" id="1_r1yqw"]
+[ext_resource type="Material" uid="uid://db0xa8csyorlg" path="res://PolyBlocks/misc/backdrop/src/misc_backdrop.tres" id="2_r1yqw"]
+
+[node name="misc_backdrop" unique_id=2109330734 instance=ExtResource("1_r1yqw")]
+
+[node name="backdrop" parent="." index="0" unique_id=1904155569]
+surface_material_override/0 = ExtResource("2_r1yqw")

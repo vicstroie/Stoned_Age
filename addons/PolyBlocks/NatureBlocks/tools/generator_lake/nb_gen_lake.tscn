@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cl2kjjf6pa1nc"]
+
+[ext_resource type="Script" uid="uid://btrbsfp8dqwd6" path="res://PolyBlocks/NatureBlocks/tools/generator_lake/src/nb_gen_lake.gd" id="1_nl5a4"]
+
+[node name="nb[tool]_lake_generator" type="Node3D" unique_id=549192038]
+script = ExtResource("1_nl5a4")

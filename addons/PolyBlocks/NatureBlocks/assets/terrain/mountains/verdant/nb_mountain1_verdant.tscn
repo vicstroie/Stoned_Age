@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://nq4lv3akl6pm"]
+
+[ext_resource type="PackedScene" uid="uid://dt2a7qtc454w7" path="res://PolyBlocks/NatureBlocks/source_files/glb/terrain/mountains/nbglb_mountain1.glb" id="1_bbhn3"]
+[ext_resource type="Material" uid="uid://bss63h7j0pet7" path="res://PolyBlocks/NatureBlocks/source_files/materials/terrain/nbmat_terrain_verdant.tres" id="2_b246h"]
+
+[node name="nb_mountain1" unique_id=1297044073 instance=ExtResource("1_bbhn3")]
+
+[node name="nb_mountain_1" parent="." index="0" unique_id=1841999301]
+surface_material_override/0 = ExtResource("2_b246h")

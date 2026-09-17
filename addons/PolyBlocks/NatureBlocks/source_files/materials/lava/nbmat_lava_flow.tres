@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cykwxsycv5c0c"]
+
+[ext_resource type="Shader" uid="uid://ccpg3d25jjucu" path="res://PolyBlocks/NatureBlocks/source_files/shaders/nbshader_water.gdshader" id="1_yunjb"]
+[ext_resource type="Texture2D" uid="uid://dnuw8yntc2u7p" path="res://PolyBlocks/NatureBlocks/source_files/textures/noise/nbtex_noise_waterflow.png" id="2_mf85h"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_yunjb")
+shader_parameter/noise_texture = ExtResource("2_mf85h")
+shader_parameter/water_color = Color(1.353256, 0.4685975, 0.11787485, 1)
+shader_parameter/ripple_color = Color(2.454227, 2.454227, 0.31831774, 1)
+shader_parameter/wave_strength = 0.1
+shader_parameter/wave_speed = Vector2(0, 0.2)
+shader_parameter/water_transparency = 0.8
+shader_parameter/water_roughness = 0.4
+shader_parameter/normal_strength = 0.4
+shader_parameter/water_depth_fade = 0.5
+shader_parameter/foam_distance = -0.5
+shader_parameter/surface_noise_cutoff = 2.0
+shader_parameter/foam_scale = 4.0
+shader_parameter/distortion_intensity = 0.02000000095

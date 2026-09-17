@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dg2r16umyilll"]
+
+[ext_resource type="PackedScene" uid="uid://cepcoj8admwli" path="res://PolyBlocks/NatureBlocks/source_files/glb/ground/boulders/nbglb_boulder1.glb" id="1_jdf6b"]
+[ext_resource type="Material" uid="uid://crtlvy7btpfpx" path="res://PolyBlocks/NatureBlocks/source_files/materials/ground/nbmat_ground_moss.tres" id="2_lfkll"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wj2wp"]
+points = PackedVector3Array(-1.5316881, 0.27686793, -0.78586143, 0.057060543, 3.0017185, -0.030234108, 1.9664625, -0.029000299, 1.5239654, -1.5210786, 1.720306, 1.1354606, 0.5415829, 1.9375169, -1.6987333, 0.47875616, -0.092829876, -1.3654563, -1.5421659, -0.14699869, 0.94341075, 2.0920496, 1.6631935, 0.60171217, -2.3622375, 1.1732892, -0.16603045, 0.9486773, 2.4197183, 1.2878183, -0.91956764, 2.6353536, -1.0735401, 1.5239729, 0.75328773, 1.8584398, -1.2681308, 2.7752318, 0.38857937, 0.33906296, -0.58808583, 0.8850152, 0.8278081, 2.784902, -0.7307556, 2.0035093, 1.311623, 0.041106384, -1.4006221, 1.3111967, -1.137192, -1.0540204, 0.13359755, -1.1370248, -2.407969, 1.382891, 0.18065402, -1.6107821, 0.6176413, 1.1510644, 1.4598707, 1.5229766, -0.8715808, -1.9611666, 0.1298168, -0.16785878, -1.1848781, 2.5487263, 0.93503404, -0.63983196, 1.8670996, 1.3602151, -1.2706794, 2.8485494, -0.16891167, -0.5025167, 1.0335608, -1.4942769, 1.8776848, -0.15843885, 1.511292, 1.0851665, 0.7603676, -1.1975627, -1.8519433, 2.0914795, 0.8185933, -0.014995795, -0.56182724, 0.8039034, -2.1890466, 0.9617232, 0.67199314, 1.9460056, 1.9422915, 0.4602436)
+
+[node name="nb_boulder1" unique_id=1305296185 instance=ExtResource("1_jdf6b")]
+
+[node name="nb_boulder1" parent="." index="0" unique_id=465639889]
+surface_material_override/0 = ExtResource("2_lfkll")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1024555654]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1105383652]
+shape = SubResource("ConvexPolygonShape3D_wj2wp")

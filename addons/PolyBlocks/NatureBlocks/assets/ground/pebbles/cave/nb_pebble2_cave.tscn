@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://crqigpyjwptvd"]
+
+[ext_resource type="PackedScene" uid="uid://cueo0mgnjrp8u" path="res://PolyBlocks/NatureBlocks/source_files/glb/ground/pebbles/nbglb_pebble2.glb" id="1_cbmf7"]
+[ext_resource type="Material" uid="uid://drvxmtycf6ohm" path="res://PolyBlocks/NatureBlocks/source_files/materials/ground/nbmat_ground_cave.tres" id="2_8lfxu"]
+
+[node name="nb_pebble2" unique_id=1353905486 instance=ExtResource("1_cbmf7")]
+
+[node name="nb_pebble2" parent="." index="0" unique_id=250820477]
+surface_material_override/0 = ExtResource("2_8lfxu")

@@ -1,0 +1,29 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b6ikr3gl2dkc1"]
+
+[ext_resource type="Texture2D" uid="uid://53i0fqig2vh5" path="res://PolyBlocks/NatureBlocks/source_files/textures/vegetation/nbtex_tree_trunks.png" id="1_nu70m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmqot"]
+cull_mode = 1
+shading_mode = 0
+albedo_color = Color(0.12347304, 0.12347304, 0.12347304, 1)
+grow = true
+grow_amount = 0.02
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qf8bi"]
+
+[resource]
+next_pass = SubResource("StandardMaterial3D_mmqot")
+specular_mode = 2
+disable_ambient_light = true
+disable_specular_occlusion = true
+albedo_color = Color(0.5224414, 0.408809, 0.33152986, 1)
+albedo_texture = ExtResource("1_nu70m")
+normal_scale = -16.0
+normal_texture = SubResource("CompressedTexture2D_qf8bi")
+rim_enabled = true
+rim_tint = 0.0
+ao_light_affect = 1.0
+backlight = Color(0.72993046, 0.60420203, 0.21063238, 1)
+stencil_flags = 2
+stencil_color = Color(0.113405325, 0.08084149, 0.061381534, 1)
+stencil_outline_thickness = 0.03

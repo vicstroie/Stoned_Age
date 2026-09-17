@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b6l28b17j72lr"]
+
+[ext_resource type="Script" uid="uid://bgvidhrj4t6rq" path="res://PolyBlocks/NatureBlocks/tools/scatter_trees/src/nb_scatter_pine.gd" id="1_mcxyu"]
+
+[node name="nb[tool]_pine_scatter" type="Node" unique_id=1985741790]
+script = ExtResource("1_mcxyu")
+forest = 11.0
+jungle = 38.0
+olive = 22.0
+blue = 19.0
+anime = 7.0
+spooky = 15.0
+trunk = 8.0
+low_poly = 0.0

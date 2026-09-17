@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cpot4aohprbse"]
+
+[ext_resource type="Material" uid="uid://8ews1uox6nyj" path="res://PolyBlocks/NatureBlocks/source_files/materials/lava/nbmat_lava_splash.tres" id="1_of1wp"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_phhqk"]
+radius = 0.1
+height = 1.6
+
+[sub_resource type="Curve" id="Curve_phhqk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6q5a2"]
+curve = SubResource("Curve_phhqk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ieg2e"]
+lifetime_randomness = 0.4
+particle_flag_align_y = true
+emission_shape = 3
+emission_box_extents = Vector3(1.6, 0.5, 0.5)
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(0, 1, 1)
+initial_velocity_min = 4.0
+initial_velocity_max = 4.0
+angular_velocity_min = -720.0
+angular_velocity_max = 719.99994
+gravity = Vector3(0, -2, 0)
+scale_min = 0.19999999
+scale_max = 0.59999996
+scale_curve = SubResource("CurveTexture_6q5a2")
+
+[sub_resource type="SphereMesh" id="SphereMesh_sklwg"]
+material = ExtResource("1_of1wp")
+radius = 0.1
+height = 0.2
+radial_segments = 8
+rings = 4
+
+[node name="nbfx_lava_splash" type="Node3D" unique_id=1807379919]
+
+[node name="lava_splash" type="MeshInstance3D" parent="." unique_id=83009960]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_phhqk")
+surface_material_override/0 = ExtResource("1_of1wp")
+
+[node name="lava_splash_particles" type="GPUParticles3D" parent="." unique_id=1199343130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36999774, 0)
+process_material = SubResource("ParticleProcessMaterial_ieg2e")
+draw_pass_1 = SubResource("SphereMesh_sklwg")

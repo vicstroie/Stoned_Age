@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cisr5twrtvgpv"]
+
+[ext_resource type="PackedScene" uid="uid://c4bphf36x0mca" path="res://PolyBlocks/NatureBlocks/source_files/glb/vegetation/reeds/nbglb_reed1.glb" id="1_ihwa4"]
+[ext_resource type="Material" uid="uid://bktsc0wljl0g6" path="res://PolyBlocks/NatureBlocks/source_files/materials/reeds/nbmat_reeds1.tres" id="2_qn312"]
+
+[node name="nb_reed1" unique_id=841666177 instance=ExtResource("1_ihwa4")]
+
+[node name="nb_reed1" parent="." index="0" unique_id=1152177918]
+surface_material_override/0 = ExtResource("2_qn312")

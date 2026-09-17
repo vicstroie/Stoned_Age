@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bundvy3kchlp0"]
+
+[ext_resource type="Script" uid="uid://2rrd2enbhev7" path="res://PolyBlocks/NatureBlocks/tools/scatter_trees/src/nb_scatter_birch.gd" id="1_rgsly"]
+
+[node name="nb[tool]_birch_scatter" type="Node" unique_id=2072697077]
+script = ExtResource("1_rgsly")
+tundra = 12.0
+forest = 43.0
+jungle = 19.0
+savannah = 15.0
+olive = 51.0
+autumn = 28.0
+blue = 10.0
+anime = 4.0
+mars = 0.0
+sakura = 1.0
+snow = 0.0
+spooky = 4.0

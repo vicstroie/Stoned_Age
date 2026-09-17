@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dkoo0bs7vdqr1"]
+
+[ext_resource type="PackedScene" uid="uid://3dxlhdv2e87g" path="res://PolyBlocks/NatureBlocks/source_files/glb/vegetation/vines/nbglb_vine3.glb" id="1_pgol3"]
+[ext_resource type="Material" uid="uid://cxy4n4avh4lwp" path="res://PolyBlocks/NatureBlocks/source_files/materials/other/nbmat_vine1.tres" id="2_6134o"]
+
+[node name="nb_vine3" unique_id=946441773 instance=ExtResource("1_pgol3")]
+
+[node name="nb_vine3" parent="." index="0" unique_id=452895153]
+surface_material_override/0 = ExtResource("2_6134o")

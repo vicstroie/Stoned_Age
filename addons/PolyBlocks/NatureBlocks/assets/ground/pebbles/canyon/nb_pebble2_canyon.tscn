@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c6fg3p6rsu5wj"]
+
+[ext_resource type="PackedScene" uid="uid://cueo0mgnjrp8u" path="res://PolyBlocks/NatureBlocks/source_files/glb/ground/pebbles/nbglb_pebble2.glb" id="1_ttuvc"]
+[ext_resource type="Material" uid="uid://bnufmeatlvyms" path="res://PolyBlocks/NatureBlocks/source_files/materials/ground/nbmat_ground_canyon.tres" id="2_fvv00"]
+
+[node name="nb_pebble2" unique_id=1353905486 instance=ExtResource("1_ttuvc")]
+
+[node name="nb_pebble2" parent="." index="0" unique_id=250820477]
+surface_material_override/0 = ExtResource("2_fvv00")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cjvbaw515psew"]
+
+[ext_resource type="PackedScene" uid="uid://ryjtmwto4na3" path="res://PolyBlocks/NatureBlocks/source_files/glb/ground/boulders/nbglb_boulder3.glb" id="1_girpy"]
+[ext_resource type="Material" uid="uid://cogjlgxq3fvb5" path="res://PolyBlocks/NatureBlocks/source_files/materials/ground/nbmat_ground_grey.tres" id="2_0alfo"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vdd28"]
+points = PackedVector3Array(-1.1100851, 0.04059399, 0.8258824, -0.0072960528, 2.6358206, -0.21831228, 1.6815324, 0.34918705, 0.62017864, 0.88575256, 0.19519922, -1.3814068, -1.666332, 0.30914515, -0.7318382, -0.5821813, 1.8209126, 1.0826209, 1.3474877, 2.1332924, 0.24739493, 1.0372064, 0.25401884, 1.3644519, -1.3294365, 2.0389667, -0.27739754, 0.8366779, -0.18011847, -0.4360662, 0.04394996, 2.0240042, -0.8941032, 1.6128834, 1.5606499, -0.43138814, -1.6018281, 0.13232322, 0.72941005, 0.5699284, 1.772648, 1.2488706, -0.8557949, -0.12887917, -0.8602553, -0.1675739, 1.3526064, 1.4152722, -0.9008416, 2.2443478, 0.66882867, -0.3272773, -0.18506102, 0.67556226, 0.70600575, 0.75073886, -1.3940506, 1.1023729, -0.07605449, 0.99175876, 1.304124, 0.09182577, -0.8007835, 1.181353, 2.1777675, -0.37482807, -0.67783374, 0.9895593, -1.0442975, 1.4635243, 1.9303329, 0.40678188, -0.17662005, 2.681326, 0.09556935, -1.4897981, 1.5110942, 0.19780503, -0.85031563, 0.4056483, 1.1437372, -1.654379, 0.026674464, 0.14526635, -1.0052227, 1.456517, 0.9832033, 1.7374907, 1.511486, -0.0662453, 0.5083119, 2.0726962, 0.96750796, -0.957521, 0.5619201, -1.0150974)
+
+[node name="nb_boulder3" unique_id=1497834806 instance=ExtResource("1_girpy")]
+
+[node name="nb_boulder3" parent="." index="0" unique_id=1696805923]
+surface_material_override/0 = ExtResource("2_0alfo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1631720890]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=2062698147]
+shape = SubResource("ConvexPolygonShape3D_vdd28")

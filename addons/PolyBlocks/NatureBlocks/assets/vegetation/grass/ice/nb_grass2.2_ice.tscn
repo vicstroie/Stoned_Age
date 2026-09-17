@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b8efd4d19ab349"]
+
+[ext_resource type="PackedScene" uid="uid://b6oaaqm7fusnt" path="res://PolyBlocks/NatureBlocks/source_files/glb/vegetation/grass/nbglb_grass2.glb" id="1_rbcw9"]
+[ext_resource type="Material" uid="uid://dg5v63qj5ffgt" path="res://PolyBlocks/NatureBlocks/source_files/materials/grass/nbmat_grass2_ice.tres" id="2_a4qef"]
+
+[node name="nb_grass2" unique_id=373216902 instance=ExtResource("1_rbcw9")]
+
+[node name="nb_grass2" parent="." index="0" unique_id=1540069158]
+surface_material_override/0 = ExtResource("2_a4qef")

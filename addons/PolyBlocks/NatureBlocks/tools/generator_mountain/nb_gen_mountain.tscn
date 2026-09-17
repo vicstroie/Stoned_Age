@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bhcjpqkmjijv2"]
+
+[ext_resource type="Script" uid="uid://devba1kuf0cjx" path="res://PolyBlocks/NatureBlocks/tools/generator_mountain/src/nb_gen_mountain.gd" id="1_k35wj"]
+
+[node name="nb[tool]_mountain_generator" type="Node3D" unique_id=439265924]
+script = ExtResource("1_k35wj")
+biome = 7
+mountain_mesh_paths = Array[String](["res://PolyBlocks/NatureBlocks/tools/generator_mountain/src/nbmesh_mountain1.mesh", "res://PolyBlocks/NatureBlocks/tools/generator_mountain/src/nbmesh_mountain2.mesh", "res://PolyBlocks/NatureBlocks/tools/generator_mountain/src/nbmesh_mountain3.mesh", "res://PolyBlocks/NatureBlocks/tools/generator_mountain/src/nbmesh_mountain4.mesh"])

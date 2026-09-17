@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://br1u28d70mw1h"]
+
+[ext_resource type="PackedScene" uid="uid://cgb06ahgur7nx" path="res://PolyBlocks/NatureBlocks/source_files/glb/vegetation/boardleaf/nbglb_boardleaf1.glb" id="1_elo26"]
+[ext_resource type="ArrayMesh" uid="uid://bdo6fj3ry0dew" path="res://PolyBlocks/NatureBlocks/tools/scatter_boardleaf/src/nbmesh_boardleaf1.tres" id="2_36xh7"]
+[ext_resource type="Material" uid="uid://bopujk6lntfw" path="res://PolyBlocks/NatureBlocks/source_files/materials/boardleaf/nbmat_boardleaf2.tres" id="3_elo26"]
+
+[node name="nb_boardleaf2" unique_id=1781025653 instance=ExtResource("1_elo26")]
+
+[node name="nb_boardleaf" parent="." index="0" unique_id=808934073]
+mesh = ExtResource("2_36xh7")
+surface_material_override/0 = ExtResource("3_elo26")
