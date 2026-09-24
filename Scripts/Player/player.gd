@@ -11,6 +11,10 @@ const SPRINT_SPEED = 8.0
 const JUMP_VELOCITY = 10
 const SENSITIVITY = 0.004
 
+@export_category("Movemenet State Machine")
+enum move_states {Land, Water}
+@export var move_state : move_states = move_states.Land
+
 #Terrain
 @export var water_cast : RayCast3D
 
@@ -21,7 +25,7 @@ const WALK_F_CHANGE = 1.5
 var fov_change := 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = 9.8
+#var gravity = 9.8 #not using rn because we're using the build in gravity scale
 var grounded : bool
 @export var ground_cast : RayCast3D
 @export var use_fov_change : bool
@@ -133,8 +137,22 @@ func _physics_process(delta):
 		if(!database.pause_game):
 			#movement
 			grounded = ground_cast.is_colliding()
+			print(ground_cast.get_collider())
 			_handle_movement(delta)
-		_handle_water_check(delta)
+
+
+func _set_move_state(next_move_state:int):
+	var prev_move_state := move_state
+	move_state = next_move_state
+		
+	#check last state
+	match(prev_move_state):
+		move_states.Land:
+			pass
+	#check upcoming state
+	match(next_move_state):
+		move_states.Water:
+			pass
 
 func _record_voice(is_recording:bool) -> void:
 	# If talking, suppress all other audio or voice comms from the Steam UI
@@ -149,7 +167,7 @@ func _record_voice(is_recording:bool) -> void:
 func _setup_stream () -> void: 
 	# Optionally we can get the sample rate from Steam
 	current_sample_rate = Steam.getVoiceOptimalSampleRate()
-	var voice_stream_player := AudioStreamPlayer.new()
+	var voice_stream_player := AudioStreamPlayer3D.new()
 	add_child(voice_stream_player)
 	voice_stream_player.stream = AudioStreamGenerator.new()
 	voice_stream_player.stream.mix_rate = current_sample_rate
@@ -227,30 +245,33 @@ func _handle_movement(delta):
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (head.transform.basis * transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	body_mesh.rotation.y = head.rotation.y
-		# Add the gravity.
-	if !grounded:
-		linear_velocity.y -= gravity * delta
-		linear_velocity.x = lerp(linear_velocity.x, direction.x * speed, delta * 3.0)
-		linear_velocity.z = lerp(linear_velocity.z, direction.z * speed, delta * 3.0)
-	else:
-		#jump
-		if(Input.is_action_just_pressed("jump")):
-			linear_velocity.y = JUMP_VELOCITY
-		#TODO sprint
-		if(Input.is_action_pressed("sprint")):
-			speed = SPRINT_SPEED
-			fov_change = SPRINT_F_CHANGE
-		else:
-			speed = WALK_SPEED
-			fov_change = WALK_F_CHANGE
-		#move
-		if direction:
-			linear_velocity.x = direction.x * speed
-			linear_velocity.z = direction.z * speed
-		else:
-			linear_velocity.x = lerp(linear_velocity.x, direction.x * speed, delta * 7.0)
-			linear_velocity.z = lerp(linear_velocity.z, direction.z * speed, delta * 7.0)
-	
+	match move_state:
+		move_states.Land:
+				# Add the gravity.
+			if !grounded:
+				#linear_velocity.y -= gravity * delta #not using rn because we're using the build in gravity scale
+				linear_velocity.x = lerp(linear_velocity.x, direction.x * speed, delta * 3.0)
+				linear_velocity.z = lerp(linear_velocity.z, direction.z * speed, delta * 3.0)
+			else:
+				#jump
+				if(Input.is_action_just_pressed("jump")):
+					linear_velocity.y = JUMP_VELOCITY
+				#TODO sprint
+				if(Input.is_action_pressed("sprint")):
+					speed = SPRINT_SPEED
+					fov_change = SPRINT_F_CHANGE
+				else:
+					speed = WALK_SPEED
+					fov_change = WALK_F_CHANGE
+				#move
+				if direction:
+					linear_velocity.x = direction.x * speed
+					linear_velocity.z = direction.z * speed
+				else:
+					linear_velocity.x = lerp(linear_velocity.x, direction.x * speed, delta * 7.0)
+					linear_velocity.z = lerp(linear_velocity.z, direction.z * speed, delta * 7.0)
+		move_states.Water:
+			pass
 	if(use_headbob):
 		# Head bob
 		t_bob += delta * abs(sqrt((linear_velocity.x ** 2 )+ (linear_velocity.z) ** 2)) * float(grounded)
@@ -261,8 +282,7 @@ func _handle_movement(delta):
 		var target_fov = BASE_FOV + fov_change * velocity_clamped
 		camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 
-func _handle_water_check(delta):
-	pass
+
 
 func _handle_adding_inventory(target_item): ##handles adding an item to your inventory
 	if(!target_item.permanent && inventory_ui.get_script != null):
