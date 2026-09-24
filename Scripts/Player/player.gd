@@ -12,7 +12,7 @@ const JUMP_VELOCITY = 10
 const SENSITIVITY = 0.004
 
 @export_category("Movemenet State Machine")
-enum move_states {Land, Water}
+enum move_states {Land, Water, Falling}
 @export var move_state : move_states = move_states.Land
 
 #Terrain
@@ -149,11 +149,18 @@ func _set_move_state(next_move_state:int):
 	match(prev_move_state):
 		move_states.Land:
 			pass
-	#check upcoming state
-	match(next_move_state):
 		move_states.Water:
 			pass
-
+		move_states.Falling:
+			pass
+	#check upcoming state
+	match(next_move_state):
+		move_states.Land:
+			pass
+		move_states.Water:
+			pass
+		move_states.Falling:
+			pass
 func _record_voice(is_recording:bool) -> void:
 	# If talking, suppress all other audio or voice comms from the Steam UI
 	Steam.setInGameVoiceSpeaking(SteamManager.steam_id, is_recording)
