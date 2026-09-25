@@ -50,6 +50,7 @@ var fov_change := 0
 @onready var interaction_text = %InteractionText
 @export var player_stats : Control
 @export var inventory_ui : Control
+@export var player_ui : CanvasLayer
 
 @export_category("Player Data Info")
 @export var health : float
@@ -105,7 +106,9 @@ func _setup_local_player():
 		%InventoryUI.visible = false
 		player_stats.main_player = false
 		%PlayerStats.visible = false
+		%"Player UI".visible = false
 		main_player = false
+		
 		# We get the index of the "Record" bus.
 	
 	#JSON stuff
@@ -190,7 +193,7 @@ func _record_voice(is_recording:bool) -> void:
 func _setup_stream () -> void: 
 	# Optionally we can get the sample rate from Steam
 	current_sample_rate = Steam.getVoiceOptimalSampleRate()
-	var voice_stream_player := AudioStreamPlayer3D.new()
+	var voice_stream_player := AudioStreamPlayer.new()
 	add_child(voice_stream_player)
 	voice_stream_player.stream = AudioStreamGenerator.new()
 	voice_stream_player.stream.mix_rate = current_sample_rate

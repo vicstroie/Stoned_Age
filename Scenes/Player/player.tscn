@@ -77,7 +77,7 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 1)
 
-[node name="Player" type="RigidBody3D" unique_id=1534641321 node_paths=PackedStringArray("water_cast", "ground_cast", "player_stats", "inventory_ui", "multiplayer_name", "body_mesh", "hot_mic") groups=["Player"]]
+[node name="Player" type="RigidBody3D" unique_id=1534641321 node_paths=PackedStringArray("water_cast", "ground_cast", "player_stats", "inventory_ui", "player_ui", "multiplayer_name", "body_mesh", "hot_mic") groups=["Player"]]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
@@ -94,6 +94,7 @@ land_gravity = 1.5
 water_gravity = 0.01
 player_stats = NodePath("Player UI/PlayerStats")
 inventory_ui = NodePath("Player UI/InventoryUI")
+player_ui = NodePath("Player UI")
 multiplayer_name = NodePath("Nametag")
 body_mesh = NodePath("Body")
 hot_mic = NodePath("SubViewportContainer/SubViewport/Hot Mic")
@@ -197,6 +198,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_wydro")
 
 [node name="Player UI" type="CanvasLayer" parent="." unique_id=1852411712]
+unique_name_in_owner = true
 
 [node name="InteractionText" type="Label" parent="Player UI" unique_id=651429767]
 unique_name_in_owner = true
