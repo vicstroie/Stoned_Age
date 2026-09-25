@@ -7,7 +7,6 @@ var player_inventory_path = "res://DATA/INVENTORY.json"
 
 @export_category("Multiplayer")
 @export var players : Array[RigidBody3D]
-@export var player_voices : Array[AudioStream]
 
 @export_category("All Inventory Items")
 @export var permanent_items : Dictionary

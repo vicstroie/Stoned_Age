@@ -57,12 +57,6 @@ shader_parameter/outline_thickness = 0.0999999977648
 shader_parameter/step_threshold = 0.5999999865888
 shader_parameter/outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Gradient" id="Gradient_oqlhh"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_dyyqa"]
-gradient = SubResource("Gradient_oqlhh")
-
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xc2g5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oqlhh"]
@@ -76,6 +70,12 @@ outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_oqlhh"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dyyqa"]
+gradient = SubResource("Gradient_oqlhh")
 
 [node name="Player" type="RigidBody3D" unique_id=1534641321 node_paths=PackedStringArray("water_cast", "ground_cast", "player_stats", "inventory_ui", "player_ui", "multiplayer_name", "body_mesh", "hot_mic") groups=["Player"]]
 axis_lock_angular_x = true
@@ -97,7 +97,7 @@ inventory_ui = NodePath("Player UI/InventoryUI")
 player_ui = NodePath("Player UI")
 multiplayer_name = NodePath("Nametag")
 body_mesh = NodePath("Body")
-hot_mic = NodePath("SubViewportContainer/SubViewport/Hot Mic")
+hot_mic = NodePath("Player UI/Hot Mic")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1741235203]
 unique_name_in_owner = true
@@ -164,14 +164,6 @@ target_position = Vector3(0, 0, -5)
 collision_mask = 2
 collide_with_areas = true
 
-[node name="Hot Mic" type="TextureRect" parent="SubViewportContainer/SubViewport" unique_id=1198528225]
-unique_name_in_owner = true
-visible = false
-z_index = 18
-offset_right = 64.0
-offset_bottom = 64.0
-texture = SubResource("GradientTexture2D_dyyqa")
-
 [node name="Body" type="MeshInstance3D" parent="." unique_id=103819521]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_xc2g5")
@@ -210,6 +202,14 @@ text = "press \"e\" to pick up."
 label_settings = SubResource("LabelSettings_82c14")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Hot Mic" type="TextureRect" parent="Player UI" unique_id=1198528225]
+unique_name_in_owner = true
+visible = false
+z_index = 18
+offset_right = 64.0
+offset_bottom = 64.0
+texture = SubResource("GradientTexture2D_dyyqa")
 
 [node name="Crosshair" type="TextureRect" parent="Player UI" unique_id=301191427]
 unique_name_in_owner = true

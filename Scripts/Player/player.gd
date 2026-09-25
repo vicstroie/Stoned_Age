@@ -188,7 +188,8 @@ func _record_voice(is_recording:bool) -> void:
 		Steam.startVoiceRecording()
 	else:
 		Steam.stopVoiceRecording()
-	hot_mic.visible = is_recording
+	if (main_player):
+		hot_mic.visible = is_recording
 
 func _setup_stream () -> void: 
 	# Optionally we can get the sample rate from Steam
@@ -196,6 +197,7 @@ func _setup_stream () -> void:
 	var voice_stream_player := AudioStreamPlayer.new()
 	add_child(voice_stream_player)
 	voice_stream_player.stream = AudioStreamGenerator.new()
+	#voice_stream_player.unit_size = 100
 	voice_stream_player.stream.mix_rate = current_sample_rate
 	voice_stream_player.play()
 	voice_playback = voice_stream_player.get_stream_playback() #I think this is where audio is being applied
@@ -209,7 +211,7 @@ func _check_for_voice() -> void:
 			_process_voice_data.rpc(voice_data['buffer'])
 			#print("DETECTING VOICE DATA...")
 
-@rpc("any_peer", "call_remote", "reliable")
+@rpc("any_peer", "call_local", "reliable")
 func _process_voice_data(voice_data: PackedByteArray) -> void:
 	var decompressed_voice: Dictionary = Steam.decompressVoice(voice_data, current_sample_rate)
 
@@ -221,7 +223,7 @@ func _process_voice_data(voice_data: PackedByteArray) -> void:
 			var sample_int: int = decompressed_voice['uncompressed'].decode_s16(i)
 			var amplitude: float = float(sample_int) / 32768.0
 			frames_to_push[i / 2] = Vector2(amplitude,  amplitude)
-		print(voice_playback)
+		print("Detecting Mic")
 		if voice_playback.get_frames_available() >= frames_to_push.size() && voice_playback != null:
 			voice_playback.push_buffer(frames_to_push)
 		elif voice_playback.get_frames_available() > 0:
