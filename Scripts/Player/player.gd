@@ -6,28 +6,18 @@ func _back_to_vars():
 
 @export_category("Movement")
 var speed
+var jump_vel
+@export var land_jump_vel := 5
+@export var water_jump_vel := 1
 const WALK_SPEED = 5.0
+const SWIM_SPEED = 3.0
+const SWIM_SPRINT_SPEED = 5.0
 const SPRINT_SPEED = 8.0
-const JUMP_VELOCITY = 10
 const SENSITIVITY = 0.004
-
-@export_category("Movemenet State Machine")
-enum move_states {Land, Water, Falling}
-@export var move_state : move_states = move_states.Land
-
-#Terrain
-@export var water_cast : RayCast3D
-
-#fov variables
-const BASE_FOV = 75.0
-const SPRINT_F_CHANGE = 2
-const WALK_F_CHANGE = 1.5
-var fov_change := 0
-
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 #var gravity = 9.8 #not using rn because we're using the build in gravity scale
-var grounded : bool
-@export var ground_cast : RayCast3D
+@export var grounded : bool
+@export var submerged : bool 
 @export var use_fov_change : bool
 @export var use_headbob : bool
 #bob variables
@@ -39,6 +29,22 @@ var t_bob = 0.0
 @onready var camera = %Camera3D
 @onready var p_cam = %PhantomCamera3D
 @onready var camera_cast = %CameraCast
+
+@export_category("Movemenet State Machine")
+enum move_states {Land, Water, Falling}
+@export var move_state : move_states = move_states.Falling
+
+@export_category("Terrain Checks")
+@export var water_cast : RayCast3D
+@export var ground_cast : RayCast3D
+@export var land_gravity : float
+@export var water_gravity : float
+
+#fov variables
+const BASE_FOV = 75.0
+const SPRINT_F_CHANGE = 2
+const WALK_F_CHANGE = 1.5
+var fov_change := 0
 
 @export_category("UI Elements")
 @onready var interaction_text = %InteractionText
@@ -111,7 +117,6 @@ func _setup_local_player():
 	#spawn location
 	position = Vector3(status_dictionary.Position[0],status_dictionary.Position[1],status_dictionary.Position[2])
 
-
 func _ready():
 	_setup_local_player()
 	if (inventory_ui.main_inventory):
@@ -137,30 +142,42 @@ func _physics_process(delta):
 		if(!database.pause_game):
 			#movement
 			grounded = ground_cast.is_colliding()
-			print(ground_cast.get_collider())
-			_handle_movement(delta)
 
+			if (submerged && move_state != move_states.Water):
+				_set_move_state(move_states.Water)
+				print("SET MOVE STATE : WATER")
+			if(!submerged):
+				if(grounded && ground_cast.get_collider().is_in_group("Land") && move_state != move_states.Land):
+					print("SET MOVE STATE : LAND")
+					_set_move_state(move_states.Land)
+				if (!grounded):
+					print("SET MOVE STATE : FALLING")
+					_set_move_state(move_states.Falling)
+
+			_handle_movement(delta)
 
 func _set_move_state(next_move_state:int):
 	var prev_move_state := move_state
 	move_state = next_move_state
-		
 	#check last state
 	match(prev_move_state):
 		move_states.Land:
 			pass
 		move_states.Water:
-			pass
+			gravity_scale = land_gravity
 		move_states.Falling:
 			pass
 	#check upcoming state
 	match(next_move_state):
 		move_states.Land:
-			pass
+			gravity_scale = land_gravity
+			jump_vel = land_jump_vel
 		move_states.Water:
-			pass
+			gravity_scale = water_gravity
+			jump_vel = water_jump_vel
 		move_states.Falling:
 			pass
+
 func _record_voice(is_recording:bool) -> void:
 	# If talking, suppress all other audio or voice comms from the Steam UI
 	Steam.setInGameVoiceSpeaking(SteamManager.steam_id, is_recording)
@@ -168,8 +185,7 @@ func _record_voice(is_recording:bool) -> void:
 		Steam.startVoiceRecording()
 	else:
 		Steam.stopVoiceRecording()
-	if (main_player):
-		hot_mic.visible = is_recording
+	hot_mic.visible = is_recording
 
 func _setup_stream () -> void: 
 	# Optionally we can get the sample rate from Steam
@@ -254,15 +270,13 @@ func _handle_movement(delta):
 	body_mesh.rotation.y = head.rotation.y
 	match move_state:
 		move_states.Land:
-				# Add the gravity.
 			if !grounded:
-				#linear_velocity.y -= gravity * delta #not using rn because we're using the build in gravity scale
 				linear_velocity.x = lerp(linear_velocity.x, direction.x * speed, delta * 3.0)
 				linear_velocity.z = lerp(linear_velocity.z, direction.z * speed, delta * 3.0)
 			else:
 				#jump
 				if(Input.is_action_just_pressed("jump")):
-					linear_velocity.y = JUMP_VELOCITY
+					linear_velocity.y = jump_vel
 				#TODO sprint
 				if(Input.is_action_pressed("sprint")):
 					speed = SPRINT_SPEED
@@ -278,7 +292,29 @@ func _handle_movement(delta):
 					linear_velocity.x = lerp(linear_velocity.x, direction.x * speed, delta * 7.0)
 					linear_velocity.z = lerp(linear_velocity.z, direction.z * speed, delta * 7.0)
 		move_states.Water:
-			pass
+			#jump
+			var swimming : bool
+			if(Input.is_action_pressed("jump")):
+				swimming = true
+			else:
+				swimming = false
+			if(swimming):
+				linear_velocity.y = lerpf(linear_velocity.y, jump_vel, 1) 
+
+			#TODO sprint
+			if(Input.is_action_pressed("sprint")):
+				speed = SWIM_SPRINT_SPEED
+				fov_change = SPRINT_F_CHANGE/2
+			else:
+				speed = SWIM_SPEED
+				fov_change = WALK_F_CHANGE/2
+			#move
+			if direction:
+				linear_velocity.x = direction.x * speed
+				linear_velocity.z = direction.z * speed
+			else:
+				linear_velocity.x = lerp(linear_velocity.x, direction.x * speed, delta * 7.0)
+				linear_velocity.z = lerp(linear_velocity.z, direction.z * speed, delta * 7.0)
 	if(use_headbob):
 		# Head bob
 		t_bob += delta * abs(sqrt((linear_velocity.x ** 2 )+ (linear_velocity.z) ** 2)) * float(grounded)
@@ -288,8 +324,6 @@ func _handle_movement(delta):
 		var velocity_clamped = clamp(abs(sqrt((linear_velocity.x ** 2 )+ (linear_velocity.z) ** 2)), 0.5, SPRINT_SPEED * 2)
 		var target_fov = BASE_FOV + fov_change * velocity_clamped
 		camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
-
-
 
 func _handle_adding_inventory(target_item): ##handles adding an item to your inventory
 	if(!target_item.permanent && inventory_ui.get_script != null):
@@ -329,3 +363,13 @@ func _update_JSON_data():
 	
 	database._save_JSON_file(database.player_status_path, status_dictionary)
 	database._save_JSON_file(database.player_inventory_path, inventory_dictionary)
+
+
+func _on_submerged_area_area_entered(area):
+	if(main_player):
+		if(area.is_in_group("Water")):
+			submerged = true
+func _on_submerged_area_area_exited(area):
+	if(main_player):
+		if(area.is_in_group("Water")):
+			submerged = false # Replace with function body.
