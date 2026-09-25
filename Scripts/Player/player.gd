@@ -150,7 +150,7 @@ func _physics_process(delta):
 				if(grounded && ground_cast.get_collider().is_in_group("Land") && move_state != move_states.Land):
 					print("SET MOVE STATE : LAND")
 					_set_move_state(move_states.Land)
-				if (!grounded):
+				if (!grounded && move_state != move_states.Falling):
 					print("SET MOVE STATE : FALLING")
 					_set_move_state(move_states.Falling)
 
