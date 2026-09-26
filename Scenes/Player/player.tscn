@@ -77,18 +77,18 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dyyqa"]
 gradient = SubResource("Gradient_oqlhh")
 
-[node name="Player" type="RigidBody3D" unique_id=1534641321 node_paths=PackedStringArray("water_cast", "ground_cast", "player_stats", "inventory_ui", "player_ui", "multiplayer_name", "body_mesh", "hot_mic") groups=["Player"]]
+[node name="Player" type="RigidBody3D" unique_id=1534641321 node_paths=PackedStringArray("ground_cast", "player_stats", "inventory_ui", "player_ui", "multiplayer_name", "body_mesh", "hot_mic") groups=["Player"]]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 mass = 100.0
 gravity_scale = 1.5
 script = ExtResource("1_mtuoh")
+water_jump_vel = 5
 use_fov_change = true
 use_headbob = true
 bob_freq = 2.2
 bob_amp = 0.04
-water_cast = NodePath("Body/Water Cast")
 ground_cast = NodePath("Body/Ground Cast")
 land_gravity = 1.5
 water_gravity = 0.01
@@ -171,11 +171,6 @@ mesh = SubResource("CapsuleMesh_xc2g5")
 [node name="Ground Cast" type="RayCast3D" parent="Body" unique_id=1713023476]
 transform = Transform3D(1, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, -0.954, 0)
 debug_shape_thickness = 5
-
-[node name="Water Cast" type="RayCast3D" parent="Body" unique_id=1438608242]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99116063, 0)
-collide_with_areas = true
-collide_with_bodies = false
 
 [node name="Submerged Area" type="Area3D" parent="Body" unique_id=1797902989]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49562883, 0)

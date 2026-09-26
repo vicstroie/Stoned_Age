@@ -7,6 +7,8 @@ func _back_to_vars():
 @export_category("Movement")
 var speed
 var jump_vel
+var fall_timer_max := 20
+var fall_timer := 0
 @export var land_jump_vel := 5
 @export var water_jump_vel := 1
 const WALK_SPEED = 5.0
@@ -35,7 +37,6 @@ enum move_states {Land, Water, Falling}
 @export var move_state : move_states = move_states.Falling
 
 @export_category("Terrain Checks")
-@export var water_cast : RayCast3D
 @export var ground_cast : RayCast3D
 @export var land_gravity : float
 @export var water_gravity : float
@@ -145,7 +146,7 @@ func _physics_process(delta):
 		if(!database.pause_game):
 			#movement
 			grounded = ground_cast.is_colliding()
-
+			print(fall_timer)
 			if (submerged && move_state != move_states.Water):
 				_set_move_state(move_states.Water)
 				print("SET MOVE STATE : WATER")
@@ -154,8 +155,11 @@ func _physics_process(delta):
 					print("SET MOVE STATE : LAND")
 					_set_move_state(move_states.Land)
 				if (!grounded && move_state != move_states.Falling):
-					print("SET MOVE STATE : FALLING")
-					_set_move_state(move_states.Falling)
+					if(fall_timer <= 0):
+						print("SET MOVE STATE : FALLING")
+						_set_move_state(move_states.Falling)
+					else:
+						fall_timer -= delta
 
 			_handle_movement(delta)
 
@@ -175,9 +179,11 @@ func _set_move_state(next_move_state:int):
 		move_states.Land:
 			gravity_scale = land_gravity
 			jump_vel = land_jump_vel
+			fall_timer = fall_timer_max
 		move_states.Water:
 			gravity_scale = water_gravity
 			jump_vel = water_jump_vel
+			fall_timer = fall_timer_max
 		move_states.Falling:
 			pass
 
@@ -194,10 +200,11 @@ func _record_voice(is_recording:bool) -> void:
 func _setup_stream () -> void: 
 	# Optionally we can get the sample rate from Steam
 	current_sample_rate = Steam.getVoiceOptimalSampleRate()
-	var voice_stream_player := AudioStreamPlayer3D.new()
+	#var voice_stream_player := AudioStreamPlayer3D.new()
+	var voice_stream_player := AudioStreamPlayer.new()
 	add_child(voice_stream_player)
 	voice_stream_player.stream = AudioStreamGenerator.new()
-	voice_stream_player.unit_size = 100
+	#voice_stream_player.unit_size = 100
 	voice_stream_player.stream.mix_rate = current_sample_rate
 	voice_stream_player.play()
 	voice_playback = voice_stream_player.get_stream_playback() #I think this is where audio is being applied
@@ -211,7 +218,8 @@ func _check_for_voice() -> void:
 			_process_voice_data.rpc(voice_data['buffer'])
 			#print("DETECTING VOICE DATA...")
 
-@rpc("any_peer", "call_local", "reliable")
+#@rpc("any_peer", "call_local", "reliable")
+@rpc("any_peer", "call_remote", "reliable")
 func _process_voice_data(voice_data: PackedByteArray) -> void:
 	var decompressed_voice: Dictionary = Steam.decompressVoice(voice_data, current_sample_rate)
 
@@ -223,7 +231,7 @@ func _process_voice_data(voice_data: PackedByteArray) -> void:
 			var sample_int: int = decompressed_voice['uncompressed'].decode_s16(i)
 			var amplitude: float = float(sample_int) / 32768.0
 			frames_to_push[i / 2] = Vector2(amplitude,  amplitude)
-		print("Detecting Mic")
+#		print("Detecting Mic")
 		if voice_playback.get_frames_available() >= frames_to_push.size() && voice_playback != null:
 			voice_playback.push_buffer(frames_to_push)
 		elif voice_playback.get_frames_available() > 0:
@@ -298,15 +306,8 @@ func _handle_movement(delta):
 					linear_velocity.z = lerp(linear_velocity.z, direction.z * speed, delta * 7.0)
 		move_states.Water:
 			#jump
-			var swimming : bool
 			if(Input.is_action_pressed("jump")):
-				swimming = true
-			else:
-				swimming = false
-			if(swimming):
-				linear_velocity.y = lerpf(linear_velocity.y, jump_vel, 1) 
-
-			#TODO sprint
+				linear_velocity.y = jump_vel
 			if(Input.is_action_pressed("sprint")):
 				speed = SWIM_SPRINT_SPEED
 				fov_change = SPRINT_F_CHANGE/2
