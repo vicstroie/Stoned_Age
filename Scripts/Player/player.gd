@@ -275,6 +275,12 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * bob_freq) * bob_amp
 	pos.x = cos(time * bob_freq / 2) * bob_amp
 	return pos
+#
+#func _handle_controller_cam(delta):
+	#controller_vector = Input.get_vector("cam_right","cam_left","cam_up","cam_down")
+	#if (controller_vector.length() >= .2):
+		#cam_origin.rotation.x -= controller_vector.y  * delta
+		#cam_origin.rotation.y += controller_vector.x  * delta
 
 func _handle_movement(delta):
 	# Get the input direction and handle the movement/deceleration.
