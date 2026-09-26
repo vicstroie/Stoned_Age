@@ -146,7 +146,6 @@ func _physics_process(delta):
 		if(!database.pause_game):
 			#movement
 			grounded = ground_cast.is_colliding()
-			print(fall_timer)
 			if (submerged && move_state != move_states.Water):
 				_set_move_state(move_states.Water)
 				print("SET MOVE STATE : WATER")
@@ -155,7 +154,7 @@ func _physics_process(delta):
 					print("SET MOVE STATE : LAND")
 					_set_move_state(move_states.Land)
 				if (!grounded && move_state != move_states.Falling):
-					if(fall_timer <= 0):
+					if(fall_timer <= 0): #TODO find a better transition for falling
 						print("SET MOVE STATE : FALLING")
 						_set_move_state(move_states.Falling)
 					else:
@@ -197,16 +196,20 @@ func _record_voice(is_recording:bool) -> void:
 	if (main_player):
 		hot_mic.visible = is_recording
 
+#TODO prox chat
 func _setup_stream () -> void: 
-	# Optionally we can get the sample rate from Steam
+	#Optionally we can get the sample rate from Steam
 	current_sample_rate = Steam.getVoiceOptimalSampleRate()
-	#var voice_stream_player := AudioStreamPlayer3D.new()
-	var voice_stream_player := AudioStreamPlayer.new()
+	var voice_stream_player := AudioStreamPlayer3D.new()
+	#var voice_stream_player := AudioStreamPlayer.new()
 	add_child(voice_stream_player)
+	
+	voice_stream_player.max_distance = 25
+
 	voice_stream_player.stream = AudioStreamGenerator.new()
-	#voice_stream_player.unit_size = 100
 	voice_stream_player.stream.mix_rate = current_sample_rate
 	voice_stream_player.play()
+	
 	voice_playback = voice_stream_player.get_stream_playback() #I think this is where audio is being applied
 
 func _check_for_voice() -> void: 
@@ -218,8 +221,8 @@ func _check_for_voice() -> void:
 			_process_voice_data.rpc(voice_data['buffer'])
 			#print("DETECTING VOICE DATA...")
 
-#@rpc("any_peer", "call_local", "reliable")
-@rpc("any_peer", "call_remote", "reliable")
+#@rpc("any_peer", "call_remote", "reliable")
+@rpc("any_peer", "call_local", "reliable")
 func _process_voice_data(voice_data: PackedByteArray) -> void:
 	var decompressed_voice: Dictionary = Steam.decompressVoice(voice_data, current_sample_rate)
 
@@ -275,7 +278,8 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * bob_freq) * bob_amp
 	pos.x = cos(time * bob_freq / 2) * bob_amp
 	return pos
-#
+
+#TODO CONTROLLER COMPATIBILITY
 #func _handle_controller_cam(delta):
 	#controller_vector = Input.get_vector("cam_right","cam_left","cam_up","cam_down")
 	#if (controller_vector.length() >= .2):
@@ -296,20 +300,19 @@ func _handle_movement(delta):
 				#jump
 				if(Input.is_action_just_pressed("jump")):
 					linear_velocity.y = jump_vel
-				#TODO sprint
 				if(Input.is_action_pressed("sprint")):
 					speed = SPRINT_SPEED
 					fov_change = SPRINT_F_CHANGE
 				else:
 					speed = WALK_SPEED
 					fov_change = WALK_F_CHANGE
-				#move
 				if direction:
 					linear_velocity.x = direction.x * speed
 					linear_velocity.z = direction.z * speed
 				else:
 					linear_velocity.x = lerp(linear_velocity.x, direction.x * speed, delta * 7.0)
 					linear_velocity.z = lerp(linear_velocity.z, direction.z * speed, delta * 7.0)
+		#TODO polish swimming
 		move_states.Water:
 			#jump
 			if(Input.is_action_pressed("jump")):

@@ -84,7 +84,7 @@ axis_lock_angular_z = true
 mass = 100.0
 gravity_scale = 1.5
 script = ExtResource("1_mtuoh")
-water_jump_vel = 5
+water_jump_vel = 2
 use_fov_change = true
 use_headbob = true
 bob_freq = 2.2
@@ -119,9 +119,6 @@ unique_name_in_owner = true
 script = ExtResource("3_dd0ac")
 tween_resource = SubResource("Resource_jlvik")
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
-
-[node name="VC_Input" type="AudioListener3D" parent="Head" unique_id=793014444]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32061005, 0)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=813920420]
 unique_name_in_owner = true
@@ -254,6 +251,8 @@ offset_top = 29.0
 offset_right = 312.0
 offset_bottom = 42.0
 show_percentage = false
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=567542439]
 
 [connection signal="area_entered" from="Body/Submerged Area" to="." method="_on_submerged_area_area_entered"]
 [connection signal="area_exited" from="Body/Submerged Area" to="." method="_on_submerged_area_area_exited"]
