@@ -19,8 +19,8 @@ extends Node
 @export var density: float = 0.05
 @export var max_trees: int = 100
 @export_range(0, 360, 1) var rotation_variance_degrees: float = 360.0
-@export_range(0.0, 1.0, 0.01) var scale_min: float = 0.8
-@export_range(1.0, 2.0, 0.01) var scale_max: float = 1.2
+@export_range(0.0, 5.0, 0.01) var scale_min: float = 0.8
+@export_range(1.0, 10.0, 0.01) var scale_max: float = 1.2
 @export_range(0.0, 1.0, 0.01) var cluster: float = 0.0
 
 @export_group("Biomes")
