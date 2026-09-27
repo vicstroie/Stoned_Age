@@ -196,12 +196,11 @@ func _record_voice(is_recording:bool) -> void:
 	if (main_player):
 		hot_mic.visible = is_recording
 
-#TODO prox chat
 func _setup_stream () -> void: 
 	#Optionally we can get the sample rate from Steam
 	current_sample_rate = Steam.getVoiceOptimalSampleRate()
 	var voice_stream_player := AudioStreamPlayer3D.new()
-	#var voice_stream_player := AudioStreamPlayer.new()
+
 	add_child(voice_stream_player)
 	
 	voice_stream_player.max_distance = 25
@@ -222,7 +221,7 @@ func _check_for_voice() -> void:
 			#print("DETECTING VOICE DATA...")
 
 #@rpc("any_peer", "call_remote", "reliable")
-@rpc("any_peer", "call_local", "reliable")
+@rpc("any_peer", "call_remote", "reliable")
 func _process_voice_data(voice_data: PackedByteArray) -> void:
 	var decompressed_voice: Dictionary = Steam.decompressVoice(voice_data, current_sample_rate)
 
