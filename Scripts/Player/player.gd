@@ -1,5 +1,6 @@
 @icon("uid://b4e1f62upntch")
 extends RigidBody3D
+
 ##quick link to top of script
 func _back_to_vars():
 	pass
@@ -16,8 +17,10 @@ const SWIM_SPEED = 3.0
 const SWIM_SPRINT_SPEED = 5.0
 const SPRINT_SPEED = 8.0
 const SENSITIVITY = 0.004
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 #var gravity = 9.8 #not using rn because we're using the build in gravity scale
+
 @export var grounded : bool
 @export var submerged : bool 
 @export var use_fov_change : bool
@@ -109,15 +112,12 @@ func _setup_local_player():
 		%PlayerStats.visible = false
 		%"Player UI".visible = false
 		main_player = false
-		
-		# We get the index of the "Record" bus.
 	
 	#JSON stuff
 	for game_obj in get_tree().get_nodes_in_group("Database"): #assign database
 		database = game_obj
 	status_dictionary = database._JSON_to_dictionary(database.player_status_path)
 	inventory_dictionary = database._JSON_to_dictionary(database.player_inventory_path)
-	
 	#spawn location
 	position = Vector3(status_dictionary.Position[0],status_dictionary.Position[1],status_dictionary.Position[2])
 
@@ -128,6 +128,7 @@ func _ready():
 	if player_stats.main_player:
 		player_stats.setup(self, 100.0, 100.0)
 	interaction_text.text = ""
+	
 	_record_voice(true) #default microphone toggled ON
 	_setup_stream() #this function is where the audio data is being called
 
@@ -220,7 +221,6 @@ func _check_for_voice() -> void:
 			_process_voice_data.rpc(voice_data['buffer'])
 			#print("DETECTING VOICE DATA...")
 
-#@rpc("any_peer", "call_remote", "reliable")
 @rpc("any_peer", "call_remote", "reliable")
 func _process_voice_data(voice_data: PackedByteArray) -> void:
 	var decompressed_voice: Dictionary = Steam.decompressVoice(voice_data, current_sample_rate)
@@ -246,6 +246,7 @@ func _input(event):
 			p_cam.rotate_x(-event.relative.y * SENSITIVITY)
 			p_cam.rotation.x = clamp(p_cam.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 	#endregion
+
 	if (main_player):
 		if(event.is_action_pressed("toggle mic")):
 			is_open_mic = !is_open_mic
@@ -329,6 +330,7 @@ func _handle_movement(delta):
 			else:
 				linear_velocity.x = lerp(linear_velocity.x, direction.x * speed, delta * 7.0)
 				linear_velocity.z = lerp(linear_velocity.z, direction.z * speed, delta * 7.0)
+	
 	if(use_headbob):
 		# Head bob
 		t_bob += delta * abs(sqrt((linear_velocity.x ** 2 )+ (linear_velocity.z) ** 2)) * float(grounded)
