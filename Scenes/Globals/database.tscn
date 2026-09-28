@@ -7,26 +7,29 @@
 [sub_resource type="Gradient" id="Gradient_6byxh"]
 colors = PackedColorArray(0.047058824, 0.8745098, 1, 1, 0, 0, 1, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_hipvn"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rj8he"]
 gradient = SubResource("Gradient_6byxh")
 fill_from = Vector2(1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eq76m"]
 shader = ExtResource("2_rj8he")
-shader_parameter/equirectangular_sky_texture = SubResource("GradientTexture2D_hipvn")
+shader_parameter/equirectangular_sky_texture = SubResource("GradientTexture2D_rj8he")
 shader_parameter/color_gradient = ExtResource("3_0wh8c")
 shader_parameter/brightness = 2.705
 shader_parameter/speed = 0.12
 shader_parameter/height = 46.875
 shader_parameter/scale = 0.58
 
-[sub_resource type="Sky" id="Sky_e35u1"]
+[sub_resource type="Sky" id="Sky_0wh8c"]
 sky_material = SubResource("ShaderMaterial_eq76m")
 
 [sub_resource type="Environment" id="Environment_75yyr"]
 background_mode = 2
-sky = SubResource("Sky_e35u1")
+sky = SubResource("Sky_0wh8c")
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.025
+volumetric_fog_albedo = Color(0.68359375, 0.66223145, 0.66223145, 1)
 
 [sub_resource type="Animation" id="Animation_rj8he"]
 resource_name = "Day to Night"
