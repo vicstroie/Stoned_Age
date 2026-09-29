@@ -9,8 +9,7 @@ var player_inventory_path = "res://DATA/INVENTORY.json"
 @export var players : Array[RigidBody3D]
 
 @export_category("All Inventory Items")
-@export var permanent_items : Dictionary
-@export var removable_items : Dictionary
+@export var interactable_items : Dictionary
 
 @export_category("Inventory Menu")
 @export var inventory_ui : Control
