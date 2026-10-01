@@ -6,10 +6,7 @@
 [resource]
 script = ExtResource("1_3mps0")
 texture = ExtResource("2_3mps0")
-name = "Ephedra Bush Alt"
-inventory_item_name = "Ephedra Berry Alt"
-id_code = 1000
-inventory_id_code = 1001
+name = "Ephedra Berry Alt"
 is_consumable = true
 health_points = -10.0
 hunger_points = 5.0

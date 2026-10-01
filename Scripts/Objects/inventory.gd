@@ -5,7 +5,7 @@ class_name Inventory
 signal update
 var player_inventory_path = "res://DATA/INVENTORY.json"
 @export var slots: Array[InvSlot]
-
+@export var inventory_JSON_dictionary : Dictionary
 #Create Inventory
 func setup_inventory(size: int = 8):
 	for i in range(size):
@@ -25,8 +25,7 @@ func can_pick_up(item: InvItem) -> bool:
 	return false
 
 func _update_inventory_JSON():
-	var inventory_JSON_dictionary = _JSON_to_dictionary(player_inventory_path)
-	print(inventory_JSON_dictionary)
+	inventory_JSON_dictionary = _JSON_to_dictionary(player_inventory_path)
 	for i in slots.size():
 		if (slots[i].item != null):
 			inventory_JSON_dictionary[slots[i].item.name] = {

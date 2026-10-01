@@ -4,25 +4,29 @@ extends Control
 @export var inventory_ui: Control
 @onready var recipe_container = %"Recipe Container"
 var recipe_slot = preload("res://Scenes/UI/recipe_slot.tscn")
-var inventory : Inventory
+##COPYING THE ONE IN INVENTORY_UI
+var inventory 
 var is_open : bool 
 
 ##all active recipes
 var unlocked_recipes : Dictionary
 var current_crafting_slots
-
+var all_slots : Array[Control]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(inventory == null):
-		inventory = inventory_ui.inventory
-	if (Input.is_action_just_pressed("crafting") && inventory_ui.main_inventory):
-		inventory._update_inventory_JSON()
-		if(is_open):
-			close()
-		else:
-			open()
-		for recipe in all_recipes:
-			_unlock_crafting_recipe()
+
+	if (inventory_ui.main_inventory): #to ensure we don't get a ref to another player's inventory
+		if(inventory == null): #if we don't have a ref of inventory, use inventory_ui's ref
+			inventory = inventory_ui.inventory
+		if (Input.is_action_just_pressed("crafting")):
+			if(is_open):
+				close()
+			else:
+				open()
+			##Updates known recipes in the list
+			inventory._update_inventory_JSON()
+			for recipe in all_recipes:
+				_unlock_crafting_recipe()
 
 func _add_to_crafting_slots(new_recipe):
 	var new_slot = recipe_slot.instantiate()
@@ -31,17 +35,24 @@ func _add_to_crafting_slots(new_recipe):
 	
 	var new_slot_resources = [new_slot.resource_1_name, new_slot.resource_2_name, new_slot.resource_3_name]
 	var new_slot_amt = [new_slot.amt_1_needed, new_slot.amt_2_needed, new_slot.amt_3_needed]
-
+	
 	##TODO dynamically add to this list rather than having a hard set 3
 	for i in unlocked_recipes[new_recipe]["Recipe"].res_name.size():
 		if(unlocked_recipes[new_recipe]["Recipe"].res_name[i] != null):
 			new_slot_resources[i].text = unlocked_recipes[new_recipe]["Recipe"].res_name[i]
 			##TODO player stock/amount needed
 			new_slot_amt[i].text = str(unlocked_recipes[new_recipe]["Recipe"].res_amt[i])
+	
+	#remove resource data if there is no resource needed
 	for i in new_slot_resources.size():
 		if (new_slot_resources[i].text == null):
 			new_slot_resources[i].queue_free()
 			new_slot_amt[i].queue_free()
+	
+	new_slot.crafting_ui = self
+	
+	#add slot to our list of all slots
+	all_slots.append(new_slot)
 	
 ##TODO recipe JSON to keep consistent what's already been unlocked
 func _unlock_crafting_recipe():
@@ -50,6 +61,7 @@ func _unlock_crafting_recipe():
 			if(!unlocked_recipes.has(recipe)):
 				unlocked_recipes[recipe] = all_recipes[recipe]
 				_add_to_crafting_slots(recipe)
+
 func open():
 	visible = true
 	is_open = true

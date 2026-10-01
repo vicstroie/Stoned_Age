@@ -6,8 +6,7 @@
 [resource]
 script = ExtResource("1_t2ya7")
 texture = ExtResource("2_c21v6")
-name = "Ephedra Bush"
-inventory_item_name = "Ephedra Berry"
+name = "Ephedra Berry"
 is_consumable = true
 hunger_points = 10.0
 metadata/_custom_type_script = "uid://cpn5vvvoobabs"

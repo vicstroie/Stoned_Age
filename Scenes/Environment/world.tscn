@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://47y23r8uek7m" path="res://Scripts/game_manager.gd" id="1_65wml"]
 [ext_resource type="Script" uid="uid://dnqa7pnc1kwyb" path="res://Scripts/Networks/network_manager.gd" id="2_lrwwn"]
+[ext_resource type="Resource" uid="uid://c3vvgsfu0el2l" path="res://Scripts/Recipes/test_item.tres" id="2_n21hv"]
 [ext_resource type="Resource" uid="uid://bx2kv5h2uqmya" path="res://ObjectData/RedBerry.tres" id="3_hipvn"]
 [ext_resource type="Resource" uid="uid://b1vdc7l5iiqkp" path="res://ObjectData/BlackBerry.tres" id="5_vpl1c"]
 [ext_resource type="Script" uid="uid://dpxy8xquxvntr" path="res://Scripts/water_behavior.gd" id="6_5xqn0"]
@@ -77,37 +78,43 @@ transform = Transform3D(1, 0, 0, 0, 0.99968654, -0.025036298, 0, 0.025036298, 0.
 
 [node name="InteractableObject" parent="Interactables" unique_id=1402295265 instance=ExtResource("8_5xqn0")]
 transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, 0.49317932, -1.9268599, 18.002625)
+item_type = ExtResource("2_n21hv")
+item_name = "Test Item"
 
 [node name="Ephedra" parent="Interactables" unique_id=250256377 instance=ExtResource("9_hipvn")]
 transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, 0.49317932, -1.6347532, 19.650482)
 item_type = ExtResource("3_hipvn")
+item_name = "Ephedra Berry"
 
 [node name="Ephedra2" parent="Interactables" unique_id=1080127246 instance=ExtResource("9_hipvn")]
 transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, -2.4514313, -1.6347532, 19.650482)
 item_type = ExtResource("3_hipvn")
+item_name = "Ephedra Berry"
 
 [node name="Ephedra3" parent="Interactables" unique_id=587408758 instance=ExtResource("9_hipvn")]
 transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, -5.8269806, -1.6347532, 19.650482)
 item_type = ExtResource("3_hipvn")
+item_name = "Ephedra Berry"
 
 [node name="Ephedra4" parent="Interactables" unique_id=724295367 instance=ExtResource("9_hipvn")]
 transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, -10.394318, -1.6347532, 19.650482)
 item_type = ExtResource("3_hipvn")
+item_name = "Ephedra Berry"
 
 [node name="Ephedra5" parent="Interactables" unique_id=456947770 instance=ExtResource("10_hipvn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.352722, -0.58503914, 21.623215)
 item_type = ExtResource("5_vpl1c")
-item_name = "Ephedra Bush Alt"
+item_name = "Ephedra Berry Alt"
 
 [node name="Ephedra6" parent="Interactables" unique_id=397351990 instance=ExtResource("10_hipvn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4414825, -0.8705721, 22.379349)
 item_type = ExtResource("5_vpl1c")
-item_name = "Ephedra Bush Alt"
+item_name = "Ephedra Berry Alt"
 
 [node name="Ephedra7" parent="Interactables" unique_id=598380887 instance=ExtResource("10_hipvn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84742737, -1.1119528, 22.985321)
 item_type = ExtResource("5_vpl1c")
-item_name = "Ephedra Bush Alt"
+item_name = "Ephedra Berry Alt"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1649125312]
 unique_name_in_owner = true
