@@ -7,7 +7,8 @@ extends Control
 @onready var slot_container: GridContainer = $Background/GridContainer
 @onready var slots: Array = $Background/GridContainer.get_children()
 var inventory: Inventory
-
+var inventory_JSON_dictionary 
+var database
 var is_open = false
 var main_inventory : bool
 
@@ -26,9 +27,14 @@ func _process(delta: float) -> void:
 		else:
 			open()
 			update_slots()
+		inventory._update_inventory_JSON()
 	if Input.is_action_just_pressed("use") && main_inventory && !is_open && slots[0].current_item:
 		slots[0]._on_action_button_pressed()
 		update_slots()
+
+
+	
+
 
 #Called in "_ready()" in player.gd
 func setup_inventory(player, size: int = 9):

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://q32j50rtau2f"]
+
+[ext_resource type="Script" uid="uid://kf1t4r8x31g1" path="res://Scripts/Recipes/recipe.gd" id="1_47eg7"]
+[ext_resource type="Resource" uid="uid://c3vvgsfu0el2l" path="res://Scripts/Recipes/test_item.tres" id="1_wa778"]
+
+[resource]
+script = ExtResource("1_47eg7")
+recipe_name = "Test"
+res_name = Array[String](["Ephedra Berry", "Ephedra Berry Alt"])
+res_amt = Array[int]([2, 1])
+resulting_item = ExtResource("1_wa778")
+metadata/_custom_type_script = "uid://kf1t4r8x31g1"

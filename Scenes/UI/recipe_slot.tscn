@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://cb2gvvtk37rdx"]
+
+[ext_resource type="Texture2D" uid="uid://b5mou04gnkh1s" path="res://icon.svg" id="1_4b22e"]
+[ext_resource type="Script" uid="uid://b47xq328bvtop" path="res://Scripts/Recipes/recipe_ui_slot.gd" id="1_uncut"]
+
+[node name="Recipe Slot" type="Control" unique_id=2145188963]
+custom_minimum_size = Vector2(552, 139.416)
+layout_mode = 3
+anchor_right = 0.47900003
+anchor_bottom = 0.215
+offset_right = 0.19195557
+offset_bottom = 0.0960083
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uncut")
+
+[node name="SlotBackground" type="ColorRect" parent="." unique_id=1777843031]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.60784316)
+
+[node name="Stats" type="CenterContainer" parent="SlotBackground" unique_id=1688510040]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.683
+anchor_bottom = 1.0
+offset_right = -0.016021729
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(-0.25, 0.05)
+
+[node name="Panel" type="Panel" parent="SlotBackground/Stats" unique_id=1512191639]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ItemDisplay" type="Sprite2D" parent="SlotBackground/Stats/Panel" unique_id=424300602]
+unique_name_in_owner = true
+position = Vector2(-43.000004, -9.000001)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("1_4b22e")
+
+[node name="Name" type="Label" parent="SlotBackground/Stats/Panel" unique_id=2031718768]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 18.0
+offset_top = -58.0
+offset_right = 236.0
+offset_bottom = -35.0
+text = "NAME"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SlotBackground/Stats/Panel/Name" unique_id=1932376185]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.13
+anchor_right = 0.90800005
+anchor_bottom = 4.478
+offset_left = 3.0
+offset_top = 0.010000229
+offset_right = 0.055984497
+offset_bottom = 3.0059967
+
+[node name="Resources" type="HSplitContainer" parent="SlotBackground/Stats/Panel/Name/VBoxContainer" unique_id=761985571]
+layout_mode = 2
+dragging_enabled = false
+
+[node name="Resource Needed" type="Label" parent="SlotBackground/Stats/Panel/Name/VBoxContainer/Resources" unique_id=2146990306]
+unique_name_in_owner = true
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="AMT" type="Label" parent="SlotBackground/Stats/Panel/Name/VBoxContainer/Resources" unique_id=867514881]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Resources2" type="HSplitContainer" parent="SlotBackground/Stats/Panel/Name/VBoxContainer" unique_id=298186196]
+layout_mode = 2
+dragging_enabled = false
+
+[node name="Resource 2 Needed" type="Label" parent="SlotBackground/Stats/Panel/Name/VBoxContainer/Resources2" unique_id=1202385250]
+unique_name_in_owner = true
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="AMT 2" type="Label" parent="SlotBackground/Stats/Panel/Name/VBoxContainer/Resources2" unique_id=1723492272]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Resources3" type="HSplitContainer" parent="SlotBackground/Stats/Panel/Name/VBoxContainer" unique_id=1951068465]
+layout_mode = 2
+dragging_enabled = false
+
+[node name="Resource 3 Needed" type="Label" parent="SlotBackground/Stats/Panel/Name/VBoxContainer/Resources3" unique_id=263636726]
+unique_name_in_owner = true
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="AMT 3" type="Label" parent="SlotBackground/Stats/Panel/Name/VBoxContainer/Resources3" unique_id=1199154755]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Action Buttons" type="CenterContainer" parent="SlotBackground" unique_id=741639073]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.647
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.14401245
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Craft" type="Button" parent="SlotBackground/Action Buttons" unique_id=1905007412]
+unique_name_in_owner = true
+layout_mode = 2
+text = "CRAFT"

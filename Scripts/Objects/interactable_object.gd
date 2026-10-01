@@ -1,17 +1,10 @@
 extends Area3D
-@export var ID : String
+##ALERT this is a repeat in inventory item script find a way to consolidate
 @export var permanent := false
-@export var item_id: InvItem
+@export var item_type: InvItem
+@export var item_name : String
 var picked_up : bool 
 @export var collision_shape : CollisionShape3D
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 @rpc("any_peer","reliable","call_local")
 func remove_from_world():
@@ -23,4 +16,4 @@ func remove_from_world():
 func pick_up() -> InvItem:
 	rpc("remove_from_world")
 	picked_up = true
-	return item_id
+	return item_type

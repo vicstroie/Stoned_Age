@@ -1,7 +1,7 @@
 extends Node
 
 var player_status_path = "res://DATA/STATUS.json"
-var player_inventory_path = "res://DATA/INVENTORY.json"
+#var player_inventory_path = "res://DATA/INVENTORY.json"
 @export var autosave_enabled : bool
 @export var daytime : bool
 
@@ -65,14 +65,14 @@ func _process(delta):
 	#if(Input.is_action_just_pressed("cam_down") || Input.is_action_just_pressed("cam_up") || Input.is_action_just_pressed("cam_left") || Input.is_action_just_pressed("cam_right")):
 		#controller_used = true
 
-func _update_inventory():
-	#CHASE THIS FUNCTION NEEDS TO BE UPDATED, SHOULD TALK TO INVENTORY SLOTS AND SHOULD TALK TO WORLD DATABASE SO THAT PICKED UP ITEMS DON'T RESPAWN UPON RELOADING THE GAME
-	var inventory_data = _JSON_to_dictionary(player_inventory_path)
-	for item in inventory_data.Removable.size():
-		print(inventory_data.Removable[item])
-		var item_add = Label.new()
-		item_add.text = inventory_data.Removable[item]
-		item_list.add_child(item_add)
+#func _update_inventory():
+	##CHASE THIS FUNCTION NEEDS TO BE UPDATED, SHOULD TALK TO INVENTORY SLOTS AND SHOULD TALK TO WORLD DATABASE SO THAT PICKED UP ITEMS DON'T RESPAWN UPON RELOADING THE GAME
+	#var inventory_data = _JSON_to_dictionary(player_inventory_path)
+	#for item in inventory_data.Removable.size():
+		#print(inventory_data.Removable[item])
+		#var item_add = Label.new()
+		#item_add.text = inventory_data.Removable[item]
+		#item_list.add_child(item_add)
 
 func _JSON_to_dictionary(data_path:String): #returns true if JSON contains key
 	var file = FileAccess.get_file_as_string(data_path)

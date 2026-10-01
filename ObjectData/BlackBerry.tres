@@ -5,9 +5,12 @@
 
 [resource]
 script = ExtResource("1_3mps0")
-name = "Black Berry"
 texture = ExtResource("2_3mps0")
+name = "Ephedra Bush Alt"
+inventory_item_name = "Ephedra Berry Alt"
+id_code = 1000
+inventory_id_code = 1001
 is_consumable = true
-hunger_points = 5.0
 health_points = -10.0
+hunger_points = 5.0
 metadata/_custom_type_script = "uid://cpn5vvvoobabs"

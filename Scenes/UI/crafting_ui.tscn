@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bmjttniaprx3p"]
+
+[ext_resource type="Script" uid="uid://cuiry5eq0cwy0" path="res://Scripts/Player/crafting_behavior.gd" id="1_jqbsb"]
+[ext_resource type="Resource" uid="uid://q32j50rtau2f" path="res://Scripts/Recipes/test_recipe.tres" id="2_tgous"]
+[ext_resource type="Resource" uid="uid://boq82yh20cr15" path="res://Scripts/Recipes/test_recipe_alt.tres" id="3_ydygl"]
+
+[node name="CraftingUI" type="Control" unique_id=777426713]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jqbsb")
+all_recipes = {
+"Test": {
+"Recipe": ExtResource("2_tgous"),
+"Unlocked": true
+},
+"Test Alt": {
+"Recipe": ExtResource("3_ydygl"),
+"Unlocked": true
+}
+}
+
+[node name="Background" type="ColorRect" parent="." unique_id=1590504842]
+layout_mode = 1
+offset_right = 576.0
+offset_bottom = 648.0
+color = Color(0.03137255, 1, 0, 0.3254902)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Background" unique_id=522675125]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 648.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="Recipe Container" type="VBoxContainer" parent="Background/ScrollContainer" unique_id=1208318992]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1

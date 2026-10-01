@@ -28,9 +28,7 @@ background_mode = 2
 sky = SubResource("Sky_0wh8c")
 glow_enabled = true
 glow_bloom = 1.0
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.09
-volumetric_fog_albedo = Color(0.68359375, 0.66223145, 0.66223145, 1)
 
 [sub_resource type="Animation" id="Animation_rj8he"]
 resource_name = "Day to Night"
