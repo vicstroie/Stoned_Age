@@ -4,6 +4,7 @@ extends Control
 @export var inventory_ui: Control
 @onready var recipe_container = %"Recipe Container"
 var recipe_slot = preload("res://Scenes/UI/recipe_slot.tscn")
+var resource_slot = preload("res://Scenes/UI/resource_slot.tscn")
 ##COPYING THE ONE IN INVENTORY_UI
 var inventory 
 var is_open : bool 
@@ -33,22 +34,14 @@ func _add_to_crafting_slots(new_recipe):
 	recipe_container.add_child(new_slot)
 	new_slot.recipe_name.text = unlocked_recipes[new_recipe]["Recipe"].recipe_name
 	
-	var new_slot_resources = [new_slot.resource_1_name, new_slot.resource_2_name, new_slot.resource_3_name]
-	var new_slot_amt = [new_slot.amt_1_needed, new_slot.amt_2_needed, new_slot.amt_3_needed]
-	
 	##TODO dynamically add to this list rather than having a hard set 3
 	for i in unlocked_recipes[new_recipe]["Recipe"].res_name.size():
-		if(unlocked_recipes[new_recipe]["Recipe"].res_name[i] != null):
-			new_slot_resources[i].text = unlocked_recipes[new_recipe]["Recipe"].res_name[i]
-			##TODO player stock/amount needed
-			new_slot_amt[i].text = str(unlocked_recipes[new_recipe]["Recipe"].res_amt[i])
-	
-	#remove resource data if there is no resource needed
-	for i in new_slot_resources.size():
-		if (new_slot_resources[i].text == null):
-			new_slot_resources[i].queue_free()
-			new_slot_amt[i].queue_free()
-	
+		var new_resource = resource_slot.instantiate()
+		new_slot.resource_container.add_child(new_resource)
+		new_resource.get_child(0).text = unlocked_recipes[new_recipe]["Recipe"].res_name[i]
+		new_resource.get_child(1).text = str(unlocked_recipes[new_recipe]["Recipe"].res_amt[i])
+		new_slot.resource_name.append(new_resource.get_child(0).text)
+		new_slot.resource_amt.append(new_resource.get_child(1).text)
 	new_slot.crafting_ui = self
 	
 	#add slot to our list of all slots
@@ -60,6 +53,7 @@ func _unlock_crafting_recipe():
 		if(all_recipes[recipe].Unlocked):
 			if(!unlocked_recipes.has(recipe)):
 				unlocked_recipes[recipe] = all_recipes[recipe]
+				print("ADDING " + recipe + " TO RECIPE BOOK")
 				_add_to_crafting_slots(recipe)
 
 func open():
