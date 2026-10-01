@@ -1,3 +1,10 @@
 {
-
+	"Ephedra Berry": {
+		"Amount": 1,
+		"Permanent": false
+	},
+	"Ephedra Berry Alt": {
+		"Amount": 1.0,
+		"Permanent": false
+	}
 }
