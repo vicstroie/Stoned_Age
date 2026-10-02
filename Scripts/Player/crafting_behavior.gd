@@ -15,7 +15,6 @@ var current_crafting_slots
 var all_slots : Array[Control]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-
 	if (inventory_ui.main_inventory): #to ensure we don't get a ref to another player's inventory
 		if(inventory == null): #if we don't have a ref of inventory, use inventory_ui's ref
 			inventory = inventory_ui.inventory
