@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b3husq881kkt8"]
+
+[ext_resource type="PackedScene" uid="uid://8j5w40wkookt" path="res://Imports/TEMP/TextureTesting/starting_plateau.glb" id="1_jsrdp"]
+[ext_resource type="Texture2D" uid="uid://cgav0u4qjjvjv" path="res://Imports/TEMP/TextureTesting/TerrainTextureFinal.png" id="2_1qvcu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdmiw"]
+albedo_texture = ExtResource("2_1qvcu")
+metallic_specular = 0.0
+
+[node name="starting_plateau" unique_id=193424841 instance=ExtResource("1_jsrdp")]
+
+[node name="StartingPlateau" parent="." index="0" unique_id=560068348]
+material_override = SubResource("StandardMaterial3D_pdmiw")
