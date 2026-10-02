@@ -28,9 +28,11 @@ func _process(delta: float) -> void:
 			open()
 			update_slots()
 		inventory._update_inventory_JSON()
-	if Input.is_action_just_pressed("use") && main_inventory && !is_open && slots[0].current_item:
-		slots[0]._on_action_button_pressed()
-		update_slots()
+
+	#Old "EATING" code, bring back with different button config
+	#if Input.is_action_just_pressed("use") && main_inventory && !is_open && slots[0].current_item:
+		#slots[0]._on_action_button_pressed()
+		#update_slots()
 
 
 	
