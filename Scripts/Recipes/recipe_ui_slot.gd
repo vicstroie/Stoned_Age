@@ -10,6 +10,9 @@ var crafting : bool
 var craftable : bool  
 var craft_button_buffer_max = .3
 var craft_button_buffer
+var active_recipe : Recipe
+var inventory : Inventory
+var inventory_ui : Control
 
 var resource_name : Array[String]
 var resource_amt : Array[String]
@@ -19,7 +22,7 @@ func _ready():
 	
 func _process(delta):
 	_check_craftable()
-	if(crafting_ui.inventory_ui.main_inventory): 	##TODO find better way to check this
+	if(inventory_ui.main_inventory): 	##TODO find better way to check this
 		if(crafting_button.button_pressed && !crafting):
 			crafting = true
 			if(craftable):
@@ -34,8 +37,8 @@ func _process(delta):
 func _check_craftable():
 	var has_enough : Array[bool]
 	for i in resource_name.size():
-		if(crafting_ui.inventory.inventory_JSON_dictionary.has(resource_name[i])):
-			if(int(resource_amt[i]) <= crafting_ui.inventory.inventory_JSON_dictionary[resource_name[i]]["Amount"]):
+		if(inventory.inventory_JSON_dictionary.has(resource_name[i])):
+			if(int(resource_amt[i]) <= inventory.inventory_JSON_dictionary[resource_name[i]]["Amount"]):
 				has_enough.append(true)
 			else: 
 				has_enough.append(false)
@@ -45,3 +48,4 @@ func _check_craftable():
 func _craft_me():
 	#TODO crafting
 	print("Crafted " + recipe_name.text)
+	inventory_ui.insert_item(active_recipe.resulting_item)

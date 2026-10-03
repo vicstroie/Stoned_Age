@@ -42,7 +42,10 @@ func _add_to_crafting_slots(new_recipe):
 		new_slot.resource_name.append(new_resource.get_child(0).text)
 		new_slot.resource_amt.append(new_resource.get_child(1).text)
 	new_slot.crafting_ui = self
-	
+	new_slot.active_recipe = unlocked_recipes[new_recipe]["Recipe"]
+	new_slot.inventory = inventory
+	new_slot.inventory_ui = inventory_ui
+
 	#add slot to our list of all slots
 	all_slots.append(new_slot)
 	
