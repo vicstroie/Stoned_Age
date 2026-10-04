@@ -465,7 +465,6 @@ mesh = SubResource("CylinderMesh_bpro4")
 surface_material_override/0 = ExtResource("15_g1q5q")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=625971060]
-visible = false
 curve = SubResource("Curve3D_bhkp6")
 
 [node name="nb[tool]_ground_scatter" parent="." unique_id=278895764 node_paths=PackedStringArray("surface_mesh") instance=ExtResource("45_hhunj")]

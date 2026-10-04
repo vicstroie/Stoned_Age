@@ -45,7 +45,7 @@ enum GrassType {
 
 @export_group("Grass")
 @export var grass_type: GrassType = GrassType.TYPE_1
-@export_range(1, 100000, 1) var grass_amount: int = 1000
+@export_range(1, 500000, 1) var grass_amount: int = 1000
 @export_range(0.01, 10.0, 0.01) var grass_scale_min: float = 0.8
 @export_range(0.01, 10.0, 0.01) var grass_scale_max: float = 1.2
 @export var grass_surface_offset: float = -0.02

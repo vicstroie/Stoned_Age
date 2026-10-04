@@ -19,8 +19,9 @@ extends Node
 @export var density: float = 0.05
 @export var max_trees: int = 0
 @export_range(0, 360, 1) var rotation_variance_degrees: float = 360.0
-@export_range(0.0, 1.0, 0.01) var scale_min: float = 0.8
-@export_range(1.0, 2.0, 0.01) var scale_max: float = 1.2
+@export_range(0.0, 5.0, 0.01) var scale_min: float = 0.8
+@export_range(1.0, 10.0, 0.01) var scale_max: float = 1.2
+@export_range(0.0, 1.0, 0.01) var horizontal_scale_weight: float = 1.0
 @export_range(0.0, 1.0, 0.01) var cluster: float = 0.0
 
 @export_group("Biomes")
@@ -259,7 +260,16 @@ func _place_tree_at(local_pos: Vector3, surface_normal: Vector3, tree_scenes: Ar
 	instance.set_meta(GENERATED_META, true)
 	instance.transform.basis = _basis_from_up(normal, _rng.randf_range(0.0, deg_to_rad(rotation_variance_degrees)))
 	instance.transform.origin = local_pos + normal * surface_offset
-	instance.scale *= _rng.randf_range(scale_min, scale_max)
+	
+	#Commented out
+	#instance.scale *= _rng.randf_range(scale_min, scale_max)
+	
+	#Added code
+	var vertical_scale = _rng.randf_range(scale_min, scale_max)
+	var horizontal_scale = vertical_scale * horizontal_scale_weight
+	instance.scale.y *= vertical_scale
+	instance.scale.x *= horizontal_scale
+	instance.scale.z *= horizontal_scale
 
 	return true
 
