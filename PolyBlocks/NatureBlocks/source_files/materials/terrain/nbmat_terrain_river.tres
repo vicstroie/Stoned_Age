@@ -1,20 +1,16 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dtjaii2dd5qju"]
 
-[ext_resource type="Texture2D" uid="uid://d3wp4lml2oyun" path="res://PolyBlocks/NatureBlocks/source_files/textures/terrain/nbtex_terrain_river.png" id="1_0i8gq"]
+[ext_resource type="Texture2D" uid="uid://b5mv4b3gq1ldj" path="res://Imports/TEMP/TextureTesting/rock_texture/rocks_ground_02_col_4k.jpg" id="1_0i8gq"]
 
 [resource]
-diffuse_mode = 3
-specular_mode = 2
 disable_specular_occlusion = true
-albedo_color = Color(0.6820018, 0.9159379, 0.7836371, 1)
+albedo_color = Color(0.89661604, 0.8369692, 0.8420039, 1)
 albedo_texture = ExtResource("1_0i8gq")
 metallic_specular = 0.0
 roughness = 0.0
-backlight_enabled = true
 backlight = Color(0.3050545, 0.39357388, 0.40138963, 1)
 uv1_scale = Vector3(0.02, 0.02, 0.02)
 uv1_triplanar = true
 uv1_world_triplanar = true
-disable_receive_shadows = true
 stencil_flags = 2
 stencil_outline_thickness = 0.04
