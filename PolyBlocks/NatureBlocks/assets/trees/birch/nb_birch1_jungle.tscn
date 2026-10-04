@@ -4,10 +4,21 @@
 [ext_resource type="Material" uid="uid://ngsbxbrq0wlp" path="res://PolyBlocks/NatureBlocks/source_files/materials/leaves1/nbmat_leaves1_jungle.tres" id="2_50y8v"]
 [ext_resource type="Material" uid="uid://cyqcg6yp544lq" path="res://PolyBlocks/NatureBlocks/source_files/materials/tree_trunks/nbmat_trunk_birch.tres" id="3_nws31"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oyark"]
+radius = 0.10058594
+height = 3.024404
+
 [node name="nb_birch1" unique_id=728148679 instance=ExtResource("1_qpiah")]
 
-[node name="nb_birch_1_leaves" parent="." index="0" unique_id=1116939909]
+[node name="nb_birch_1_leaves" parent="." index="0" unique_id=1562022133]
 surface_material_override/0 = ExtResource("2_50y8v")
 
-[node name="nb_birch_1_trunk" parent="." index="1" unique_id=635524413]
+[node name="nb_birch_1_trunk" parent="." index="1" unique_id=1991980640]
 surface_material_override/0 = ExtResource("3_nws31")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="nb_birch_1_trunk" index="0" unique_id=414056081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07168034, 1.3711534, 0.25556958)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="nb_birch_1_trunk/StaticBody3D" index="0" unique_id=1211393580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05090046, 0, -0.24203622)
+shape = SubResource("CapsuleShape3D_oyark")

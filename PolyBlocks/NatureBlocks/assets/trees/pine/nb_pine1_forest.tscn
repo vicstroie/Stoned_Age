@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://c66fyxu6yhw2w" path="res://PolyBlocks/NatureBlocks/source_files/materials/tree_trunks/nbmat_trunk_pine.tres" id="3_ey3rs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_po1ws"]
-radius = 0.26464844
+radius = 0.22558594
 height = 5.5116653
 
 [node name="nb_pine1" unique_id=1409481706 instance=ExtResource("1_4168m")]

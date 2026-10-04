@@ -2,12 +2,23 @@
 
 [ext_resource type="PackedScene" uid="uid://b68kg4t5komh" path="res://PolyBlocks/NatureBlocks/source_files/glb/trees/pine/nbglb_pine1.glb" id="1_iws7m"]
 [ext_resource type="Material" uid="uid://bea5ur3i1o41b" path="res://PolyBlocks/NatureBlocks/source_files/materials/leaves2/nbmat_leaves2_jungle.tres" id="2_ay7n7"]
-[ext_resource type="Material" path="res://PolyBlocks/NatureBlocks/source_files/materials/tree_trunks/nbmat_trunk_pine.tres" id="3_gqj1g"]
+[ext_resource type="Material" uid="uid://c66fyxu6yhw2w" path="res://PolyBlocks/NatureBlocks/source_files/materials/tree_trunks/nbmat_trunk_pine.tres" id="3_gqj1g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5r1d6"]
+radius = 0.16796875
+height = 5.5116653
 
 [node name="nb_pine1" unique_id=1409481706 instance=ExtResource("1_iws7m")]
 
-[node name="nb_pine_1_leaves" parent="." index="0" unique_id=590623580]
+[node name="nb_pine_1_leaves" parent="." index="0" unique_id=135673472]
 surface_material_override/0 = ExtResource("2_ay7n7")
 
-[node name="nb_pine_1_trunk" parent="." index="1" unique_id=1780943456]
+[node name="nb_pine_1_trunk" parent="." index="1" unique_id=1868775194]
 surface_material_override/0 = ExtResource("3_gqj1g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="nb_pine_1_trunk" index="0" unique_id=661021190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12272763, 2.5560668, -0.007888198)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="nb_pine_1_trunk/StaticBody3D" index="0" unique_id=2019622972]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12690878, 0, 0)
+shape = SubResource("CapsuleShape3D_5r1d6")
