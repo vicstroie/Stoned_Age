@@ -17,9 +17,11 @@ var inventory_ui : Control
 var resource_name : Array[String]
 var resource_amt : Array[String]
 
+
 func _ready():
 	craft_button_buffer = craft_button_buffer_max
-	
+
+
 func _process(delta):
 	_check_craftable()
 	if(inventory_ui.main_inventory): 	##TODO find better way to check this
@@ -27,6 +29,8 @@ func _process(delta):
 			crafting = true
 			if(craftable):
 				_craft_me()
+			else:
+				print("NOT CRAFTABLE NEED MORE MATERIALS")
 		##NOTE ensure you can't spam this button
 		if(crafting && !crafting_button.button_pressed):
 			craft_button_buffer -= delta
@@ -46,6 +50,19 @@ func _check_craftable():
 		craftable = true
 
 func _craft_me():
-	#TODO crafting
 	print("Crafted " + recipe_name.text)
+	_remove_cost_from_inventory()
 	inventory_ui.insert_item(active_recipe.resulting_item)
+	
+func _remove_cost_from_inventory():
+	#ALERT VICTOR I NEED HELP
+	for i in inventory_ui.slots.size():
+		if(inventory_ui.slots[i].current_item != null):
+			for r in resource_name.size():
+				if resource_name[r] == inventory_ui.slots[i].current_item.name:
+					inventory_ui.slots[i].current_slot.amount -= int(resource_amt[r])
+					if (inventory_ui.slots[i].current_slot.amount <= 0):
+						inventory_ui.slots[i].reset_current_slot()
+					else:
+						inventory_ui.slots[i].update(inventory_ui.slots[i].current_slot)
+					inventory._update_inventory_JSON()

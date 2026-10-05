@@ -51,10 +51,7 @@ func update(slot: InvSlot):
 		
 		item_visual.visible = true
 		item_visual.texture = slot.item.texture
-		if(slot.item.inventory_item_name != null): ##if the inventory item has an alternate name
-			item_name.text = slot.item.inventory_item_name
-		else:
-			item_name.text = slot.item.name
+		item_name.text = slot.item.name
 		item_name.visible = true
 		rescale_sprite(slot.item.texture)
 		if slot.amount > 1:

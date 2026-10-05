@@ -118,7 +118,8 @@ func _setup_local_player():
 		database = game_obj
 	status_dictionary = database._JSON_to_dictionary(database.player_status_path)
 	#spawn location
-	position = Vector3(status_dictionary.Position[0],status_dictionary.Position[1],status_dictionary.Position[2])
+	if(status_dictionary.Position.size() > 0):
+		position = Vector3(status_dictionary.Position[0],status_dictionary.Position[1],status_dictionary.Position[2])
 
 func _ready():
 	_setup_local_player()

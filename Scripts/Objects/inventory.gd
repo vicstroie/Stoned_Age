@@ -48,6 +48,7 @@ func insert(item: InvItem):
 		if !emptyslots.is_empty():
 			emptyslots[0].item = item
 			emptyslots[0].amount = 1
+
 	update.emit()
 
 ##ALERT this is a repeat function from database, find a way to consolidate 
