@@ -39,7 +39,6 @@ func update(slot: InvSlot):
 	current_slot = slot
 	if !slot.item:
 		current_item = null
-		
 		item_visual.visible = false
 		amount_text.visible = false
 		item_name.text = ""
@@ -48,7 +47,7 @@ func update(slot: InvSlot):
 		current_item = slot.item
 		if current_item.is_consumable:
 			action_button.text = "CONSUME"
-		
+
 		item_visual.visible = true
 		item_visual.texture = slot.item.texture
 		item_name.text = slot.item.name
@@ -104,6 +103,7 @@ func _on_equip_button_pressed() -> void:
 	inventory_ui.equip_item(self)
 
 func reset_current_slot():
+	#inventory_ui.inventory.inventory_JSON_dictionary.erase(current_slot.item.name)
 	current_slot.item = null
 	current_slot.amount = 0
 	update(current_slot)

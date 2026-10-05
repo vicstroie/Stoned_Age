@@ -23,7 +23,7 @@ func _ready():
 
 
 func _process(delta):
-	_check_craftable()
+	_check_craftable() #TODO move to anytime book is open
 	if(inventory_ui.main_inventory): 	##TODO find better way to check this
 		if(crafting_button.button_pressed && !crafting):
 			crafting = true
@@ -55,13 +55,14 @@ func _craft_me():
 	inventory_ui.insert_item(active_recipe.resulting_item)
 	
 func _remove_cost_from_inventory():
-	#ALERT VICTOR I NEED HELP
-	for i in inventory_ui.slots.size():
-		if(inventory_ui.slots[i].current_item != null):
-			for r in resource_name.size():
+	for r in resource_name.size():
+		for i in inventory_ui.slots.size():
+			if(inventory_ui.slots[i].current_item != null):
 				if resource_name[r] == inventory_ui.slots[i].current_item.name:
 					inventory_ui.slots[i].current_slot.amount -= int(resource_amt[r])
 					if (inventory_ui.slots[i].current_slot.amount <= 0):
+						##TODO do this in inventory slot too
+						#inventory.inventory_JSON_dictionary.erase(inventory_ui.slots[i].current_item.name)
 						inventory_ui.slots[i].reset_current_slot()
 					else:
 						#update inventory slots

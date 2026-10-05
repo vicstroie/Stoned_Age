@@ -34,6 +34,9 @@ func _update_inventory_JSON():
 				##TODO discrete IDS
 				#"Discrete_ID" : 0000
 				}
+			if(int(slots[i].amount) <= 0):
+				print("Erasing " + slots[i].item.name + " from dictionary")
+				inventory_JSON_dictionary.erase(slots[i].item.name)
 	_save_JSON_file(player_inventory_path, inventory_JSON_dictionary)
 
 
