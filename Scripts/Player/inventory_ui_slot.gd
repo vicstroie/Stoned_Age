@@ -103,7 +103,6 @@ func _on_equip_button_pressed() -> void:
 	inventory_ui.equip_item(self)
 
 func reset_current_slot():
-	#inventory_ui.inventory.inventory_JSON_dictionary.erase(current_slot.item.name)
 	current_slot.item = null
 	current_slot.amount = 0
 	update(current_slot)

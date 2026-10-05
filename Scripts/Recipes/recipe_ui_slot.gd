@@ -23,9 +23,9 @@ func _ready():
 
 
 func _process(delta):
-	_check_craftable() #TODO move to anytime book is open
 	if(inventory_ui.main_inventory): 	##TODO find better way to check this
 		if(crafting_button.button_pressed && !crafting):
+			_check_craftable() #TODO move to anytime book is open
 			crafting = true
 			if(craftable):
 				_craft_me()
@@ -39,15 +39,23 @@ func _process(delta):
 				craft_button_buffer = craft_button_buffer_max
 
 func _check_craftable():
-	var has_enough : Array[bool]
-	for i in resource_name.size():
-		if(inventory.inventory_JSON_dictionary.has(resource_name[i])):
-			if(int(resource_amt[i]) <= inventory.inventory_JSON_dictionary[resource_name[i]]["Amount"]):
-				has_enough.append(true)
-			else: 
-				has_enough.append(false)
-	if (not false in has_enough):
+	var has_enough : Array[int]
+	for r in resource_name.size():
+			for i in inventory_ui.slots.size():
+				if(inventory_ui.slots[i].current_item != null):
+					if resource_name[r] == inventory_ui.slots[i].current_item.name:
+						if(int(resource_amt[r]) <= inventory_ui.slots[i].current_slot.amount):
+							has_enough.append(1)
+						else:
+							has_enough.append(0)
+	print(has_enough)
+	if (has_enough.size() <= 0):
+		craftable = false
+		return
+	if (not 0 in has_enough):
 		craftable = true
+	else:
+		craftable = false
 
 func _craft_me():
 	print("Crafted " + recipe_name.text)
@@ -61,11 +69,12 @@ func _remove_cost_from_inventory():
 				if resource_name[r] == inventory_ui.slots[i].current_item.name:
 					inventory_ui.slots[i].current_slot.amount -= int(resource_amt[r])
 					if (inventory_ui.slots[i].current_slot.amount <= 0):
-						##TODO do this in inventory slot too
-						#inventory.inventory_JSON_dictionary.erase(inventory_ui.slots[i].current_item.name)
 						inventory_ui.slots[i].reset_current_slot()
 					else:
 						#update inventory slots
+						print("SUBTRACT")
 						inventory_ui.slots[i].update(inventory_ui.slots[i].current_slot)
 					#update JSON file
 					inventory._update_inventory_JSON()
+					#update is craftable
+					_check_craftable()
