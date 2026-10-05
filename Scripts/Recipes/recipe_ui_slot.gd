@@ -64,5 +64,7 @@ func _remove_cost_from_inventory():
 					if (inventory_ui.slots[i].current_slot.amount <= 0):
 						inventory_ui.slots[i].reset_current_slot()
 					else:
+						#update inventory slots
 						inventory_ui.slots[i].update(inventory_ui.slots[i].current_slot)
+					#update JSON file
 					inventory._update_inventory_JSON()
