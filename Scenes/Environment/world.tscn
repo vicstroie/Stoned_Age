@@ -74,7 +74,7 @@ size = Vector3(10.0078125, 69.41553, 10.754028)
 [node name="World" type="Node3D" unique_id=1340814464]
 
 [node name="Interactables" type="Node3D" parent="." unique_id=1134304704]
-transform = Transform3D(1, 0, 0, 0, 0.99968654, -0.025036298, 0, 0.025036298, 0.99968654, 0, -2.9562001, -15.977794)
+transform = Transform3D(1, 0, 0, 0, 0.99968654, -0.025036298, 0, 0.025036298, 0.99968654, -39.628204, -6.582767, -55.254215)
 
 [node name="InteractableObject" parent="Interactables" unique_id=1402295265 instance=ExtResource("8_5xqn0")]
 transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, 0.49317932, -1.9268599, 18.002625)
@@ -82,37 +82,37 @@ item_type = ExtResource("2_n21hv")
 item_name = "Test Item"
 
 [node name="Ephedra" parent="Interactables" unique_id=250256377 instance=ExtResource("9_hipvn")]
-transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, 0.49317932, -1.6347532, 19.650482)
+transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, 0.49317932, -1.220252, 19.640106)
 item_type = ExtResource("3_hipvn")
 item_name = "Ephedra Berry"
 
 [node name="Ephedra2" parent="Interactables" unique_id=1080127246 instance=ExtResource("9_hipvn")]
-transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, -2.4514313, -1.6347532, 19.650482)
+transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, -2.4514313, -1.220252, 19.640106)
 item_type = ExtResource("3_hipvn")
 item_name = "Ephedra Berry"
 
 [node name="Ephedra3" parent="Interactables" unique_id=587408758 instance=ExtResource("9_hipvn")]
-transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, -5.8269806, -1.6347532, 19.650482)
+transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, -5.8269806, -1.220252, 19.640106)
 item_type = ExtResource("3_hipvn")
 item_name = "Ephedra Berry"
 
 [node name="Ephedra4" parent="Interactables" unique_id=724295367 instance=ExtResource("9_hipvn")]
-transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, -10.394318, -1.6347532, 19.650482)
+transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, -10.394318, -1.220252, 19.640106)
 item_type = ExtResource("3_hipvn")
 item_name = "Ephedra Berry"
 
 [node name="Ephedra5" parent="Interactables" unique_id=456947770 instance=ExtResource("10_hipvn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.352722, -0.58503914, 21.623215)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.352722, -1.2062759, 21.638775)
 item_type = ExtResource("5_vpl1c")
 item_name = "Ephedra Berry Alt"
 
 [node name="Ephedra6" parent="Interactables" unique_id=397351990 instance=ExtResource("10_hipvn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4414825, -0.8705721, 22.379349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4414825, -1.4918098, 22.394909)
 item_type = ExtResource("5_vpl1c")
 item_name = "Ephedra Berry Alt"
 
 [node name="Ephedra7" parent="Interactables" unique_id=598380887 instance=ExtResource("10_hipvn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84742737, -1.1119528, 22.985321)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84742737, -1.7331896, 23.000877)
 item_type = ExtResource("5_vpl1c")
 item_name = "Ephedra Berry Alt"
 
@@ -239,9 +239,10 @@ spawn_path = NodePath("../Players")
 spawn_limit = 4
 
 [node name="Players" type="Node3D" parent="." unique_id=3530728 groups=["Player_Container"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.442566, -5.4813633, -45.68485)
 
 [node name="Swimming Test" type="Area3D" parent="." unique_id=1919145153 groups=["Water"]]
-transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -25.523333, 49.30139)
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, -80.553055, 49.30139)
 visible = false
 script = ExtResource("6_5xqn0")
 wave_size_tall = 5

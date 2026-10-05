@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dtjaii2dd5qju"]
 
-[ext_resource type="Texture2D" uid="uid://b5mv4b3gq1ldj" path="res://Imports/TEMP/TextureTesting/rock_texture/rocks_ground_02_col_4k.jpg" id="1_0i8gq"]
+[ext_resource type="Texture2D" uid="uid://bpevp6p4t27s4" path="res://Imports/TEMP/TextureTesting/rocky_terrain_02_4k.blend/textures/rocky_terrain_02_diff_4k.jpg" id="1_0i8gq"]
 
 [resource]
 disable_specular_occlusion = true
