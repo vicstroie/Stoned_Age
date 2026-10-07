@@ -3,9 +3,8 @@ extends Resource
 class_name Inventory
 
 signal update
-var player_inventory_path = "res://DATA/INVENTORY.json"
 @export var slots: Array[InvSlot]
-@export var inventory_JSON_dictionary : Dictionary
+
 #Create Inventory
 func setup_inventory(size: int = 8):
 	for i in range(size):
@@ -24,20 +23,6 @@ func can_pick_up(item: InvItem) -> bool:
 	#No where for it to go
 	return false
 
-func _update_inventory_JSON():
-	inventory_JSON_dictionary = _JSON_to_dictionary(player_inventory_path)
-	for i in slots.size():
-		if (slots[i].item != null):
-			inventory_JSON_dictionary[slots[i].item.name] = {
-				"Amount" : slots[i].amount,
-				"Permanent" : slots[i].item.is_permanent,
-				##TODO discrete IDS
-				#"Discrete_ID" : 0000
-				}
-			if(int(slots[i].amount) <= 0):
-				print("Erasing " + slots[i].item.name + " from dictionary")
-				inventory_JSON_dictionary.erase(slots[i].item.name)
-	_save_JSON_file(player_inventory_path, inventory_JSON_dictionary)
 
 
 func insert(item: InvItem):
@@ -51,18 +36,4 @@ func insert(item: InvItem):
 		if !emptyslots.is_empty():
 			emptyslots[0].item = item
 			emptyslots[0].amount = 1
-
 	update.emit()
-
-##ALERT this is a repeat function from database, find a way to consolidate 
-func _JSON_to_dictionary(data_path:String): #returns true if JSON contains key
-	var file = FileAccess.get_file_as_string(data_path)
-	var dict = JSON.parse_string(file)
-	return dict
-
-##ALERT this is a repeat function from database, find a way to consolidate 
-func _save_JSON_file(data_path:String, game_data):
-	var json = JSON.stringify(game_data, "\t")
-	var file = FileAccess.open(data_path, FileAccess.WRITE)
-	file.store_line(json)
-	file.close()

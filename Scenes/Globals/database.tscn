@@ -189,14 +189,10 @@ _data = {
 &"RESET": SubResource("Animation_0wh8c")
 }
 
-[node name="Database" type="Node" unique_id=1463900199 node_paths=PackedStringArray("inventory_ui", "inventory_back", "item_list", "menu_ui", "save_game", "inventory", "options", "exit_game", "dither_slider", "dither_pattern_slider") groups=["Database"]]
+[node name="Database" type="Node" unique_id=1463900199 node_paths=PackedStringArray("menu_ui", "save_game", "options", "exit_game", "dither_slider", "dither_pattern_slider") groups=["Database"]]
 script = ExtResource("1_3blq3")
-inventory_ui = NodePath("Inventory UI")
-inventory_back = NodePath("Inventory UI/Panel/Inventory Buttons/Inventory Back")
-item_list = NodePath("Inventory UI/Panel/Item List")
 menu_ui = NodePath("Menu UI")
 save_game = NodePath("Menu UI/Panel/Menu Buttons/Save")
-inventory = NodePath("Menu UI/Panel/Menu Buttons/Inventory")
 options = NodePath("Menu UI/Panel/Menu Buttons/Options")
 exit_game = NodePath("Menu UI/Panel/Menu Buttons/Quit")
 dither_slider = NodePath("Menu UI/Panel/Menu Buttons/Dither Slider")
@@ -297,57 +293,6 @@ layout_mode = 2
 max_value = 3.0
 value = 2.0
 tick_count = 4
-
-[node name="Inventory UI" type="Control" parent="." unique_id=1835641062]
-visible = false
-z_index = 24
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="Inventory UI" unique_id=1940401358]
-z_index = 24
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Inventory Buttons" type="VBoxContainer" parent="Inventory UI/Panel" unique_id=1095067168]
-z_index = 24
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.056
-anchor_top = 0.133
-anchor_right = 0.35700002
-anchor_bottom = 0.70100003
-offset_left = -0.51200104
-offset_top = -0.18399811
-offset_right = -0.2640381
-offset_bottom = -0.24801636
-
-[node name="Inventory Back" type="Button" parent="Inventory UI/Panel/Inventory Buttons" unique_id=2033401650]
-z_index = 24
-layout_mode = 2
-text = "Back
-"
-
-[node name="Item List" type="VBoxContainer" parent="Inventory UI/Panel" unique_id=569045732]
-z_index = 24
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.42600003
-anchor_top = 0.133
-anchor_right = 0.90900004
-anchor_bottom = 0.70100003
-offset_left = 0.24795532
-offset_top = -0.18399811
-offset_right = -0.16809082
-offset_bottom = -0.24801636
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=971553599]
 environment = SubResource("Environment_75yyr")

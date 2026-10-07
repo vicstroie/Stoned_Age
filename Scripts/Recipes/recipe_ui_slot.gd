@@ -3,7 +3,7 @@ extends Control
 @onready var item_visual: Sprite2D = %ItemDisplay
 @onready var recipe_name : Label = %Name
 @onready var resource_container := %"Resource Container"
-@export var crafting_button :Button
+@export var crafting_button : Button
 
 var crafting_ui
 var crafting : bool
@@ -48,7 +48,6 @@ func _check_craftable():
 							has_enough.append(1)
 						else:
 							has_enough.append(0)
-	print(has_enough)
 	if (has_enough.size() <= 0):
 		craftable = false
 		return
@@ -74,7 +73,5 @@ func _remove_cost_from_inventory():
 						#update inventory slots
 						print("SUBTRACT")
 						inventory_ui.slots[i].update(inventory_ui.slots[i].current_slot)
-					#update JSON file
-					inventory._update_inventory_JSON()
 					#update is craftable
 					_check_craftable()

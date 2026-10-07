@@ -1,6 +1,8 @@
 @icon("uid://b4e1f62upntch")
 extends RigidBody3D
 
+##TODO remove JSONS and reference SAVE MANAGER GLOBAL
+
 ##quick link to top of script
 func _back_to_vars():
 	pass
@@ -17,9 +19,6 @@ const SWIM_SPEED = 3.0
 const SWIM_SPRINT_SPEED = 5.0
 const SPRINT_SPEED = 8.0
 const SENSITIVITY = 0.004
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-#var gravity = 9.8 #not using rn because we're using the build in gravity scale
 
 @export var grounded : bool
 @export var submerged : bool 
