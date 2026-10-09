@@ -23,12 +23,18 @@ var pause_game : bool
 var open_menu : bool 
 var controller_used : bool 
 
+@export_category("Other Manager Data")
+var save_manager
+
 func _ready():
 	#disable menus
 	menu_ui.visible = false
 	
 	#confine mouse
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	
+	#assign save manager
+	save_manager = get_node("/root/SaveManager")
 
 func _input(event: InputEvent) -> void:
 	#Pausing
@@ -50,6 +56,7 @@ func _process(delta):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if(save_game.button_pressed):
 		saving = true
+		save_manager.save_game()
 	if (exit_game.button_pressed):
 		_quit_game()
 #endregion

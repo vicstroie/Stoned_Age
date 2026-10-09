@@ -135,7 +135,7 @@ func _process(delta):
 	%SubViewportContainer.material.set("shader_parameter/quantize_size", database.dither_slider.value)
 	%SubViewportContainer.material.set("shader_parameter/dither_pattern", database.dither_pattern_slider.value)
 
-	_handle_saving()
+	#_handle_saving()
 	_handle_picking_up()
 	
 	if(main_player):
@@ -352,32 +352,32 @@ func consume_item(current_item: InvItem):
 	player_stats.update_health_bar(current_item.health_points)
 	player_stats.update_hunger_bar(current_item.hunger_points)
 
-func _handle_saving():
-	if (database.saving):
-		_update_JSON_Status_data()
-		print("SAVING...")
-		autosave_timer = time_to_autosave_max
-		database.saving = false
-	if (database.autosave_enabled):
-		_handle_autosave()
+#func _handle_saving():
+	#if (database.saving):
+		#_update_JSON_Status_data()
+		#print("SAVING...")
+		#autosave_timer = time_to_autosave_max
+		#database.saving = false
+	#if (database.autosave_enabled):
+		#_handle_autosave()
+#
+#func _handle_autosave():
+	#if(autosave_timer >= 0):
+		#autosave_timer -= get_process_delta_time()
+	#else:
+		#_update_JSON_Status_data()
+		#print("AUTOSAVING...")
+		#autosave_timer = time_to_autosave_max
 
-func _handle_autosave():
-	if(autosave_timer >= 0):
-		autosave_timer -= get_process_delta_time()
-	else:
-		_update_JSON_Status_data()
-		print("AUTOSAVING...")
-		autosave_timer = time_to_autosave_max
-
-func _update_JSON_Status_data():
-	status_dictionary.Health = health
-	
-	status_dictionary.Position[0] = global_position.x
-	status_dictionary.Position[1] = global_position.y
-	status_dictionary.Position[2] = global_position.z
-	
-	database._save_JSON_file(database.player_status_path, status_dictionary)
-	#database._save_JSON_file(database.player_inventory_path, inventory_dictionary)
+#func _update_JSON_Status_data():
+	#status_dictionary.Health = health
+	#
+	#status_dictionary.Position[0] = global_position.x
+	#status_dictionary.Position[1] = global_position.y
+	#status_dictionary.Position[2] = global_position.z
+	#
+	#database._save_JSON_file(database.player_status_path, status_dictionary)
+	##database._save_JSON_file(database.player_inventory_path, inventory_dictionary)
 
 
 func _on_submerged_area_area_entered(area):

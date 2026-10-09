@@ -1,11 +1,14 @@
 # save_manager.gd - Add as Autoload in Project Settings
 extends Node
 
-const SAVE_PATH = "user://savegame.json"
+#const SAVE_PATH = "user://savegame.json"
+const SAVE_PATH = "C:/Users/thede/Documents/Godot/Projects/Stoned_Age/DATA/"
 const ROOM = 1
 
 signal game_saved
 signal game_loaded
+
+var database 
 
 var game_data = {
 	"room": ROOM, ##what room/world the player is in (steam lobby ID?)
@@ -14,6 +17,9 @@ var game_data = {
 	"world": {}, ## world save
 	"settings": {} ##player settings save
 }
+
+func ready():
+	database = get_node("/root/Database")
 
 func save_game() -> bool:
 	game_saved.emit()  # Every subscriber writes its section into game_data now
