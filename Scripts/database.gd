@@ -26,7 +26,6 @@ var save_manager
 var active_player
 var world_interactables
 
-
 func _ready():
 	#disable menus
 	menu_ui.visible = false
@@ -76,6 +75,12 @@ func _check_raycast(ray : RayCast3D, group : String):
 		var collision = ray.get_collider()
 		if(collision != null && collision.is_in_group(group)):
 			return true
+
+func _setup_world():
+	pass
+
+func _update_world():
+	pass
 
 func _quit_game():
 	get_tree().quit()

@@ -134,6 +134,8 @@ func _setup_save_data():
 		
 		#set HUNGER
 		player_stats.hunger = player_save_data.Hunger
+		
+		#TODO set SOBRIETY
 
 func _ready():
 	_setup_local_player()
@@ -384,9 +386,9 @@ func _save_player_data():
 		"Hunger": player_stats.hunger,
 		"Inventory": {},
 		"Position": [
-			player_save_data.Position[0],
-			player_save_data.Position[1],
-			player_save_data.Position[2]
+			global_position.x,
+			global_position.y,
+			global_position.z
 		]
 	}
 	return dict
