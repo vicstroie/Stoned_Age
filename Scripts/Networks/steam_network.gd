@@ -5,10 +5,12 @@ var player_scene = preload("res://Scenes/Player/player.tscn")
 var multiplayer_peer : SteamMultiplayerPeer = SteamMultiplayerPeer.new()
 var _players_spawn_node 
 var _hosted_lobby_id = 0
+var save_manager
 
 func  _ready():
 	Steam.connect("lobby_created", _on_lobby_created)
 	Steam.lobby_joined.connect(_on_lobby_joined)
+	save_manager = get_node("/root/SaveManager")
 
 func become_host():
 	Steam.createLobby(Steam.LOBBY_TYPE_PUBLIC, SteamManager.lobby_max_members)
@@ -26,6 +28,8 @@ func _on_lobby_created(connect_status: int, lobby_id):
 	if connect_status == Steam.RESULT_OK:
 		print("Created lobby: %s" % lobby_id)
 		var LOBBY_NAME = Steam.getPersonaName()
+		save_manager.room_name = LOBBY_NAME + "'s room"
+		save_manager.save_data["room name"] = save_manager.room_name
 		_hosted_lobby_id = lobby_id
 
 		multiplayer_peer.host_with_lobby(lobby_id)
@@ -36,6 +40,8 @@ func _on_lobby_created(connect_status: int, lobby_id):
 
 func _on_lobby_joined(lobby_id: int, _permissions: int, _locked: bool, _response: int) -> void:
 	print("Lobby joined %s" % lobby_id)
+	save_manager.lobby_ID = lobby_id
+	save_manager.save_data["lobby ID"] = save_manager.lobby_ID
 	if Steam.getLobbyOwner(lobby_id) == Steam.getSteamID():
 		print("Lobby host already in lobby, bypassing...")
 		return

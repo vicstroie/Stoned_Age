@@ -8,11 +8,15 @@ var resource_slot = preload("res://Scenes/UI/resource_slot.tscn")
 ##COPYING THE ONE IN INVENTORY_UI
 var inventory 
 var is_open : bool 
+var database
 
 ##all active recipes
 var unlocked_recipes : Dictionary
 var current_crafting_slots
 var all_slots : Array[Control]
+
+func _ready():
+	database = get_node("/root/Database")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_5xqn0"]
 size = Vector3(1.3776855, 2.1408691, 0.068847656)
 
-[node name="Ephedra Bush" type="Area3D" unique_id=250256377]
+[node name="Ephedra Bush" type="Area3D" unique_id=250256377 groups=["Interactable"]]
 collision_layer = 2
 script = ExtResource("1_8yorj")
 item_name = "Ephedra Bush"

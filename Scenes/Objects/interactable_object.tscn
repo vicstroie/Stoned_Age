@@ -6,7 +6,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_82c14"]
 
-[node name="InteractableObject" type="Area3D" unique_id=1402295265 node_paths=PackedStringArray("collision_shape")]
+[node name="InteractableObject" type="Area3D" unique_id=1402295265 node_paths=PackedStringArray("collision_shape") groups=["Interactable"]]
 collision_layer = 2
 script = ExtResource("1_x7wyi")
 collision_shape = NodePath("CollisionShape3D")

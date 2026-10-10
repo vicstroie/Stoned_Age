@@ -58,10 +58,11 @@ var fov_change := 0
 @export var health : float
 @export var inventory_size : int = 8 #DO NOT CHANGE
 var status_dictionary
-var database
 var time_to_autosave_max = 600
 var autosave_timer
 var save_manager
+var database
+var player_save_data : Dictionary
 
 @export_category("Multiplayer")
 @export var player_id : int
@@ -82,7 +83,6 @@ func _load_in():
 	speed = WALK_SPEED
 	set_multiplayer_authority(name.to_int())
 	save_manager = get_node("/root/SaveManager")
-	print("Load game status: " + str(save_manager.load_game()))
 
 func _enter_tree():
 	_load_in()
@@ -114,15 +114,31 @@ func _setup_local_player():
 		main_player = false
 	
 	#JSON stuff
-	for game_obj in get_tree().get_nodes_in_group("Database"): #assign database
-		database = game_obj
-	status_dictionary = database._JSON_to_dictionary(database.player_status_path)
-	#spawn location
-	if(status_dictionary.Position.size() > 0):
-		position = Vector3(status_dictionary.Position[0],status_dictionary.Position[1],status_dictionary.Position[2])
+	database = get_node("/root/Database")
+	database.active_player = self
+	##spawn location
+	#if(status_dictionary.Position.size() > 0):
+		#position = Vector3(status_dictionary.Position[0],status_dictionary.Position[1],status_dictionary.Position[2])
+
+func _setup_save_data():
+	player_save_data = save_manager.save_data.player
+
+	if (player_save_data["Position"] != null):
+		#set POSITION
+		position = Vector3(player_save_data.Position[0], player_save_data.Position[1], player_save_data.Position[2])
+		
+		#TODO set INVENTORY
+		
+		#set HEALTH
+		player_stats.health = player_save_data.Health
+		
+		#set HUNGER
+		player_stats.hunger = player_save_data.Hunger
 
 func _ready():
 	_setup_local_player()
+	_setup_save_data()
+
 	if (inventory_ui.main_inventory):
 		inventory_ui.setup_inventory(self)
 	if player_stats.main_player:
@@ -353,24 +369,6 @@ func consume_item(current_item: InvItem):
 	player_stats.update_health_bar(current_item.health_points)
 	player_stats.update_hunger_bar(current_item.hunger_points)
 
-#func _handle_saving():
-	#if (database.saving):
-		#_update_JSON_Status_data()
-		#print("SAVING...")
-		#autosave_timer = time_to_autosave_max
-		#database.saving = false
-	#if (database.autosave_enabled):
-		#_handle_autosave()
-#
-#func _handle_autosave():
-	#if(autosave_timer >= 0):
-		#autosave_timer -= get_process_delta_time()
-	#else:
-		#_update_JSON_Status_data()
-		#print("AUTOSAVING...")
-		#autosave_timer = time_to_autosave_max
-
-#func _update_JSON_Status_data():
 	#status_dictionary.Health = health
 	#
 	#status_dictionary.Position[0] = global_position.x
@@ -380,6 +378,18 @@ func consume_item(current_item: InvItem):
 	#database._save_JSON_file(database.player_status_path, status_dictionary)
 	##database._save_JSON_file(database.player_inventory_path, inventory_dictionary)
 
+func _save_player_data():
+	var dict = {
+		"Health": player_stats.health,
+		"Hunger": player_stats.hunger,
+		"Inventory": {},
+		"Position": [
+			player_save_data.Position[0],
+			player_save_data.Position[1],
+			player_save_data.Position[2]
+		]
+	}
+	return dict
 
 func _on_submerged_area_area_entered(area):
 	if(main_player):

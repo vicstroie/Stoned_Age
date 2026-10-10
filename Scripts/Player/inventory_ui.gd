@@ -10,13 +10,14 @@ var inventory: Inventory
 var database
 var is_open = false
 var main_inventory : bool
-
+var inventory_save_data : Dictionary
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Add the handheld to the front of the array
 	#slots[0] will always be the handheld object
 	slots.push_front(hand_slot)
 	close()
+	database = get_node("/root/Database")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -31,10 +32,6 @@ func _process(delta: float) -> void:
 	#if Input.is_action_just_pressed("use") && main_inventory && !is_open && slots[0].current_item:
 		#slots[0]._on_action_button_pressed()
 		#update_slots()
-
-
-	
-
 
 #Called in "_ready()" in player.gd
 func setup_inventory(player, size: int = 9):
