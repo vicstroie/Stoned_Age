@@ -13,6 +13,7 @@ var is_open : bool
 var unlocked_recipes : Dictionary
 var current_crafting_slots
 var all_slots : Array[Control]
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (inventory_ui.main_inventory): #to ensure we don't get a ref to another player's inventory
@@ -23,8 +24,6 @@ func _process(delta):
 				close()
 			else:
 				open()
-			##Updates known recipes in the list
-			inventory._update_inventory_JSON()
 			for recipe in all_recipes:
 				_unlock_crafting_recipe()
 

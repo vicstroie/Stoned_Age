@@ -305,3 +305,5 @@ shadow_enabled = true
 [node name="Sky Animator" type="AnimationPlayer" parent="." unique_id=1900444237]
 libraries/ = SubResource("AnimationLibrary_6byxh")
 autoplay = &"Day to Night"
+
+[connection signal="pressed" from="Menu UI/Panel/Menu Buttons/Save" to="." method="_on_save_pressed"]

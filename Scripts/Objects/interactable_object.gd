@@ -9,7 +9,6 @@ var picked_up : bool
 @rpc("any_peer","reliable","call_local")
 func remove_from_world():
 	self.set_process(false)
-	print("Disabled " + str(name))
 	visible = false
 	queue_free()
 

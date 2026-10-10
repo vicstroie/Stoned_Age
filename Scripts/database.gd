@@ -87,3 +87,7 @@ func _check_raycast(ray : RayCast3D, group : String):
 
 func _quit_game():
 	get_tree().quit()
+
+func _on_save_pressed():
+	save_manager.save_game()
+	pass # Replace with function body.

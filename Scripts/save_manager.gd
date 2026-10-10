@@ -2,7 +2,7 @@
 extends Node
 
 #const SAVE_PATH = "user://savegame.json"
-const SAVE_PATH = "C:/Users/thede/Documents/Godot/Projects/Stoned_Age/DATA/"
+const SAVE_PATH = "C:/Users/thede/Documents/Godot/Projects/Stoned_Age/DATA/SAVE_DATA.json"
 const ROOM = 1
 
 signal game_saved

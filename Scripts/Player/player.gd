@@ -1,8 +1,6 @@
 @icon("uid://b4e1f62upntch")
 extends RigidBody3D
 
-##TODO remove JSONS and reference SAVE MANAGER GLOBAL
-
 ##quick link to top of script
 func _back_to_vars():
 	pass
@@ -63,6 +61,7 @@ var status_dictionary
 var database
 var time_to_autosave_max = 600
 var autosave_timer
+var save_manager
 
 @export_category("Multiplayer")
 @export var player_id : int
@@ -82,6 +81,8 @@ func _load_in():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
 	speed = WALK_SPEED
 	set_multiplayer_authority(name.to_int())
+	save_manager = get_node("/root/SaveManager")
+	print("Load game status: " + str(save_manager.load_game()))
 
 func _enter_tree():
 	_load_in()

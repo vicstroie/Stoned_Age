@@ -71,7 +71,6 @@ func _remove_cost_from_inventory():
 						inventory_ui.slots[i].reset_current_slot()
 					else:
 						#update inventory slots
-						print("SUBTRACT")
 						inventory_ui.slots[i].update(inventory_ui.slots[i].current_slot)
 					#update is craftable
 					_check_craftable()
