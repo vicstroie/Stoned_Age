@@ -23,12 +23,16 @@ func _process(delta):
 	if (inventory_ui.main_inventory): #to ensure we don't get a ref to another player's inventory
 		if(inventory == null): #if we don't have a ref of inventory, use inventory_ui's ref
 			inventory = inventory_ui.inventory
-		if (Input.is_action_just_pressed("crafting")):
-			if(is_open):
-				close()
-			else:
-				open()
-			for recipe in all_recipes:
+
+func toggle_crafting(toggle:bool):
+	#Make sure wrong inventory isn't being accessed
+	if(!inventory_ui.main_inventory):
+		return
+	if toggle:
+		open()
+	else:
+		close()
+	for recipe in all_recipes:
 				_unlock_crafting_recipe()
 
 func _add_to_crafting_slots(new_recipe):

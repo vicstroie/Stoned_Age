@@ -39,23 +39,12 @@ func _ready():
 	#store interactables
 
 func _input(event: InputEvent) -> void:
-	#Pausing
-	if(Input.is_action_just_pressed("pause")):
-		pause_game = !pause_game
 	#Controller Check
 	if event is InputEventMouseMotion:
 		controller_used = false
 
 func _process(delta):
 #region UI Stuff
-	if(pause_game && !menu_ui.visible && !open_menu):
-		menu_ui.visible = true
-		open_menu = true
-		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-	if(!pause_game && menu_ui.visible):
-		menu_ui.visible = false
-		open_menu = false
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if(save_game.button_pressed):
 		saving = true
 		save_manager.save_game()
@@ -65,6 +54,15 @@ func _process(delta):
 
 	#if(Input.is_action_just_pressed("cam_down") || Input.is_action_just_pressed("cam_up") || Input.is_action_just_pressed("cam_left") || Input.is_action_just_pressed("cam_right")):
 		#controller_used = true
+
+func toggle_game_pause(toggle : bool):
+	menu_ui.visible = toggle
+	open_menu = toggle
+	pause_game = toggle
+	if toggle:
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _check_raycast(ray : RayCast3D, group : String):
 	if(ray.collide_with_bodies):

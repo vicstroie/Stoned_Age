@@ -21,12 +21,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("inventory") && main_inventory:
-		if is_open:
-			close()
-		else:
-			open()
-			update_slots()
+	pass
 
 	#Old "EATING" code, bring back with different button config
 	#if Input.is_action_just_pressed("use") && main_inventory && !is_open && slots[0].current_item:
@@ -74,6 +69,15 @@ func insert_item(new_item: InvItem):
 			inventory.insert(new_item)
 		else:
 			print("INVALID ITEM ID")
+
+func toggle_inventory(toggle:bool):
+	if !main_inventory:
+		return
+	if toggle:
+		open()
+	else:
+		close()
+	update_slots()
 
 func open():
 	visible = true
