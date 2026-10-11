@@ -9,7 +9,7 @@ signal game_loaded
 
 var database 
 
-var save_JSON = "C:/Users/thede/Documents/Godot/Projects/Stoned_Age/DATA/SAVE_DATA.json"
+var save_JSON = "res://DATA/SAVE_DATA.json"
 var save_data 
 
 func _enter_tree():
