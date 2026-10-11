@@ -7,6 +7,7 @@ var _players_spawn_node
 var _hosted_lobby_id = 0
 var save_manager
 
+
 func  _ready():
 	Steam.connect("lobby_created", _on_lobby_created)
 	Steam.lobby_joined.connect(_on_lobby_joined)

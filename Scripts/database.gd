@@ -44,6 +44,9 @@ func _input(event: InputEvent) -> void:
 		controller_used = false
 
 func _process(delta):
+	if(active_player != null && world_interactables == null):
+		world_interactables = get_tree().get_nodes_in_group("Interactable")
+	
 #region UI Stuff
 	if(save_game.button_pressed):
 		saving = true

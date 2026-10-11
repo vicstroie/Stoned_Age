@@ -170,14 +170,11 @@ func _physics_process(delta):
 			grounded = ground_cast.is_colliding()
 			if (submerged && move_state != move_states.Water):
 				_set_move_state(move_states.Water)
-				print("SET MOVE STATE : WATER")
 			if(!submerged):
 				if(grounded && ground_cast.get_collider().is_in_group("Land") && move_state != move_states.Land):
-					print("SET MOVE STATE : LAND")
 					_set_move_state(move_states.Land)
 				if (!grounded && move_state != move_states.Falling):
 					if(fall_timer <= 0): #TODO find a better transition for falling
-						print("SET MOVE STATE : FALLING")
 						_set_move_state(move_states.Falling)
 					else:
 						fall_timer -= delta
