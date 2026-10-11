@@ -121,6 +121,9 @@ func _setup_local_player():
 		#position = Vector3(status_dictionary.Position[0],status_dictionary.Position[1],status_dictionary.Position[2])
 
 func _setup_save_data():
+	if !save_manager.save_data:
+		print("SAVE DATA SETUP ERROR")
+		return
 	player_save_data = save_manager.save_data.player
 
 	if (player_save_data["Position"] != null):

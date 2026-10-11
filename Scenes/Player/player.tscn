@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://c0cmltoj615n2" path="res://Scripts/Shaders/dither_and_gradient_2.gdshader" id="4_dd0ac"]
 [ext_resource type="Shader" uid="uid://dc4n1tkqmy250" path="res://Scripts/Shaders/moebius.gdshader" id="4_gk6dx"]
 [ext_resource type="Texture2D" uid="uid://bt47elcjsrylq" path="res://Assets/Gradients/Screenshot 2026-08-12 174812.png" id="5_0u5uq"]
+[ext_resource type="Script" uid="uid://p0yw8ov0m1hi" path="res://Scripts/Player/player_ui.gd" id="8_7g0yx"]
 [ext_resource type="FontFile" uid="uid://d0r3fxyfh4kne" path="res://Assets/Fonts/Jacquard24-Regular.ttf" id="8_jlvik"]
 [ext_resource type="Texture2D" uid="uid://dyjuj7vvcfu43" path="res://Imports/TEMP/temp other/coin.png" id="9_gk6dx"]
 [ext_resource type="PackedScene" uid="uid://b5nlo21oi5f06" path="res://Scenes/UI/inventory_ui.tscn" id="10_jhyir"]
@@ -64,6 +65,12 @@ shader_parameter/outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wydro"]
 
+[sub_resource type="Gradient" id="Gradient_oqlhh"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dyyqa"]
+gradient = SubResource("Gradient_oqlhh")
+
 [sub_resource type="LabelSettings" id="LabelSettings_82c14"]
 font = ExtResource("8_jlvik")
 font_size = 35
@@ -71,12 +78,6 @@ outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Gradient" id="Gradient_oqlhh"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_dyyqa"]
-gradient = SubResource("Gradient_oqlhh")
 
 [node name="Player" type="RigidBody3D" unique_id=1534641321 node_paths=PackedStringArray("ground_cast", "player_stats", "inventory_ui", "crafting_ui", "player_ui", "multiplayer_name", "body_mesh", "hot_mic") groups=["Player"]]
 axis_lock_angular_x = true
@@ -186,17 +187,7 @@ shape = SubResource("CapsuleShape3D_wydro")
 
 [node name="Player UI" type="CanvasLayer" parent="." unique_id=1852411712]
 unique_name_in_owner = true
-
-[node name="InteractionText" type="Label" parent="Player UI" unique_id=651429767]
-unique_name_in_owner = true
-offset_left = 305.0
-offset_top = 330.0
-offset_right = 840.0
-offset_bottom = 366.0
-text = "press \"e\" to pick up."
-label_settings = SubResource("LabelSettings_82c14")
-horizontal_alignment = 1
-vertical_alignment = 1
+script = ExtResource("8_7g0yx")
 
 [node name="Hot Mic" type="TextureRect" parent="Player UI" unique_id=1198528225]
 unique_name_in_owner = true
@@ -206,25 +197,9 @@ offset_right = 64.0
 offset_bottom = 64.0
 texture = SubResource("GradientTexture2D_dyyqa")
 
-[node name="Crosshair" type="TextureRect" parent="Player UI" unique_id=301191427]
-unique_name_in_owner = true
-offset_left = 560.0
-offset_top = 304.0
-offset_right = 591.30646
-offset_bottom = 330.0
-mouse_filter = 2
-texture = ExtResource("9_gk6dx")
-expand_mode = 1
-
-[node name="HandSlot" parent="Player UI" unique_id=607667247 instance=ExtResource("15_dey5f")]
-offset_left = 985.0
-offset_top = 482.0
-offset_right = 1110.0
-offset_bottom = 607.0
-
 [node name="InventoryUI" parent="Player UI" unique_id=777426713 node_paths=PackedStringArray("hand_slot") instance=ExtResource("10_jhyir")]
 unique_name_in_owner = true
-hand_slot = NodePath("../HandSlot")
+hand_slot = NodePath("../PlayerStats/HandSlot")
 
 [node name="PlayerStats" type="Control" parent="Player UI" unique_id=558879293]
 unique_name_in_owner = true
@@ -255,7 +230,39 @@ offset_right = 312.0
 offset_bottom = 42.0
 show_percentage = false
 
+[node name="HandSlot" parent="Player UI/PlayerStats" unique_id=607667247 instance=ExtResource("15_dey5f")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 985.0
+offset_top = -49.0
+offset_right = 1110.0
+offset_bottom = 76.0
+
+[node name="Crosshair" type="TextureRect" parent="Player UI/PlayerStats" unique_id=301191427]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 560.0
+offset_top = -227.0
+offset_right = 591.30646
+offset_bottom = -201.0
+mouse_filter = 2
+texture = ExtResource("9_gk6dx")
+expand_mode = 1
+
+[node name="InteractionText" type="Label" parent="Player UI/PlayerStats" unique_id=651429767]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 305.0
+offset_top = -201.0
+offset_right = 840.0
+offset_bottom = -165.0
+text = "press \"e\" to pick up."
+label_settings = SubResource("LabelSettings_82c14")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CraftingUI" parent="Player UI" unique_id=1969055694 node_paths=PackedStringArray("inventory_ui") instance=ExtResource("13_06tpx")]
+unique_name_in_owner = true
 visible = false
 inventory_ui = NodePath("../InventoryUI")
 
