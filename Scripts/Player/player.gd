@@ -63,6 +63,7 @@ var autosave_timer
 var save_manager
 var database
 var player_save_data : Dictionary
+var is_host : bool 
 
 @export_category("Multiplayer")
 @export var player_id : int
@@ -139,6 +140,7 @@ func _setup_save_data():
 		player_stats.hunger = player_save_data.Hunger
 		
 		#TODO set SOBRIETY
+		
 
 func _ready():
 	_setup_local_player()

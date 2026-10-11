@@ -16,6 +16,7 @@ func _enter_tree():
 	database = get_node("/root/Database")
 	save_data = _JSON_to_dictionary(save_JSON)
 	
+	#TODO call save data BASED on what world the player is joining
 	
 func save_game() -> bool:
 	_save_JSON_file(save_JSON,save_data)

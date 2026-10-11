@@ -43,9 +43,13 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		controller_used = false
 
-func _process(delta):
+func _sync_worlds():
 	if(active_player != null && world_interactables == null):
 		world_interactables = get_tree().get_nodes_in_group("Interactable")
+		#TODO set GLOBAL WORLD DATA based on HOST JSON
+
+func _process(delta):
+	_sync_worlds() ##TODO switch this call into being a signal
 	
 #region UI Stuff
 	if(save_game.button_pressed):
