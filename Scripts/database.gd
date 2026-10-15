@@ -18,12 +18,24 @@ extends Node
 @export var dither_pattern_slider : HSlider
 var saving : bool
 var pause_game : bool
-var open_menu : bool 
-var controller_used : bool 
+var open_menu : bool
+var controller_used : bool
 
 @export_category("Data")
 var save_manager
+##used to cycle through JSONS based on what world/game the player is entering
+var all_save_JSON
+##used to sync the worlds when entering a game
+var host_save_JSON
+##current player active on this device
 var active_player
+##all players in the scene
+var all_players
+##stores the current amount of players compared to the amount of children in the player container
+var player_count
+##the node that is parent to all the players
+var player_container
+##all interactable objects active in this world
 var world_interactables
 
 func _ready():
@@ -44,12 +56,20 @@ func _input(event: InputEvent) -> void:
 		controller_used = false
 
 func _sync_worlds():
-	if(active_player != null && world_interactables == null):
-		world_interactables = get_tree().get_nodes_in_group("Interactable")
-		#TODO set GLOBAL WORLD DATA based on HOST JSON
+	world_interactables = get_tree().get_nodes_in_group("Interactable")
+	_update_player_ref()
+	for i in all_players.size():
+		if all_players[i].is_host:
+			print(str(all_players[i].multiplayer_name.text) + " is the host")
+
+func _update_player_ref():
+	player_container = get_tree().get_nodes_in_group("Player_Container")
+	all_players = player_container[0].get_children() #needs to be array ref because get_tree().get_nodes_in_group() returns an array
 
 func _process(delta):
-	_sync_worlds() ##TODO switch this call into being a signal
+	# if the world is active and JSONs haven't been assigned yet (which we can tell based on if there's an active player) 
+	if(active_player != null && world_interactables == null): 
+		_sync_worlds() ##TODO switch this call into being a signal
 	
 #region UI Stuff
 	if(save_game.button_pressed):

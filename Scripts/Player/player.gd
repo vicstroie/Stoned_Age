@@ -104,6 +104,10 @@ func _setup_local_player():
 		multiplayer_name.set_layer_mask_value(1,false)
 		inventory_ui.main_inventory = true
 		player_stats.main_player = true
+		if player_id == 1:
+			is_host = true
+		else:
+			is_host = false
 	else:
 		%Camera3D.visible = false
 		%PhantomCamera3D.visible = false
