@@ -62,8 +62,8 @@ var time_to_autosave_max = 600
 var autosave_timer
 var save_manager
 var database
-var player_save_data : Dictionary
-var is_host : bool 
+@export var player_save_data : Dictionary
+@export var is_host : bool 
 
 @export_category("Multiplayer")
 @export var player_id : int
