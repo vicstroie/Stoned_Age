@@ -22,6 +22,7 @@ var open_menu : bool
 var controller_used : bool
 
 @export_category("Data")
+@export var trigger_world_sync : bool 
 var save_manager
 ##used to cycle through JSONS based on what world/game the player is entering
 var all_save_data
@@ -40,7 +41,7 @@ var player_container
 ##all interactable objects active in this world
 var world_interactables
 ##all interactables to be removed in this world upon loading in
-var remove_interactables
+var remove_interactables : Array
 ##all interactables to be placed upon loading in
 var place_interactables #TODO placement logic
 
@@ -61,16 +62,35 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		controller_used = false
 
-func _sync_worlds():
+func _store_world_data():
 	world_interactables = get_tree().get_nodes_in_group("Interactable")
 	_update_player_ref()
 	for i in all_players.size():
 		if all_players[i].is_host:
 			print(str(all_players[i].multiplayer_name.text) + " is the host")
 			host_save_data = all_players[i].game_save_data
-			print("Host save data " + str(host_save_data))
 		else:
 			all_save_data.append(all_players[i].game_save_data)
+	_sync_worlds()
+
+func _sync_worlds():
+	for o in host_save_data.world["Remove Object Global"]:
+		if not o in remove_interactables:
+			remove_interactables.append(o)
+	if (all_save_data != null):
+		for player_save in all_save_data:
+			for i in player_save.world["Remove Object Global"]:
+				if not i in remove_interactables:
+					remove_interactables.append(i)
+	print(remove_interactables)
+	
+	for obj in world_interactables:
+		for remove in remove_interactables:
+			if (obj != null):
+				if remove == obj.name:
+					obj.pick_up()
+			else:
+				world_interactables.erase(obj)
 
 func _update_player_ref(): ##TODO figure out a way to update this any time a player JOINS or LEAVES
 	player_container = get_tree().get_nodes_in_group("Player_Container")
@@ -79,8 +99,8 @@ func _update_player_ref(): ##TODO figure out a way to update this any time a pla
 func _process(delta):
 	# if the world is active and JSONs haven't been assigned yet (which we can tell based on if there's an active player) 
 	if(active_player != null && world_interactables == null): 
-		_sync_worlds() ##TODO switch this call into being a signal
-	
+		_store_world_data() ##TODO switch this call into being a signal
+
 #region UI Stuff
 	if(save_game.button_pressed):
 		saving = true

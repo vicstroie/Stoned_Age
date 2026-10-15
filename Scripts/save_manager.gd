@@ -19,6 +19,7 @@ func _enter_tree():
 	
 func save_game() -> bool:
 	_save_JSON_file(save_JSON,save_data)
+	database._sync_worlds()
 	return true
 
 func _JSON_to_dictionary(data_path:String): #returns true if JSON contains key
