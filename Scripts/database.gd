@@ -35,8 +35,14 @@ var all_players
 var player_count
 ##the node that is parent to all the players
 var player_container
+
+#TODO figure out a more efficient way to store all world data
 ##all interactable objects active in this world
 var world_interactables
+##all interactables to be removed in this world upon loading in
+var remove_interactables
+##all interactables to be placed upon loading in
+var place_interactables #TODO placement logic
 
 func _ready():
 	#disable menus
@@ -61,12 +67,12 @@ func _sync_worlds():
 	for i in all_players.size():
 		if all_players[i].is_host:
 			print(str(all_players[i].multiplayer_name.text) + " is the host")
-			host_save_data = all_players[i].player_save_data
+			host_save_data = all_players[i].game_save_data
 			print("Host save data " + str(host_save_data))
 		else:
-			all_save_data.append(all_players[i].player_save_data)
+			all_save_data.append(all_players[i].game_save_data)
 
-func _update_player_ref():
+func _update_player_ref(): ##TODO figure out a way to update this any time a player JOINS or LEAVES
 	player_container = get_tree().get_nodes_in_group("Player_Container")
 	all_players = player_container[0].get_children() #needs to be array ref because get_tree().get_nodes_in_group() returns an array
 

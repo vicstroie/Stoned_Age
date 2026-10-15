@@ -63,7 +63,9 @@ var autosave_timer
 var save_manager
 var database
 @export var player_save_data : Dictionary
+@export var game_save_data : Dictionary
 @export var is_host : bool 
+
 
 @export_category("Multiplayer")
 @export var player_id : int
@@ -84,6 +86,7 @@ func _load_in():
 	speed = WALK_SPEED
 	set_multiplayer_authority(name.to_int())
 	save_manager = get_node("/root/SaveManager")
+	
 
 func _enter_tree():
 	_load_in()
@@ -108,6 +111,7 @@ func _setup_local_player():
 			is_host = true
 		else:
 			is_host = false
+		game_save_data = save_manager.save_data
 	else:
 		%Camera3D.visible = false
 		%PhantomCamera3D.visible = false
