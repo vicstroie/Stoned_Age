@@ -1,18 +1,21 @@
 {
-	"lobby ID": 109775244831454930,
+	"lobby ID": 109775240960216183,
 	"player": {
 		"Health": 0.0,
 		"Hunger": 0.0,
 		"Inventory": {},
 		"Position": [
-			-47.6784591674805,
-			-9.16747570037842,
-			-32.1417846679688
+			-48.4529457092285,
+			-9.15871906280518,
+			-33.1362800598145
 		]
 	},
-	"room name": "dodgenerd's room",
+	"room name": "kaisnotanerd's room",
 	"settings": {},
 	"world": {
-		"Remove Object Global" : []
+		"Remove Object Global": [
+			"Ephedra5",
+			"Ephedra3"
+		]
 	}
 }

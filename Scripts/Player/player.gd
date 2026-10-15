@@ -62,7 +62,9 @@ var time_to_autosave_max = 600
 var autosave_timer
 var save_manager
 var database
-@export var player_save_data : Dictionary
+##save data as it relates specifically to this player
+var player_save_data : Dictionary
+##all save data + world and interactables
 @export var game_save_data : Dictionary
 @export var is_host : bool 
 
@@ -86,7 +88,6 @@ func _load_in():
 	speed = WALK_SPEED
 	set_multiplayer_authority(name.to_int())
 	save_manager = get_node("/root/SaveManager")
-	
 
 func _enter_tree():
 	_load_in()
@@ -148,7 +149,6 @@ func _setup_save_data():
 		player_stats.hunger = player_save_data.Hunger
 		
 		#TODO set SOBRIETY
-		
 
 func _ready():
 	_setup_local_player()
@@ -294,6 +294,8 @@ func _handle_picking_up():
 		#Pick objects up with "E"
 		if Input.is_action_just_pressed("interact"):
 			_handle_adding_inventory(collider)
+			game_save_data.world["Remove Object Global"].append(collider.name)
+			save_manager.save_game()
 			interaction_text.text = ""
 	#Did not find an object
 	else:
