@@ -90,7 +90,7 @@ func _sync_worlds():
 	#set world removable to everything ALL players have removed
 	active_player.game_save_data.world["Remove Object Global"] = remove_interactables 
 	print(active_player.game_save_data.world["Remove Object Global"] )
-	print(remove_interactables)
+	save_manager.save_game()
 	
 	#REMOVE REMOVABLE
 	for obj in world_interactables:
@@ -142,11 +142,15 @@ func _check_raycast(ray : RayCast3D, group : String):
 			return true
 
 func _quit_game():
+	_update_player_ref()
 	save_manager.save_data.player = active_player._save_player_data()
+	save_manager.save_data.world = active_player.game_save_data.world
 	save_manager.save_game()
 	get_tree().quit()
 
-#func _on_save_pressed():
-	#save_manager.save_data.player = active_player._save_player_data()
-	#save_manager.save_game()
-	#pass # Replace with function body.
+func _on_save_pressed():
+	_update_player_ref()
+	save_manager.save_data.player = active_player._save_player_data()
+	save_manager.save_data.world = active_player.game_save_data.world
+	save_manager.save_game()
+	pass # Replace with function body.
