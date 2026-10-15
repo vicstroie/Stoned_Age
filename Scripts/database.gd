@@ -97,7 +97,7 @@ func _sync_worlds():
 	for obj in world_interactables:
 		for remove in remove_interactables:
 			if (obj != null):
-				if remove == obj.name:
+				if remove == obj.name && !obj.picked_up:
 					obj.pick_up()
 
 ##TODO figure out a way to update this any time a player JOINS or LEAVES
