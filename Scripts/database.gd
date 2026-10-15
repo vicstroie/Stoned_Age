@@ -74,12 +74,11 @@ func _store_world_data():
 			all_save_data.append(all_players[i].game_save_data)
 	_sync_worlds()
 
-func _sync_worlds():
+func _store_removable():
 	#sync what objects have been removed from host world
 	for o in host_save_data.world["Remove Object Global"]:
 		if not o in remove_interactables:
 			remove_interactables.append(o)
-	
 	#sync what objects have been removed from main world
 	if (all_save_data != null):
 		for player_save in all_save_data:
@@ -89,16 +88,17 @@ func _sync_worlds():
 	
 	#set world removable to everything ALL players have removed
 	active_player.game_save_data.world["Remove Object Global"] = remove_interactables 
-	print(active_player.game_save_data.world["Remove Object Global"] )
-	save_manager.save_game()
-	
+	print(active_player.game_save_data.world["Remove Object Global"])
+
+##this happens upon loading into the game, it will remove all objs that are supposed to be gone
+func _sync_worlds():
+	_store_removable()
 	#REMOVE REMOVABLE
 	for obj in world_interactables:
 		for remove in remove_interactables:
 			if (obj != null):
 				if remove == obj.name:
 					obj.pick_up()
-
 
 ##TODO figure out a way to update this any time a player JOINS or LEAVES
 func _update_player_ref(): 
@@ -142,14 +142,12 @@ func _check_raycast(ray : RayCast3D, group : String):
 			return true
 
 func _quit_game():
-	_update_player_ref()
 	save_manager.save_data.player = active_player._save_player_data()
 	save_manager.save_data.world = active_player.game_save_data.world
 	save_manager.save_game()
 	get_tree().quit()
 
 func _on_save_pressed():
-	_update_player_ref()
 	save_manager.save_data.player = active_player._save_player_data()
 	save_manager.save_data.world = active_player.game_save_data.world
 	save_manager.save_game()
