@@ -89,6 +89,8 @@ func _sync_worlds():
 	
 	#set world removable to everything ALL players have removed
 	active_player.game_save_data.world["Remove Object Global"] = remove_interactables 
+	print(active_player.game_save_data.world["Remove Object Global"] )
+	print(remove_interactables)
 	
 	#REMOVE REMOVABLE
 	for obj in world_interactables:

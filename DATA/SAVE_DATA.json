@@ -1,5 +1,5 @@
 {
-	"lobby ID": 109775240995726218,
+	"lobby ID": 109775240996807510,
 	"player": {
 		"Health": 0.0,
 		"Hunger": 0.0,
@@ -14,7 +14,8 @@
 	"settings": {},
 	"world": {
 		"Remove Object Global": [
-
+			"Ephedra3",
+			"Ephedra6"
 		]
 	}
 }
