@@ -18,8 +18,8 @@ func _enter_tree():
 	#TODO call save data BASED on what world the player is joining
 	
 func save_game() -> bool:
-	_save_JSON_file(save_JSON,save_data)
 	database._sync_worlds()
+	_save_JSON_file(save_JSON,save_data)
 	return true
 
 func _JSON_to_dictionary(data_path:String): #returns true if JSON contains key

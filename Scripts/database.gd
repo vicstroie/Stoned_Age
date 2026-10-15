@@ -77,23 +77,24 @@ func _sync_worlds():
 	for o in host_save_data.world["Remove Object Global"]:
 		if not o in remove_interactables:
 			remove_interactables.append(o)
+	
 	#sync what objects have been removed from main world
 	if (all_save_data != null):
 		for player_save in all_save_data:
 			for i in player_save.world["Remove Object Global"]:
 				if not i in remove_interactables:
 					remove_interactables.append(i)
+	
 	#set world removable to everything ALL players have removed
 	active_player.game_save_data.world["Remove Object Global"] = remove_interactables 
+	
 	#REMOVE REMOVABLE
 	for obj in world_interactables:
 		for remove in remove_interactables:
 			if (obj != null):
 				if remove == obj.name:
 					obj.pick_up()
-			else:
-				world_interactables.erase(obj)
-				obj.free()
+
 
 ##TODO figure out a way to update this any time a player JOINS or LEAVES
 func _update_player_ref(): 
