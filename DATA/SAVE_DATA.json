@@ -1,20 +1,20 @@
 {
-	"lobby ID": 109775240963403684,
+	"lobby ID": 109775240993759767,
 	"player": {
 		"Health": 0.0,
 		"Hunger": 0.0,
 		"Inventory": {},
 		"Position": [
-			-50.1839790344238,
-			-9.04281330108643,
-			-36.5299606323242
+			-42.7567138671875,
+			-9.19938945770264,
+			-38.1973724365234
 		]
 	},
 	"room name": "kaisnotanerd's room",
 	"settings": {},
 	"world": {
 		"Remove Object Global": [
-
+		
 		]
 	}
 }

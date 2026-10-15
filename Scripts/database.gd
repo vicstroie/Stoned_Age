@@ -22,7 +22,6 @@ var open_menu : bool
 var controller_used : bool
 
 @export_category("Data")
-@export var trigger_world_sync : bool 
 var save_manager
 ##used to cycle through JSONS based on what world/game the player is entering
 var all_save_data
@@ -74,16 +73,19 @@ func _store_world_data():
 	_sync_worlds()
 
 func _sync_worlds():
+	#sync what objects have been removed from host world
 	for o in host_save_data.world["Remove Object Global"]:
 		if not o in remove_interactables:
 			remove_interactables.append(o)
+	#sync what objects have been removed from main world
 	if (all_save_data != null):
 		for player_save in all_save_data:
 			for i in player_save.world["Remove Object Global"]:
 				if not i in remove_interactables:
 					remove_interactables.append(i)
-	print(remove_interactables)
-	
+	#set world removable to everything ALL players have removed
+	active_player.game_save_data.world["Remove Object Global"] = remove_interactables 
+	#REMOVE REMOVABLE
 	for obj in world_interactables:
 		for remove in remove_interactables:
 			if (obj != null):
@@ -92,7 +94,8 @@ func _sync_worlds():
 			else:
 				world_interactables.erase(obj)
 
-func _update_player_ref(): ##TODO figure out a way to update this any time a player JOINS or LEAVES
+##TODO figure out a way to update this any time a player JOINS or LEAVES
+func _update_player_ref(): 
 	player_container = get_tree().get_nodes_in_group("Player_Container")
 	all_players = player_container[0].get_children() #needs to be array ref because get_tree().get_nodes_in_group() returns an array
 
@@ -121,6 +124,7 @@ func toggle_game_pause(toggle : bool):
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+#TODO check if this function can be removed
 func _check_raycast(ray : RayCast3D, group : String):
 	if(ray.collide_with_bodies):
 		var collision = ray.get_collider()
@@ -131,16 +135,12 @@ func _check_raycast(ray : RayCast3D, group : String):
 		if(collision != null && collision.is_in_group(group)):
 			return true
 
-func _setup_world():
-	pass
-
-func _update_world():
-	pass
-
 func _quit_game():
-	get_tree().quit()
-
-func _on_save_pressed():
 	save_manager.save_data.player = active_player._save_player_data()
 	save_manager.save_game()
-	pass # Replace with function body.
+	get_tree().quit()
+
+#func _on_save_pressed():
+	#save_manager.save_data.player = active_player._save_player_data()
+	#save_manager.save_game()
+	#pass # Replace with function body.

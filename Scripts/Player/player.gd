@@ -295,7 +295,6 @@ func _handle_picking_up():
 		if Input.is_action_just_pressed("interact"):
 			_handle_adding_inventory(collider)
 			game_save_data.world["Remove Object Global"].append(collider.name)
-			save_manager.save_game()
 			interaction_text.text = ""
 	#Did not find an object
 	else:
