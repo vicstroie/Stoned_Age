@@ -24,9 +24,9 @@ var controller_used : bool
 @export_category("Data")
 var save_manager
 ##used to cycle through JSONS based on what world/game the player is entering
-var all_save_JSON
+var all_save_data
 ##used to sync the worlds when entering a game
-var host_save_JSON
+var host_save_data
 ##current player active on this device
 var active_player
 ##all players in the scene
@@ -61,6 +61,10 @@ func _sync_worlds():
 	for i in all_players.size():
 		if all_players[i].is_host:
 			print(str(all_players[i].multiplayer_name.text) + " is the host")
+			host_save_data = all_players[i].player_save_data
+			print("Host save data " + str(host_save_data))
+		else:
+			all_save_data.append(all_players[i].player_save_data)
 
 func _update_player_ref():
 	player_container = get_tree().get_nodes_in_group("Player_Container")
