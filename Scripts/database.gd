@@ -68,6 +68,8 @@ func _store_world_data():
 		if all_players[i].is_host:
 			print(str(all_players[i].multiplayer_name.text) + " is the host")
 			host_save_data = all_players[i].game_save_data
+			if !active_player.is_host:
+				active_player.game_save_data.world = host_save_data.world
 		else:
 			all_save_data.append(all_players[i].game_save_data)
 	_sync_worlds()
