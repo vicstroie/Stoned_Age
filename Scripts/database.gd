@@ -24,7 +24,7 @@ var controller_used : bool
 @export_category("Data")
 var save_manager
 ##used to cycle through JSONS based on what world/game the player is entering
-var all_save_data
+var all_save_data = []
 ##used to sync the worlds when entering a game
 var host_save_data
 ##current player active on this device
@@ -80,7 +80,7 @@ func _store_removable():
 		if not o in remove_interactables:
 			remove_interactables.append(o)
 	#sync what objects have been removed from main world
-	if (all_save_data != null):
+	if (all_save_data.size() > 0):
 		for player_save in all_save_data:
 			for i in player_save.world["Remove Object Global"]:
 				if not i in remove_interactables:
@@ -104,6 +104,7 @@ func _sync_worlds():
 func _update_player_ref(): 
 	player_container = get_tree().get_nodes_in_group("Player_Container")
 	all_players = player_container[0].get_children() #needs to be array ref because get_tree().get_nodes_in_group() returns an array
+	print("All Players In Game: " + str(all_players))
 
 func _process(delta):
 	# if the world is active and JSONs haven't been assigned yet (which we can tell based on if there's an active player) 
