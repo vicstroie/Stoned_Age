@@ -93,6 +93,7 @@ func _sync_worlds():
 					obj.pick_up()
 			else:
 				world_interactables.erase(obj)
+				obj.free()
 
 ##TODO figure out a way to update this any time a player JOINS or LEAVES
 func _update_player_ref(): 

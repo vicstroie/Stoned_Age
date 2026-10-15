@@ -294,7 +294,6 @@ func _handle_picking_up():
 		#Pick objects up with "E"
 		if Input.is_action_just_pressed("interact"):
 			_handle_adding_inventory(collider)
-			game_save_data.world["Remove Object Global"].append(collider.name)
 			interaction_text.text = ""
 	#Did not find an object
 	else:
@@ -372,6 +371,7 @@ func _handle_movement(delta):
 
 func _handle_adding_inventory(target_item): ##handles adding an item to your inventory
 	if(!target_item.permanent && inventory_ui.get_script != null):
+		game_save_data.world["Remove Object Global"].append(target_item.name)
 		inventory_ui.insert_item(target_item.pick_up())
 		#inventory_dictionary.Removable.append(target_item.ID)
 	else:
