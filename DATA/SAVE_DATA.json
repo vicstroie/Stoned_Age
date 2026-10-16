@@ -1,19 +1,18 @@
 {
-	"lobby ID": 109775240999314186,
+	"lobby ID": 109775241130233606,
 	"player": {
 		"Health": 0.0,
 		"Hunger": 0.0,
 		"Inventory": {},
 		"Position": [
-			-41.0633392333984,
-			-9.21246337890625,
-			-46.1735076904297
+			-38.0188369750977,
+			-9.27457332611084,
+			-40.9032020568848
 		]
 	},
-	"room name": "kaisnotanerd's room",
+	"room name": "Leafryeon's room",
 	"settings": {},
 	"world": {
-		"Remove Object Global": [
-		]
+		"Remove Object Global": []
 	}
 }

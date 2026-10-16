@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dafbejrt8stxp"]
+
+[ext_resource type="Shader" uid="uid://bjl0mqx3rokpt" path="res://Scripts/Shaders/color_reducer.gdshader" id="1_kig30"]
+[ext_resource type="Shader" uid="uid://44j7c3ew1rd3" path="res://frequency_distortion.gdshader" id="1_ohrbd"]
+[ext_resource type="PackedScene" uid="uid://djijt8y5v1lvh" path="res://Scenes/Environment/overworld.tscn" id="2_kig30"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qm6td"]
+render_priority = 0
+shader = ExtResource("1_kig30")
+shader_parameter/colorCount = Vector3(16, 16, 16)
+shader_parameter/colorShift = Vector3(5, 1, 2)
+shader_parameter/doShiftFirst = true
+shader_parameter/includeAlpha = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bs44d"]
+shader = ExtResource("1_ohrbd")
+shader_parameter/speed = 33.419998135396156
+shader_parameter/frequency = 9.20000013709104
+shader_parameter/contrast = 0.8999999798832
+
+[node name="DrugShaderTest" type="Node3D" unique_id=1187850861]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1047631795]
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="CanvasLayer" unique_id=2010920714]
+material = SubResource("ShaderMaterial_qm6td")
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer2" unique_id=1218525680]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer2/SubViewport" unique_id=993791262]
+transform = Transform3D(0.6655527, 0, -0.74635094, 0, 1, 0, 0.74635094, 0, 0.6655527, 18.008648, -3.7120879, 22.080856)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=471695681]
+material = SubResource("ShaderMaterial_bs44d")
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=1850432565]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=589348433]
+transform = Transform3D(0.6655527, 0, -0.74635094, 0, 1, 0, 0.74635094, 0, 0.6655527, 18.008648, -3.7120879, 22.080856)
+
+[node name="Overworld" parent="." unique_id=268311446 instance=ExtResource("2_kig30")]
