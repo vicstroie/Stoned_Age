@@ -18,6 +18,10 @@ all_recipes = {
 "Recipe": ExtResource("2_tgous"),
 "Unlocked": true
 },
+"Test Again": {
+"Recipe": ExtResource("2_tgous"),
+"Unlocked": true
+},
 "Test Alt": {
 "Recipe": ExtResource("3_ydygl"),
 "Unlocked": true

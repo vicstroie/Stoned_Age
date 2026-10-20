@@ -1,18 +1,19 @@
 {
-	"lobby ID": 109775241130233606,
+	"lobby ID": 109775241652248812,
 	"player": {
 		"Health": 0.0,
 		"Hunger": 0.0,
 		"Inventory": {},
 		"Position": [
-			-38.0188369750977,
-			-9.27457332611084,
-			-40.9032020568848
+			-41.548828125,
+			-9.23168468475342,
+			-40.2950744628906
 		]
 	},
-	"room name": "Leafryeon's room",
+	"room name": "dodgenerd's room",
 	"settings": {},
 	"world": {
-		"Remove Object Global": []
+		"Remove Object Global": [
+		]
 	}
 }

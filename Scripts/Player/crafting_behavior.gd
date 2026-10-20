@@ -40,7 +40,6 @@ func _add_to_crafting_slots(new_recipe):
 	recipe_container.add_child(new_slot)
 	new_slot.recipe_name.text = unlocked_recipes[new_recipe]["Recipe"].recipe_name
 	
-	##TODO dynamically add to this list rather than having a hard set 3
 	for i in unlocked_recipes[new_recipe]["Recipe"].res_name.size():
 		var new_resource = resource_slot.instantiate()
 		new_slot.resource_container.add_child(new_resource)
