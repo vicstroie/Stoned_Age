@@ -10,6 +10,8 @@ var crafting : bool
 var craftable : bool  
 var craft_button_buffer_max = .3
 var craft_button_buffer
+##how the recipe slot is checked for if it should be on or off, stores the key to be cycled through in the unlocked recipe list
+var recipe_id
 var active_recipe : Recipe
 var inventory : Inventory
 var inventory_ui : Control

@@ -34,6 +34,8 @@ func toggle_crafting(toggle:bool):
 	if toggle:
 		open()
 		_unlock_crafting_recipe()
+		for slot in all_slots:
+			slot.visible = _check_recipe_valid(slot.recipe_id)
 	else:
 		close()
 
@@ -53,22 +55,20 @@ func _add_to_crafting_slots(new_recipe):
 		
 	new_slot.crafting_ui = self
 	new_slot.active_recipe = unlocked_recipes[new_recipe]["Recipe"]
+	new_slot.recipe_id = new_recipe
 	new_slot.inventory = inventory
 	new_slot.inventory_ui = inventory_ui
-
 	#add slot to our list of all slots
 	all_slots.append(new_slot)
 
 func _check_recipe_valid(recipe):
 	if (unlocked_recipes[recipe]["Recipe"].required_table != ""): #if the recipe has a required table
 		if(active_table == unlocked_recipes[recipe]["Recipe"].required_table):
-			print("ADDING " + recipe + " TO RECIPE BOOK")
 			return true
 		else:
 			return false
 	else:
 		if(active_table == null):
-			print("ADDING " + recipe + " TO RECIPE BOOK")
 			return true
 		else:
 			return false
@@ -81,11 +81,8 @@ func _unlock_crafting_recipe():
 		if(all_recipes[recipe].Unlocked):
 			if(!unlocked_recipes.has(recipe)):
 				unlocked_recipes[recipe] = all_recipes[recipe]
-				if(_check_recipe_valid(recipe)):
-					_add_to_crafting_slots(recipe)
-				else:
-					#toggle recipe off
-					pass
+				print("ADDING " + recipe + " TO RECIPE BOOK")
+				_add_to_crafting_slots(recipe)
 
 func open():
 	visible = true
