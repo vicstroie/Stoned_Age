@@ -12,3 +12,5 @@ class_name Recipe
 @export var unlocked_by : String
 ##what crafting table/tool needs to be used for this recipe, if NULL default to crafting book/ui
 @export var required_table : String
+##how long crafting this item takes
+@export var time_to_make : float

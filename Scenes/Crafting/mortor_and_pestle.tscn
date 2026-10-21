@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bbppetk8nysvw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_oqlhh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4uhr"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dyyqa"]
+
+[node name="Mortor and Pestle" type="StaticBody3D" unique_id=720565532 groups=["Crafting", "Interactable"]]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1506245974]
+mesh = SubResource("BoxMesh_oqlhh")
+surface_material_override/0 = SubResource("StandardMaterial3D_o4uhr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1415581128]
+shape = SubResource("BoxShape3D_dyyqa")

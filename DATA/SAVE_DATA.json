@@ -1,19 +1,18 @@
 {
-	"lobby ID": 109775241652248812,
+	"lobby ID": 109775241772290124,
 	"player": {
 		"Health": 0.0,
 		"Hunger": 0.0,
 		"Inventory": {},
 		"Position": [
-			-41.548828125,
-			-9.23168468475342,
-			-40.2950744628906
+			-43.8774833679199,
+			-9.20044994354248,
+			-38.3914527893066
 		]
 	},
 	"room name": "dodgenerd's room",
 	"settings": {},
 	"world": {
-		"Remove Object Global": [
-		]
+		"Remove Object Global": []
 	}
 }

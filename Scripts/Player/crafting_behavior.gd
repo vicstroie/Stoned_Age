@@ -15,6 +15,9 @@ var unlocked_recipes : Dictionary
 var current_crafting_slots
 var all_slots : Array[Control]
 
+##to be used to track WHAT crafting system is being used
+var active_table
+
 func _ready():
 	database = get_node("/root/Database")
 
@@ -30,10 +33,10 @@ func toggle_crafting(toggle:bool):
 		return
 	if toggle:
 		open()
+		_unlock_crafting_recipe()
 	else:
 		close()
-	for recipe in all_recipes:
-				_unlock_crafting_recipe()
+
 
 func _add_to_crafting_slots(new_recipe):
 	var new_slot = recipe_slot.instantiate()
@@ -47,6 +50,7 @@ func _add_to_crafting_slots(new_recipe):
 		new_resource.get_child(1).text = str(unlocked_recipes[new_recipe]["Recipe"].res_amt[i])
 		new_slot.resource_name.append(new_resource.get_child(0).text)
 		new_slot.resource_amt.append(new_resource.get_child(1).text)
+		
 	new_slot.crafting_ui = self
 	new_slot.active_recipe = unlocked_recipes[new_recipe]["Recipe"]
 	new_slot.inventory = inventory
@@ -54,15 +58,34 @@ func _add_to_crafting_slots(new_recipe):
 
 	#add slot to our list of all slots
 	all_slots.append(new_slot)
-	
+
+func _check_recipe_valid(recipe):
+	if (unlocked_recipes[recipe]["Recipe"].required_table != ""): #if the recipe has a required table
+		if(active_table == unlocked_recipes[recipe]["Recipe"].required_table):
+			print("ADDING " + recipe + " TO RECIPE BOOK")
+			return true
+		else:
+			return false
+	else:
+		if(active_table == null):
+			print("ADDING " + recipe + " TO RECIPE BOOK")
+			return true
+		else:
+			return false
+
 ##TODO recipe JSON to keep consistent what's already been unlocked
+##TODO unlock based on trips
+##TODO toggle slots on/off based on crafting table
 func _unlock_crafting_recipe():
 	for recipe in all_recipes:
 		if(all_recipes[recipe].Unlocked):
 			if(!unlocked_recipes.has(recipe)):
 				unlocked_recipes[recipe] = all_recipes[recipe]
-				print("ADDING " + recipe + " TO RECIPE BOOK")
-				_add_to_crafting_slots(recipe)
+				if(_check_recipe_valid(recipe)):
+					_add_to_crafting_slots(recipe)
+				else:
+					#toggle recipe off
+					pass
 
 func open():
 	visible = true
@@ -70,6 +93,7 @@ func open():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 func close():
+	#clear slots
 	visible = false
 	is_open = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

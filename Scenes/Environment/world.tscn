@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://bx2kv5h2uqmya" path="res://ObjectData/RedBerry.tres" id="3_hipvn"]
 [ext_resource type="Resource" uid="uid://b1vdc7l5iiqkp" path="res://ObjectData/BlackBerry.tres" id="5_vpl1c"]
 [ext_resource type="Script" uid="uid://dpxy8xquxvntr" path="res://Scripts/water_behavior.gd" id="6_5xqn0"]
+[ext_resource type="PackedScene" uid="uid://bbppetk8nysvw" path="res://Scenes/Crafting/mortor_and_pestle.tscn" id="7_uet2k"]
 [ext_resource type="PackedScene" uid="uid://dmewidr72f0k5" path="res://Scenes/Objects/interactable_object.tscn" id="8_5xqn0"]
 [ext_resource type="AudioStream" uid="uid://cc3ggulrcjvee" path="res://Imports/TEMP/Audio/483168__kevp888__190809_0562_fr_cricketsandwind.wav" id="8_f5sk1"]
 [ext_resource type="Shader" uid="uid://mvcgr1gk7pwj" path="res://Scripts/Shaders/water.gdshader" id="9_5xqn0"]
@@ -115,6 +116,9 @@ item_name = "Ephedra Berry Alt"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84742737, -1.7331896, 23.000877)
 item_type = ExtResource("5_vpl1c")
 item_name = "Ephedra Berry Alt"
+
+[node name="Mortor and Pestle" parent="Interactables" unique_id=720565532 instance=ExtResource("7_uet2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4676647, 21.280922)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1649125312]
 unique_name_in_owner = true

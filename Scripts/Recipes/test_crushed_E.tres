@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://dvst7moim6msw"]
+
+[ext_resource type="Script" uid="uid://cpn5vvvoobabs" path="res://Scripts/Objects/inventory_item.gd" id="1_x4rqv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gaa43"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kqtg6"]
+noise = SubResource("FastNoiseLite_gaa43")
+
+[resource]
+script = ExtResource("1_x4rqv")
+texture = SubResource("NoiseTexture2D_kqtg6")
+name = "Crushed Ephedra (test)"
+is_consumable = true
+metadata/_custom_type_script = "uid://cpn5vvvoobabs"

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cuiry5eq0cwy0" path="res://Scripts/Player/crafting_behavior.gd" id="1_jqbsb"]
 [ext_resource type="Resource" uid="uid://q32j50rtau2f" path="res://Scripts/Recipes/test_recipe.tres" id="2_tgous"]
-[ext_resource type="Resource" uid="uid://boq82yh20cr15" path="res://Scripts/Recipes/test_recipe_alt.tres" id="3_ydygl"]
+[ext_resource type="Resource" uid="uid://cvgjp0e1a8fs5" path="res://Scripts/Recipes/crushed_ephedra_test_recipe.tres" id="3_ydygl"]
 
 [node name="CraftingUI" type="Control" unique_id=777426713]
 custom_minimum_size = Vector2(1152, 648)
@@ -14,16 +14,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jqbsb")
 all_recipes = {
+"Crushed Ephedra": {
+"Recipe": ExtResource("3_ydygl"),
+"Unlocked": true
+},
 "Test": {
 "Recipe": ExtResource("2_tgous"),
 "Unlocked": true
 },
 "Test Again": {
 "Recipe": ExtResource("2_tgous"),
-"Unlocked": true
-},
-"Test Alt": {
-"Recipe": ExtResource("3_ydygl"),
 "Unlocked": true
 }
 }

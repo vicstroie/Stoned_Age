@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Recipe" format=3 uid="uid://cvgjp0e1a8fs5"]
+
+[ext_resource type="Resource" uid="uid://dvst7moim6msw" path="res://Scripts/Recipes/test_crushed_E.tres" id="1_mypru"]
+[ext_resource type="Script" uid="uid://kf1t4r8x31g1" path="res://Scripts/Recipes/recipe.gd" id="2_3vwob"]
+
+[resource]
+script = ExtResource("2_3vwob")
+recipe_name = "Crushed Ephedra"
+res_name = Array[String](["Ephedra Berry", "Ephedra Berry Alt"])
+res_amt = Array[int]([1, 1])
+resulting_item = ExtResource("1_mypru")
+required_table = "Mortar and Pestle"
+metadata/_custom_type_script = "uid://kf1t4r8x31g1"
