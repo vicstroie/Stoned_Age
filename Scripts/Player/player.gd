@@ -168,7 +168,7 @@ func _process(delta):
 	%SubViewportContainer.material.set("shader_parameter/dither_pattern", database.dither_pattern_slider.value)
 
 	#_handle_saving()
-	_handle_picking_up()
+	_handle_interactable()
 	
 	if(main_player):
 		_check_for_voice()
@@ -285,16 +285,25 @@ func _input(event):
 			_record_voice(false)
 
 #region Inventory
-func _handle_picking_up():
+func _handle_interactable():
 	#Found object to grab
 	if camera_cast.is_colliding():
 		var collider = camera_cast.get_collider()
-		interaction_text.text = "press 'e' to pick up."
-		
-		#Pick objects up with "E"
-		if Input.is_action_just_pressed("interact"):
-			_handle_adding_inventory(collider)
-			interaction_text.text = ""
+		if(!collider.is_in_group("Crafting")): #this is done so that if both are within view, crafting tables have priority
+			##if the collider is in the group used for pickupable objects
+			if(collider.is_in_group("Interactable")):
+				interaction_text.text = "press 'e' to pick up."
+				
+				#Pick objects up with "E"
+				if Input.is_action_just_pressed("interact"):
+					_handle_adding_inventory(collider)
+					interaction_text.text = ""
+		##if the collider is in the group used for crafting tables
+		else:
+			interaction_text.text = "press 'e' use " + str(collider.name)
+			if Input.is_action_just_pressed("interact"):
+				crafting_ui.active_table = collider.table_name #set the active crafting table to this table
+				crafting_ui.toggle_crafting(true)
 	#Did not find an object
 	else:
 		if interaction_text.text != "":

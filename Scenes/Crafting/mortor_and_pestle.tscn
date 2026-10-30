@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bbppetk8nysvw"]
 
+[ext_resource type="Script" uid="uid://o8tqdn2i5s4h" path="res://Scripts/crafting_table.gd" id="1_kfnbj"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_oqlhh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4uhr"]
@@ -8,6 +10,9 @@ albedo_color = Color(1, 0, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_dyyqa"]
 
 [node name="Mortor and Pestle" type="StaticBody3D" unique_id=720565532 groups=["Crafting", "Interactable"]]
+collision_layer = 3
+script = ExtResource("1_kfnbj")
+table_name = "Mortar and Pestle"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1506245974]
 mesh = SubResource("BoxMesh_oqlhh")

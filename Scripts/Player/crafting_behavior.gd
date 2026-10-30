@@ -39,7 +39,6 @@ func toggle_crafting(toggle:bool):
 	else:
 		close()
 
-
 func _add_to_crafting_slots(new_recipe):
 	var new_slot = recipe_slot.instantiate()
 	recipe_container.add_child(new_slot)
@@ -91,6 +90,7 @@ func open():
 
 func close():
 	#clear slots
+	active_table = null
 	visible = false
 	is_open = false
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
