@@ -25,7 +25,7 @@ shader_parameter/zoom = 0.25
 shader_parameter/normalization = 0.9550000453625
 shader_parameter/normalized_scale = 0.00100004754750004
 
-[sub_resource type="Shader" id="Shader_0siay"]
+[sub_resource type="Shader" id="Shader_jwup4"]
 code = "shader_type canvas_item;
 
 //by Maaack
@@ -70,12 +70,12 @@ void fragment() {
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_12i4a"]
-shader = SubResource("Shader_0siay")
+shader = SubResource("Shader_jwup4")
 shader_parameter/zoom_center = Vector2(0, 0)
-shader_parameter/layers = 13
-shader_parameter/opacity = 6.585
-shader_parameter/original_opacity_mod = 1.0
-shader_parameter/zoom = 0.685
+shader_parameter/layers = 12
+shader_parameter/opacity = 0.5
+shader_parameter/original_opacity_mod = 0.0
+shader_parameter/zoom = 0.25
 shader_parameter/normalization = 1.0
 shader_parameter/normalized_scale = 1.0
 
