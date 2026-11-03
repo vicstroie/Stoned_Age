@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://dafbejrt8stxp"]
 
+[ext_resource type="Script" uid="uid://cnqco5ne7ybjo" path="res://Scripts/shader_playground.gd" id="1_0siay"]
 [ext_resource type="Material" uid="uid://cw2wjtwhofryd" path="res://CanvasShaderMaterials/frequency_distortion.tres" id="2_7btwc"]
 [ext_resource type="PackedScene" uid="uid://djijt8y5v1lvh" path="res://Scenes/Environment/overworld.tscn" id="2_kig30"]
 [ext_resource type="Material" uid="uid://cse6lsvs6lhfs" path="res://CanvasShaderMaterials/base_camera_material.tres" id="2_xex0l"]
 [ext_resource type="Shader" uid="uid://tat7bslflqcq" path="res://Scripts/Shaders/pixelation.gdshader" id="3_xex0l"]
 [ext_resource type="Shader" uid="uid://f6m2uyio4wkc" path="res://Scripts/Shaders/depth_reflection.gdshader" id="4_gpqg4"]
 [ext_resource type="Material" uid="uid://dxgyllb7qbssx" path="res://CanvasShaderMaterials/distortion_flow.tres" id="5_7btwc"]
+[ext_resource type="Material" uid="uid://rpmb4jcab0jo" path="res://CanvasShaderMaterials/mild_distortion_pink.tres" id="5_12i4a"]
+[ext_resource type="Material" uid="uid://cy1sa4mo4w2oi" path="res://CanvasShaderMaterials/colorshift_no_swirl.tres" id="6_jwup4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_82c14"]
 shader = ExtResource("3_xex0l")
@@ -22,34 +25,97 @@ shader_parameter/zoom = 0.25
 shader_parameter/normalization = 0.9550000453625
 shader_parameter/normalized_scale = 0.00100004754750004
 
+[sub_resource type="Shader" id="Shader_0siay"]
+code = "shader_type canvas_item;
+
+//by Maaack
+//https://godotshaders.com/shader/simple-zoom-reflections-mirrors/
+
+// The texture to receive the effect.
+uniform sampler2D screen_texture: hint_screen_texture, filter_linear_mipmap, repeat_enable;
+// Defines the origin point of the zoom effect relative to the texture size.
+uniform vec2 zoom_center = vec2(0.5, 0.5);
+// Adjusts the number of times the texture should get mirrored.
+uniform int layers = 5;
+// Adjusts the alpha/transparency of each layer relative to the last.
+uniform float opacity = 0.5;
+// Adjusts the boost given to the colors of the input texture.
+uniform float original_opacity_mod: hint_range(0.0, 1.0) = 0.0;
+// Adjusts the magnification of each layer relative to the last.
+uniform float zoom = 0.25;
+// Range between 0 and 1 of how much to use a normalized vector from the zoom origin.
+uniform float normalization: hint_range(0.0, 1.0) = 1.0;
+// Range between -1 and 1 of how much to user the normalized vector relative to the texture size.
+uniform float normalized_scale: hint_range(-1.0, 1.0) = 0.01;
+
+// Adjust UV per new scale and pivot
+vec2 adj_uv(vec2 a_uv, float a_scale, vec2 a_pivot){
+	return a_pivot + (a_uv - a_pivot) * pow(a_scale, -1.0);
+}
+
+void fragment() {
+	vec4 original_color = texture(screen_texture, UV);
+	COLOR = original_color;
+	for (int iter = 1; iter < layers + 1; iter++){
+		vec2 adjusted_uv = adj_uv(UV, 1.0 + (zoom * float(iter)), zoom_center);
+		vec2 adjusted_vector = adjusted_uv - UV;
+		vec2 zoom_vector = (zoom_center - UV);
+		vec2 normalized_vector = normalize(zoom_vector) * float(iter) * normalized_scale;
+		zoom_vector = mix(adjusted_vector, normalized_vector, normalization);
+		vec4 sample_color = texture(screen_texture, zoom_vector + UV);
+		float opacity_mod = 1.0 - (original_color.a * original_opacity_mod);
+		COLOR = mix(COLOR, sample_color, sample_color.a * pow(opacity, float(iter)) * opacity_mod);
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_12i4a"]
+shader = SubResource("Shader_0siay")
+shader_parameter/zoom_center = Vector2(0, 0)
+shader_parameter/layers = 13
+shader_parameter/opacity = 6.585
+shader_parameter/original_opacity_mod = 1.0
+shader_parameter/zoom = 0.685
+shader_parameter/normalization = 1.0
+shader_parameter/normalized_scale = 1.0
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_82c14"]
 viewport_path = NodePath("TestCanvas/FrequencyShader/SubViewport")
 
 [node name="DrugShaderTest" type="Node3D" unique_id=1187850861]
 
-[node name="ToggleCanvas" type="CanvasLayer" parent="." unique_id=1949967604]
+[node name="ToggleCanvas" type="CanvasLayer" parent="." unique_id=1949967604 node_paths=PackedStringArray("background_effect", "foreground_effect", "pixelation_effect", "blur_effect")]
+script = ExtResource("1_0siay")
+materials = Array[ShaderMaterial]([null, ExtResource("2_xex0l"), ExtResource("5_7btwc"), ExtResource("2_7btwc"), ExtResource("5_12i4a"), ExtResource("6_jwup4")])
+base_dither = ExtResource("2_xex0l")
+distortion_flow = ExtResource("5_7btwc")
+frequency_distortion = ExtResource("2_7btwc")
+background_effect = NodePath("BackgroundEffect")
+foreground_effect = NodePath("ForegroundEffect")
+pixelation_effect = NodePath("PixelationEffect")
+blur_effect = NodePath("BlurEffect")
 
 [node name="NoEffect" type="SubViewportContainer" parent="ToggleCanvas" unique_id=2002270809]
+visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="SubViewport" type="SubViewport" parent="ToggleCanvas/NoEffect" unique_id=2062958543]
 handle_input_locally = false
 size = Vector2i(1152, 648)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="Camera3D" type="Camera3D" parent="ToggleCanvas/NoEffect/SubViewport" unique_id=2111313273]
 transform = Transform3D(0.6655527, 0, -0.74635094, 0, 1, 0, 0.74635094, 0, 0.6655527, 18.008648, -3.7120879, 22.080856)
 
 [node name="BackgroundEffect" type="SubViewportContainer" parent="ToggleCanvas" unique_id=955319921]
-visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="SubViewport" type="SubViewport" parent="ToggleCanvas/BackgroundEffect" unique_id=1860052406]
 handle_input_locally = false
 size = Vector2i(1152, 648)
-render_target_update_mode = 0
+render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="ToggleCanvas/BackgroundEffect/SubViewport" unique_id=1656513954]
 transform = Transform3D(0.6655527, 0, -0.74635094, 0, 1, 0, 0.74635094, 0, 0.6655527, 18.008648, -3.7120879, 22.080856)
@@ -79,6 +145,62 @@ visible = false
 material = SubResource("ShaderMaterial_ncn67")
 offset_right = 1151.0
 offset_bottom = 648.0
+
+[node name="BlurEffect2" type="ColorRect" parent="ToggleCanvas" unique_id=730133637]
+visible = false
+material = SubResource("ShaderMaterial_12i4a")
+offset_right = 1151.0
+offset_bottom = 648.0
+
+[node name="Buttons" type="Control" parent="ToggleCanvas" unique_id=548793870]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ToggleForeground" type="Button" parent="ToggleCanvas/Buttons" unique_id=1775836909]
+layout_mode = 0
+offset_left = 999.0
+offset_top = 45.0
+offset_right = 1152.0
+offset_bottom = 76.0
+text = "Toggle Foreground
+"
+
+[node name="NextBackground" type="Button" parent="ToggleCanvas/Buttons" unique_id=2143679694]
+layout_mode = 0
+offset_left = 830.0
+offset_right = 983.0
+offset_bottom = 31.0
+text = "Next Background"
+
+[node name="NextForeground" type="Button" parent="ToggleCanvas/Buttons" unique_id=224518880]
+layout_mode = 0
+offset_left = 999.0
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 32.0
+text = "Next Foreground
+
+"
+
+[node name="TogglePixelation" type="Button" parent="ToggleCanvas/Buttons" unique_id=1273570291]
+layout_mode = 0
+offset_left = 999.0
+offset_top = 617.0
+offset_right = 1152.0
+offset_bottom = 648.0
+text = "Toggle Pixelation
+"
+
+[node name="ToggleBlur" type="Button" parent="ToggleCanvas/Buttons" unique_id=1117330653]
+layout_mode = 0
+offset_left = 999.0
+offset_top = 579.0
+offset_right = 1152.0
+offset_bottom = 610.0
+text = "Toggle Blur
+"
 
 [node name="TestCanvas" type="CanvasLayer" parent="." unique_id=1047631795]
 visible = false
@@ -163,3 +285,9 @@ offset_right = 1152.0
 offset_bottom = 647.0
 
 [node name="Overworld" parent="." unique_id=268311446 instance=ExtResource("2_kig30")]
+
+[connection signal="pressed" from="ToggleCanvas/Buttons/ToggleForeground" to="ToggleCanvas" method="toggle_foreground"]
+[connection signal="pressed" from="ToggleCanvas/Buttons/NextBackground" to="ToggleCanvas" method="next_background"]
+[connection signal="pressed" from="ToggleCanvas/Buttons/NextForeground" to="ToggleCanvas" method="next_foreground"]
+[connection signal="pressed" from="ToggleCanvas/Buttons/TogglePixelation" to="ToggleCanvas" method="toggle_pixelation"]
+[connection signal="pressed" from="ToggleCanvas/Buttons/ToggleBlur" to="ToggleCanvas" method="toggle_blur"]
