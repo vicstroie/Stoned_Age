@@ -1,51 +1,165 @@
 [gd_scene format=3 uid="uid://dafbejrt8stxp"]
 
-[ext_resource type="Shader" uid="uid://bjl0mqx3rokpt" path="res://Scripts/Shaders/color_reducer.gdshader" id="1_kig30"]
-[ext_resource type="Shader" uid="uid://44j7c3ew1rd3" path="res://frequency_distortion.gdshader" id="1_ohrbd"]
+[ext_resource type="Material" uid="uid://cw2wjtwhofryd" path="res://CanvasShaderMaterials/frequency_distortion.tres" id="2_7btwc"]
 [ext_resource type="PackedScene" uid="uid://djijt8y5v1lvh" path="res://Scenes/Environment/overworld.tscn" id="2_kig30"]
+[ext_resource type="Material" uid="uid://cse6lsvs6lhfs" path="res://CanvasShaderMaterials/base_camera_material.tres" id="2_xex0l"]
+[ext_resource type="Shader" uid="uid://tat7bslflqcq" path="res://Scripts/Shaders/pixelation.gdshader" id="3_xex0l"]
+[ext_resource type="Shader" uid="uid://f6m2uyio4wkc" path="res://Scripts/Shaders/depth_reflection.gdshader" id="4_gpqg4"]
+[ext_resource type="Material" uid="uid://dxgyllb7qbssx" path="res://CanvasShaderMaterials/distortion_flow.tres" id="5_7btwc"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qm6td"]
-render_priority = 0
-shader = ExtResource("1_kig30")
-shader_parameter/colorCount = Vector3(16, 16, 16)
-shader_parameter/colorShift = Vector3(5, 1, 2)
-shader_parameter/doShiftFirst = true
-shader_parameter/includeAlpha = true
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_82c14"]
+shader = ExtResource("3_xex0l")
+shader_parameter/pixelation = 0.00400000019
+shader_parameter/opacity = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bs44d"]
-shader = ExtResource("1_ohrbd")
-shader_parameter/speed = 33.419998135396156
-shader_parameter/frequency = 9.20000013709104
-shader_parameter/contrast = 0.8999999798832
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ncn67"]
+shader = ExtResource("4_gpqg4")
+shader_parameter/zoom_center = Vector2(0, 0)
+shader_parameter/layers = 5
+shader_parameter/opacity = 0.5
+shader_parameter/original_opacity_mod = 0.0
+shader_parameter/zoom = 0.25
+shader_parameter/normalization = 0.9550000453625
+shader_parameter/normalized_scale = 0.00100004754750004
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_82c14"]
+viewport_path = NodePath("TestCanvas/FrequencyShader/SubViewport")
 
 [node name="DrugShaderTest" type="Node3D" unique_id=1187850861]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1047631795]
+[node name="ToggleCanvas" type="CanvasLayer" parent="." unique_id=1949967604]
 
-[node name="SubViewportContainer2" type="SubViewportContainer" parent="CanvasLayer" unique_id=2010920714]
-material = SubResource("ShaderMaterial_qm6td")
+[node name="NoEffect" type="SubViewportContainer" parent="ToggleCanvas" unique_id=2002270809]
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer2" unique_id=1218525680]
+[node name="SubViewport" type="SubViewport" parent="ToggleCanvas/NoEffect" unique_id=2062958543]
 handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer2/SubViewport" unique_id=993791262]
+[node name="Camera3D" type="Camera3D" parent="ToggleCanvas/NoEffect/SubViewport" unique_id=2111313273]
 transform = Transform3D(0.6655527, 0, -0.74635094, 0, 1, 0, 0.74635094, 0, 0.6655527, 18.008648, -3.7120879, 22.080856)
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=471695681]
-material = SubResource("ShaderMaterial_bs44d")
+[node name="BackgroundEffect" type="SubViewportContainer" parent="ToggleCanvas" unique_id=955319921]
+visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=1850432565]
+[node name="SubViewport" type="SubViewport" parent="ToggleCanvas/BackgroundEffect" unique_id=1860052406]
 handle_input_locally = false
 size = Vector2i(1152, 648)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
-[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=589348433]
+[node name="Camera3D" type="Camera3D" parent="ToggleCanvas/BackgroundEffect/SubViewport" unique_id=1656513954]
 transform = Transform3D(0.6655527, 0, -0.74635094, 0, 1, 0, 0.74635094, 0, 0.6655527, 18.008648, -3.7120879, 22.080856)
+
+[node name="ForegroundEffect" type="SubViewportContainer" parent="ToggleCanvas" unique_id=1227974957]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="SubViewport" type="SubViewport" parent="ToggleCanvas/ForegroundEffect" unique_id=39372886]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="ToggleCanvas/ForegroundEffect/SubViewport" unique_id=1367355935]
+transform = Transform3D(0.6655527, 0, -0.74635094, 0, 1, 0, 0.74635094, 0, 0.6655527, 18.008648, -3.7120879, 22.080856)
+
+[node name="PixelationEffect" type="ColorRect" parent="ToggleCanvas" unique_id=1099298838]
+visible = false
+material = SubResource("ShaderMaterial_82c14")
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="BlurEffect" type="ColorRect" parent="ToggleCanvas" unique_id=1312477540]
+visible = false
+material = SubResource("ShaderMaterial_ncn67")
+offset_right = 1151.0
+offset_bottom = 648.0
+
+[node name="TestCanvas" type="CanvasLayer" parent="." unique_id=1047631795]
+visible = false
+
+[node name="NoEffect" type="SubViewportContainer" parent="TestCanvas" unique_id=465529875]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="SubViewport" type="SubViewport" parent="TestCanvas/NoEffect" unique_id=38608429]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="TestCanvas/NoEffect/SubViewport" unique_id=1944875913]
+transform = Transform3D(0.6655527, 0, -0.74635094, 0, 1, 0, 0.74635094, 0, 0.6655527, 18.008648, -3.7120879, 22.080856)
+
+[node name="DistortionFlow" type="SubViewportContainer" parent="TestCanvas" unique_id=346959471]
+material = ExtResource("5_7btwc")
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="SubViewport" type="SubViewport" parent="TestCanvas/DistortionFlow" unique_id=1442857787]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="TestCanvas/DistortionFlow/SubViewport" unique_id=1798837442]
+transform = Transform3D(0.6655527, 0, -0.74635094, 0, 1, 0, 0.74635094, 0, 0.6655527, 18.008648, -3.7120879, 22.080856)
+
+[node name="OriginalDitherShader" type="SubViewportContainer" parent="TestCanvas" unique_id=2010920714]
+material = ExtResource("2_xex0l")
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="SubViewport" type="SubViewport" parent="TestCanvas/OriginalDitherShader" unique_id=1218525680]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="TestCanvas/OriginalDitherShader/SubViewport" unique_id=993791262]
+transform = Transform3D(0.6655527, 0, -0.74635094, 0, 1, 0, 0.74635094, 0, 0.6655527, 18.008648, -3.7120879, 22.080856)
+
+[node name="FrequencyShader" type="SubViewportContainer" parent="TestCanvas" unique_id=471695681]
+visible = false
+material = ExtResource("2_7btwc")
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="SubViewport" type="SubViewport" parent="TestCanvas/FrequencyShader" unique_id=1850432565]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="TestCanvas/FrequencyShader/SubViewport" unique_id=589348433]
+transform = Transform3D(0.6655527, 0, -0.74635094, 0, 1, 0, 0.74635094, 0, 0.6655527, 18.008648, -3.7120879, 22.080856)
+
+[node name="PixelationEffect" type="ColorRect" parent="TestCanvas" unique_id=1958874142]
+visible = false
+material = SubResource("ShaderMaterial_82c14")
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="BlurEffect" type="ColorRect" parent="TestCanvas" unique_id=524107103]
+visible = false
+material = SubResource("ShaderMaterial_ncn67")
+offset_right = 1151.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="TestCanvas" unique_id=1824023459]
+visible = false
+material = ExtResource("2_xex0l")
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("ViewportTexture_82c14")
+
+[node name="ColorRect" type="ColorRect" parent="TestCanvas" unique_id=2011686]
+visible = false
+material = ExtResource("5_7btwc")
+offset_right = 1152.0
+offset_bottom = 647.0
 
 [node name="Overworld" parent="." unique_id=268311446 instance=ExtResource("2_kig30")]

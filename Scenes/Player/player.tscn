@@ -4,9 +4,8 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_htcer"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_dd0ac"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_0u5uq"]
-[ext_resource type="Shader" uid="uid://c0cmltoj615n2" path="res://Scripts/Shaders/dither_and_gradient_2.gdshader" id="4_dd0ac"]
+[ext_resource type="Material" uid="uid://cse6lsvs6lhfs" path="res://CanvasShaderMaterials/base_camera_material.tres" id="4_06tpx"]
 [ext_resource type="Shader" uid="uid://dc4n1tkqmy250" path="res://Scripts/Shaders/moebius.gdshader" id="4_gk6dx"]
-[ext_resource type="Texture2D" uid="uid://bt47elcjsrylq" path="res://Assets/Gradients/Screenshot 2026-08-12 174812.png" id="5_0u5uq"]
 [ext_resource type="Script" uid="uid://p0yw8ov0m1hi" path="res://Scripts/Player/player_ui.gd" id="8_7g0yx"]
 [ext_resource type="FontFile" uid="uid://d0r3fxyfh4kne" path="res://Assets/Fonts/Jacquard24-Regular.ttf" id="8_jlvik"]
 [ext_resource type="Texture2D" uid="uid://dyjuj7vvcfu43" path="res://Imports/TEMP/temp other/coin.png" id="9_gk6dx"]
@@ -37,22 +36,6 @@ properties/5/replication_mode = 1
 
 [sub_resource type="Resource" id="Resource_jlvik"]
 script = ExtResource("4_0u5uq")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fvyv6"]
-shader = ExtResource("4_dd0ac")
-shader_parameter/texture_mode = 0
-shader_parameter/alpha_mode = 0
-shader_parameter/quantize_size = 2
-shader_parameter/snap_to_world = true
-shader_parameter/limit_subpixels = true
-shader_parameter/dither_enabled = true
-shader_parameter/dither_pattern = 1
-shader_parameter/levels = 14
-shader_parameter/contrast = 1.0
-shader_parameter/brightness = 0.0
-shader_parameter/average = 0.0
-shader_parameter/palette_mode = 0
-shader_parameter/palette = ExtResource("5_0u5uq")
 
 [sub_resource type="BoxMesh" id="BoxMesh_74mp2"]
 size = Vector3(10, 10, 1)
@@ -131,7 +114,7 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=813920420]
 unique_name_in_owner = true
-material = SubResource("ShaderMaterial_fvyv6")
+material = ExtResource("4_06tpx")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -149,7 +132,6 @@ render_target_update_mode = 4
 unique_name_in_owner = true
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
-top_level = true
 cull_mask = 524287
 current = true
 

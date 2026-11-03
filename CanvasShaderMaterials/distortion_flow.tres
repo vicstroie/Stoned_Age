@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dxgyllb7qbssx"]
+
+[ext_resource type="Shader" uid="uid://5hvwi6omnsse" path="res://Scripts/Shaders/distortion_flow.gdshader" id="1_l5ney"]
+
+[resource]
+shader = ExtResource("1_l5ney")
+shader_parameter/time_factor = 0.7350000349125
+shader_parameter/wave_strength = 0.0
+shader_parameter/ripple_speed = 0.3910000185725
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/edge_color = Color(1, 0.5, 0.7, 1)
+shader_parameter/glow_intensity = 1.046000049685
+shader_parameter/edge_pulse = 0.0
+shader_parameter/noise_scale = 0.9950000472625
+shader_parameter/swirl_strength = -0.7199999392
+shader_parameter/hue_shift_speed = 1.0

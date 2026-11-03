@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cse6lsvs6lhfs"]
+
+[ext_resource type="Shader" uid="uid://c0cmltoj615n2" path="res://Scripts/Shaders/dither_and_gradient_2.gdshader" id="1_iiitw"]
+[ext_resource type="Texture2D" uid="uid://bt47elcjsrylq" path="res://Assets/Gradients/Screenshot 2026-08-12 174812.png" id="2_85kju"]
+
+[resource]
+shader = ExtResource("1_iiitw")
+shader_parameter/texture_mode = 0
+shader_parameter/alpha_mode = 0
+shader_parameter/quantize_size = 2
+shader_parameter/snap_to_world = true
+shader_parameter/limit_subpixels = true
+shader_parameter/dither_enabled = true
+shader_parameter/dither_pattern = 1
+shader_parameter/levels = 14
+shader_parameter/contrast = 1.0
+shader_parameter/brightness = 0.0
+shader_parameter/average = 0.0
+shader_parameter/palette_mode = 0
+shader_parameter/palette = ExtResource("2_85kju")
