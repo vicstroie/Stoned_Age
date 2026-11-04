@@ -303,7 +303,7 @@ func _handle_interactable():
 			interaction_text.text = "press 'e' use " + str(collider.name)
 			if Input.is_action_just_pressed("interact"):
 				crafting_ui.active_table = collider.table_name #set the active crafting table to this table
-				crafting_ui.toggle_crafting(true)
+				player_ui.open_crafting()
 	#Did not find an object
 	else:
 		if interaction_text.text != "":

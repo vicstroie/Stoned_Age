@@ -9,7 +9,7 @@ albedo_color = Color(1, 0, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dyyqa"]
 
-[node name="Mortor and Pestle" type="StaticBody3D" unique_id=720565532 groups=["Crafting", "Interactable"]]
+[node name="Mortar and Pestle" type="StaticBody3D" unique_id=720565532 groups=["Crafting", "Interactable"]]
 collision_layer = 3
 script = ExtResource("1_kfnbj")
 table_name = "Mortar and Pestle"

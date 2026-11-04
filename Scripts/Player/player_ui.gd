@@ -30,6 +30,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		_handle_pause()
 
+func open_crafting():
+	_handle_crafting()
 
 func _handle_inventory():
 	match(current_state):
