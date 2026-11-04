@@ -10,6 +10,7 @@ var foreground_view : SubViewportContainer
 var overlay_effects : ColorRect
 
 #Managers
+var database
 var player_ui : CanvasLayer
 
 #Blink
@@ -29,6 +30,7 @@ func _ready() -> void:
 	foreground_view = %ForegroundView
 	overlay_effects = %OverlayEffects
 	
+	database = get_node("/root/Database")
 	player_ui = %"Player UI"
 	
 	top_eyelid = %TopEyelid
@@ -70,7 +72,11 @@ func _process(delta: float) -> void:
 #Set current_drug, called in player.gd -> consume_item()
 func set_current_drug(current_drug:DrugEffect):
 	self.current_drug = current_drug
+	activate_blink()
+#Player cannot move, all menus will close
+func activate_blink():
 	close_eyes = true
+	database.pause_game
 #Apply Effects
 func use_current_drug():
 	use_drug(current_drug)

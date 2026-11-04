@@ -120,6 +120,26 @@ item_name = "Ephedra Berry Alt"
 [node name="Mortor and Pestle" parent="Interactables" unique_id=720565532 instance=ExtResource("7_uet2k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4676647, 21.280922)
 
+[node name="Ephedra8" parent="Interactables" unique_id=1422924397 instance=ExtResource("10_hipvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8122635, -1.1593885, 22.986507)
+item_type = ExtResource("5_vpl1c")
+item_name = "Ephedra Berry Alt"
+
+[node name="Ephedra9" parent="Interactables" unique_id=348074239 instance=ExtResource("9_hipvn")]
+transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, -10.394318, -0.1678505, 15.225845)
+item_type = ExtResource("3_hipvn")
+item_name = "Ephedra Berry"
+
+[node name="Ephedra10" parent="Interactables" unique_id=1016422530 instance=ExtResource("10_hipvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8122635, -1.1593885, 22.986507)
+item_type = ExtResource("5_vpl1c")
+item_name = "Ephedra Berry Alt"
+
+[node name="Ephedra11" parent="Interactables" unique_id=2050805496 instance=ExtResource("9_hipvn")]
+transform = Transform3D(1, 0, 0, 0, 0.98464954, 0.17454317, 0, -0.17454317, 0.98464954, -10.394318, -0.1678505, 15.225845)
+item_type = ExtResource("3_hipvn")
+item_name = "Ephedra Berry"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1649125312]
 unique_name_in_owner = true
 stream = ExtResource("8_f5sk1")

@@ -1,13 +1,13 @@
 {
-	"lobby ID": 109775243469158580,
+	"lobby ID": 109775243470150440,
 	"player": {
 		"Health": 0.0,
 		"Hunger": 0.0,
 		"Inventory": {},
 		"Position": [
-			-45.1005516052246,
-			-9.18652248382568,
-			-36.2069435119629
+			-20.1278953552246,
+			-8.1694803237915,
+			-11.4959173202515
 		]
 	},
 	"room name": "Leafryeon's room",
@@ -19,7 +19,13 @@
 			"Ephedra2",
 			"Ephedra6",
 			"Ephedra3",
-			"Ephedra5"
+			"Ephedra5",
+			"Ephedra4",
+			"InteractableObject",
+			"Ephedra9",
+			"Ephedra8",
+			"Ephedra11",
+			"Ephedra10"
 		]
 	}
 }

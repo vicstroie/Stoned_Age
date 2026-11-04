@@ -128,7 +128,7 @@ offset_bottom = 648.0
 mouse_filter = 2
 script = ExtResource("4_7g0yx")
 base_camera_material = ExtResource("4_06tpx")
-blink_speed = 100.0
+blink_speed = 150.0
 
 [node name="BackgroundView" type="SubViewportContainer" parent="PlayerCameraEffects" unique_id=813920420]
 unique_name_in_owner = true

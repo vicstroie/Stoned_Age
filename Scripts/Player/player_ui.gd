@@ -30,9 +30,17 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		_handle_pause()
 
+#Call from other nodes
+#region External Functions
 func open_crafting():
 	_handle_crafting()
-
+func open_inventory():
+	_handle_inventory()
+func open_pause():
+	_handle_pause()
+#endregion
+#Call from this node
+#region Internal Functions
 func _handle_inventory():
 	match(current_state):
 			ui_state.None:
@@ -106,3 +114,4 @@ func exit_current_menu():
 				stats.visible = true
 				database.toggle_game_pause(false)
 				current_state = ui_state.None
+#endregion
