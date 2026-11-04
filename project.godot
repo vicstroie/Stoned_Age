@@ -43,6 +43,10 @@ enabled=PackedStringArray("res://addons/ScatterShot/plugin.cfg", "res://addons/a
 folder_colors={
 "res://Assets/": "purple",
 "res://DATA/": "purple",
+"res://Materials/": "orange",
+"res://Materials/CanvasShaderMaterials/": "orange",
+"res://Materials/CanvasShaderMaterials/OverlayMaterials/": "orange",
+"res://Materials/CanvasShaderMaterials/SubViewportMaterials/": "orange",
 "res://Scripts/": "teal",
 "res://Terrain/": "yellow",
 "res://UNUSED/": "red",

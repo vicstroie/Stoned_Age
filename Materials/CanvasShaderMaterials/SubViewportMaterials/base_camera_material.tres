@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://cse6lsvs6lhfs"]
 
-[ext_resource type="Shader" uid="uid://c0cmltoj615n2" path="res://Scripts/Shaders/dither_and_gradient_2.gdshader" id="1_iiitw"]
+[ext_resource type="Shader" uid="uid://c0cmltoj615n2" path="res://Scripts/Shaders/CanvasShaders/dither_and_gradient_2.gdshader" id="1_iiitw"]
 [ext_resource type="Texture2D" uid="uid://bt47elcjsrylq" path="res://Assets/Gradients/Screenshot 2026-08-12 174812.png" id="2_85kju"]
 
 [resource]

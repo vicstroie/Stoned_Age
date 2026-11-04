@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://cw2wjtwhofryd"]
 
-[ext_resource type="Shader" uid="uid://44j7c3ew1rd3" path="res://frequency_distortion.gdshader" id="1_bao8w"]
+[ext_resource type="Shader" uid="uid://44j7c3ew1rd3" path="res://Scripts/Shaders/CanvasShaders/frequency_distortion.gdshader" id="1_bao8w"]
 
 [resource]
 shader = ExtResource("1_bao8w")

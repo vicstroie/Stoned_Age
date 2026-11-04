@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://brcya6nw13s4i"]
+
+[ext_resource type="Shader" uid="uid://tat7bslflqcq" path="res://Scripts/Shaders/CanvasShaders/pixelation.gdshader" id="1_cwrul"]
+
+[resource]
+shader = ExtResource("1_cwrul")
+shader_parameter/pixelation = 0.00400000019
+shader_parameter/opacity = 1.0

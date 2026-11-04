@@ -286,6 +286,9 @@ func _handle_interactable():
 	#Found object to grab
 	if camera_cast.is_colliding():
 		var collider = camera_cast.get_collider()
+		if !collider:
+			print("couldn't find collider")
+			return
 		if(!collider.is_in_group("Crafting")): #this is done so that if both are within view, crafting tables have priority
 			##if the collider is in the group used for pickupable objects
 			if(collider.is_in_group("Interactable")):
@@ -387,6 +390,14 @@ func _handle_adding_inventory(target_item): ##handles adding an item to your inv
 func consume_item(current_item: InvItem):
 	player_stats.update_health_bar(current_item.health_points)
 	player_stats.update_hunger_bar(current_item.hunger_points)
+	
+	if current_item.is_drug:
+		var current_drug = current_item.drug_effect
+		
+		if current_drug.use_background:
+			%PlayerCameraEffects.toggle_background(current_drug.use_background)
+			%PlayerCameraEffects.set_background_material(current_drug.background_material)
+		
 
 	#status_dictionary.Health = health
 	#

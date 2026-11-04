@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://dxgyllb7qbssx"]
 
-[ext_resource type="Shader" uid="uid://5hvwi6omnsse" path="res://Scripts/Shaders/distortion_flow.gdshader" id="1_l5ney"]
+[ext_resource type="Shader" uid="uid://5hvwi6omnsse" path="res://Scripts/Shaders/CanvasShaders/distortion_flow.gdshader" id="1_l5ney"]
 
 [resource]
 shader = ExtResource("1_l5ney")

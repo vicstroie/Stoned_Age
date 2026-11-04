@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://b1vdc7l5iiqkp"]
 
 [ext_resource type="Script" uid="uid://cpn5vvvoobabs" path="res://Scripts/Objects/inventory_item.gd" id="1_3mps0"]
+[ext_resource type="Resource" uid="uid://p7er01dlscg5" path="res://ObjectData/DrugEffects/TestEffect.tres" id="1_ffd5j"]
 [ext_resource type="Texture2D" uid="uid://c7ftannrdld58" path="res://Imports/TEMP/temp other/blackberries.png" id="2_3mps0"]
 
 [resource]
@@ -10,4 +11,6 @@ name = "Ephedra Berry Alt"
 is_consumable = true
 health_points = -10.0
 hunger_points = 5.0
+is_drug = true
+drug_effect = ExtResource("1_ffd5j")
 metadata/_custom_type_script = "uid://cpn5vvvoobabs"

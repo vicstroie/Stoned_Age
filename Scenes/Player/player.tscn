@@ -4,16 +4,12 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_htcer"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_dd0ac"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_0u5uq"]
-[ext_resource type="Material" uid="uid://cse6lsvs6lhfs" path="res://CanvasShaderMaterials/base_camera_material.tres" id="4_06tpx"]
+[ext_resource type="Material" uid="uid://cse6lsvs6lhfs" path="res://Materials/CanvasShaderMaterials/SubViewportMaterials/base_camera_material.tres" id="4_06tpx"]
 [ext_resource type="Script" uid="uid://bsdvc8ikohtq0" path="res://Scripts/Player/player_camera_effects.gd" id="4_7g0yx"]
 [ext_resource type="Shader" uid="uid://dc4n1tkqmy250" path="res://Scripts/Shaders/moebius.gdshader" id="4_gk6dx"]
-[ext_resource type="Material" uid="uid://cy1sa4mo4w2oi" path="res://CanvasShaderMaterials/colorshift_no_swirl.tres" id="6_hnuln"]
-[ext_resource type="Material" uid="uid://dxgyllb7qbssx" path="res://CanvasShaderMaterials/distortion_flow.tres" id="7_aqm4k"]
 [ext_resource type="Script" uid="uid://p0yw8ov0m1hi" path="res://Scripts/Player/player_ui.gd" id="8_7g0yx"]
 [ext_resource type="FontFile" uid="uid://d0r3fxyfh4kne" path="res://Assets/Fonts/Jacquard24-Regular.ttf" id="8_jlvik"]
-[ext_resource type="Material" uid="uid://cw2wjtwhofryd" path="res://CanvasShaderMaterials/frequency_distortion.tres" id="8_rcvs5"]
 [ext_resource type="Texture2D" uid="uid://dyjuj7vvcfu43" path="res://Imports/TEMP/temp other/coin.png" id="9_gk6dx"]
-[ext_resource type="Material" uid="uid://rpmb4jcab0jo" path="res://CanvasShaderMaterials/mild_distortion_pink.tres" id="9_h8ma5"]
 [ext_resource type="PackedScene" uid="uid://b5nlo21oi5f06" path="res://Scenes/UI/inventory_ui.tscn" id="10_jhyir"]
 [ext_resource type="Script" uid="uid://b2ohe8lsij56a" path="res://Scripts/Player/player_stats.gd" id="12_oikmp"]
 [ext_resource type="PackedScene" uid="uid://bmjttniaprx3p" path="res://Scenes/UI/crafting_ui.tscn" id="13_06tpx"]
@@ -124,8 +120,7 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 script = ExtResource("4_7g0yx")
-subviewport_material_array = Array[ShaderMaterial]([null, ExtResource("4_06tpx"), ExtResource("6_hnuln"), ExtResource("7_aqm4k"), ExtResource("8_rcvs5"), ExtResource("9_h8ma5")])
-overlay_material_array = Array[ShaderMaterial]([null, null, null])
+base_camera_material = ExtResource("4_06tpx")
 
 [node name="BackgroundView" type="SubViewportContainer" parent="PlayerCameraEffects" unique_id=813920420]
 unique_name_in_owner = true
@@ -200,6 +195,7 @@ visible = false
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+mouse_filter = 2
 
 [node name="Body" type="MeshInstance3D" parent="." unique_id=103819521]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

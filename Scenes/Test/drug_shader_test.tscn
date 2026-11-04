@@ -1,20 +1,15 @@
 [gd_scene format=3 uid="uid://dafbejrt8stxp"]
 
 [ext_resource type="Script" uid="uid://cnqco5ne7ybjo" path="res://Scripts/shader_playground.gd" id="1_0siay"]
-[ext_resource type="Material" uid="uid://cw2wjtwhofryd" path="res://CanvasShaderMaterials/frequency_distortion.tres" id="2_7btwc"]
+[ext_resource type="Material" uid="uid://cw2wjtwhofryd" path="res://Materials/CanvasShaderMaterials/SubViewportMaterials/frequency_distortion.tres" id="2_7btwc"]
 [ext_resource type="PackedScene" uid="uid://djijt8y5v1lvh" path="res://Scenes/Environment/overworld.tscn" id="2_kig30"]
-[ext_resource type="Material" uid="uid://cse6lsvs6lhfs" path="res://CanvasShaderMaterials/base_camera_material.tres" id="2_xex0l"]
-[ext_resource type="Shader" uid="uid://tat7bslflqcq" path="res://Scripts/Shaders/pixelation.gdshader" id="3_xex0l"]
-[ext_resource type="Material" uid="uid://dxgyllb7qbssx" path="res://CanvasShaderMaterials/distortion_flow.tres" id="5_7btwc"]
-[ext_resource type="Material" uid="uid://rpmb4jcab0jo" path="res://CanvasShaderMaterials/mild_distortion_pink.tres" id="5_12i4a"]
-[ext_resource type="Material" uid="uid://cy1sa4mo4w2oi" path="res://CanvasShaderMaterials/colorshift_no_swirl.tres" id="6_jwup4"]
-[ext_resource type="Material" uid="uid://britcarv4iu52" path="res://CanvasShaderMaterials/blur.tres" id="8_vhahc"]
-[ext_resource type="Material" uid="uid://c4pk0akhodng0" path="res://CanvasShaderMaterials/blur_mild.tres" id="9_u0htx"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_82c14"]
-shader = ExtResource("3_xex0l")
-shader_parameter/pixelation = 0.00400000019
-shader_parameter/opacity = 1.0
+[ext_resource type="Material" uid="uid://cse6lsvs6lhfs" path="res://Materials/CanvasShaderMaterials/SubViewportMaterials/base_camera_material.tres" id="2_xex0l"]
+[ext_resource type="Material" uid="uid://dxgyllb7qbssx" path="res://Materials/CanvasShaderMaterials/SubViewportMaterials/distortion_flow.tres" id="5_7btwc"]
+[ext_resource type="Material" uid="uid://rpmb4jcab0jo" path="res://Materials/CanvasShaderMaterials/SubViewportMaterials/mild_distortion_pink.tres" id="5_12i4a"]
+[ext_resource type="Material" uid="uid://cy1sa4mo4w2oi" path="res://Materials/CanvasShaderMaterials/SubViewportMaterials/colorshift_no_swirl.tres" id="6_jwup4"]
+[ext_resource type="Material" uid="uid://brcya6nw13s4i" path="res://Materials/CanvasShaderMaterials/OverlayMaterials/pixelation_overlay.tres" id="7_vhahc"]
+[ext_resource type="Material" uid="uid://britcarv4iu52" path="res://Materials/CanvasShaderMaterials/OverlayMaterials/blur.tres" id="8_vhahc"]
+[ext_resource type="Material" uid="uid://c4pk0akhodng0" path="res://Materials/CanvasShaderMaterials/OverlayMaterials/blur_mild.tres" id="9_u0htx"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_82c14"]
 viewport_path = NodePath("TestCanvas/FrequencyShader/SubViewport")
@@ -72,7 +67,7 @@ render_target_update_mode = 0
 transform = Transform3D(0.6655527, 0, -0.74635094, 0, 1, 0, 0.74635094, 0, 0.6655527, 18.008648, -3.7120879, 22.080856)
 
 [node name="PixelationEffect" type="ColorRect" parent="ToggleCanvas" unique_id=1099298838]
-material = SubResource("ShaderMaterial_82c14")
+material = ExtResource("7_vhahc")
 offset_right = 1152.0
 offset_bottom = 648.0
 
@@ -197,7 +192,7 @@ transform = Transform3D(0.6655527, 0, -0.74635094, 0, 1, 0, 0.74635094, 0, 0.665
 
 [node name="PixelationEffect" type="ColorRect" parent="TestCanvas" unique_id=1958874142]
 visible = false
-material = SubResource("ShaderMaterial_82c14")
+material = ExtResource("7_vhahc")
 offset_right = 1152.0
 offset_bottom = 648.0
 

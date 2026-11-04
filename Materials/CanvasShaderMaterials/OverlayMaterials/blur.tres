@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://britcarv4iu52"]
 
-[ext_resource type="Shader" uid="uid://f6m2uyio4wkc" path="res://Scripts/Shaders/depth_reflection.gdshader" id="1_fjie7"]
+[ext_resource type="Shader" uid="uid://f6m2uyio4wkc" path="res://Scripts/Shaders/CanvasShaders/depth_reflection.gdshader" id="1_fjie7"]
 
 [resource]
 shader = ExtResource("1_fjie7")
