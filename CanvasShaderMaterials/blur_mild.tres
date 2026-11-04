@@ -1,0 +1,55 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c4pk0akhodng0"]
+
+[sub_resource type="Shader" id="Shader_jwup4"]
+code = "shader_type canvas_item;
+
+//by Maaack
+//https://godotshaders.com/shader/simple-zoom-reflections-mirrors/
+
+// The texture to receive the effect.
+uniform sampler2D screen_texture: hint_screen_texture, filter_linear_mipmap, repeat_enable;
+// Defines the origin point of the zoom effect relative to the texture size.
+uniform vec2 zoom_center = vec2(0.5, 0.5);
+// Adjusts the number of times the texture should get mirrored.
+uniform int layers = 5;
+// Adjusts the alpha/transparency of each layer relative to the last.
+uniform float opacity = 0.5;
+// Adjusts the boost given to the colors of the input texture.
+uniform float original_opacity_mod: hint_range(0.0, 1.0) = 0.0;
+// Adjusts the magnification of each layer relative to the last.
+uniform float zoom = 0.25;
+// Range between 0 and 1 of how much to use a normalized vector from the zoom origin.
+uniform float normalization: hint_range(0.0, 1.0) = 1.0;
+// Range between -1 and 1 of how much to user the normalized vector relative to the texture size.
+uniform float normalized_scale: hint_range(-1.0, 1.0) = 0.01;
+
+// Adjust UV per new scale and pivot
+vec2 adj_uv(vec2 a_uv, float a_scale, vec2 a_pivot){
+	return a_pivot + (a_uv - a_pivot) * pow(a_scale, -1.0);
+}
+
+void fragment() {
+	vec4 original_color = texture(screen_texture, UV);
+	COLOR = original_color;
+	for (int iter = 1; iter < layers + 1; iter++){
+		vec2 adjusted_uv = adj_uv(UV, 1.0 + (zoom * float(iter)), zoom_center);
+		vec2 adjusted_vector = adjusted_uv - UV;
+		vec2 zoom_vector = (zoom_center - UV);
+		vec2 normalized_vector = normalize(zoom_vector) * float(iter) * normalized_scale;
+		zoom_vector = mix(adjusted_vector, normalized_vector, normalization);
+		vec4 sample_color = texture(screen_texture, zoom_vector + UV);
+		float opacity_mod = 1.0 - (original_color.a * original_opacity_mod);
+		COLOR = mix(COLOR, sample_color, sample_color.a * pow(opacity, float(iter)) * opacity_mod);
+	}
+}
+"
+
+[resource]
+shader = SubResource("Shader_jwup4")
+shader_parameter/zoom_center = Vector2(0, 0)
+shader_parameter/layers = 12
+shader_parameter/opacity = 0.5
+shader_parameter/original_opacity_mod = 0.0
+shader_parameter/zoom = 0.25
+shader_parameter/normalization = 1.0
+shader_parameter/normalized_scale = 1.0

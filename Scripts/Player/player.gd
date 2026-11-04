@@ -98,8 +98,8 @@ func _setup_local_player():
 	print("multiplayer id " + str(multiplayer.get_unique_id()))
 	if(multiplayer.get_unique_id() == player_id):
 		%Camera3D.make_current()
-		%SubViewportContainer.visible = true
 		%PhantomCamera3D.visible = true
+		%PlayerCameraEffects.toggle_background(true)
 		multiplayer_name.text = Steam.getPersonaName()
 		#cull these from main camera
 		body_mesh.set_layer_mask_value(20,true)
@@ -164,9 +164,6 @@ func _ready():
 	_setup_stream() #this function is where the audio data is being called
 
 func _process(delta):
-	%SubViewportContainer.material.set("shader_parameter/quantize_size", database.dither_slider.value)
-	%SubViewportContainer.material.set("shader_parameter/dither_pattern", database.dither_pattern_slider.value)
-
 	#_handle_saving()
 	_handle_interactable()
 	

@@ -5,10 +5,15 @@
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_dd0ac"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_0u5uq"]
 [ext_resource type="Material" uid="uid://cse6lsvs6lhfs" path="res://CanvasShaderMaterials/base_camera_material.tres" id="4_06tpx"]
+[ext_resource type="Script" uid="uid://bsdvc8ikohtq0" path="res://Scripts/Player/player_camera_effects.gd" id="4_7g0yx"]
 [ext_resource type="Shader" uid="uid://dc4n1tkqmy250" path="res://Scripts/Shaders/moebius.gdshader" id="4_gk6dx"]
+[ext_resource type="Material" uid="uid://cy1sa4mo4w2oi" path="res://CanvasShaderMaterials/colorshift_no_swirl.tres" id="6_hnuln"]
+[ext_resource type="Material" uid="uid://dxgyllb7qbssx" path="res://CanvasShaderMaterials/distortion_flow.tres" id="7_aqm4k"]
 [ext_resource type="Script" uid="uid://p0yw8ov0m1hi" path="res://Scripts/Player/player_ui.gd" id="8_7g0yx"]
 [ext_resource type="FontFile" uid="uid://d0r3fxyfh4kne" path="res://Assets/Fonts/Jacquard24-Regular.ttf" id="8_jlvik"]
+[ext_resource type="Material" uid="uid://cw2wjtwhofryd" path="res://CanvasShaderMaterials/frequency_distortion.tres" id="8_rcvs5"]
 [ext_resource type="Texture2D" uid="uid://dyjuj7vvcfu43" path="res://Imports/TEMP/temp other/coin.png" id="9_gk6dx"]
+[ext_resource type="Material" uid="uid://rpmb4jcab0jo" path="res://CanvasShaderMaterials/mild_distortion_pink.tres" id="9_h8ma5"]
 [ext_resource type="PackedScene" uid="uid://b5nlo21oi5f06" path="res://Scenes/UI/inventory_ui.tscn" id="10_jhyir"]
 [ext_resource type="Script" uid="uid://b2ohe8lsij56a" path="res://Scripts/Player/player_stats.gd" id="12_oikmp"]
 [ext_resource type="PackedScene" uid="uid://bmjttniaprx3p" path="res://Scenes/UI/crafting_ui.tscn" id="13_06tpx"]
@@ -112,9 +117,20 @@ script = ExtResource("3_dd0ac")
 tween_resource = SubResource("Resource_jlvik")
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=813920420]
+[node name="PlayerCameraEffects" type="Control" parent="." unique_id=767734231]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("4_7g0yx")
+subviewport_material_array = Array[ShaderMaterial]([null, ExtResource("4_06tpx"), ExtResource("6_hnuln"), ExtResource("7_aqm4k"), ExtResource("8_rcvs5"), ExtResource("9_h8ma5")])
+overlay_material_array = Array[ShaderMaterial]([null, null, null])
+
+[node name="BackgroundView" type="SubViewportContainer" parent="PlayerCameraEffects" unique_id=813920420]
 unique_name_in_owner = true
 material = ExtResource("4_06tpx")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -122,13 +138,13 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=720155550]
+[node name="SubViewport" type="SubViewport" parent="PlayerCameraEffects/BackgroundView" unique_id=720155550]
 handle_input_locally = false
 audio_listener_enable_3d = true
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=2146566821]
+[node name="Camera3D" type="Camera3D" parent="PlayerCameraEffects/BackgroundView/SubViewport" unique_id=2146566821]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
@@ -136,23 +152,54 @@ top_level = true
 cull_mask = 524287
 current = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=1819258933]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerCameraEffects/BackgroundView/SubViewport/Camera3D" unique_id=1819258933]
 transform = Transform3D(1000, 0, 0, 0, 384.88, 0, 0, 0, 111.85, 0, 0, 0)
 visible = false
 mesh = SubResource("BoxMesh_74mp2")
 surface_material_override/0 = SubResource("ShaderMaterial_oikmp")
 
-[node name="PhantomCameraHost" type="Node" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=741297041]
+[node name="PhantomCameraHost" type="Node" parent="PlayerCameraEffects/BackgroundView/SubViewport/Camera3D" unique_id=741297041]
 process_priority = 300
 process_physics_priority = 300
 script = ExtResource("2_htcer")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
-[node name="CameraCast" type="RayCast3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=892649074]
+[node name="CameraCast" type="RayCast3D" parent="PlayerCameraEffects/BackgroundView/SubViewport/Camera3D" unique_id=892649074]
 unique_name_in_owner = true
 target_position = Vector3(0, 0, -5)
 collision_mask = 2
 collide_with_areas = true
+
+[node name="ForegroundView" type="SubViewportContainer" parent="PlayerCameraEffects" unique_id=2128366929]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SubViewport" type="SubViewport" parent="PlayerCameraEffects/ForegroundView" unique_id=572599919]
+handle_input_locally = false
+audio_listener_enable_3d = true
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="ForegroundCamera" type="Camera3D" parent="PlayerCameraEffects/ForegroundView/SubViewport" unique_id=1563174842]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
+top_level = true
+cull_mask = 524287
+current = true
+
+[node name="OverlayEffects" type="ColorRect" parent="PlayerCameraEffects" unique_id=654632920]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="Body" type="MeshInstance3D" parent="." unique_id=103819521]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
