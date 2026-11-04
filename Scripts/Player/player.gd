@@ -392,12 +392,7 @@ func consume_item(current_item: InvItem):
 	player_stats.update_hunger_bar(current_item.hunger_points)
 	
 	if current_item.is_drug:
-		var current_drug = current_item.drug_effect
-		
-		if current_drug.use_background:
-			%PlayerCameraEffects.toggle_background(current_drug.use_background)
-			%PlayerCameraEffects.set_background_material(current_drug.background_material)
-		
+		%PlayerCameraEffects.use_drug(current_item.drug_effect)
 
 	#status_dictionary.Health = health
 	#

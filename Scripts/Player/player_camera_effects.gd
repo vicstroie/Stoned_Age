@@ -64,6 +64,8 @@ func set_overlay_material(new_material:ShaderMaterial):
 func reset_camera_effects():
 	toggle_overlay(false)
 	toggle_foreground(false)
+	toggle_background(true)
+	set_background_material(base_camera_material)
 #Set Base Material Attributes
 func set_base_attributes(dither_size:float, dither_pattern:int):
 	base_camera_material.set("shader_parameter/quantize_size", dither_size)
