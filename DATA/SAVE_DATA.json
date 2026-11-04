@@ -1,18 +1,23 @@
 {
-	"lobby ID": 109775243369064144,
+	"lobby ID": 109775243467764679,
 	"player": {
 		"Health": 0.0,
 		"Hunger": 0.0,
 		"Inventory": {},
 		"Position": [
-			-35.5674438476563,
-			-9.17392349243164,
-			-35.084056854248
+			-19.0525016784668,
+			-8.42179203033447,
+			-16.3407516479492
 		]
 	},
 	"room name": "Leafryeon's room",
 	"settings": {},
 	"world": {
-		"Remove Object Global": []
+		"Remove Object Global": [
+			"Ephedra",
+			"Ephedra7",
+			"Ephedra2",
+			"Ephedra6"
+		]
 	}
 }

@@ -84,6 +84,23 @@ func _handle_pause():
 				database.toggle_game_pause(true)
 				current_state = ui_state.Pause
 			ui_state.Pause:
-				stats.visible = false
+				stats.visible = true
+				database.toggle_game_pause(false)
+				current_state = ui_state.None
+
+func exit_current_menu():
+	match(current_state):
+			ui_state.None:
+				stats.visible = true
+			ui_state.Inventory:
+				stats.visible = true
+				inventory.toggle_inventory(false)
+				current_state = ui_state.None
+			ui_state.Crafting:
+				stats.visible = true
+				crafting.toggle_crafting(false)
+				current_state = ui_state.None
+			ui_state.Pause:
+				stats.visible = true
 				database.toggle_game_pause(false)
 				current_state = ui_state.None

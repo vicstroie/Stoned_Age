@@ -69,6 +69,12 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bs44d"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncn67"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="Player" type="RigidBody3D" unique_id=1534641321 node_paths=PackedStringArray("ground_cast", "player_stats", "inventory_ui", "crafting_ui", "player_ui", "multiplayer_name", "body_mesh", "hot_mic") groups=["Player"]]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -119,6 +125,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+mouse_filter = 2
 script = ExtResource("4_7g0yx")
 base_camera_material = ExtResource("4_06tpx")
 
@@ -297,6 +304,29 @@ vertical_alignment = 1
 unique_name_in_owner = true
 visible = false
 inventory_ui = NodePath("../InventoryUI")
+
+[node name="PlayerBlink" type="CanvasLayer" parent="." unique_id=1476432794]
+
+[node name="TopEyelid" type="ProgressBar" parent="PlayerBlink" unique_id=842894528]
+unique_name_in_owner = true
+offset_right = 1152.0
+offset_bottom = 324.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_bs44d")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ncn67")
+fill_mode = 2
+show_percentage = false
+
+[node name="BottomEyelid" type="ProgressBar" parent="PlayerBlink" unique_id=1853004726]
+unique_name_in_owner = true
+offset_top = 324.0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_bs44d")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ncn67")
+fill_mode = 3
+show_percentage = false
 
 [connection signal="area_entered" from="Body/Submerged Area" to="." method="_on_submerged_area_area_entered"]
 [connection signal="area_exited" from="Body/Submerged Area" to="." method="_on_submerged_area_area_exited"]
